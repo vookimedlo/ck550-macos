@@ -12,16 +12,21 @@ import IOKit
 class HIDRaw {
     private let manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
     private var dispatchQueue = DispatchQueue(label: "HIDRaw", qos: .utility, attributes: .concurrent)
+    private var vid: Int = 0
+    private var pid: Int = 0
+    private var usagePage: UInt32 = 0
+    private var usage: UInt32 = 0
+    
     
     private func enumerated(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) -> Void {
         guard result == kIOReturnSuccess else {
             return
         }
         
-        if 0xFF00 == (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32) {
+        if (usagePage == 0 || usagePage == (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)) && (usage == 0 || usage == (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)) {
             
             print(device)
-            print("keybord device")
+            print("keyboard device")
             
             let hidDevice = HIDDevice(manager: manager, device: device)
             hidDevice.open()
@@ -41,8 +46,13 @@ class HIDRaw {
     }
     
     func monitorEnumeration(vid: Int, pid: Int) -> Bool {
-
+        return monitorEnumeration(vid: vid, pid: pid, usagePage: 0, usage: 0)
+    }
+    
+    func monitorEnumeration(vid: Int, pid: Int, usagePage: UInt32, usage: UInt32) -> Bool {
         let deviceMatch = [kIOHIDProductIDKey: pid, kIOHIDVendorIDKey: vid]
+        self.usagePage = usagePage
+        self.usage = usage
         
         let matchingCallback : IOHIDDeviceCallback = { context, result, sender, device in
             let this : HIDRaw = Unmanaged<HIDRaw>.fromOpaque(context!).takeUnretainedValue()

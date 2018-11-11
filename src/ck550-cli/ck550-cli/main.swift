@@ -12,7 +12,7 @@ print("Hello, World!")
 
 let hid = HIDRaw()
 
-var boolResult = hid.monitorEnumeration(vid: 0x2516, pid: 0x007f)
+var boolResult = hid.monitorEnumeration(vid: 0x2516, pid: 0x007f, usagePage: 0xFF00, usage: 0x00)
 print("monitoring...", boolResult)
 
 RunLoop.current.run()
