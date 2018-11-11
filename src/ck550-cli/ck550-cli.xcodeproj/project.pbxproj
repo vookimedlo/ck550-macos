@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8DADC2AD219857FA008F0641 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2AC219857FA008F0641 /* main.swift */; };
-		8DADC2B521985882008F0641 /* HidRAW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2B321985881008F0641 /* HidRAW.swift */; };
+		8DADC2B521985882008F0641 /* HIDRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2B321985881008F0641 /* HIDRaw.swift */; };
 		8DADC2B7219858D1008F0641 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2B6219858D1008F0641 /* Data.swift */; };
 		8DADC2B92198AD50008F0641 /* CK550Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2B82198AD50008F0641 /* CK550Command.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		8DADC2A9219857FA008F0641 /* ck550-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ck550-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DADC2AC219857FA008F0641 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		8DADC2B321985881008F0641 /* HidRAW.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HidRAW.swift; path = ../../HidRAW.swift; sourceTree = "<group>"; };
+		8DADC2B321985881008F0641 /* HIDRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HIDRaw.swift; path = ../../HIDRaw.swift; sourceTree = "<group>"; };
 		8DADC2B421985881008F0641 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../../Bridging-Header.h"; sourceTree = "<group>"; };
 		8DADC2B6219858D1008F0641 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = ../../Data.swift; sourceTree = "<group>"; };
 		8DADC2B82198AD50008F0641 /* CK550Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CK550Command.swift; path = ../../CK550Command.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			children = (
 				8DADC2B6219858D1008F0641 /* Data.swift */,
 				8DADC2B421985881008F0641 /* Bridging-Header.h */,
-				8DADC2B321985881008F0641 /* HidRAW.swift */,
+				8DADC2B321985881008F0641 /* HIDRaw.swift */,
 				8DADC2AC219857FA008F0641 /* main.swift */,
 				8DADC2B82198AD50008F0641 /* CK550Command.swift */,
 			);
@@ -131,7 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DADC2B92198AD50008F0641 /* CK550Command.swift in Sources */,
-				8DADC2B521985882008F0641 /* HidRAW.swift in Sources */,
+				8DADC2B521985882008F0641 /* HIDRaw.swift in Sources */,
 				8DADC2B7219858D1008F0641 /* Data.swift in Sources */,
 				8DADC2AD219857FA008F0641 /* main.swift in Sources */,
 			);
