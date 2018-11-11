@@ -10,11 +10,18 @@ import Foundation
 import IOKit
 
 
-struct CK550Commands {
+struct CK550Command {
     static public var getActiveProfile : [uint8] {
         get {
             var command = newComand()
             command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x52, 0x00])
+            return command
+        }
+    }
+    static private var setActiveProfileTemplate : [uint8] {
+        get {
+            var command = newComand()
+            command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x51, 0x00])
             return command
         }
     }
@@ -53,10 +60,27 @@ struct CK550Commands {
             return command
         }
     }
+    
+    static public var turnLEDsOff : [uint8] {
+        get {
+            var command = newComand()
+            command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0xC0, 0x00])
+            return command
+        }
+    }
+    
     static private func newComand() -> [uint8] {
         return Array.init(repeating: UInt8(0x00), count: 64)
     }
+    
+    static public func setActiveProfile(profileId: uint8) -> [uint8] {
+        var command = setActiveProfileTemplate
+        command[4] = profileId
+        return command
+    }
 }
+
+
 
 class HIDRaw {
     
@@ -154,9 +178,10 @@ class HIDRaw {
             hidDevice.open()
             
 
-            _ = hidDevice.write(command: CK550Commands.setEffectControl)
-            _ = hidDevice.write(command: CK550Commands.getActiveEffects)
-            let res = hidDevice.write(command: CK550Commands.setFirmwareControl)
+  //          _ = hidDevice.write(command: CK550Command.setManualControl)
+    //        _ = hidDevice.write(command: CK550Command.turnLEDsOff)
+//            _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 1))
+            let res = hidDevice.write(command: CK550Command.setFirmwareControl)
             print("write", res)
         }
     }
