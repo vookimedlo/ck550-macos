@@ -12,8 +12,6 @@ import IOKit
 class HIDRaw {
     private let manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
     private var dispatchQueue = DispatchQueue(label: "HIDRaw", qos: .utility, attributes: .concurrent)
-    private var vid: Int = 0
-    private var pid: Int = 0
     private var usagePage: UInt32 = 0
     private var usage: UInt32 = 0
     
@@ -32,11 +30,16 @@ class HIDRaw {
             hidDevice.open()
             
 
-  //          _ = hidDevice.write(command: CK550Command.setManualControl)
-    //        _ = hidDevice.write(command: CK550Command.turnLEDsOff)
-//            _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 1))
+            _ = hidDevice.write(command: CK550Command.setProfileControl)
+            _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 1))
+//        _ = hidDevice.write(command: CK550Command.turnLEDsOff)
+//            _ = hidDevice.write(command: CK550Command.setManualControl)
+
+            _ = hidDevice.write(command: CK550Command.setLEDsColor(red: 0x2F, green: 0x4F, blue: 0x4F))
+//            _ = hidDevice.write(command: CK550Command.setProfileControl)
+    //        _ = hidDevice.write(command: CK550Command.getCustomRGBMapping)
             let res = hidDevice.write(command: CK550Command.setFirmwareControl)
-            print("write", res)
+   //         print("write", res)
         }
     }
     
