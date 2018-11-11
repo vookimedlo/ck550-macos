@@ -11,6 +11,7 @@
 		8DADC2B521985882008F0641 /* HIDRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2B321985881008F0641 /* HIDRaw.swift */; };
 		8DADC2B7219858D1008F0641 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2B6219858D1008F0641 /* Data.swift */; };
 		8DADC2B92198AD50008F0641 /* CK550Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2B82198AD50008F0641 /* CK550Command.swift */; };
+		8DADC2BF2198B151008F0641 /* HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2BE2198B151008F0641 /* HIDDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,7 @@
 		8DADC2B421985881008F0641 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../../Bridging-Header.h"; sourceTree = "<group>"; };
 		8DADC2B6219858D1008F0641 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = ../../Data.swift; sourceTree = "<group>"; };
 		8DADC2B82198AD50008F0641 /* CK550Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CK550Command.swift; path = ../../CK550Command.swift; sourceTree = "<group>"; };
+		8DADC2BE2198B151008F0641 /* HIDDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HIDDevice.swift; path = ../../HIDDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				8DADC2B321985881008F0641 /* HIDRaw.swift */,
 				8DADC2AC219857FA008F0641 /* main.swift */,
 				8DADC2B82198AD50008F0641 /* CK550Command.swift */,
+				8DADC2BE2198B151008F0641 /* HIDDevice.swift */,
 			);
 			path = "ck550-cli";
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 			files = (
 				8DADC2B92198AD50008F0641 /* CK550Command.swift in Sources */,
 				8DADC2B521985882008F0641 /* HIDRaw.swift in Sources */,
+				8DADC2BF2198B151008F0641 /* HIDDevice.swift in Sources */,
 				8DADC2B7219858D1008F0641 /* Data.swift in Sources */,
 				8DADC2AD219857FA008F0641 /* main.swift in Sources */,
 			);
