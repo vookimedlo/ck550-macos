@@ -9,6 +9,55 @@
 import Foundation
 import IOKit
 
+
+struct CK550Commands {
+    static public var getActiveProfile : [uint8] {
+        get {
+            var command = newComand()
+            command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x52, 0x00])
+            return command
+        }
+    }
+    static public var getActiveEffects : [uint8] {
+        get {
+            var command = newComand()
+            command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x52, 0x28])
+            return command
+        }
+    }
+    static public var setFirmwareControl : [uint8] {
+        get {
+            var command = newComand()
+            command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x41, 0x00])
+            return command
+        }
+    }
+    static public var setEffectControl : [uint8] {
+        get {
+            var command = newComand()
+            command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x41, 0x01])
+            return command
+        }
+    }
+    static public var setManualControl : [uint8] {
+        get {
+            var command = newComand()
+            command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x41, 0x02])
+            return command
+        }
+    }
+    static public var setProfileControl : [uint8] {
+        get {
+            var command = newComand()
+            command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x41, 0x03])
+            return command
+        }
+    }
+    static private func newComand() -> [uint8] {
+        return Array.init(repeating: UInt8(0x00), count: 64)
+    }
+}
+
 class HIDRaw {
     
     class HIDDevice {
@@ -81,6 +130,11 @@ class HIDRaw {
             return true
         }
         
+        func write(command: [uint8]) -> Bool {
+            let pointerToCommand = UnsafePointer<uint8>(command)
+            return kIOReturnSuccess == IOHIDDeviceSetReport(device, kIOHIDReportTypeOutput, 0, pointerToCommand, command.count);
+        }
+        
     }
     
     private let manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
@@ -90,14 +144,6 @@ class HIDRaw {
         guard result == kIOReturnSuccess else {
             return
         }
-
-/*
-        if let manufacturer = IOHIDDeviceGetProperty(device, "Manufacturer" as CFString) {
-            if let product = IOHIDDeviceGetProperty(device, "Product" as CFString) {
-                print("Device enumerated:", manufacturer, " - ", product)
-            }
-        }
- */
         
         if 0xFF00 == (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32) {
             
@@ -107,24 +153,17 @@ class HIDRaw {
             let hidDevice = HIDDevice(manager: manager, device: device)
             hidDevice.open()
             
-            var arrayToSend = Array.init(repeating: UInt8(0x00), count: 64)
-            arrayToSend.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x52, 0x00])
-            
-            //var data = Data(bytes: arrayToSend)
-            var pointer = UnsafePointer<uint8>(arrayToSend)
-            
-            let ret = IOHIDDeviceSetReport(device, kIOHIDReportTypeOutput, 0, pointer, arrayToSend.count);
-            print("write", ret)
+
+            _ = hidDevice.write(command: CK550Commands.setEffectControl)
+            _ = hidDevice.write(command: CK550Commands.getActiveEffects)
+            let res = hidDevice.write(command: CK550Commands.setFirmwareControl)
+            print("write", res)
         }
     }
     
     private func removed(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) -> Void {
         print("disconnect")
         print(result)
-    }
-    
-    private func write(buffer: [uint8]) -> Bool {
-        return true
     }
     
     func monitorEnumeration(vid: Int, pid: Int) -> Bool {
