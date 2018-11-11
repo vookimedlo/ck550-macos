@@ -10,7 +10,80 @@ import Foundation
 import IOKit
 
 class HIDRaw {
-    private let managerRef = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
+    
+    class HIDDevice {
+        private let manager : IOHIDManager
+        private let device : IOHIDDevice
+        
+        private let inputBufferSize = 64
+        private let inputBuffer : UnsafeMutablePointer<UInt8>
+        
+        var manufacturer : String? {
+            get {
+                return IOHIDDeviceGetProperty(device, "Manufacturer" as CFString) as! String?
+            }
+        }
+        var product : String? {
+            get {
+                return IOHIDDeviceGetProperty(device, "Product" as CFString) as! String?
+            }
+        }
+        var vendorID : UInt32 {
+            get {
+                return (IOHIDDeviceGetProperty(device, "VendorID" as CFString) as! UInt32)
+            }
+        }
+        var productID : UInt32 {
+            get {
+                return (IOHIDDeviceGetProperty(device, "ProductID" as CFString) as! UInt32)
+            }
+        }
+        var usagePage : UInt32 {
+            get {
+                return (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)
+            }
+        }
+        var usage : UInt32 {
+            get {
+                return (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)
+            }
+        }
+        
+        init(manager: IOHIDManager, device: IOHIDDevice) {
+            self.manager = manager
+            self.device = device
+            self.inputBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: inputBufferSize)
+            
+        }
+        deinit {
+            self.inputBuffer.deallocate()
+        }
+        
+        func open(options: IOOptionBits = IOOptionBits(kIOHIDOptionsTypeNone)) -> Bool {
+            guard kIOReturnSuccess == IOHIDDeviceOpen(device, IOOptionBits(kIOHIDOptionsTypeNone))
+                else {
+                    return false
+            }
+
+            let inputCallback : IOHIDReportCallback = { context, result, sender, type, reportId, inputBuffer, inputBufferLength in
+                guard kIOReturnSuccess == result else {
+                    return
+                }
+                let this : HIDRaw = Unmanaged<HIDRaw>.fromOpaque(context!).takeUnretainedValue()
+                let buffer = UnsafeMutableBufferPointer(start: inputBuffer, count: inputBufferLength)
+                print(Data(buffer: buffer).hexString())
+            }
+            
+            let this = Unmanaged.passRetained(self).toOpaque()
+            IOHIDDeviceRegisterInputReportCallback(device, inputBuffer, inputBufferSize, inputCallback, this)
+            IOHIDDeviceScheduleWithRunLoop(device, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue);
+            
+            return true
+        }
+        
+    }
+    
+    private let manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
     private var dispatchQueue = DispatchQueue(label: "HIDRaw", qos: .utility, attributes: .concurrent)
     
     private func enumerated(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) -> Void {
@@ -31,28 +104,11 @@ class HIDRaw {
             print(device)
             print("keybord device")
             
-            let result = IOHIDDeviceOpen(device, IOOptionBits(kIOHIDOptionsTypeNone))
-            print(result)
+            let hidDevice = HIDDevice(manager: manager, device: device)
+            hidDevice.open()
             
-            let reportSize = 64
-            let report = UnsafeMutablePointer<UInt8>.allocate(capacity: reportSize)
-            
-            let inputCallback : IOHIDReportCallback = { context, result, sender, type, reportId, report, reportLength in
-                let this : HIDRaw = Unmanaged<HIDRaw>.fromOpaque(context!).takeUnretainedValue()
-                print("input", result, reportLength)
-
-                let buffer = UnsafeMutableBufferPointer(start: report, count: reportLength)
-                
-                print(Data(buffer: buffer).hexString())
-            }
-            
-            let this = Unmanaged.passRetained(self).toOpaque()
-            IOHIDDeviceRegisterInputReportCallback(device!, report, reportSize, inputCallback, this)
-            IOHIDDeviceScheduleWithRunLoop(device, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue);
-
             var arrayToSend = Array.init(repeating: UInt8(0x00), count: 64)
-            arrayToSend[0] = 0x52
-            arrayToSend[1] = 0x00
+            arrayToSend.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: 2)), with: [0x52, 0x00])
             
             //var data = Data(bytes: arrayToSend)
             var pointer = UnsafePointer<uint8>(arrayToSend)
@@ -86,13 +142,13 @@ class HIDRaw {
         }
         
         let this = Unmanaged.passRetained(self).toOpaque()
-        IOHIDManagerRegisterDeviceMatchingCallback(managerRef, matchingCallback, this)
-        IOHIDManagerRegisterDeviceRemovalCallback(managerRef, removalCallback, this)
+        IOHIDManagerRegisterDeviceMatchingCallback(manager, matchingCallback, this)
+        IOHIDManagerRegisterDeviceRemovalCallback(manager, removalCallback, this)
         
-        IOHIDManagerSetDeviceMatching(managerRef, deviceMatch as CFDictionary?)
-        IOHIDManagerScheduleWithRunLoop(managerRef, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue)
+        IOHIDManagerSetDeviceMatching(manager, deviceMatch as CFDictionary?)
+        IOHIDManagerScheduleWithRunLoop(manager, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue)
         
-        return kIOReturnSuccess == IOHIDManagerOpen(managerRef, 0)
+        return kIOReturnSuccess == IOHIDManagerOpen(manager, 0)
     }
 
 }
