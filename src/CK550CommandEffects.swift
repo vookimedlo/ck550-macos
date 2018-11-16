@@ -32,12 +32,12 @@ extension CK550Command {
         case Off = 0xff
     }
     
-    static public var getActiveEffects : [uint8] {
+    static var getActiveEffects : [uint8] {
         get {
             return newComand(request: [0x52, 0x28])
         }
     }
-    static public var setEffectControl : [uint8] {
+    static var setEffectControl : [uint8] {
         get {
             return newComand(request: [0x41, 0x01])
         }
@@ -47,7 +47,7 @@ extension CK550Command {
             return newComand(request: [0x51, 0x28])
         }
     }
-    static public func setEffect(effectId: EffectID) -> [uint8] {
+    static func setEffect(effectId: EffectID) -> [uint8] {
         var command = setEffectTemplate
         command[4] = effectId.rawValue
         return command
