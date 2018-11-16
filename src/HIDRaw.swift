@@ -29,16 +29,44 @@ class HIDRaw {
             let hidDevice = HIDDevice(manager: manager, device: device)
             hidDevice.open()
             
+             _ = hidDevice.write(command: CK550Command.setProfileControl)
+             _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 4))
+             _ = hidDevice.write(command: CK550Command.setEffectControl)
+             _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Static))
+             
+             _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
+             _ = hidDevice.write(command: CK550Command.setFirmwareControl)
 
+/*
             _ = hidDevice.write(command: CK550Command.setProfileControl)
-            _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 1))
+            _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
+            _ = hidDevice.write(command: CK550Command.setEffectControl)
+            _ = hidDevice.write(command: CK550Command.setEffect(effectId: 4))
+            _ = hidDevice.write(command: CK550Command.setLEDColor(key: 0x2e, red: 0x2F, green: 0x4F, blue: 0x4F))
+            _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
+            _ = hidDevice.write(command: CK550Command.setFirmwareControl)
+*/
+            
+            
+  //          _ = hidDevice.write(command: CK550Command.setProfileControl)
+//            _ = hidDevice.write(command: CK550Command.getFirmwareVersion)
+            
+  //          _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
 //        _ = hidDevice.write(command: CK550Command.turnLEDsOff)
-//            _ = hidDevice.write(command: CK550Command.setManualControl)
+///            _ = hidDevice.write(command: CK550Command.setManualControl)
+ //           _ = hidDevice.write(command: CK550Command.setManualControl2)
 
-            _ = hidDevice.write(command: CK550Command.setLEDsColor(red: 0x2F, green: 0x4F, blue: 0x4F))
-//            _ = hidDevice.write(command: CK550Command.setProfileControl)
-    //        _ = hidDevice.write(command: CK550Command.getCustomRGBMapping)
-            let res = hidDevice.write(command: CK550Command.setFirmwareControl)
+ //           _ = hidDevice.write(command: CK550Command.setLEDsColor(red: 0x2F, green: 0x4F, blue: 0x4F))
+ //           _ = hidDevice.write(command: CK550Command.setEffectControl)
+  //          _ = hidDevice.write(command: CK550Command.setEffect(effectId: 4))
+   //         _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
+      //      let res = hidDevice.write(command: CK550Command.setFirmwareControl)
+   //         _ = hidDevice.write(command: CK550Command.setLEDColor(key: 0x02, red: 0x00, green: 0x00, blue: 0xFF))
+     //       _ = hidDevice.write(command: CK550Command.setEffectControl)
+        //    _ = hidDevice.write(command: CK550Command.setEffect(effectId: 0))
+
+       //     _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
+         //   let res = hidDevice.write(command: CK550Command.setFirmwareControl)
    //         print("write", res)
         }
     }
