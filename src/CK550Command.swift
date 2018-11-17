@@ -9,16 +9,6 @@
 import Foundation
 
 struct CK550Command {
-    static var getFirmwareVersion : [uint8] {
-        get {
-            return newComand(request: [0x12, 0x20])
-        }
-    }
-    static var setFirmwareControl : [uint8] {
-        get {
-            return newComand(request: [0x41, 0x00])
-        }
-    }
 
     static var setManualControl : [uint8] {
         get {
