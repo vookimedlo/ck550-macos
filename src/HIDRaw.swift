@@ -43,7 +43,7 @@ class HIDRaw {
             _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
             _ = hidDevice.write(command: CK550Command.setEffectControl)
             _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
-            _ = hidDevice.write(command: CK550Command.settmp1)
+            _ = hidDevice.write(command: CK550Command.setCustomizationRGBControl)
             _ = hidDevice.write(command: CK550Command.settmp2)
             _ = hidDevice.write(command: CK550Command.setCustomRGBMapping0)
             _ = hidDevice.write(command: CK550Command.setCustomRGBMapping1)

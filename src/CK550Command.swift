@@ -155,8 +155,21 @@ struct CK550CustomizationKeyData {
     }
 }
 
-class LayoutUS {
-    enum Key: Int, CaseIterable  {
+protocol Layout {
+    init(mapping: inout Array<CK550CustomizationKeyData>)
+    associatedtype Key
+    
+    func color(key: Key) -> RGBColor
+    func setColor(key: Key, color: RGBColor) -> Void
+    func packet(key: Key) -> Int
+    func offset(key: Key) -> Int
+    func keys(packet: Int) -> Array<Key>
+    func key(packet: Int, offset: Int) -> Key?
+}
+
+class LayoutUS : Layout {
+    typealias Key = KeyUS
+    enum KeyUS: Int, CaseIterable  {
         typealias RawValue = Int
         
         case Escape = 0, BackQuote, Tab, Capslock, LeftShift, LeftCtrl, LeftWin, Number1,
@@ -168,7 +181,10 @@ class LayoutUS {
         Numlock, Num7, Num4, Num1, NumSlash, Num8, Num5, Num2, Num0, NumAsterisk, Num9, Num6, Num3, NumPoint, NumMinus, NumPlus, NumEnter
     }
     
+    var mapping: Array<CK550CustomizationKeyData>
+    
     required init(mapping: inout Array<CK550CustomizationKeyData>) {
+        self.mapping = mapping
         mapping[Key.Escape.rawValue] = CK550CustomizationKeyData(packet: 0, offset: 0x18)
         mapping[Key.BackQuote.rawValue] = CK550CustomizationKeyData(packet: 0, offset: 0x1B)
         mapping[Key.Tab.rawValue] = CK550CustomizationKeyData(packet: 0, offset: 0x1E)
@@ -274,34 +290,26 @@ class LayoutUS {
         mapping[Key.NumPlus.rawValue] = CK550CustomizationKeyData(packet: 7, offset: 0x06)
         mapping[Key.NumEnter.rawValue] = CK550CustomizationKeyData(packet: 7, offset: 0x0C)
     }
-}
-
-class CK550CustomizationKeys<LAYOUT> {
-    var mapping = Array<CK550CustomizationKeyData>()
-    var layout : LAYOUT
-    init() {
-        layout = LAYOUT.init(mapping: &mapping)
-    }
     
-    func color(key: LAYOUT.Key) -> RGBColor {
+    func color(key: Key) -> RGBColor {
         return mapping[key.rawValue].color
     }
     
-    func setColor(key: LAYOUT.Key, color: RGBColor) -> Void {
+    func setColor(key: Key, color: RGBColor) -> Void {
         mapping[key.rawValue].color = color
     }
     
-    func packet(key: LAYOUT.Key) -> Int {
+    func packet(key: Key) -> Int {
         return mapping[key.rawValue].packet
     }
     
-    func offset(key: LAYOUT.Key) -> Int {
+    func offset(key: Key) -> Int {
         return mapping[key.rawValue].offset
     }
     
-    func keys(packet: Int) -> Array<LAYOUT.Key> {
-        var list = Array<LAYOUT.Key>()
-        LAYOUT.Key.allCases.forEach { (key) in
+    func keys(packet: Int) -> Array<Key> {
+        var list = Array<Key>()
+        Key.allCases.forEach { (key) in
             if mapping[key.rawValue].packet == packet {
                 list.append(key)
             }
@@ -309,14 +317,22 @@ class CK550CustomizationKeys<LAYOUT> {
         return list
     }
     
-    func key(packet: Int, offset: Int) -> LAYOUT.Key? {
-        var retval : LAYOUT.Key? = nil
-        LAYOUT.Key.allCases.forEach { (key) in
+    func key(packet: Int, offset: Int) -> Key? {
+        var retval : Key? = nil
+        Key.allCases.forEach { (key) in
             let data = mapping[key.rawValue]
             if data.packet == packet && data.offset == offset {
                 return retval = key
             }
         }
         return retval
+    }
+}
+
+class CK550CustomizationKeys<LAYOUT : Layout> {
+    var mapping = Array<CK550CustomizationKeyData>()
+    var layout : LAYOUT
+    init() {
+        layout = LAYOUT.init(mapping: &mapping)
     }
 }
