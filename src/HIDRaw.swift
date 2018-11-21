@@ -28,7 +28,9 @@ class HIDRaw {
             
             let hidDevice = HIDDevice(manager: manager, device: device)
             hidDevice.open()
+          
             /*
+             // Saving profile with a given access
              _ = hidDevice.write(command: CK550Command.setProfileControl)
              _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
              _ = hidDevice.write(command: CK550Command.setEffectControl)
@@ -36,38 +38,43 @@ class HIDRaw {
              
              _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
              _ = hidDevice.write(command: CK550Command.setFirmwareControl)
-*/
+             */
             
-
+            // Changing the color of keys in customization profile
+            let layout = CK550CustomizationLayoutUS()
+            let custom = CK550CustomizationKeys(layout: layout)
+            
+            layout.setColor(key: .Numlock, color: RGBColor(red: 0x00, green: 0xFD, blue: 0xFC))
+            layout.setColor(key: .Space, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
+            layout.setColor(key: .Escape, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
+            
             _ = hidDevice.write(command: CK550Command.setProfileControl)
             _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
             _ = hidDevice.write(command: CK550Command.setEffectControl)
             _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
             _ = hidDevice.write(command: CK550Command.setCustomizationRGBControl)
-            _ = hidDevice.write(command: CK550Command.settmp2)
-            _ = hidDevice.write(command: CK550Command.setCustomRGBMapping0)
-            _ = hidDevice.write(command: CK550Command.setCustomRGBMapping1)
-            _ = hidDevice.write(command: CK550Command.setCustomRGBMapping2)
-            _ = hidDevice.write(command: CK550Command.setCustomRGBMapping3)
-            _ = hidDevice.write(command: CK550Command.setCustomRGBMapping4)
-            _ = hidDevice.write(command: CK550Command.setCustomRGBMapping5)
-            _ = hidDevice.write(command: CK550Command.setCustomRGBMapping6)
-            _ = hidDevice.write(command: CK550Command.setCustomRGBMapping7)
+            _ = hidDevice.write(command: CK550Command.setCustomizationRGBControlUNKNOWN_BEFORE_PACKETS)
+            
+            let packets = custom.packets()
+            for packet in packets {
+               _ = hidDevice.write(command: packet)
+            }
+            
             _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
-            _ = hidDevice.write(command: CK550Command.settmp3)
+            _ = hidDevice.write(command: CK550Command.setCustomizationRGBControlUNKNOWN_AFTER_PACKETS)
 
+            /*
+            // Writes the color of keys in customization profile to flash
+            _ = hidDevice.write(command: CK550Command.setProfileControl)
+            _ = hidDevice.write(command: CK550Command.setEffectControl)
+            _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
+            _ = hidDevice.write(command: CK550Command.setFirmwareControl)
+            */
+            
+            
             
 //            _ = hidDevice.write(command: CK550Command.setLEDColor(key: 0x2e, red: 0x2F, green: 0x4F, blue: 0x4F))
-//            _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
 
-//            _ = hidDevice.write(command: CK550Command.setFirmwareControl)
-
-  //          _ = hidDevice.write(command: CK550Command.setProfileControl)
-    //        _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
-      //      _ = hidDevice.write(command: CK550Command.setEffectControl)
-        //    _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Customization))
-          //  _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
-         //   _ = hidDevice.write(command: CK550Command.setFirmwareControl)
             
   //          _ = hidDevice.write(command: CK550Command.setProfileControl)
 //            _ = hidDevice.write(command: CK550Command.getFirmwareVersion)

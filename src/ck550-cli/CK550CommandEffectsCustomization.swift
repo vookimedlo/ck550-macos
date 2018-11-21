@@ -19,6 +19,23 @@ extension CK550Command {
             return command
         }
     }
+    
+    static var setCustomizationRGBControl : [uint8] {
+        get {
+            return newComand(request: [0x41, 0x80])
+        }
+    }
+    static var setCustomizationRGBControlUNKNOWN_BEFORE_PACKETS : [uint8] {
+        get {
+            return newComand(request: [0x56, 0x81, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0xBB, 0xBB, 0xBB, 0xBB, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
+        }
+    }
+    
+    static var setCustomizationRGBControlUNKNOWN_AFTER_PACKETS : [uint8] {
+        get {
+            return newComand(request: [0x40, 0x63])
+        }
+    }
 }
 
 
@@ -123,7 +140,7 @@ class CK550CustomizationLayoutUS : CK550CustomizationLayout {
         mapping[Key.RightWin.rawValue] = CK550CustomizationKeyData(packet: 3, offset: 0x39)
         mapping[Key.F9.rawValue] = CK550CustomizationKeyData(packet: 3, offset: 0x3C)
         mapping[Key.Minus.rawValue] = CK550CustomizationKeyData(packet: 3, offset: 0x3F)
-        mapping[Key.LeftSquareBracket.rawValue] = CK550CustomizationKeyData(packet: 0, offset: 0x06)
+        mapping[Key.LeftSquareBracket.rawValue] = CK550CustomizationKeyData(packet: 4, offset: 0x06)
         mapping[Key.Apostroph.rawValue] = CK550CustomizationKeyData(packet: 4, offset: 0x09)
         mapping[Key.Function.rawValue] = CK550CustomizationKeyData(packet: 4, offset: 0x0F)
         mapping[Key.F10.rawValue] = CK550CustomizationKeyData(packet: 4, offset: 0x12)
