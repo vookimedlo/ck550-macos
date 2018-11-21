@@ -15,6 +15,7 @@
 		8D9BD61221A0C85900489488 /* HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9BD61021A0C85900489488 /* HIDDevice.swift */; };
 		8DADC2AD219857FA008F0641 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2AC219857FA008F0641 /* main.swift */; };
 		8DADC2B7219858D1008F0641 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADC2B6219858D1008F0641 /* Data.swift */; };
+		8DBCF65E21A5D5550054D0B4 /* CK550CommandEffectsCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBCF65D21A5D5550054D0B4 /* CK550CommandEffectsCustomization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,7 @@
 		8DADC2AC219857FA008F0641 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8DADC2B421985881008F0641 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../../Bridging-Header.h"; sourceTree = "<group>"; };
 		8DADC2B6219858D1008F0641 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = ../../Data.swift; sourceTree = "<group>"; };
+		8DBCF65D21A5D5550054D0B4 /* CK550CommandEffectsCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandEffectsCustomization.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			children = (
 				8D9BD60821A0C82F00489488 /* CK550Command.swift */,
 				8D9BD60721A0C82F00489488 /* CK550CommandEffects.swift */,
+				8DBCF65D21A5D5550054D0B4 /* CK550CommandEffectsCustomization.swift */,
 				8D9BD60A21A0C82F00489488 /* CK550CommandFirmware.swift */,
 				8D9BD60921A0C82F00489488 /* CK550CommandProfiles.swift */,
 			);
@@ -161,6 +164,7 @@
 				8D9BD60C21A0C82F00489488 /* CK550Command.swift in Sources */,
 				8D9BD61121A0C85900489488 /* HIDRaw.swift in Sources */,
 				8D9BD60E21A0C82F00489488 /* CK550CommandFirmware.swift in Sources */,
+				8DBCF65E21A5D5550054D0B4 /* CK550CommandEffectsCustomization.swift in Sources */,
 				8DADC2B7219858D1008F0641 /* Data.swift in Sources */,
 				8DADC2AD219857FA008F0641 /* main.swift in Sources */,
 				8D9BD60B21A0C82F00489488 /* CK550CommandEffects.swift in Sources */,
