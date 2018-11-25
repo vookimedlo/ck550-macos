@@ -27,7 +27,7 @@ class HIDRaw {
             print("keyboard device")
             
             let hidDevice = HIDDevice(manager: manager, device: device)
-            hidDevice.open()
+            _ = hidDevice.open()
           
             /*
              // Saving profile with a given access
@@ -63,14 +63,17 @@ class HIDRaw {
             _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
             _ = hidDevice.write(command: CK550Command.setCustomizationRGBControlUNKNOWN_AFTER_PACKETS)
 
-            /*
+          /*
             // Writes the color of keys in customization profile to flash
             _ = hidDevice.write(command: CK550Command.setProfileControl)
             _ = hidDevice.write(command: CK550Command.setEffectControl)
             _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
             _ = hidDevice.write(command: CK550Command.setFirmwareControl)
-            */
+           */
             
+            _ = hidDevice.write(command: CK550Command.setEffectControl)
+            _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 4))
+            _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
             
             
 //            _ = hidDevice.write(command: CK550Command.setLEDColor(key: 0x2e, red: 0x2F, green: 0x4F, blue: 0x4F))
