@@ -11,9 +11,9 @@ import IOKit
 
 class HIDRaw {
     private let manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
-    private var dispatchQueue = DispatchQueue(label: "HIDRaw", qos: .utility, attributes: .concurrent)
     private var usagePage: UInt32 = 0
     private var usage: UInt32 = 0
+    private var enumeratedDevs: Dictionary<IOHIDDevice, HIDDevice> = Dictionary<IOHIDDevice, HIDDevice>()
     
     
     private func enumerated(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) -> Void {
@@ -23,88 +23,25 @@ class HIDRaw {
         
         if (usagePage == 0 || usagePage == (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)) && (usage == 0 || usage == (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)) {
             
-            print(device)
-            print("keyboard device")
-            
             let hidDevice = HIDDevice(manager: manager, device: device)
-            _ = hidDevice.open()
-          
-            /*
-             // Saving profile with a given access
-             _ = hidDevice.write(command: CK550Command.setProfileControl)
-             _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
-             _ = hidDevice.write(command: CK550Command.setEffectControl)
-             _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Static))
-             
-             _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
-             _ = hidDevice.write(command: CK550Command.setFirmwareControl)
-             */
+            let userInfo = ["device": hidDevice]
+            let notification = Notification(name: .CustomHIDDeviceEnumerated, object: self, userInfo: userInfo)
             
-            // Changing the color of keys in customization profile
-            let layout = CK550CustomizationLayoutUS()
-            let custom = CK550CustomizationKeys(layout: layout)
-            
-            layout.setColor(key: .Numlock, color: RGBColor(red: 0x00, green: 0xFD, blue: 0xFC))
-            layout.setColor(key: .Space, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
-            layout.setColor(key: .Escape, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
-            
-            _ = hidDevice.write(command: CK550Command.setProfileControl)
-            _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
-            _ = hidDevice.write(command: CK550Command.setEffectControl)
-            _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
-            _ = hidDevice.write(command: CK550Command.setCustomizationRGBControl)
-            _ = hidDevice.write(command: CK550Command.setCustomizationRGBControlUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = custom.packets()
-            for packet in packets {
-               _ = hidDevice.write(command: packet)
-            }
-            
-            _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
-            _ = hidDevice.write(command: CK550Command.setCustomizationRGBControlUNKNOWN_AFTER_PACKETS)
-
-          /*
-            // Writes the color of keys in customization profile to flash
-            _ = hidDevice.write(command: CK550Command.setProfileControl)
-            _ = hidDevice.write(command: CK550Command.setEffectControl)
-            _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
-            _ = hidDevice.write(command: CK550Command.setFirmwareControl)
-           */
-            
-            _ = hidDevice.write(command: CK550Command.setEffectControl)
-            _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 4))
-            _ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
-            
-            
-//            _ = hidDevice.write(command: CK550Command.setLEDColor(key: 0x2e, red: 0x2F, green: 0x4F, blue: 0x4F))
-
-            
-  //          _ = hidDevice.write(command: CK550Command.setProfileControl)
-//            _ = hidDevice.write(command: CK550Command.getFirmwareVersion)
-            
-  //          _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
-//        _ = hidDevice.write(command: CK550Command.turnLEDsOff)
-///            _ = hidDevice.write(command: CK550Command.setManualControl)
- //           _ = hidDevice.write(command: CK550Command.setManualControl2)
-
- //           _ = hidDevice.write(command: CK550Command.setLEDsColor(red: 0x2F, green: 0x4F, blue: 0x4F))
- //           _ = hidDevice.write(command: CK550Command.setEffectControl)
-  //          _ = hidDevice.write(command: CK550Command.setEffect(effectId: 4))
-   //         _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
-      //      let res = hidDevice.write(command: CK550Command.setFirmwareControl)
-   //         _ = hidDevice.write(command: CK550Command.setLEDColor(key: 0x02, red: 0x00, green: 0x00, blue: 0xFF))
-     //       _ = hidDevice.write(command: CK550Command.setEffectControl)
-        //    _ = hidDevice.write(command: CK550Command.setEffect(effectId: 0))
-
-       //     _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
-         //   let res = hidDevice.write(command: CK550Command.setFirmwareControl)
-   //         print("write", res)
+            enumeratedDevs[device] = hidDevice
+            NotificationCenter.default.post(notification)
         }
     }
     
     private func removed(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) -> Void {
-        print("disconnect")
-        print(result)
+            if (usagePage == 0 || usagePage == (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)) && (usage == 0 || usage == (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)) {
+                
+                if let removedDevice = enumeratedDevs[device] {
+                    let userInfo = ["device": removedDevice]
+                    let notification = Notification(name: .CustomHIDDeviceRemoved, object: self, userInfo: userInfo)
+                    NotificationCenter.default.post(notification)
+                    enumeratedDevs[device] = nil
+                }
+            }
     }
     
     func monitorEnumeration(vid: Int, pid: Int) -> Bool {

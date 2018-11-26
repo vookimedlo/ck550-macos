@@ -66,7 +66,7 @@ class HIDDevice {
             guard kIOReturnSuccess == result else {
                 return
             }
-            let this : HIDRaw = Unmanaged<HIDRaw>.fromOpaque(context!).takeUnretainedValue()
+            let this: HIDRaw = Unmanaged<HIDRaw>.fromOpaque(context!).takeUnretainedValue()
             let buffer = UnsafeMutableBufferPointer(start: inputBuffer, count: inputBufferLength)
             print(Data(buffer: buffer).hexString())
         }
