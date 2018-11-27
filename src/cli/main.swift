@@ -9,9 +9,9 @@
 import Foundation
 
 class CLI: NSObject, HIDDeviceEnumeratedHandler {
-    let dispatchQueue = DispatchQueue(label: "cli", qos: .utility, attributes: .concurrent)
-    let hid = HIDRaw()
-    var hidDevice: HIDDevice? = nil
+    private let dispatchQueue = DispatchQueue(label: "cli", qos: .utility, attributes: .concurrent)
+    private let hid = HIDRaw()
+    private var hidDevice: HIDDevice? = nil
     
     
     override init() {

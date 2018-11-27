@@ -1,0 +1,390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D34C6F621AD7B11007746B6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6CF21AD64A7007746B6 /* main.swift */; };
+		8D34C6F721AD7B11007746B6 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C821AD63CA007746B6 /* Bridging-Header.h */; };
+		8D34C6F821AD7B11007746B6 /* CK550Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B521AD6393007746B6 /* CK550Command.swift */; };
+		8D34C6F921AD7B11007746B6 /* CK550CommandEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */; };
+		8D34C6FA21AD7B11007746B6 /* CK550CommandEffectsCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B721AD6393007746B6 /* CK550CommandEffectsCustomization.swift */; };
+		8D34C6FB21AD7B11007746B6 /* CK550CommandFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */; };
+		8D34C6FC21AD7B11007746B6 /* CK550CommandProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B821AD6393007746B6 /* CK550CommandProfiles.swift */; };
+		8D34C6FD21AD7B11007746B6 /* HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */; };
+		8D34C6FE21AD7B11007746B6 /* HIDRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */; };
+		8D34C6FF21AD7B11007746B6 /* HIDEnumerationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C221AD63B2007746B6 /* HIDEnumerationNotification.swift */; };
+		8D34C70021AD7B11007746B6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C421AD63BB007746B6 /* Data.swift */; };
+		8D34C70121AD7B11007746B6 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C521AD63BB007746B6 /* Logging.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8D34C6ED21AD7A85007746B6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandFirmware.swift; sourceTree = "<group>"; };
+		8D34C6B521AD6393007746B6 /* CK550Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550Command.swift; sourceTree = "<group>"; };
+		8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandEffects.swift; sourceTree = "<group>"; };
+		8D34C6B721AD6393007746B6 /* CK550CommandEffectsCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandEffectsCustomization.swift; sourceTree = "<group>"; };
+		8D34C6B821AD6393007746B6 /* CK550CommandProfiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandProfiles.swift; sourceTree = "<group>"; };
+		8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDRaw.swift; sourceTree = "<group>"; };
+		8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDDevice.swift; sourceTree = "<group>"; };
+		8D34C6C221AD63B2007746B6 /* HIDEnumerationNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDEnumerationNotification.swift; sourceTree = "<group>"; };
+		8D34C6C421AD63BB007746B6 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8D34C6C521AD63BB007746B6 /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		8D34C6C821AD63CA007746B6 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		8D34C6CF21AD64A7007746B6 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = cli/main.swift; sourceTree = "<group>"; };
+		8D34C6EF21AD7A85007746B6 /* ck550-cli */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ck550-cli"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D34C6EC21AD7A85007746B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D34C6A521AD62E1007746B6 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				8D34C6AA21AD631F007746B6 /* bridging */,
+				8D34C6A621AD62F6007746B6 /* ck550 */,
+				8D34C6A721AD6300007746B6 /* hid */,
+				8D34C6A821AD6308007746B6 /* notifications */,
+				8D34C6A921AD6315007746B6 /* utils */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		8D34C6A621AD62F6007746B6 /* ck550 */ = {
+			isa = PBXGroup;
+			children = (
+				8D34C6B521AD6393007746B6 /* CK550Command.swift */,
+				8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */,
+				8D34C6B721AD6393007746B6 /* CK550CommandEffectsCustomization.swift */,
+				8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */,
+				8D34C6B821AD6393007746B6 /* CK550CommandProfiles.swift */,
+			);
+			name = ck550;
+			sourceTree = "<group>";
+		};
+		8D34C6A721AD6300007746B6 /* hid */ = {
+			isa = PBXGroup;
+			children = (
+				8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */,
+				8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */,
+			);
+			name = hid;
+			sourceTree = "<group>";
+		};
+		8D34C6A821AD6308007746B6 /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				8D34C6C221AD63B2007746B6 /* HIDEnumerationNotification.swift */,
+			);
+			name = notifications;
+			sourceTree = "<group>";
+		};
+		8D34C6A921AD6315007746B6 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				8D34C6C421AD63BB007746B6 /* Data.swift */,
+				8D34C6C521AD63BB007746B6 /* Logging.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		8D34C6AA21AD631F007746B6 /* bridging */ = {
+			isa = PBXGroup;
+			children = (
+				8D34C6C821AD63CA007746B6 /* Bridging-Header.h */,
+			);
+			name = bridging;
+			sourceTree = "<group>";
+		};
+		8D34C6CC21AD646C007746B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D34C6CE21AD648B007746B6 /* cli */ = {
+			isa = PBXGroup;
+			children = (
+				8D34C6CF21AD64A7007746B6 /* main.swift */,
+			);
+			name = cli;
+			sourceTree = "<group>";
+		};
+		8DADC2A0219857FA008F0641 = {
+			isa = PBXGroup;
+			children = (
+				8D34C6CE21AD648B007746B6 /* cli */,
+				8D34C6A521AD62E1007746B6 /* lib */,
+				8DADC2AA219857FA008F0641 /* Products */,
+				8D34C6CC21AD646C007746B6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8DADC2AA219857FA008F0641 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D34C6EF21AD7A85007746B6 /* ck550-cli */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D34C6EE21AD7A85007746B6 /* ck550-cli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D34C6F321AD7A85007746B6 /* Build configuration list for PBXNativeTarget "ck550-cli" */;
+			buildPhases = (
+				8D34C6EB21AD7A85007746B6 /* Sources */,
+				8D34C6EC21AD7A85007746B6 /* Frameworks */,
+				8D34C6ED21AD7A85007746B6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ck550-cli";
+			productName = "ck550-cli";
+			productReference = 8D34C6EF21AD7A85007746B6 /* ck550-cli */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8DADC2A1219857FA008F0641 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Michal Duda";
+				TargetAttributes = {
+					8D34C6EE21AD7A85007746B6 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 8DADC2A4219857FA008F0641 /* Build configuration list for PBXProject "ck550" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8DADC2A0219857FA008F0641;
+			productRefGroup = 8DADC2AA219857FA008F0641 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D34C6EE21AD7A85007746B6 /* ck550-cli */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D34C6EB21AD7A85007746B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D34C6F621AD7B11007746B6 /* main.swift in Sources */,
+				8D34C6F721AD7B11007746B6 /* Bridging-Header.h in Sources */,
+				8D34C6F821AD7B11007746B6 /* CK550Command.swift in Sources */,
+				8D34C6F921AD7B11007746B6 /* CK550CommandEffects.swift in Sources */,
+				8D34C6FA21AD7B11007746B6 /* CK550CommandEffectsCustomization.swift in Sources */,
+				8D34C6FB21AD7B11007746B6 /* CK550CommandFirmware.swift in Sources */,
+				8D34C6FC21AD7B11007746B6 /* CK550CommandProfiles.swift in Sources */,
+				8D34C6FD21AD7B11007746B6 /* HIDDevice.swift in Sources */,
+				8D34C6FE21AD7B11007746B6 /* HIDRaw.swift in Sources */,
+				8D34C6FF21AD7B11007746B6 /* HIDEnumerationNotification.swift in Sources */,
+				8D34C70021AD7B11007746B6 /* Data.swift in Sources */,
+				8D34C70121AD7B11007746B6 /* Logging.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8D34C6F421AD7A85007746B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3HRQ8E2SZ4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		8D34C6F521AD7A85007746B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3HRQ8E2SZ4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		8DADC2AE219857FA008F0641 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8DADC2AF219857FA008F0641 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8D34C6F321AD7A85007746B6 /* Build configuration list for PBXNativeTarget "ck550-cli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D34C6F421AD7A85007746B6 /* Debug */,
+				8D34C6F521AD7A85007746B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DADC2A4219857FA008F0641 /* Build configuration list for PBXProject "ck550" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DADC2AE219857FA008F0641 /* Debug */,
+				8DADC2AF219857FA008F0641 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8DADC2A1219857FA008F0641 /* Project object */;
+}
