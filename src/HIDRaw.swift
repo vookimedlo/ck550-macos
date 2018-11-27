@@ -13,8 +13,13 @@ class HIDRaw {
     private let manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
     private var usagePage: UInt32 = 0
     private var usage: UInt32 = 0
-    private var enumeratedDevs: Dictionary<IOHIDDevice, HIDDevice> = Dictionary<IOHIDDevice, HIDDevice>()
+    private var enumeratedDevs: Dictionary<IOHIDDevice, HIDDeviceProtocol> = Dictionary<IOHIDDevice, HIDDeviceProtocol>()
+    private let hidDeviceType: HIDDeviceProtocol.Type
     
+    
+    required init<HID_DEVICE: HIDDeviceProtocol>(_ deviceType: HID_DEVICE.Type) {
+        hidDeviceType = deviceType
+    }
     
     private func enumerated(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) -> Void {
         guard result == kIOReturnSuccess else {
@@ -23,7 +28,7 @@ class HIDRaw {
         
         if (usagePage == 0 || usagePage == (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)) && (usage == 0 || usage == (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)) {
             
-            let hidDevice = HIDDevice(manager: manager, device: device)
+            let hidDevice = hidDeviceType.init(manager: manager, device: device)
             let userInfo = ["device": hidDevice]
             let notification = Notification(name: .CustomHIDDeviceEnumerated, object: self, userInfo: userInfo)
             

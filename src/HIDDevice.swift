@@ -8,10 +8,11 @@
 
 import Foundation
 
-class HIDDevice {
+class HIDDevice : HIDDeviceProtocol {
+
     private let manager : IOHIDManager
     private let device : IOHIDDevice
-    
+
     private let inputBufferSize = 64
     private let inputBuffer : UnsafeMutablePointer<UInt8>
     
@@ -46,11 +47,10 @@ class HIDDevice {
         }
     }
     
-    init(manager: IOHIDManager, device: IOHIDDevice) {
+    required init(manager: IOHIDManager, device: IOHIDDevice) {
         self.manager = manager
         self.device = device
         self.inputBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: inputBufferSize)
-        
     }
     deinit {
         self.inputBuffer.deallocate()
@@ -66,9 +66,10 @@ class HIDDevice {
             guard kIOReturnSuccess == result else {
                 return
             }
-            let this: HIDRaw = Unmanaged<HIDRaw>.fromOpaque(context!).takeUnretainedValue()
+            let this: HIDDevice = Unmanaged<HIDDevice>.fromOpaque(context!).takeUnretainedValue()
             let buffer = UnsafeMutableBufferPointer(start: inputBuffer, count: inputBufferLength)
-            print(Data(buffer: buffer).hexString())
+            let receivedData = Array<uint8>(buffer)
+            this.dataReceived(buffer: receivedData)
         }
         
         let this = Unmanaged.passRetained(self).toOpaque()
@@ -78,9 +79,16 @@ class HIDDevice {
         return true
     }
     
+    func close(options: IOOptionBits) -> Bool {
+        return kIOReturnSuccess == IOHIDDeviceClose(device, IOOptionBits(kIOHIDOptionsTypeNone))
+    }
+    
     func write(command: [uint8]) -> Bool {
         let pointerToCommand = UnsafePointer<uint8>(command)
         return kIOReturnSuccess == IOHIDDeviceSetReport(device, kIOHIDReportTypeOutput, 0, pointerToCommand, command.count);
     }
     
+    func dataReceived(buffer: [uint8]) -> Void {
+        // Override in a subclass
+    }
 }
