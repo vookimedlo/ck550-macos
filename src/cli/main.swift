@@ -16,19 +16,21 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
     override init() {
         super.init()
         startObserving()
-        let boolResult = hid.monitorEnumeration(vid: 0x2516, pid: 0x007f, usagePage: 0xFF00, usage: 0x00)
-        print("monitoring HID...", boolResult)
     }
     
     deinit {
         stopObserving()
     }
     
+    func startHIDMonitoring() -> Bool {
+        return hid.monitorEnumeration(vid: 0x2516, pid: 0x007f, usagePage: 0xFF00, usage: 0x00)
+    }
+    
     func deviceEnumerated(notification: Notification) {
         guard notification.name == Notification.Name.CustomHIDDeviceEnumerated else {return}
         
         let hidDevice = notification.userInfo?["device"] as! CK550HIDDevice
-        LogDebug("Enumerated device: %@", hidDevice.manufacturer!, hidDevice.product!)
+        //LogDebug("Enumerated device: %@", hidDevice.manufacturer!, hidDevice.product!)
         
         dispatchQueue.async {
             _ = self.open(hidDevice: hidDevice)
@@ -39,7 +41,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         guard notification.name == Notification.Name.CustomHIDDeviceRemoved else {return}
         
         let hidDevice = notification.userInfo?["device"] as! HIDDevice
-        LogDebug("Removed device: %@", hidDevice.manufacturer!, hidDevice.product!)
+        print(" - Keyboard unplugged: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
         
         dispatchQueue.async {
             self.hidDevice = nil
@@ -52,12 +54,20 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         }
         self.hidDevice = hidDevice
         
+
+        print(" - Keyboard detected: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
+        
+        if let version = getFirmwareVersion() {
+            print(" - FW version: \(version)")
+        }
+        
         // TODO: move
         setProfile(profileId: 3)
         setEffect()
-      //  saveCurrentProfile()
-      //  setFirmwareControl()
-      //  setCustomColors()
+        
+       // saveCurrentProfile()
+       // setFirmwareControl()
+       // setCustomColors()
         
         return true
     }
@@ -144,12 +154,32 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             print(command.result)
         }
     }
+    
+    func getFirmwareVersion() -> String? {
+        if let hidDevice = self.hidDevice {
+            let command = CK550HIDCommand()
+            command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            command.addOutgoingMessage(CK550Command.getFirmwareVersion)
+            hidDevice.write(command: command)
+            if command.result == .ok {
+                // Throw away a FW control response
+                _ = command.responses.dequeue()
+                let fwArray = command.responses.dequeue()?[0x08...0x21]
+                let fwVersion = String(bytes: fwArray!, encoding: String.Encoding.utf16LittleEndian)?.filter({$0 != "\0"})
+                return fwVersion
+            }
+        }
+        return nil
+    }
 }
 
 print("CK550 MacOS Utility")
 
 let cli = CLI()
-RunLoop.current.run()
+if cli.startHIDMonitoring() {
+    print(" - Monitoring HID...")
+    RunLoop.current.run()
+}
 
 
 //TODO: remove

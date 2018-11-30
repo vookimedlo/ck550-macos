@@ -18,14 +18,23 @@ class CK550HIDDevice : HIDDevice {
     }
     
     override func dataReceived(buffer: [uint8]) -> Void {
-        print(Data(buffer).hexString())
-        
         commandAccessMutex.wait()
         if let command = self.command {
-            command.addIncomingResponse(buffer)
             if !command.waitsForAnotherResponse() {
+                // TODO: remove print
+                print(Data(buffer).hexString())
                 waitForResponseMutex.signal()
             }
+            else {
+                command.addIncomingResponse(buffer)
+                if !command.waitsForAnotherResponse() {
+                    waitForResponseMutex.signal()
+                }
+            }
+        }
+        else {
+            // TODO: remove print
+            print(Data(buffer).hexString())
         }
         commandAccessMutex.signal()
     }
