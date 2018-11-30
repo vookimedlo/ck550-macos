@@ -52,5 +52,9 @@ extension CK550Command {
         command[4] = effectId.rawValue
         return command
     }
-    
+    static var enableOffEffectModification : [uint8] {
+        get {
+            return newComand(request: [0x41, 0x80])
+        }
+    }
 }

@@ -63,11 +63,13 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         
         // TODO: move
         setProfile(profileId: 3)
-        setEffect()
-        
+        //setEffect()
+        setOffEffectSingleKey(background: RGBColor(red: 0x00, green: 0xFF, blue: 0xFF), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
        // saveCurrentProfile()
        // setFirmwareControl()
        // setCustomColors()
+        
+
         
         return true
     }
@@ -76,7 +78,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         if let hidDevice = self.hidDevice {
             let command = CK550HIDCommand()
             command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Static))
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
             hidDevice.write(command: command)
             print(command.result)
         }
@@ -109,6 +111,28 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             print(command.result)
         }
     }
+    
+    func setOffEffectSingleKey(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSingleKeySpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            let command = CK550HIDCommand()
+            command.addOutgoingMessage(CK550Command.setEffectControl)
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
+            
+            command.addOutgoingMessage(CK550Command.setOffEffectSingleKeyUNKNOWN_BEFORE_PACKETS)
+            
+            let packets = CK550Command.setOffEffectSingleKey(background: background, key: key, speed: speed)
+            for packet in packets {
+                command.addOutgoingMessage(packet)
+            }
+            
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            
+            hidDevice.write(command: command)
+            print(command.result)
+        }
+    }
 
     func setCustomColors() -> Void {
         if let hidDevice = self.hidDevice {
@@ -126,7 +150,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             command.addOutgoingMessage(CK550Command.setActiveProfile(profileId: 3))
             command.addOutgoingMessage(CK550Command.setEffectControl)
             command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setCustomizationRGBControl)
+            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
             command.addOutgoingMessage(CK550Command.setCustomizationRGBControlUNKNOWN_BEFORE_PACKETS)
             
             let packets = custom.packets()
