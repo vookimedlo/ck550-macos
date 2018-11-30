@@ -139,19 +139,17 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             let command = CK550HIDCommand()
             
             // Changing the color of keys in Off effect
-            let layout = CK550CustomizationLayoutUS()
-            let custom = CK550CustomizationKeys(layout: layout)
+            let layout = CK550OffEffectCustomizationLayoutUS()
+            let custom = CK550OffEffectCustomizationKeys(layout: layout)
             
             layout.setColor(key: .Numlock, color: RGBColor(red: 0x00, green: 0xFD, blue: 0xFC))
             layout.setColor(key: .Space, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
             layout.setColor(key: .Escape, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
             
-            command.addOutgoingMessage(CK550Command.setProfileControl)
-            command.addOutgoingMessage(CK550Command.setActiveProfile(profileId: 3))
             command.addOutgoingMessage(CK550Command.setEffectControl)
             command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
             command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            command.addOutgoingMessage(CK550Command.setCustomizationRGBControlUNKNOWN_BEFORE_PACKETS)
+            command.addOutgoingMessage(CK550Command.setOffEffectCustomizationUNKNOWN_BEFORE_PACKETS)
             
             let packets = custom.packets()
             for packet in packets {
@@ -159,7 +157,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
             
             command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setCustomizationRGBControlUNKNOWN_AFTER_PACKETS)
+            command.addOutgoingMessage(CK550Command.setOffEffectCustomizationUNKNOWN_AFTER_PACKETS)
             
             /*
              // Writes the color of keys in Off effect to flash

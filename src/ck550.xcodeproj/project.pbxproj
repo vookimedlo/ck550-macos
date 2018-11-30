@@ -11,7 +11,7 @@
 		8D34C6F721AD7B11007746B6 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C821AD63CA007746B6 /* Bridging-Header.h */; };
 		8D34C6F821AD7B11007746B6 /* CK550Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B521AD6393007746B6 /* CK550Command.swift */; };
 		8D34C6F921AD7B11007746B6 /* CK550CommandEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */; };
-		8D34C6FA21AD7B11007746B6 /* CK550CommandKeysCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B721AD6393007746B6 /* CK550CommandKeysCustomization.swift */; };
+		8D34C6FA21AD7B11007746B6 /* CK550CommandCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */; };
 		8D34C6FB21AD7B11007746B6 /* CK550CommandFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */; };
 		8D34C6FC21AD7B11007746B6 /* CK550CommandProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B821AD6393007746B6 /* CK550CommandProfiles.swift */; };
 		8D34C6FD21AD7B11007746B6 /* HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */; };
@@ -44,7 +44,7 @@
 		8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandFirmware.swift; sourceTree = "<group>"; };
 		8D34C6B521AD6393007746B6 /* CK550Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550Command.swift; sourceTree = "<group>"; };
 		8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandEffects.swift; sourceTree = "<group>"; };
-		8D34C6B721AD6393007746B6 /* CK550CommandKeysCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandKeysCustomization.swift; sourceTree = "<group>"; };
+		8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandCustomization.swift; sourceTree = "<group>"; };
 		8D34C6B821AD6393007746B6 /* CK550CommandProfiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandProfiles.swift; sourceTree = "<group>"; };
 		8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDRaw.swift; sourceTree = "<group>"; };
 		8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDDevice.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		8D34C71821B1E0AA007746B6 /* off effect overrides */ = {
 			isa = PBXGroup;
 			children = (
-				8D34C6B721AD6393007746B6 /* CK550CommandKeysCustomization.swift */,
+				8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */,
 				8D34C71921B1E125007746B6 /* CK550CommandSingleKey.swift */,
 			);
 			name = "off effect overrides";
@@ -284,7 +284,7 @@
 				8D34C6F821AD7B11007746B6 /* CK550Command.swift in Sources */,
 				8D34C71521AF173C007746B6 /* CK550HIDClientCommand.swift in Sources */,
 				8D34C6F921AD7B11007746B6 /* CK550CommandEffects.swift in Sources */,
-				8D34C6FA21AD7B11007746B6 /* CK550CommandKeysCustomization.swift in Sources */,
+				8D34C6FA21AD7B11007746B6 /* CK550CommandCustomization.swift in Sources */,
 				8D34C71A21B1E125007746B6 /* CK550CommandSingleKey.swift in Sources */,
 				8D34C70821ADF458007746B6 /* CK550HIDDevice.swift in Sources */,
 				8D34C6FB21AD7B11007746B6 /* CK550CommandFirmware.swift in Sources */,
