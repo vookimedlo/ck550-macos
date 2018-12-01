@@ -64,7 +64,9 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         // TODO: move
         setProfile(profileId: 3)
         //setEffect()
-        setOffEffectSingleKey(background: RGBColor(red: 0x00, green: 0xFF, blue: 0xFF), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
+        //setOffEffectSingleKey(background: RGBColor(red: 0x00, green: 0xFF, blue: 0xFF), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
+        //setOffEffectWave(color: RGBColor(red: 0xFF, green: 0xFF, blue: 0xFF), direction: .LeftToRight, speed: .Lower)
+        setOffEffectRipple(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Lowest)
        // saveCurrentProfile()
        // setFirmwareControl()
        // setCustomColors()
@@ -107,6 +109,50 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         if let hidDevice = self.hidDevice {
             let command = CK550HIDCommand()
             command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            hidDevice.write(command: command)
+            print(command.result)
+        }
+    }
+    
+    func setOffEffectRipple(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectRippleSpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            let command = CK550HIDCommand()
+            command.addOutgoingMessage(CK550Command.setEffectControl)
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
+            
+            command.addOutgoingMessage(CK550Command.setOffEffectRippleUNKNOWN_BEFORE_PACKETS)
+            
+            let packets = CK550Command.setOffEffectRipple(background: background, key: key, speed: speed)
+            for packet in packets {
+                command.addOutgoingMessage(packet)
+            }
+            
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            
+            hidDevice.write(command: command)
+            print(command.result)
+        }
+    }
+    
+    func setOffEffectWave(color: RGBColor, direction: CK550Command.OffEffectWaveDirection, speed: CK550Command.OffEffectWaveSpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            let command = CK550HIDCommand()
+            command.addOutgoingMessage(CK550Command.setEffectControl)
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
+            
+            command.addOutgoingMessage(CK550Command.setOffEffectWaveUNKNOWN_BEFORE_PACKETS)
+            
+            let packets = CK550Command.setOffEffectWave(color: color, direction: direction, speed: speed)
+            for packet in packets {
+                command.addOutgoingMessage(packet)
+            }
+            
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            
             hidDevice.write(command: command)
             print(command.result)
         }
