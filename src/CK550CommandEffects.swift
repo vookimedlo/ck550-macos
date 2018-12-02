@@ -25,7 +25,7 @@ extension CK550Command {
         case ReactivePunch   = 0x0a //
         case Heartbeat       = 0x0b //
         case Fireball        = 0x0c //
-        case CircleSpectrum  = 0x0d //
+        case CircleSpectrum  = 0x0d // CK550CommandCircleSpectrum
         case ReactiveTornado = 0x0e // CK550CommandReactiveTornado
         case WaterRipple     = 0x0f //
         case GameSnake       = 0x10 //
