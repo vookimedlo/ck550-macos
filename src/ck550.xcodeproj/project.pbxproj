@@ -29,6 +29,7 @@
 		8D34C71C21B315A1007746B6 /* CK550CommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */; };
 		8D34C71E21B32665007746B6 /* CK550CommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */; };
 		8D4281F821B4684500EB1F76 /* CK550CommandColorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */; };
+		8D4281FA21B46B2D00EB1F76 /* CK550CommandSnowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,7 @@
 		8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandWave.swift; sourceTree = "<group>"; };
 		8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandRipple.swift; sourceTree = "<group>"; };
 		8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandColorCycle.swift; sourceTree = "<group>"; };
+		8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandSnowing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */,
 				8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */,
 				8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */,
+				8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */,
 			);
 			name = "off effect overrides";
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				8D34C6FC21AD7B11007746B6 /* CK550CommandProfiles.swift in Sources */,
 				8D34C6FD21AD7B11007746B6 /* HIDDevice.swift in Sources */,
 				8D34C6FE21AD7B11007746B6 /* HIDRaw.swift in Sources */,
+				8D4281FA21B46B2D00EB1F76 /* CK550CommandSnowing.swift in Sources */,
 				8D34C71121AEDC19007746B6 /* Queue.swift in Sources */,
 				8D34C6FF21AD7B11007746B6 /* HIDEnumerationNotification.swift in Sources */,
 				8D34C70021AD7B11007746B6 /* Data.swift in Sources */,
