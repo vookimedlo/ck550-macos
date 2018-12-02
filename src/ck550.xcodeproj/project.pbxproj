@@ -31,6 +31,7 @@
 		8D4281F821B4684500EB1F76 /* CK550CommandColorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */; };
 		8D4281FA21B46B2D00EB1F76 /* CK550CommandSnowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */; };
 		8D4281FC21B4738E00EB1F76 /* CK550CommandStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FB21B4738E00EB1F76 /* CK550CommandStars.swift */; };
+		8D4281FE21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +72,7 @@
 		8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandColorCycle.swift; sourceTree = "<group>"; };
 		8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandSnowing.swift; sourceTree = "<group>"; };
 		8D4281FB21B4738E00EB1F76 /* CK550CommandStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandStars.swift; sourceTree = "<group>"; };
+		8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandReactiveTornado.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */,
 				8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */,
 				8D4281FB21B4738E00EB1F76 /* CK550CommandStars.swift */,
+				8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */,
 			);
 			name = "off effect overrides";
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				8D34C70321ADE932007746B6 /* HIDDeviceProtocol.swift in Sources */,
 				8D34C6F621AD7B11007746B6 /* main.swift in Sources */,
 				8D34C6F721AD7B11007746B6 /* Bridging-Header.h in Sources */,
+				8D4281FE21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift in Sources */,
 				8D34C71C21B315A1007746B6 /* CK550CommandWave.swift in Sources */,
 				8D34C71321AF168F007746B6 /* CK550HIDDeviceCommand.swift in Sources */,
 				8D34C6F821AD7B11007746B6 /* CK550Command.swift in Sources */,

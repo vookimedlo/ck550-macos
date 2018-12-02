@@ -12,24 +12,24 @@ extension CK550Command {
     enum EffectID : uint8 {
         typealias RawValue = uint8
         
-        case Static = 0x00
-        case Wave = 0x01
-        case CrossMode = 0x02
-        case SingleKey = 0x03
-        case Customization = 0x04
-        case Star = 0x05
-        case ColorCycle = 0x06
-        case Breathing = 0x07
-        case Ripple = 0x08
-        case Snowing = 0x09
-        case ReactivePunch = 0x0a
-        case Heartbeat = 0x0b
-        case Fireball = 0x0c
-        case CircleSpectrum = 0x0d
-        case ReactiveTornado = 0x0e
-        case WaterRipple = 0x0f
-        case GameSnake = 0x10
-        case Off = 0xff
+        case Static          = 0x00 //
+        case Wave            = 0x01 // CK550CommandWave
+        case CrossMode       = 0x02 //
+        case SingleKey       = 0x03 // CK550CommandSingleKey
+        case Customization   = 0x04 // CK550CommandCustomization
+        case Star            = 0x05 // CK550CommandStars
+        case ColorCycle      = 0x06 // CK550CommandColorCycle
+        case Breathing       = 0x07 //
+        case Ripple          = 0x08 // CK550CommandRipple
+        case Snowing         = 0x09 // CK550CommandSnowing
+        case ReactivePunch   = 0x0a //
+        case Heartbeat       = 0x0b //
+        case Fireball        = 0x0c //
+        case CircleSpectrum  = 0x0d //
+        case ReactiveTornado = 0x0e // CK550CommandReactiveTornado
+        case WaterRipple     = 0x0f //
+        case GameSnake       = 0x10 //
+        case Off             = 0xff //
     }
     
     static var getActiveEffects : [uint8] {
