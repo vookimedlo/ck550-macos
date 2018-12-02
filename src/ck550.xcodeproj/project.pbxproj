@@ -28,6 +28,7 @@
 		8D34C71A21B1E125007746B6 /* CK550CommandSingleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71921B1E125007746B6 /* CK550CommandSingleKey.swift */; };
 		8D34C71C21B315A1007746B6 /* CK550CommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */; };
 		8D34C71E21B32665007746B6 /* CK550CommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */; };
+		8D4281F821B4684500EB1F76 /* CK550CommandColorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +66,7 @@
 		8D34C71921B1E125007746B6 /* CK550CommandSingleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandSingleKey.swift; sourceTree = "<group>"; };
 		8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandWave.swift; sourceTree = "<group>"; };
 		8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandRipple.swift; sourceTree = "<group>"; };
+		8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandColorCycle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 				8D34C71921B1E125007746B6 /* CK550CommandSingleKey.swift */,
 				8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */,
 				8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */,
+				8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */,
 			);
 			name = "off effect overrides";
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				8D34C70121AD7B11007746B6 /* Logging.swift in Sources */,
 				8D34C70A21AED604007746B6 /* CK550HIDCommand.swift in Sources */,
 				8D34C71E21B32665007746B6 /* CK550CommandRipple.swift in Sources */,
+				8D4281F821B4684500EB1F76 /* CK550CommandColorCycle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
