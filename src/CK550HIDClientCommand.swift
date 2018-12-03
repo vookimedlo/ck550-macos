@@ -9,13 +9,13 @@
 import Foundation
 
 extension CK550HIDCommand {
-enum Result {
-    case ok
-    case writeFailed
-    case responseFailed
-    case responseTimedout
-    case notProcessed
-}
+    enum Result {
+        case ok
+        case writeFailed
+        case responseFailed
+        case responseTimedout
+        case notProcessed
+    }
 }
 
 protocol CK550HIDClientCommand {
