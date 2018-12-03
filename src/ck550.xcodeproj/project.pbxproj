@@ -33,6 +33,8 @@
 		8D4281FC21B4738E00EB1F76 /* CK550CommandStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FB21B4738E00EB1F76 /* CK550CommandStars.swift */; };
 		8D4281FE21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */; };
 		8D42820021B4842100EB1F76 /* CK550CommandCircleSpectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */; };
+		8D49DCA221B5A8B900BAC6F8 /* CK550CommandStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */; };
+		8D49DCA421B5A9AC00BAC6F8 /* CK550CommandOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +77,8 @@
 		8D4281FB21B4738E00EB1F76 /* CK550CommandStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandStars.swift; sourceTree = "<group>"; };
 		8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandReactiveTornado.swift; sourceTree = "<group>"; };
 		8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandCircleSpectrum.swift; sourceTree = "<group>"; };
+		8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandStatic.swift; sourceTree = "<group>"; };
+		8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandOff.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,15 +214,17 @@
 		8D34C71821B1E0AA007746B6 /* off effect overrides */ = {
 			isa = PBXGroup;
 			children = (
-				8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */,
-				8D34C71921B1E125007746B6 /* CK550CommandSingleKey.swift */,
-				8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */,
-				8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */,
+				8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */,
 				8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */,
+				8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */,
+				8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */,
+				8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */,
+				8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */,
+				8D34C71921B1E125007746B6 /* CK550CommandSingleKey.swift */,
 				8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */,
 				8D4281FB21B4738E00EB1F76 /* CK550CommandStars.swift */,
-				8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */,
-				8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */,
+				8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */,
+				8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */,
 			);
 			name = "off effect overrides";
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 			files = (
 				8D42820021B4842100EB1F76 /* CK550CommandCircleSpectrum.swift in Sources */,
 				8D34C70321ADE932007746B6 /* HIDDeviceProtocol.swift in Sources */,
+				8D49DCA421B5A9AC00BAC6F8 /* CK550CommandOff.swift in Sources */,
 				8D34C6F621AD7B11007746B6 /* main.swift in Sources */,
 				8D34C6F721AD7B11007746B6 /* Bridging-Header.h in Sources */,
 				8D4281FE21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift in Sources */,
@@ -320,6 +327,7 @@
 				8D34C71121AEDC19007746B6 /* Queue.swift in Sources */,
 				8D34C6FF21AD7B11007746B6 /* HIDEnumerationNotification.swift in Sources */,
 				8D34C70021AD7B11007746B6 /* Data.swift in Sources */,
+				8D49DCA221B5A8B900BAC6F8 /* CK550CommandStatic.swift in Sources */,
 				8D34C70121AD7B11007746B6 /* Logging.swift in Sources */,
 				8D34C70A21AED604007746B6 /* CK550HIDCommand.swift in Sources */,
 				8D34C71E21B32665007746B6 /* CK550CommandRipple.swift in Sources */,
