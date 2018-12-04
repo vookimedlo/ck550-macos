@@ -66,7 +66,11 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         //setEffect()
         //setOffEffectSingleKey(background: RGBColor(red: 0x00, green: 0xFF, blue: 0xFF), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
         //setOffEffectWave(color: RGBColor(red: 0xFF, green: 0xFF, blue: 0xFF), direction: .LeftToRight, speed: .Lower)
-        setOffEffectRipple(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Lowest)
+        //setOffEffectRipple(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Lowest)
+        //setOffEffectBreathing(speed: .Highest)
+        //setOffEffectColorCycle(speed: .Middle)
+        //setOffEffectStatic(color: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00))
+        setOffEffectSnowing(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
        // saveCurrentProfile()
        // setFirmwareControl()
        // setCustomColors()
@@ -109,6 +113,116 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         if let hidDevice = self.hidDevice {
             let command = CK550HIDCommand()
             command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            hidDevice.write(command: command)
+            print(command.result)
+        }
+    }
+    
+    func setOffEffectSnowing(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSnowingSpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            let command = CK550HIDCommand()
+            command.addOutgoingMessage(CK550Command.setEffectControl)
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
+            
+            command.addOutgoingMessage(CK550Command.setOffEffectSnowingUNKNOWN_BEFORE_PACKETS)
+            
+            let packets = CK550Command.setOffEffectSnowing(background: background, key: key, speed: speed)
+            for packet in packets {
+                command.addOutgoingMessage(packet)
+            }
+            
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            
+            hidDevice.write(command: command)
+            print(command.result)
+        }
+    }
+    
+    func setOffEffectOff() -> Void {
+        if let hidDevice = self.hidDevice {
+            let command = CK550HIDCommand()
+            command.addOutgoingMessage(CK550Command.setEffectControl)
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
+            
+            command.addOutgoingMessage(CK550Command.setOffEffectOffUNKNOWN_BEFORE_PACKETS)
+            
+            let packets = CK550Command.setOffEffectOff()
+            for packet in packets {
+                command.addOutgoingMessage(packet)
+            }
+            
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            
+            hidDevice.write(command: command)
+            print(command.result)
+        }
+    }
+    
+    func setOffEffectStatic(color: RGBColor) -> Void {
+        if let hidDevice = self.hidDevice {
+            let command = CK550HIDCommand()
+            command.addOutgoingMessage(CK550Command.setEffectControl)
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
+            
+            command.addOutgoingMessage(CK550Command.setOffEffectStaticUNKNOWN_BEFORE_PACKETS)
+            
+            let packets = CK550Command.setOffEffectStatic(color: color)
+            for packet in packets {
+                command.addOutgoingMessage(packet)
+            }
+            
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            
+            hidDevice.write(command: command)
+            print(command.result)
+        }
+    }
+    
+    func setOffEffectColorCycle(speed: CK550Command.OffEffectColorCycleSpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            let command = CK550HIDCommand()
+            command.addOutgoingMessage(CK550Command.setEffectControl)
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
+            
+            command.addOutgoingMessage(CK550Command.setOffEffectColorCycleUNKNOWN_BEFORE_PACKETS)
+            
+            let packets = CK550Command.setOffEffectColorCycle(speed: speed)
+            for packet in packets {
+                command.addOutgoingMessage(packet)
+            }
+            
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            
+            hidDevice.write(command: command)
+            print(command.result)
+        }
+    }
+    
+    func setOffEffectBreathing(speed: CK550Command.OffEffectBreathingSpeed, color: RGBColor? = nil) -> Void {
+        if let hidDevice = self.hidDevice {
+            let command = CK550HIDCommand()
+            command.addOutgoingMessage(CK550Command.setEffectControl)
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
+            
+            command.addOutgoingMessage(CK550Command.setOffEffectBreathingUNKNOWN_BEFORE_PACKETS)
+            
+            let packets = CK550Command.setOffEffectBreathing(speed: speed, color: color)
+            for packet in packets {
+                command.addOutgoingMessage(packet)
+            }
+            
+            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+            command.addOutgoingMessage(CK550Command.setFirmwareControl)
+            
             hidDevice.write(command: command)
             print(command.result)
         }
