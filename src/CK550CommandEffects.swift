@@ -19,7 +19,7 @@ extension CK550Command {
         case Customization   = 0x04 // CK550CommandCustomization
         case Star            = 0x05 // CK550CommandStars
         case ColorCycle      = 0x06 // CK550CommandColorCycle
-        case Breathing       = 0x07 //
+        case Breathing       = 0x07 // CK550CommandBreathing
         case Ripple          = 0x08 // CK550CommandRipple
         case Snowing         = 0x09 // CK550CommandSnowing
         case ReactivePunch   = 0x0a //

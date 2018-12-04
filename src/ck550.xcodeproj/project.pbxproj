@@ -35,6 +35,7 @@
 		8D42820021B4842100EB1F76 /* CK550CommandCircleSpectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */; };
 		8D49DCA221B5A8B900BAC6F8 /* CK550CommandStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */; };
 		8D49DCA421B5A9AC00BAC6F8 /* CK550CommandOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */; };
+		8D49DCA621B5BD1500BAC6F8 /* CK550CommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +80,7 @@
 		8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandCircleSpectrum.swift; sourceTree = "<group>"; };
 		8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandStatic.swift; sourceTree = "<group>"; };
 		8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandOff.swift; sourceTree = "<group>"; };
+		8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandBreathing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 		8D34C71821B1E0AA007746B6 /* off effect overrides */ = {
 			isa = PBXGroup;
 			children = (
+				8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */,
 				8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */,
 				8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */,
 				8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */,
@@ -325,6 +328,7 @@
 				8D34C6FE21AD7B11007746B6 /* HIDRaw.swift in Sources */,
 				8D4281FA21B46B2D00EB1F76 /* CK550CommandSnowing.swift in Sources */,
 				8D34C71121AEDC19007746B6 /* Queue.swift in Sources */,
+				8D49DCA621B5BD1500BAC6F8 /* CK550CommandBreathing.swift in Sources */,
 				8D34C6FF21AD7B11007746B6 /* HIDEnumerationNotification.swift in Sources */,
 				8D34C70021AD7B11007746B6 /* Data.swift in Sources */,
 				8D49DCA221B5A8B900BAC6F8 /* CK550CommandStatic.swift in Sources */,
