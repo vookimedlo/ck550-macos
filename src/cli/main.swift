@@ -302,7 +302,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             let layout = CK550OffEffectCustomizationLayoutUS()
             let custom = CK550OffEffectCustomizationKeys(layout: layout)
             
-            layout.setColor(key: .Numlock, color: RGBColor(red: 0x00, green: 0xFD, blue: 0xFC))
+            layout.setColor(key: .NumLock, color: RGBColor(red: 0x00, green: 0xFD, blue: 0xFC))
             layout.setColor(key: .Space, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
             layout.setColor(key: .Escape, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
             

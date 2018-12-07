@@ -67,10 +67,10 @@ class CK550OffEffectCustomizationLayoutUS : CK550OffEffectCustomizationLayout {
         /* Packet 1 */ Q, A, Z, LeftAlt, F1, Numeric2, W, S, X, F2, Numeric3, E, D, C, F3, Numeric4, R, F,
         /* Packet 2 */ V, F4, Numeric5, T, G, B, Space, Numeric6, Y, H, N, F5, Numeric7, U, J, M,
         /* Packet 3 */ F6, Numeric8, I, K, Comma, F7, Numeric9, O, L, Point, RightAlt, F8, Numeric0, P, Semicolon, Slash, RightWin, F9, Minus,
-        /* Packet 4 */ LeftSquareBracket, Apostroph, Function, F10, Equal, RightCurlyBracket, F11, F12, Backspace, Backslash, Enter,
+        /* Packet 4 */ LeftSquareBracket, Apostroph, Function, F10, Equal, RightSquareBracket, F11, F12, Backspace, Backslash, Enter,
         /* Packet 5 */ RightShift, RightCtrl, Print, Insert, Delete, LeftArrow, Scroll, Home, End, UpArrow, DownArrow, Pause, PageUp, PageDown, RightArrow,
-        /* Packet 6 */ Numlock, Num7, Num4, Num1, NumSlash, Num8, Num5, Num2, Num0, NumAsterisk, Num9, Num6, Num3, NumPoint, NumMinus,
-        /* Packet 7 */ NumPlus, NumEnter
+        /* Packet 6 */ NumLock, Numpad7, Numpad4, Numpad1, NumSlash, Numpad8, Numpad5, Numpad2, Numpad0, NumpadAsterisk, Numpad9, Numpad6, Numpad3, NumpadPoint, NumpadMinus,
+        /* Packet 7 */ NumpadPlus, NumpadEnter
     }
     
     var mapping = Array<CK550OffEffectCustomizationKeyData>(repeating: CK550OffEffectCustomizationKeyData(packet: 0, offset: 0), count: KeyUS.allCases.count)
@@ -142,7 +142,7 @@ class CK550OffEffectCustomizationLayoutUS : CK550OffEffectCustomizationLayout {
         mapping[Key.Function.rawValue]              = CK550OffEffectCustomizationKeyData(packet: 4, offset: 0x0F)
         mapping[Key.F10.rawValue]                   = CK550OffEffectCustomizationKeyData(packet: 4, offset: 0x12)
         mapping[Key.Equal.rawValue]                 = CK550OffEffectCustomizationKeyData(packet: 4, offset: 0x15)
-        mapping[Key.RightCurlyBracket.rawValue]     = CK550OffEffectCustomizationKeyData(packet: 4, offset: 0x18)
+        mapping[Key.RightSquareBracket.rawValue]    = CK550OffEffectCustomizationKeyData(packet: 4, offset: 0x18)
         mapping[Key.F11.rawValue]                   = CK550OffEffectCustomizationKeyData(packet: 4, offset: 0x24)
         mapping[Key.F12.rawValue]                   = CK550OffEffectCustomizationKeyData(packet: 4, offset: 0x36)
         mapping[Key.Backspace.rawValue]             = CK550OffEffectCustomizationKeyData(packet: 4, offset: 0x39)
@@ -163,23 +163,23 @@ class CK550OffEffectCustomizationLayoutUS : CK550OffEffectCustomizationLayout {
         mapping[Key.PageUp.rawValue]                = CK550OffEffectCustomizationKeyData(packet: 5, offset: 0x33)
         mapping[Key.PageDown.rawValue]              = CK550OffEffectCustomizationKeyData(packet: 5, offset: 0x36)
         mapping[Key.RightArrow.rawValue]            = CK550OffEffectCustomizationKeyData(packet: 5, offset: 0x3F)
-        mapping[Key.Numlock.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x09)
-        mapping[Key.Num7.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x0C)
-        mapping[Key.Num4.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x0F)
-        mapping[Key.Num1.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x12)
+        mapping[Key.NumLock.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x09)
+        mapping[Key.Numpad7.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x0C)
+        mapping[Key.Numpad4.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x0F)
+        mapping[Key.Numpad1.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x12)
         mapping[Key.NumSlash.rawValue]              = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x1B)
-        mapping[Key.Num8.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x1E)
-        mapping[Key.Num5.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x21)
-        mapping[Key.Num2.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x24)
-        mapping[Key.Num0.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x27)
-        mapping[Key.NumAsterisk.rawValue]           = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x2D)
-        mapping[Key.Num9.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x30)
-        mapping[Key.Num6.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x33)
-        mapping[Key.Num3.rawValue]                  = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x36)
-        mapping[Key.NumPoint.rawValue]              = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x39)
-        mapping[Key.NumMinus.rawValue]              = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x3F)
-        mapping[Key.NumPlus.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 7, offset: 0x06)
-        mapping[Key.NumEnter.rawValue]              = CK550OffEffectCustomizationKeyData(packet: 7, offset: 0x0C)
+        mapping[Key.Numpad8.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x1E)
+        mapping[Key.Numpad5.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x21)
+        mapping[Key.Numpad2.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x24)
+        mapping[Key.Numpad0.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x27)
+        mapping[Key.NumpadAsterisk.rawValue]        = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x2D)
+        mapping[Key.Numpad9.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x30)
+        mapping[Key.Numpad6.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x33)
+        mapping[Key.Numpad3.rawValue]               = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x36)
+        mapping[Key.NumpadPoint.rawValue]           = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x39)
+        mapping[Key.NumpadMinus.rawValue]           = CK550OffEffectCustomizationKeyData(packet: 6, offset: 0x3F)
+        mapping[Key.NumpadPlus.rawValue]            = CK550OffEffectCustomizationKeyData(packet: 7, offset: 0x06)
+        mapping[Key.NumpadEnter.rawValue]           = CK550OffEffectCustomizationKeyData(packet: 7, offset: 0x0C)
     }
     
     func color(key: Key) -> RGBColor {
