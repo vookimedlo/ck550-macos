@@ -66,6 +66,8 @@
 		8D49DCA221B5A8B900BAC6F8 /* CK550CommandStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */; };
 		8D49DCA421B5A9AC00BAC6F8 /* CK550CommandOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */; };
 		8D49DCA621B5BD1500BAC6F8 /* CK550CommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */; };
+		8DFD0D0621BDB105009905CD /* AssembleCommandCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */; };
+		8DFD0D0821BDB765009905CD /* AssembleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0721BDB765009905CD /* AssembleCommand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,7 +95,6 @@
 
 /* Begin PBXFileReference section */
 		8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
-		8D109A2B21BC7C16007F2C30 /* cli.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = cli.entitlements; path = cli/cli.entitlements; sourceTree = "<group>"; };
 		8D20653321BC72CF000FF8E4 /* ck550-cli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ck550-cli.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D20654221BC7359000FF8E4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cli/Info.plist; sourceTree = "<group>"; };
 		8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandFirmware.swift; sourceTree = "<group>"; };
@@ -126,6 +127,9 @@
 		8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandStatic.swift; sourceTree = "<group>"; };
 		8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandOff.swift; sourceTree = "<group>"; };
 		8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandBreathing.swift; sourceTree = "<group>"; };
+		8DFD0D0421BDADCB009905CD /* ck550-cli.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ck550-cli.entitlements"; sourceTree = "<group>"; };
+		8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCustomization.swift; sourceTree = "<group>"; };
+		8DFD0D0721BDB765009905CD /* AssembleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +219,7 @@
 		8D34C6CE21AD648B007746B6 /* cli */ = {
 			isa = PBXGroup;
 			children = (
-				8D109A2B21BC7C16007F2C30 /* cli.entitlements */,
+				8DFD0D0421BDADCB009905CD /* ck550-cli.entitlements */,
 				8D20654221BC7359000FF8E4 /* Info.plist */,
 				8D34C6CF21AD64A7007746B6 /* main.swift */,
 			);
@@ -291,7 +295,7 @@
 		8DADC2A0219857FA008F0641 = {
 			isa = PBXGroup;
 			children = (
-				8D34C6CE21AD648B007746B6 /* cli */,
+				8DFD0D0121BDAC59009905CD /* app */,
 				8D34C6A521AD62E1007746B6 /* lib */,
 				8DADC2AA219857FA008F0641 /* Products */,
 				8D34C6CC21AD646C007746B6 /* Frameworks */,
@@ -305,6 +309,24 @@
 				8D20653321BC72CF000FF8E4 /* ck550-cli.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8DFD0D0121BDAC59009905CD /* app */ = {
+			isa = PBXGroup;
+			children = (
+				8DFD0D0221BDAC94009905CD /* shared */,
+				8D34C6CE21AD648B007746B6 /* cli */,
+			);
+			name = app;
+			sourceTree = "<group>";
+		};
+		8DFD0D0221BDAC94009905CD /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */,
+				8DFD0D0721BDB765009905CD /* AssembleCommand.swift */,
+			);
+			name = shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +382,11 @@
 					8D20653221BC72CF000FF8E4 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					8D34C6EE21AD7A85007746B6 = {
 						CreatedOnToolsVersion = 10.0;
@@ -444,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D20656521BC7469000FF8E4 /* main.swift in Sources */,
+				8DFD0D0621BDB105009905CD /* AssembleCommandCustomization.swift in Sources */,
 				8D20654A21BC7394000FF8E4 /* CK550CommandBreathing.swift in Sources */,
 				8D20654B21BC7394000FF8E4 /* CK550CommandCircleSpectrum.swift in Sources */,
 				8D20654C21BC7394000FF8E4 /* CK550CommandColorCycle.swift in Sources */,
@@ -453,6 +481,7 @@
 				8D20655021BC7394000FF8E4 /* CK550CommandRipple.swift in Sources */,
 				8D20655121BC7394000FF8E4 /* CK550CommandSingleKey.swift in Sources */,
 				8D20655221BC7394000FF8E4 /* CK550CommandSnowing.swift in Sources */,
+				8DFD0D0821BDB765009905CD /* AssembleCommand.swift in Sources */,
 				8D20655321BC7394000FF8E4 /* CK550CommandStars.swift in Sources */,
 				8D20655421BC7394000FF8E4 /* CK550CommandStatic.swift in Sources */,
 				8D20655521BC7394000FF8E4 /* CK550CommandWave.swift in Sources */,
@@ -517,7 +546,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = cli/cli.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3HRQ8E2SZ4;
@@ -539,7 +567,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = cli/cli.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3HRQ8E2SZ4;

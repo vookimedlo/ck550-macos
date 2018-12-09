@@ -70,10 +70,10 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         //setOffEffectBreathing(speed: .Highest)
         //setOffEffectColorCycle(speed: .Middle)
         //setOffEffectStatic(color: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00))
-        setOffEffectSnowing(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
+        //setOffEffectSnowing(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
        // saveCurrentProfile()
        // setFirmwareControl()
-       // setCustomColors()
+       setCustomColors(jsonPath: "/Users/duda/Development/_scm/CoolerMaster-ck550-macos/config/customization.json")
         
 
         
@@ -293,49 +293,6 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             print(command.result)
         }
     }
-
-    func setCustomColors() -> Void {
-        if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            
-            // Changing the color of keys in Off effect
-            let layout = CK550OffEffectCustomizationLayoutUS()
-            let custom = CK550OffEffectCustomizationKeys(layout: layout)
-            
-            layout.setColor(key: .NumLock, color: RGBColor(red: 0x00, green: 0xFD, blue: 0xFC))
-            layout.setColor(key: .Space, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
-            layout.setColor(key: .Escape, color: RGBColor(red: 0xFF, green: 0x00, blue: 0xFC))
-            
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            command.addOutgoingMessage(CK550Command.setOffEffectCustomizationUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = custom.packets()
-            for packet in packets {
-                command.addOutgoingMessage(packet)
-            }
-            
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setOffEffectCustomizationUNKNOWN_AFTER_PACKETS)
-            
-            /*
-             // Writes the color of keys in Off effect to flash
-             _ = hidDevice.write(command: CK550Command.setProfileControl)
-             _ = hidDevice.write(command: CK550Command.setEffectControl)
-             _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
-             _ = hidDevice.write(command: CK550Command.setFirmwareControl)
-             */
-            
-            //_ = hidDevice.write(command: CK550Command.setEffectControl)
-            //_ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 4))
-            //_ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
-            
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            hidDevice.write(command: command)
-            print(command.result)
-        }
-    }
     
     func getFirmwareVersion() -> String? {
         if let hidDevice = self.hidDevice {
@@ -353,7 +310,25 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         }
         return nil
     }
+    
+    func setCustomColors(jsonPath: String) -> Void {
+        if let hidDevice = self.hidDevice {
+            do {
+                let command = try AssembleCommand.assembleCommandCustomization(configPath: jsonPath)
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch AssembleCommand.AssembleError.FileReadFailure(let path) {
+                print("Cannot read configuration file:", path)
+            } catch AssembleCommand.AssembleError.InvalidFormatJSON {
+                print("Configuration file has a wrong format", jsonPath)
+            } catch {
+                print("Unexpected error")
+            }
+        }
+    }
 }
+
+
 
 print("CK550 MacOS Utility")
 
