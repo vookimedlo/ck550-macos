@@ -120,194 +120,117 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
     
     func setOffEffectSnowing(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSnowingSpeed) -> Void {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            
-            command.addOutgoingMessage(CK550Command.setOffEffectSnowingUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = CK550Command.setOffEffectSnowing(background: background, key: key, speed: speed)
-            for packet in packets {
-                command.addOutgoingMessage(packet)
+            do {
+                let command = try AssembleCommand.assembleCommandSnowing(background: background, key: key, speed: speed)
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch {
+                print("Unexpected error")
             }
-            
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            
-            hidDevice.write(command: command)
-            print(command.result)
         }
     }
     
     func setOffEffectOff() -> Void {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            
-            command.addOutgoingMessage(CK550Command.setOffEffectOffUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = CK550Command.setOffEffectOff()
-            for packet in packets {
-                command.addOutgoingMessage(packet)
+            do {
+                let command = try AssembleCommand.assembleCommandOff()
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch {
+                print("Unexpected error")
             }
-            
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            
-            hidDevice.write(command: command)
-            print(command.result)
         }
     }
     
     func setOffEffectStatic(color: RGBColor) -> Void {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            
-            command.addOutgoingMessage(CK550Command.setOffEffectStaticUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = CK550Command.setOffEffectStatic(color: color)
-            for packet in packets {
-                command.addOutgoingMessage(packet)
+            do {
+                let command = try AssembleCommand.assembleCommandStatic(color: color)
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch {
+                print("Unexpected error")
             }
-            
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            
-            hidDevice.write(command: command)
-            print(command.result)
         }
     }
     
     func setOffEffectColorCycle(speed: CK550Command.OffEffectColorCycleSpeed) -> Void {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            
-            command.addOutgoingMessage(CK550Command.setOffEffectColorCycleUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = CK550Command.setOffEffectColorCycle(speed: speed)
-            for packet in packets {
-                command.addOutgoingMessage(packet)
+            do {
+                let command = try AssembleCommand.assembleCommandColorCycle(speed: speed)
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch {
+                print("Unexpected error")
             }
-            
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            
-            hidDevice.write(command: command)
-            print(command.result)
         }
     }
     
     func setOffEffectBreathing(speed: CK550Command.OffEffectBreathingSpeed, color: RGBColor? = nil) -> Void {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            
-            command.addOutgoingMessage(CK550Command.setOffEffectBreathingUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = CK550Command.setOffEffectBreathing(speed: speed, color: color)
-            for packet in packets {
-                command.addOutgoingMessage(packet)
+            do {
+                let command = try AssembleCommand.assembleCommandBreathing(speed: speed, color: color)
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch {
+                print("Unexpected error")
             }
-            
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            
-            hidDevice.write(command: command)
-            print(command.result)
         }
     }
     
     func setOffEffectRipple(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectRippleSpeed) -> Void {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            
-            command.addOutgoingMessage(CK550Command.setOffEffectRippleUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = CK550Command.setOffEffectRipple(background: background, key: key, speed: speed)
-            for packet in packets {
-                command.addOutgoingMessage(packet)
+            do {
+                let command = try AssembleCommand.assembleCommandRipple(background: background, key: key, speed: speed)
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch {
+                print("Unexpected error")
             }
-            
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            
-            hidDevice.write(command: command)
-            print(command.result)
         }
     }
     
     func setOffEffectWave(color: RGBColor, direction: CK550Command.OffEffectWaveDirection, speed: CK550Command.OffEffectWaveSpeed) -> Void {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            
-            command.addOutgoingMessage(CK550Command.setOffEffectWaveUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = CK550Command.setOffEffectWave(color: color, direction: direction, speed: speed)
-            for packet in packets {
-                command.addOutgoingMessage(packet)
+            do {
+                let command = try AssembleCommand.assembleCommandWave(color: color, direction: direction, speed: speed)
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch {
+                print("Unexpected error")
             }
-            
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            
-            hidDevice.write(command: command)
-            print(command.result)
         }
     }
     
     func setOffEffectSingleKey(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSingleKeySpeed) -> Void {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-            
-            command.addOutgoingMessage(CK550Command.setOffEffectSingleKeyUNKNOWN_BEFORE_PACKETS)
-            
-            let packets = CK550Command.setOffEffectSingleKey(background: background, key: key, speed: speed)
-            for packet in packets {
-                command.addOutgoingMessage(packet)
+            do {
+                let command = try AssembleCommand.assembleCommandSingleKey(background: background, key: key, speed: speed)
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch {
+                print("Unexpected error")
             }
-            
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            
-            hidDevice.write(command: command)
-            print(command.result)
         }
     }
     
     func getFirmwareVersion() -> String? {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
-            command.addOutgoingMessage(CK550Command.getFirmwareVersion)
-            hidDevice.write(command: command)
-            if command.result == .ok {
-                // Throw away a FW control response
-                _ = command.responses.dequeue()
-                let fwArray = command.responses.dequeue()?[0x08...0x21]
-                let fwVersion = String(bytes: fwArray!, encoding: String.Encoding.utf16LittleEndian)?.filter({$0 != "\0"})
-                return fwVersion
+            do {
+                let command = try AssembleCommand.assembleCommandFirmwareVersion()
+                hidDevice.write(command: command)
+                if command.result == .ok {
+                    // Throw away a FW control response
+                    _ = command.responses.dequeue()
+                    let fwArray = command.responses.dequeue()?[0x08...0x21]
+                    let fwVersion = String(bytes: fwArray!, encoding: String.Encoding.utf16LittleEndian)?.filter({$0 != "\0"})
+                    return fwVersion
+                }
+            } catch {
+                print("Unexpected error")
             }
         }
+        
         return nil
     }
     
