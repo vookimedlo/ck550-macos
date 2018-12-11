@@ -75,6 +75,7 @@
 		8D966E4021BF0B8A009AF6E6 /* AssembleCommandStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3F21BF0B8A009AF6E6 /* AssembleCommandStatic.swift */; };
 		8D966E4221BF0C07009AF6E6 /* AssembleCommandOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4121BF0C07009AF6E6 /* AssembleCommandOff.swift */; };
 		8D966E4421BF0C93009AF6E6 /* AssembleCommandSnowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4321BF0C93009AF6E6 /* AssembleCommandSnowing.swift */; };
+		8D966E4621C031C5009AF6E6 /* AssembleCommandProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */; };
 		8DFD0D0621BDB105009905CD /* AssembleCommandCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */; };
 		8DFD0D0821BDB765009905CD /* AssembleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0721BDB765009905CD /* AssembleCommand.swift */; };
 /* End PBXBuildFile section */
@@ -145,6 +146,7 @@
 		8D966E3F21BF0B8A009AF6E6 /* AssembleCommandStatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandStatic.swift; sourceTree = "<group>"; };
 		8D966E4121BF0C07009AF6E6 /* AssembleCommandOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandOff.swift; sourceTree = "<group>"; };
 		8D966E4321BF0C93009AF6E6 /* AssembleCommandSnowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandSnowing.swift; sourceTree = "<group>"; };
+		8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandProfile.swift; sourceTree = "<group>"; };
 		8DFD0D0421BDADCB009905CD /* ck550-cli.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ck550-cli.entitlements"; sourceTree = "<group>"; };
 		8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCustomization.swift; sourceTree = "<group>"; };
 		8DFD0D0721BDB765009905CD /* AssembleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommand.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */,
 				8D966E3B21BF0826009AF6E6 /* AssembleCommandFirmwareVersion.swift */,
 				8D966E4121BF0C07009AF6E6 /* AssembleCommandOff.swift */,
+				8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */,
 				8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */,
 				8D966E3921BF0745009AF6E6 /* AssembleCommandSingleKey.swift */,
 				8D966E4321BF0C93009AF6E6 /* AssembleCommandSnowing.swift */,
@@ -524,6 +527,7 @@
 				8D966E3A21BF0745009AF6E6 /* AssembleCommandSingleKey.swift in Sources */,
 				8D966E3E21BF0A68009AF6E6 /* AssembleCommandColorCycle.swift in Sources */,
 				8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */,
+				8D966E4621C031C5009AF6E6 /* AssembleCommandProfile.swift in Sources */,
 				8D20655C21BC7394000FF8E4 /* CK550HIDCommand.swift in Sources */,
 				8D20655D21BC7394000FF8E4 /* CK550HIDDevice.swift in Sources */,
 				8D966E4221BF0C07009AF6E6 /* AssembleCommandOff.swift in Sources */,

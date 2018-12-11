@@ -29,4 +29,3 @@ extension AssembleCommand {
         return command
     }
 }
-

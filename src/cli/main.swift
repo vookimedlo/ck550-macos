@@ -77,15 +77,15 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         return true
     }
     
-
-    
     func setProfile(profileId: uint8) -> Void {
         if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setProfileControl)
-            command.addOutgoingMessage(CK550Command.setActiveProfile(profileId: profileId))
-            hidDevice.write(command: command)
-            print(command.result)
+            do {
+                let command = try AssembleCommand.assembleCommandChangeProfile(profileId: profileId)
+                hidDevice.write(command: command)
+                print(command.result)
+            } catch {
+                print("Unexpected error")
+            }
         }
     }
     
