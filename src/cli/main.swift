@@ -41,7 +41,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         guard notification.name == Notification.Name.CustomHIDDeviceRemoved else {return}
         
         let hidDevice = notification.userInfo?["device"] as! HIDDevice
-        print(" - Keyboard unplugged: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
+        Terminal.important(" - Keyboard unplugged: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
         
         dispatchQueue.async {
             self.hidDevice = nil
@@ -55,10 +55,10 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         self.hidDevice = hidDevice
         
 
-        print(" - Keyboard detected: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
+        Terminal.important(" - Keyboard detected: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
         
         if let version = getFirmwareVersion() {
-            print(" - FW version: \(version)")
+            Terminal.general(" - FW version: \(version)")
         }
         
         // TODO: move
@@ -77,98 +77,115 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         return true
     }
     
+    func printCommandResult(_ result: CK550HIDCommand.Result) {
+        if result == .ok {
+            Terminal.ok("[", result, "]", separator: "")
+        }
+        else {
+            Terminal.error("[", result, "]", separator: "")
+        }
+    }
+    
     func setProfile(profileId: uint8) -> Void {
         if let hidDevice = self.hidDevice {
+            Terminal.general("Switching a keyboard profle to", profileId, "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandChangeProfile(profileId: profileId)
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
     
     func setOffEffectSnowing(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSnowingSpeed) -> Void {
         if let hidDevice = self.hidDevice {
+            Terminal.general("Setting a snowing effect", "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandSnowing(background: background, key: key, speed: speed)
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
     
     func setOffEffectOff() -> Void {
         if let hidDevice = self.hidDevice {
+            Terminal.general("Setting an off effect", "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandOff()
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
     
     func setOffEffectStatic(color: RGBColor) -> Void {
         if let hidDevice = self.hidDevice {
+            Terminal.general("Setting a static effect", "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandStatic(color: color)
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
     
     func setOffEffectColorCycle(speed: CK550Command.OffEffectColorCycleSpeed) -> Void {
         if let hidDevice = self.hidDevice {
+            Terminal.general("Setting a color cycle effect", "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandColorCycle(speed: speed)
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
     
     func setOffEffectBreathing(speed: CK550Command.OffEffectBreathingSpeed, color: RGBColor? = nil) -> Void {
         if let hidDevice = self.hidDevice {
+            Terminal.general("Setting a breathing effect", "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandBreathing(speed: speed, color: color)
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
     
     func setOffEffectRipple(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectRippleSpeed) -> Void {
         if let hidDevice = self.hidDevice {
+            Terminal.general("Setting a ripple effect", "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandRipple(background: background, key: key, speed: speed)
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
     
     func setOffEffectWave(color: RGBColor, direction: CK550Command.OffEffectWaveDirection, speed: CK550Command.OffEffectWaveSpeed) -> Void {
         if let hidDevice = self.hidDevice {
+            Terminal.general("Setting a wave effect", "...", separator: " ", terminator: " " )
             do {
                 let command = try AssembleCommand.assembleCommandWave(color: color, direction: direction, speed: speed)
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
@@ -176,11 +193,12 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
     func setOffEffectSingleKey(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSingleKeySpeed) -> Void {
         if let hidDevice = self.hidDevice {
             do {
+                Terminal.general("Setting a single key effect", "...", separator: " ", terminator: " ")
                 let command = try AssembleCommand.assembleCommandSingleKey(background: background, key: key, speed: speed)
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
@@ -198,7 +216,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
                     return fwVersion
                 }
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
         
@@ -207,26 +225,27 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
     
     func setCustomColors(jsonPath: String) -> Void {
         if let hidDevice = self.hidDevice {
+            Terminal.general("Setting a custom key color effect", "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandCustomization(configPath: jsonPath)
                 hidDevice.write(command: command)
-                print(command.result)
+                printCommandResult(command.result)
             } catch AssembleCommand.AssembleError.FileReadFailure(let path) {
-                print("Cannot read configuration file:", path)
+                Terminal.error("Cannot read configuration file:", path)
             } catch AssembleCommand.AssembleError.InvalidFormatJSON {
-                print("Configuration file has a wrong format", jsonPath)
+                Terminal.error("Configuration file has a wrong format", jsonPath)
             } catch {
-                print("Unexpected error")
+                Terminal.error("Unexpected error")
             }
         }
     }
 }
 
-
-print("CK550 MacOS Utility")
+Terminal.important("CK550 MacOS Utility")
 
 let cli = CLI()
+
 if cli.startHIDMonitoring() {
-    print(" - Monitoring HID...")
+    Terminal.general(" - Monitoring HID...")
     RunLoop.current.run()
 }

@@ -1,1 +1,2 @@
 github "SwiftyJSON/SwiftyJSON" "4.2.0"
+github "jdhealy/PrettyColors" "5.0.1"
