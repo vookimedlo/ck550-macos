@@ -24,7 +24,6 @@ extension CK550Command {
             return newComand(request: [0x41, 0x03])
         }
     }
-    
     static private var setActiveProfileTemplate : [uint8] {
         get {
             return newComand(request: [0x51, 0x00])

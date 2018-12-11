@@ -63,7 +63,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         
         // TODO: move
         setProfile(profileId: 3)
-        //setEffect()
+
         //setOffEffectSingleKey(background: RGBColor(red: 0x00, green: 0xFF, blue: 0xFF), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
         //setOffEffectWave(color: RGBColor(red: 0xFF, green: 0xFF, blue: 0xFF), direction: .LeftToRight, speed: .Lower)
         //setOffEffectRipple(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Lowest)
@@ -71,48 +71,19 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         //setOffEffectColorCycle(speed: .Middle)
         //setOffEffectStatic(color: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00))
         //setOffEffectSnowing(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
-       // saveCurrentProfile()
-       // setFirmwareControl()
-       setCustomColors(jsonPath: "/Users/duda/Development/_scm/CoolerMaster-ck550-macos/config/customization.json")
-        
 
-        
+       setCustomColors(jsonPath: "/Users/duda/Development/_scm/CoolerMaster-ck550-macos/config/customization.json")
+
         return true
     }
     
-    func setEffect() -> Void {
-        if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setEffectControl)
-            command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
-            hidDevice.write(command: command)
-            print(command.result)
-        }
-    }
+
     
     func setProfile(profileId: uint8) -> Void {
         if let hidDevice = self.hidDevice {
             let command = CK550HIDCommand()
             command.addOutgoingMessage(CK550Command.setProfileControl)
             command.addOutgoingMessage(CK550Command.setActiveProfile(profileId: profileId))
-            hidDevice.write(command: command)
-            print(command.result)
-        }
-    }
-    
-    func saveCurrentProfile() -> Void {
-        if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.saveCurrentProfile)
-            hidDevice.write(command: command)
-            print(command.result)
-        }
-    }
-
-    func setFirmwareControl() -> Void {
-        if let hidDevice = self.hidDevice {
-            let command = CK550HIDCommand()
-            command.addOutgoingMessage(CK550Command.setFirmwareControl)
             hidDevice.write(command: command)
             print(command.result)
         }
@@ -252,7 +223,6 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
 }
 
 
-
 print("CK550 MacOS Utility")
 
 let cli = CLI()
@@ -260,28 +230,3 @@ if cli.startHIDMonitoring() {
     print(" - Monitoring HID...")
     RunLoop.current.run()
 }
-
-
-//TODO: remove
-//  _ = hidDevice.write(command: CK550Command.setLEDColor(key: 0x2e, red: 0x2F, green: 0x4F, blue: 0x4F))
-
-
-//  _ = hidDevice.write(command: CK550Command.setProfileControl)
-//  _ = hidDevice.write(command: CK550Command.getFirmwareVersion)
-
-//  _ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 3))
-//  _ = hidDevice.write(command: CK550Command.turnLEDsOff)
-/// _ = hidDevice.write(command: CK550Command.setManualControl)
-//  _ = hidDevice.write(command: CK550Command.setManualControl2)
-
-//  _ = hidDevice.write(command: CK550Command.setLEDsColor(red: 0x2F, green: 0x4F, blue: 0x4F))
-//  _ = hidDevice.write(command: CK550Command.setEffectControl)
-//  _ = hidDevice.write(command: CK550Command.setEffect(effectId: 4))
-//  _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
-//  _ = hidDevice.write(command: CK550Command.setFirmwareControl)
-//  _ = hidDevice.write(command: CK550Command.setLEDColor(key: 0x02, red: 0x00, green: 0x00, blue: 0xFF))
-//  _ = hidDevice.write(command: CK550Command.setEffectControl)
-//  _ = hidDevice.write(command: CK550Command.setEffect(effectId: 0))
-
-//  _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
-//  _ = hidDevice.write(command: CK550Command.setFirmwareControl)
