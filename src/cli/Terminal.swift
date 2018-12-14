@@ -10,15 +10,32 @@ import Foundation
 import PrettyColors
 
 class Terminal {
-    // ‼️💬⚠️ℹ️
+    private static var isDumb: Bool {
+        return ProcessInfo.processInfo.environment["TERM"]?.caseInsensitiveCompare("dumb") == .orderedSame
+    }
+
+    private static var isTTY: Bool {
+        return isatty(STDOUT_FILENO) != 0
+    }
     
-    static public var colorError: PrettyColors.Color.Named.Color?     = .red
-    static public var colorWarn: PrettyColors.Color.Named.Color?      = .yellow
-    static public var colorOK: PrettyColors.Color.Named.Color?        = .green
-    static public var colorImportant: PrettyColors.Color.Named.Color? = .magenta
-    static public var colorGeneral: PrettyColors.Color.Named.Color?   = nil
+    private static var isDebugged: Bool {
+        var info = kinfo_proc()
+        var mib : [Int32] = [CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()]
+        var size = MemoryLayout<kinfo_proc>.size(ofValue: info)
+        let junk = sysctl(&mib, UInt32(mib.count), &info, &size, nil, 0)
+        assert(junk == 0, "sysctl failed")
+        return (info.kp_proc.p_flag & P_TRACED) != 0
+    }
     
-    static private func print(_ items: [Any], separator: String = " ", terminator: String = "\n", color: PrettyColors.Color.Named.Color?) -> Void {
+    private static let shallNotBeColored = isDumb || isDebugged || !isTTY
+    
+    static var colorError: PrettyColors.Color.Named.Color?     = .red
+    static var colorWarn: PrettyColors.Color.Named.Color?      = .yellow
+    static var colorOK: PrettyColors.Color.Named.Color?        = .green
+    static var colorImportant: PrettyColors.Color.Named.Color? = .magenta
+    static var colorGeneral: PrettyColors.Color.Named.Color?   = nil
+    
+    private static func print(_ items: [Any], separator: String = " ", terminator: String = "\n", color: PrettyColors.Color.Named.Color?) -> Void {
         var output: String = ""
         
         // Splatting is not in the language yet, so the passed array is processed 'one by one'
@@ -35,17 +52,18 @@ class Terminal {
         }
         Swift.print(terminator, terminator: "", to: &output)
 
-        #if DEBUG
-//        Swift.print(output, separator: "", terminator: "")
-//        #else
-        if let color = color {
-            let coloredString = Color.Wrap(foreground: color).wrap(output)
-            Swift.print(coloredString, separator: "", terminator: "")
-        }
-        else {
+        if shallNotBeColored {
             Swift.print(output, separator: "", terminator: "")
         }
-        #endif
+        else {
+            if let color = color {
+                let coloredString = Color.Wrap(foreground: color).wrap(output)
+                Swift.print(coloredString, separator: "", terminator: "")
+            }
+            else {
+                Swift.print(output, separator: "", terminator: "")
+            }
+        }
     }
     
     static func general(_ items: Any..., separator: String = " ", terminator: String = "\n") -> Void {
