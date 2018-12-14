@@ -77,5 +77,4 @@ class HIDRaw {
         
         return kIOReturnSuccess == IOHIDManagerOpen(manager, 0)
     }
-
 }

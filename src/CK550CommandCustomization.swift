@@ -9,7 +9,7 @@
 import Foundation
 
 extension CK550Command {
-    static func offEffectcustomizationPacket(packetId: Int) -> [uint8] {
+    static func offEffectCustomizationPacket(packetId: Int) -> [uint8] {
         switch packetId {
         case 0:
             return newComand(request: [0x56, 0x83, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x80, 0x01, 0x00, 0xC1, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF])
@@ -231,7 +231,7 @@ class CK550OffEffectCustomizationKeys<LAYOUT: CK550OffEffectCustomizationLayout>
         var packets = Array<Array<uint8>>()
         
         for packetId in (0...7) {
-            var packet = CK550Command.offEffectcustomizationPacket(packetId: packetId)
+            var packet = CK550Command.offEffectCustomizationPacket(packetId: packetId)
             
             // Shared color data from the previous packet
             if let key = layout.key(packet: packetId - 1, offset: sharedColorDataOffset) {

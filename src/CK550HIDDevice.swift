@@ -39,7 +39,7 @@ class CK550HIDDevice : HIDDevice {
         commandAccessMutex.signal()
     }
     
-    internal override func write(command: [uint8]) -> Bool {
+    override func write(command: [uint8]) -> Bool {
         return super.write(command: command)
     }
     

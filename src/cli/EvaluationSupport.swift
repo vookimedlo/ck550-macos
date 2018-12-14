@@ -11,19 +11,19 @@ import Foundation
 class EvaluationSupport {
     private var errors: [CLIError] = []
     
-    public var hasFailed: Bool {
+    var hasFailed: Bool {
         get {
             return !errors.isEmpty
         }
     }
     
-    public var failedResults: [CLIError] {
+    var failedResults: [CLIError] {
         get {
             return errors
         }
     }
     
-    public var firstFailure: CLIError? {
+    var firstFailure: CLIError? {
         get {
             return errors.first
         }

@@ -9,7 +9,6 @@
 import Foundation
 
 class CK550HIDCommand : CK550HIDDeviceCommand, CK550HIDClientCommand {
-        
     private var messages: Queue<[uint8]> = Queue<[uint8]>()
     private var expectedResponses: Queue<[uint8]> = Queue<[uint8]>()
     
@@ -21,7 +20,6 @@ class CK550HIDCommand : CK550HIDDeviceCommand, CK550HIDClientCommand {
 
     func addOutgoingMessage(_ packet: [uint8], createExpectedResponse: Bool = true) -> Void {
         messages.enqueue(packet)
-        
         if createExpectedResponse {
             addExpectedResponse(Array<uint8>(packet.prefix(2)))
         }
@@ -29,8 +27,6 @@ class CK550HIDCommand : CK550HIDDeviceCommand, CK550HIDClientCommand {
     func addExpectedResponse(_ packet: [uint8]) -> Void {
         expectedResponses.enqueue(packet)
     }
-    
-
     func addIncomingResponse(_ packet: [uint8]) -> Void {
         processedResponse = packet
         if let processedExpectedResponse = expectedResponses.dequeue() {

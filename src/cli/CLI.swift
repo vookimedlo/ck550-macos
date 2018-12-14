@@ -65,15 +65,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         dispatchQueue.async {
             self.onOpenFunction()
         }
-        
-        //setOffEffectSingleKey(background: RGBColor(red: 0x00, green: 0xFF, blue: 0xFF), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
-        //setOffEffectWave(color: RGBColor(red: 0xFF, green: 0xFF, blue: 0xFF), direction: .LeftToRight, speed: .Lower)
-        //setOffEffectRipple(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Lowest)
-        //setOffEffectBreathing(speed: .Highest)
-        //setOffEffectColorCycle(speed: .Middle)
-        //setOffEffectStatic(color: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00))
-        //setOffEffectSnowing(background: RGBColor(red: 0x00, green: 0x00, blue: 0x00), key: RGBColor(red: 0xFF, green: 0xFF, blue: 0x00), speed: .Middle)
-        
+
         return true
     }
     

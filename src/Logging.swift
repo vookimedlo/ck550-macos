@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import os.log
 
 func LogDebug(_ format: StaticString, _ args: CVarArg...) {
