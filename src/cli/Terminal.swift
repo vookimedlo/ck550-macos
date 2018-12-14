@@ -36,8 +36,8 @@ class Terminal {
         Swift.print(terminator, terminator: "", to: &output)
 
         #if DEBUG
-        Swift.print(output, separator: "", terminator: "")
-        #else
+//        Swift.print(output, separator: "", terminator: "")
+//        #else
         if let color = color {
             let coloredString = Color.Wrap(foreground: color).wrap(output)
             Swift.print(coloredString, separator: "", terminator: "")

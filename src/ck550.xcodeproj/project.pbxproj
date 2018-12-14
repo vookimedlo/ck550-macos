@@ -66,6 +66,21 @@
 		8D49DCA221B5A8B900BAC6F8 /* CK550CommandStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */; };
 		8D49DCA421B5A9AC00BAC6F8 /* CK550CommandOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */; };
 		8D49DCA621B5BD1500BAC6F8 /* CK550CommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */; };
+		8D72819321C2F5DB00963B1D /* EvaluationSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819021C2F27A00963B1D /* EvaluationSupport.swift */; };
+		8D72819621C307CD00963B1D /* CommonArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819421C307B100963B1D /* CommonArguments.swift */; };
+		8D72819821C30EA900963B1D /* SingleKeyCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819721C30EA900963B1D /* SingleKeyCommand.swift */; };
+		8D72819A21C3CEBD00963B1D /* CommonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819921C3CEBD00963B1D /* CommonColors.swift */; };
+		8D72819E21C3D13E00963B1D /* WaveCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819D21C3D13E00963B1D /* WaveCommand.swift */; };
+		8D7281A021C3E98700963B1D /* RippleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819F21C3E98700963B1D /* RippleCommand.swift */; };
+		8D7281A221C3EA8B00963B1D /* StaticCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281A121C3EA8B00963B1D /* StaticCommand.swift */; };
+		8D7281A421C3EB5600963B1D /* OffCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281A321C3EB5600963B1D /* OffCommand.swift */; };
+		8D7281A621C3EC8900963B1D /* SnowingCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281A521C3EC8900963B1D /* SnowingCommand.swift */; };
+		8D7281A821C4269000963B1D /* AssembleCommandReactiveTornado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281A721C4269000963B1D /* AssembleCommandReactiveTornado.swift */; };
+		8D7281AA21C4289F00963B1D /* AssembleCommandCircleSpectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281A921C4289F00963B1D /* AssembleCommandCircleSpectrum.swift */; };
+		8D7281AC21C429BD00963B1D /* AssembleCommandStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281AB21C429BD00963B1D /* AssembleCommandStars.swift */; };
+		8D7281AE21C42FE500963B1D /* ReactiveTornadoCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281AD21C42FE500963B1D /* ReactiveTornadoCommand.swift */; };
+		8D7281B021C4323300963B1D /* CircleSpectrumCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281AF21C4323300963B1D /* CircleSpectrumCommand.swift */; };
+		8D7281B221C4346300963B1D /* StarsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281B121C4346300963B1D /* StarsCommand.swift */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -78,6 +93,19 @@
 		8D966E4621C031C5009AF6E6 /* AssembleCommandProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */; };
 		8D966E4821C035C8009AF6E6 /* PrettyColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; };
 		8D966E4A21C0375F009AF6E6 /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4921C0375F009AF6E6 /* Terminal.swift */; };
+		8D966E4C21C18425009AF6E6 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; };
+		8D966E4D21C18490009AF6E6 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D966E4E21C18490009AF6E6 /* PrettyColors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D966E5021C1859C009AF6E6 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4F21C1859C009AF6E6 /* Result.framework */; };
+		8D966E5121C185DD009AF6E6 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4F21C1859C009AF6E6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D966E5421C186A3009AF6E6 /* VersionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5321C186A3009AF6E6 /* VersionCommand.swift */; };
+		8D966E5621C18B79009AF6E6 /* MonitorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5521C18B79009AF6E6 /* MonitorCommand.swift */; };
+		8D966E5821C19993009AF6E6 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; };
+		8D966E5921C199D4009AF6E6 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D966E5B21C19A75009AF6E6 /* CustomizationCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5A21C19A75009AF6E6 /* CustomizationCommand.swift */; };
+		8D966E5D21C1A60A009AF6E6 /* CLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5C21C1A60A009AF6E6 /* CLI.swift */; };
+		8D966E5F21C1B65E009AF6E6 /* ColorCycleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5E21C1B65E009AF6E6 /* ColorCycleCommand.swift */; };
+		8D966E6121C1BD8D009AF6E6 /* BreathingCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E6021C1BD8D009AF6E6 /* BreathingCommand.swift */; };
 		8DFD0D0621BDB105009905CD /* AssembleCommandCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */; };
 		8DFD0D0821BDB765009905CD /* AssembleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0721BDB765009905CD /* AssembleCommand.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +117,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8D966E5921C199D4009AF6E6 /* Curry.framework in Embed Frameworks */,
+				8D966E5121C185DD009AF6E6 /* Result.framework in Embed Frameworks */,
+				8D966E4D21C18490009AF6E6 /* Commandant.framework in Embed Frameworks */,
+				8D966E4E21C18490009AF6E6 /* PrettyColors.framework in Embed Frameworks */,
 				8D109A3921BC80D9007F2C30 /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -139,6 +171,21 @@
 		8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandStatic.swift; sourceTree = "<group>"; };
 		8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandOff.swift; sourceTree = "<group>"; };
 		8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandBreathing.swift; sourceTree = "<group>"; };
+		8D72819021C2F27A00963B1D /* EvaluationSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EvaluationSupport.swift; path = cli/EvaluationSupport.swift; sourceTree = "<group>"; };
+		8D72819421C307B100963B1D /* CommonArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonArguments.swift; path = cli/CommonArguments.swift; sourceTree = "<group>"; };
+		8D72819721C30EA900963B1D /* SingleKeyCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingleKeyCommand.swift; path = cli/SingleKeyCommand.swift; sourceTree = "<group>"; };
+		8D72819921C3CEBD00963B1D /* CommonColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonColors.swift; path = cli/CommonColors.swift; sourceTree = "<group>"; };
+		8D72819D21C3D13E00963B1D /* WaveCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WaveCommand.swift; path = cli/WaveCommand.swift; sourceTree = "<group>"; };
+		8D72819F21C3E98700963B1D /* RippleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RippleCommand.swift; path = cli/RippleCommand.swift; sourceTree = "<group>"; };
+		8D7281A121C3EA8B00963B1D /* StaticCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaticCommand.swift; path = cli/StaticCommand.swift; sourceTree = "<group>"; };
+		8D7281A321C3EB5600963B1D /* OffCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OffCommand.swift; path = cli/OffCommand.swift; sourceTree = "<group>"; };
+		8D7281A521C3EC8900963B1D /* SnowingCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnowingCommand.swift; path = cli/SnowingCommand.swift; sourceTree = "<group>"; };
+		8D7281A721C4269000963B1D /* AssembleCommandReactiveTornado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandReactiveTornado.swift; sourceTree = "<group>"; };
+		8D7281A921C4289F00963B1D /* AssembleCommandCircleSpectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCircleSpectrum.swift; sourceTree = "<group>"; };
+		8D7281AB21C429BD00963B1D /* AssembleCommandStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandStars.swift; sourceTree = "<group>"; };
+		8D7281AD21C42FE500963B1D /* ReactiveTornadoCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReactiveTornadoCommand.swift; path = cli/ReactiveTornadoCommand.swift; sourceTree = "<group>"; };
+		8D7281AF21C4323300963B1D /* CircleSpectrumCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleSpectrumCommand.swift; path = cli/CircleSpectrumCommand.swift; sourceTree = "<group>"; };
+		8D7281B121C4346300963B1D /* StarsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StarsCommand.swift; path = cli/StarsCommand.swift; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -151,6 +198,15 @@
 		8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandProfile.swift; sourceTree = "<group>"; };
 		8D966E4721C035C8009AF6E6 /* PrettyColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PrettyColors.framework; path = ../Carthage/Build/Mac/PrettyColors.framework; sourceTree = "<group>"; };
 		8D966E4921C0375F009AF6E6 /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Terminal.swift; path = cli/Terminal.swift; sourceTree = "<group>"; };
+		8D966E4B21C18425009AF6E6 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = ../Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
+		8D966E4F21C1859C009AF6E6 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		8D966E5321C186A3009AF6E6 /* VersionCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VersionCommand.swift; path = cli/VersionCommand.swift; sourceTree = "<group>"; };
+		8D966E5521C18B79009AF6E6 /* MonitorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MonitorCommand.swift; path = cli/MonitorCommand.swift; sourceTree = "<group>"; };
+		8D966E5721C19993009AF6E6 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = ../Carthage/Build/Mac/Curry.framework; sourceTree = "<group>"; };
+		8D966E5A21C19A75009AF6E6 /* CustomizationCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomizationCommand.swift; path = cli/CustomizationCommand.swift; sourceTree = "<group>"; };
+		8D966E5C21C1A60A009AF6E6 /* CLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLI.swift; path = cli/CLI.swift; sourceTree = "<group>"; };
+		8D966E5E21C1B65E009AF6E6 /* ColorCycleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorCycleCommand.swift; path = cli/ColorCycleCommand.swift; sourceTree = "<group>"; };
+		8D966E6021C1BD8D009AF6E6 /* BreathingCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreathingCommand.swift; path = cli/BreathingCommand.swift; sourceTree = "<group>"; };
 		8DFD0D0421BDADCB009905CD /* ck550-cli.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ck550-cli.entitlements"; sourceTree = "<group>"; };
 		8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCustomization.swift; sourceTree = "<group>"; };
 		8DFD0D0721BDB765009905CD /* AssembleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommand.swift; sourceTree = "<group>"; };
@@ -161,8 +217,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D966E4C21C18425009AF6E6 /* Commandant.framework in Frameworks */,
 				8D966E4821C035C8009AF6E6 /* PrettyColors.framework in Frameworks */,
 				8D109A3821BC80D9007F2C30 /* SwiftyJSON.framework in Frameworks */,
+				8D966E5021C1859C009AF6E6 /* Result.framework in Frameworks */,
+				8D966E5821C19993009AF6E6 /* Curry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +295,10 @@
 		8D34C6CC21AD646C007746B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D966E4B21C18425009AF6E6 /* Commandant.framework */,
+				8D966E5721C19993009AF6E6 /* Curry.framework */,
 				8D966E4721C035C8009AF6E6 /* PrettyColors.framework */,
+				8D966E4F21C1859C009AF6E6 /* Result.framework */,
 				8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
@@ -245,7 +307,9 @@
 		8D34C6CE21AD648B007746B6 /* cli */ = {
 			isa = PBXGroup;
 			children = (
+				8D966E5221C1866D009AF6E6 /* command */,
 				8DFD0D0421BDADCB009905CD /* ck550-cli.entitlements */,
+				8D966E5C21C1A60A009AF6E6 /* CLI.swift */,
 				8D20654221BC7359000FF8E4 /* Info.plist */,
 				8D34C6CF21AD64A7007746B6 /* main.swift */,
 				8D966E4921C0375F009AF6E6 /* Terminal.swift */,
@@ -319,6 +383,46 @@
 			name = "off effect overrides";
 			sourceTree = "<group>";
 		};
+		8D72819221C2F28900963B1D /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				8D72819421C307B100963B1D /* CommonArguments.swift */,
+				8D72819921C3CEBD00963B1D /* CommonColors.swift */,
+				8D72819021C2F27A00963B1D /* EvaluationSupport.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		8D72819B21C3D0B600963B1D /* effects */ = {
+			isa = PBXGroup;
+			children = (
+				8D966E6021C1BD8D009AF6E6 /* BreathingCommand.swift */,
+				8D7281AF21C4323300963B1D /* CircleSpectrumCommand.swift */,
+				8D966E5E21C1B65E009AF6E6 /* ColorCycleCommand.swift */,
+				8D966E5A21C19A75009AF6E6 /* CustomizationCommand.swift */,
+				8D7281A321C3EB5600963B1D /* OffCommand.swift */,
+				8D7281AD21C42FE500963B1D /* ReactiveTornadoCommand.swift */,
+				8D72819F21C3E98700963B1D /* RippleCommand.swift */,
+				8D72819721C30EA900963B1D /* SingleKeyCommand.swift */,
+				8D7281A521C3EC8900963B1D /* SnowingCommand.swift */,
+				8D7281B121C4346300963B1D /* StarsCommand.swift */,
+				8D7281A121C3EA8B00963B1D /* StaticCommand.swift */,
+				8D72819D21C3D13E00963B1D /* WaveCommand.swift */,
+			);
+			name = effects;
+			sourceTree = "<group>";
+		};
+		8D966E5221C1866D009AF6E6 /* command */ = {
+			isa = PBXGroup;
+			children = (
+				8D72819B21C3D0B600963B1D /* effects */,
+				8D72819221C2F28900963B1D /* utils */,
+				8D966E5521C18B79009AF6E6 /* MonitorCommand.swift */,
+				8D966E5321C186A3009AF6E6 /* VersionCommand.swift */,
+			);
+			name = command;
+			sourceTree = "<group>";
+		};
 		8DADC2A0219857FA008F0641 = {
 			isa = PBXGroup;
 			children = (
@@ -352,14 +456,17 @@
 			children = (
 				8DFD0D0721BDB765009905CD /* AssembleCommand.swift */,
 				8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */,
+				8D7281A921C4289F00963B1D /* AssembleCommandCircleSpectrum.swift */,
 				8D966E3D21BF0A68009AF6E6 /* AssembleCommandColorCycle.swift */,
 				8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */,
 				8D966E3B21BF0826009AF6E6 /* AssembleCommandFirmwareVersion.swift */,
 				8D966E4121BF0C07009AF6E6 /* AssembleCommandOff.swift */,
 				8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */,
+				8D7281A721C4269000963B1D /* AssembleCommandReactiveTornado.swift */,
 				8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */,
 				8D966E3921BF0745009AF6E6 /* AssembleCommandSingleKey.swift */,
 				8D966E4321BF0C93009AF6E6 /* AssembleCommandSnowing.swift */,
+				8D7281AB21C429BD00963B1D /* AssembleCommandStars.swift */,
 				8D966E3F21BF0B8A009AF6E6 /* AssembleCommandStatic.swift */,
 				8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */,
 			);
@@ -470,6 +577,9 @@
 			inputPaths = (
 				"$(SRCROOT)/../Carthage/Build/Mac/SwiftyJSON.framework",
 				"$(SRCROOT)/../Carthage/Build/Mac/PrettyColors.framework",
+				"$(SRCROOT)/../Carthage/Build/Mac/Commandant.framework",
+				"$(SRCROOT)/../Carthage/Build/Mac/Result.framework",
+				"$(SRCROOT)/../Carthage/Build/Mac/Curry.framework",
 			);
 			name = "Carthage Frameworks Handling";
 			outputFileListPaths = (
@@ -477,6 +587,9 @@
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/SwiftyJSON.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/PrettyColors.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/Commandant.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/Curry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -509,26 +622,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D72819621C307CD00963B1D /* CommonArguments.swift in Sources */,
+				8D72819321C2F5DB00963B1D /* EvaluationSupport.swift in Sources */,
 				8D20656521BC7469000FF8E4 /* main.swift in Sources */,
+				8D7281A621C3EC8900963B1D /* SnowingCommand.swift in Sources */,
+				8D7281A421C3EB5600963B1D /* OffCommand.swift in Sources */,
 				8DFD0D0621BDB105009905CD /* AssembleCommandCustomization.swift in Sources */,
+				8D7281A821C4269000963B1D /* AssembleCommandReactiveTornado.swift in Sources */,
 				8D20654A21BC7394000FF8E4 /* CK550CommandBreathing.swift in Sources */,
 				8D20654B21BC7394000FF8E4 /* CK550CommandCircleSpectrum.swift in Sources */,
 				8D20654C21BC7394000FF8E4 /* CK550CommandColorCycle.swift in Sources */,
 				8D20654D21BC7394000FF8E4 /* CK550CommandCustomization.swift in Sources */,
 				8D20654E21BC7394000FF8E4 /* CK550CommandOff.swift in Sources */,
 				8D20654F21BC7394000FF8E4 /* CK550CommandReactiveTornado.swift in Sources */,
+				8D72819A21C3CEBD00963B1D /* CommonColors.swift in Sources */,
 				8D20655021BC7394000FF8E4 /* CK550CommandRipple.swift in Sources */,
+				8D7281B021C4323300963B1D /* CircleSpectrumCommand.swift in Sources */,
 				8D20655121BC7394000FF8E4 /* CK550CommandSingleKey.swift in Sources */,
 				8D20655221BC7394000FF8E4 /* CK550CommandSnowing.swift in Sources */,
+				8D7281A021C3E98700963B1D /* RippleCommand.swift in Sources */,
 				8DFD0D0821BDB765009905CD /* AssembleCommand.swift in Sources */,
 				8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */,
+				8D7281AE21C42FE500963B1D /* ReactiveTornadoCommand.swift in Sources */,
 				8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */,
+				8D966E5621C18B79009AF6E6 /* MonitorCommand.swift in Sources */,
+				8D72819821C30EA900963B1D /* SingleKeyCommand.swift in Sources */,
 				8D20655321BC7394000FF8E4 /* CK550CommandStars.swift in Sources */,
 				8D20655421BC7394000FF8E4 /* CK550CommandStatic.swift in Sources */,
 				8D20655521BC7394000FF8E4 /* CK550CommandWave.swift in Sources */,
+				8D7281A221C3EA8B00963B1D /* StaticCommand.swift in Sources */,
+				8D7281B221C4346300963B1D /* StarsCommand.swift in Sources */,
 				8D20655621BC7394000FF8E4 /* CK550Command.swift in Sources */,
+				8D966E5421C186A3009AF6E6 /* VersionCommand.swift in Sources */,
 				8D20655721BC7394000FF8E4 /* CK550CommandEffects.swift in Sources */,
+				8D966E5B21C19A75009AF6E6 /* CustomizationCommand.swift in Sources */,
 				8D966E4021BF0B8A009AF6E6 /* AssembleCommandStatic.swift in Sources */,
+				8D7281AC21C429BD00963B1D /* AssembleCommandStars.swift in Sources */,
 				8D20655821BC7394000FF8E4 /* CK550CommandFirmware.swift in Sources */,
 				8D20655921BC7394000FF8E4 /* CK550CommandProfiles.swift in Sources */,
 				8D20655A21BC7394000FF8E4 /* CK550HIDDeviceCommand.swift in Sources */,
@@ -536,11 +665,16 @@
 				8D966E3A21BF0745009AF6E6 /* AssembleCommandSingleKey.swift in Sources */,
 				8D966E3E21BF0A68009AF6E6 /* AssembleCommandColorCycle.swift in Sources */,
 				8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */,
+				8D72819E21C3D13E00963B1D /* WaveCommand.swift in Sources */,
+				8D7281AA21C4289F00963B1D /* AssembleCommandCircleSpectrum.swift in Sources */,
 				8D966E4621C031C5009AF6E6 /* AssembleCommandProfile.swift in Sources */,
+				8D966E6121C1BD8D009AF6E6 /* BreathingCommand.swift in Sources */,
 				8D20655C21BC7394000FF8E4 /* CK550HIDCommand.swift in Sources */,
+				8D966E5D21C1A60A009AF6E6 /* CLI.swift in Sources */,
 				8D20655D21BC7394000FF8E4 /* CK550HIDDevice.swift in Sources */,
 				8D966E4221BF0C07009AF6E6 /* AssembleCommandOff.swift in Sources */,
 				8D20655E21BC7394000FF8E4 /* Queue.swift in Sources */,
+				8D966E5F21C1B65E009AF6E6 /* ColorCycleCommand.swift in Sources */,
 				8D966E4421BF0C93009AF6E6 /* AssembleCommandSnowing.swift in Sources */,
 				8D20655F21BC7394000FF8E4 /* HIDDeviceProtocol.swift in Sources */,
 				8D20656021BC7394000FF8E4 /* HIDDevice.swift in Sources */,
