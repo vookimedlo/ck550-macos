@@ -276,4 +276,56 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
+    
+    func setOffEffectFireball(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectFireballSpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            do {
+                Terminal.general("   - Setting a fireball effect", "...", separator: " ", terminator: " ")
+                let command = try AssembleCommand.assembleCommandFireball(background: background, key: key, speed: speed)
+                hidDevice.write(command: command)
+                printCommandResult(command.result)
+            } catch {
+                Terminal.error("Unexpected error")
+            }
+        }
+    }
+    
+    func setOffEffectHeartbeat(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectHeartbeatSpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            do {
+                Terminal.general("   - Setting a heartbeat effect", "...", separator: " ", terminator: " ")
+                let command = try AssembleCommand.assembleCommandHeartbeat(background: background, key: key, speed: speed)
+                hidDevice.write(command: command)
+                printCommandResult(command.result)
+            } catch {
+                Terminal.error("Unexpected error")
+            }
+        }
+    }
+    
+    func setOffEffectReactivePunch(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectReactivePunchSpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            do {
+                Terminal.general("   - Setting a reactive punch effect", "...", separator: " ", terminator: " ")
+                let command = try AssembleCommand.assembleCommandReactivePunch(background: background, key: key, speed: speed)
+                hidDevice.write(command: command)
+                printCommandResult(command.result)
+            } catch {
+                Terminal.error("Unexpected error")
+            }
+        }
+    }
+    
+    func setOffEffectWaterRipple(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectWaterRippleSpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            do {
+                Terminal.general("   - Setting a water ripple effect", "...", separator: " ", terminator: " ")
+                let command = try AssembleCommand.assembleCommandWaterRipple(background: background, key: key, speed: speed)
+                hidDevice.write(command: command)
+                printCommandResult(command.result)
+            } catch {
+                Terminal.error("Unexpected error")
+            }
+        }
+    }
 }

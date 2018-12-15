@@ -85,6 +85,14 @@
 		8D75FABC21C5518F00574CF1 /* CK550CommandFireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABB21C5518F00574CF1 /* CK550CommandFireball.swift */; };
 		8D75FABE21C5538E00574CF1 /* CK550CommandReactivePunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABD21C5538E00574CF1 /* CK550CommandReactivePunch.swift */; };
 		8D75FAC021C58A5300574CF1 /* CK550CommandHeartbeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABF21C58A5300574CF1 /* CK550CommandHeartbeat.swift */; };
+		8D75FAC221C592B400574CF1 /* FireballCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAC121C592B400574CF1 /* FireballCommand.swift */; };
+		8D75FAC421C595C100574CF1 /* HeartbeatCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAC321C595C100574CF1 /* HeartbeatCommand.swift */; };
+		8D75FAC621C5964E00574CF1 /* ReactivePunchCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAC521C5964E00574CF1 /* ReactivePunchCommand.swift */; };
+		8D75FAC821C596BB00574CF1 /* WaterRippleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAC721C596BB00574CF1 /* WaterRippleCommand.swift */; };
+		8D75FACA21C597DA00574CF1 /* AssembleCommandFireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAC921C597DA00574CF1 /* AssembleCommandFireball.swift */; };
+		8D75FACC21C5988800574CF1 /* AssembleCommandHeartbeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FACB21C5988800574CF1 /* AssembleCommandHeartbeat.swift */; };
+		8D75FACE21C598A700574CF1 /* AssembleCommandReactivePunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FACD21C598A700574CF1 /* AssembleCommandReactivePunch.swift */; };
+		8D75FAD021C598C300574CF1 /* AssembleCommandWaterRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FACF21C598C300574CF1 /* AssembleCommandWaterRipple.swift */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -194,6 +202,14 @@
 		8D75FABB21C5518F00574CF1 /* CK550CommandFireball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandFireball.swift; sourceTree = "<group>"; };
 		8D75FABD21C5538E00574CF1 /* CK550CommandReactivePunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandReactivePunch.swift; sourceTree = "<group>"; };
 		8D75FABF21C58A5300574CF1 /* CK550CommandHeartbeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandHeartbeat.swift; sourceTree = "<group>"; };
+		8D75FAC121C592B400574CF1 /* FireballCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FireballCommand.swift; path = cli/FireballCommand.swift; sourceTree = "<group>"; };
+		8D75FAC321C595C100574CF1 /* HeartbeatCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartbeatCommand.swift; path = cli/HeartbeatCommand.swift; sourceTree = "<group>"; };
+		8D75FAC521C5964E00574CF1 /* ReactivePunchCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReactivePunchCommand.swift; path = cli/ReactivePunchCommand.swift; sourceTree = "<group>"; };
+		8D75FAC721C596BB00574CF1 /* WaterRippleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WaterRippleCommand.swift; path = cli/WaterRippleCommand.swift; sourceTree = "<group>"; };
+		8D75FAC921C597DA00574CF1 /* AssembleCommandFireball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandFireball.swift; sourceTree = "<group>"; };
+		8D75FACB21C5988800574CF1 /* AssembleCommandHeartbeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandHeartbeat.swift; sourceTree = "<group>"; };
+		8D75FACD21C598A700574CF1 /* AssembleCommandReactivePunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandReactivePunch.swift; sourceTree = "<group>"; };
+		8D75FACF21C598C300574CF1 /* AssembleCommandWaterRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWaterRipple.swift; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -412,13 +428,17 @@
 				8D7281AF21C4323300963B1D /* CircleSpectrumCommand.swift */,
 				8D966E5E21C1B65E009AF6E6 /* ColorCycleCommand.swift */,
 				8D966E5A21C19A75009AF6E6 /* CustomizationCommand.swift */,
+				8D75FAC121C592B400574CF1 /* FireballCommand.swift */,
+				8D75FAC321C595C100574CF1 /* HeartbeatCommand.swift */,
 				8D7281A321C3EB5600963B1D /* OffCommand.swift */,
+				8D75FAC521C5964E00574CF1 /* ReactivePunchCommand.swift */,
 				8D7281AD21C42FE500963B1D /* ReactiveTornadoCommand.swift */,
 				8D72819F21C3E98700963B1D /* RippleCommand.swift */,
 				8D72819721C30EA900963B1D /* SingleKeyCommand.swift */,
 				8D7281A521C3EC8900963B1D /* SnowingCommand.swift */,
 				8D7281B121C4346300963B1D /* StarsCommand.swift */,
 				8D7281A121C3EA8B00963B1D /* StaticCommand.swift */,
+				8D75FAC721C596BB00574CF1 /* WaterRippleCommand.swift */,
 				8D72819D21C3D13E00963B1D /* WaveCommand.swift */,
 			);
 			name = effects;
@@ -471,15 +491,19 @@
 				8D7281A921C4289F00963B1D /* AssembleCommandCircleSpectrum.swift */,
 				8D966E3D21BF0A68009AF6E6 /* AssembleCommandColorCycle.swift */,
 				8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */,
+				8D75FAC921C597DA00574CF1 /* AssembleCommandFireball.swift */,
 				8D966E3B21BF0826009AF6E6 /* AssembleCommandFirmwareVersion.swift */,
+				8D75FACB21C5988800574CF1 /* AssembleCommandHeartbeat.swift */,
 				8D966E4121BF0C07009AF6E6 /* AssembleCommandOff.swift */,
 				8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */,
+				8D75FACD21C598A700574CF1 /* AssembleCommandReactivePunch.swift */,
 				8D7281A721C4269000963B1D /* AssembleCommandReactiveTornado.swift */,
 				8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */,
 				8D966E3921BF0745009AF6E6 /* AssembleCommandSingleKey.swift */,
 				8D966E4321BF0C93009AF6E6 /* AssembleCommandSnowing.swift */,
 				8D7281AB21C429BD00963B1D /* AssembleCommandStars.swift */,
 				8D966E3F21BF0B8A009AF6E6 /* AssembleCommandStatic.swift */,
+				8D75FACF21C598C300574CF1 /* AssembleCommandWaterRipple.swift */,
 				8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */,
 			);
 			name = shared;
@@ -637,10 +661,14 @@
 				8D72819621C307CD00963B1D /* CommonArguments.swift in Sources */,
 				8D72819321C2F5DB00963B1D /* EvaluationSupport.swift in Sources */,
 				8D20656521BC7469000FF8E4 /* main.swift in Sources */,
+				8D75FAC621C5964E00574CF1 /* ReactivePunchCommand.swift in Sources */,
 				8D7281A621C3EC8900963B1D /* SnowingCommand.swift in Sources */,
+				8D75FAC221C592B400574CF1 /* FireballCommand.swift in Sources */,
 				8D7281A421C3EB5600963B1D /* OffCommand.swift in Sources */,
+				8D75FACA21C597DA00574CF1 /* AssembleCommandFireball.swift in Sources */,
 				8DFD0D0621BDB105009905CD /* AssembleCommandCustomization.swift in Sources */,
 				8D7281A821C4269000963B1D /* AssembleCommandReactiveTornado.swift in Sources */,
+				8D75FAD021C598C300574CF1 /* AssembleCommandWaterRipple.swift in Sources */,
 				8D20654A21BC7394000FF8E4 /* CK550CommandBreathing.swift in Sources */,
 				8D20654B21BC7394000FF8E4 /* CK550CommandCircleSpectrum.swift in Sources */,
 				8D20654C21BC7394000FF8E4 /* CK550CommandColorCycle.swift in Sources */,
@@ -657,8 +685,10 @@
 				8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */,
 				8D7281AE21C42FE500963B1D /* ReactiveTornadoCommand.swift in Sources */,
 				8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */,
+				8D75FACE21C598A700574CF1 /* AssembleCommandReactivePunch.swift in Sources */,
 				8D966E5621C18B79009AF6E6 /* MonitorCommand.swift in Sources */,
 				8D72819821C30EA900963B1D /* SingleKeyCommand.swift in Sources */,
+				8D75FACC21C5988800574CF1 /* AssembleCommandHeartbeat.swift in Sources */,
 				8D20655321BC7394000FF8E4 /* CK550CommandStars.swift in Sources */,
 				8D20655421BC7394000FF8E4 /* CK550CommandStatic.swift in Sources */,
 				8D20655521BC7394000FF8E4 /* CK550CommandWave.swift in Sources */,
@@ -677,11 +707,13 @@
 				8D966E3A21BF0745009AF6E6 /* AssembleCommandSingleKey.swift in Sources */,
 				8D966E3E21BF0A68009AF6E6 /* AssembleCommandColorCycle.swift in Sources */,
 				8D75FABA21C5480A00574CF1 /* CK550CommandWaterRipple.swift in Sources */,
+				8D75FAC421C595C100574CF1 /* HeartbeatCommand.swift in Sources */,
 				8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */,
 				8D72819E21C3D13E00963B1D /* WaveCommand.swift in Sources */,
 				8D75FABE21C5538E00574CF1 /* CK550CommandReactivePunch.swift in Sources */,
 				8D7281AA21C4289F00963B1D /* AssembleCommandCircleSpectrum.swift in Sources */,
 				8D966E4621C031C5009AF6E6 /* AssembleCommandProfile.swift in Sources */,
+				8D75FAC821C596BB00574CF1 /* WaterRippleCommand.swift in Sources */,
 				8D966E6121C1BD8D009AF6E6 /* BreathingCommand.swift in Sources */,
 				8D20655C21BC7394000FF8E4 /* CK550HIDCommand.swift in Sources */,
 				8D966E5D21C1A60A009AF6E6 /* CLI.swift in Sources */,

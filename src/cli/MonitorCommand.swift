@@ -12,7 +12,7 @@ import Result
 
 public struct MonitorCommand: CommandProtocol {
     public let verb = "monitor"
-    public let function = "Continuously monitor HID devices to see changes on an USB bus"
+    public let function = "Monitor HID devices continuously to see changes on an USB bus"
     
     public func run(_ options: NoOptions<CLIError>) -> Result<(), CLIError> {
         let cli = CLI()
