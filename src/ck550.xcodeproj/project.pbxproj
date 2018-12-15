@@ -81,6 +81,10 @@
 		8D7281AE21C42FE500963B1D /* ReactiveTornadoCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281AD21C42FE500963B1D /* ReactiveTornadoCommand.swift */; };
 		8D7281B021C4323300963B1D /* CircleSpectrumCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281AF21C4323300963B1D /* CircleSpectrumCommand.swift */; };
 		8D7281B221C4346300963B1D /* StarsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281B121C4346300963B1D /* StarsCommand.swift */; };
+		8D75FABA21C5480A00574CF1 /* CK550CommandWaterRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAB921C5480A00574CF1 /* CK550CommandWaterRipple.swift */; };
+		8D75FABC21C5518F00574CF1 /* CK550CommandFireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABB21C5518F00574CF1 /* CK550CommandFireball.swift */; };
+		8D75FABE21C5538E00574CF1 /* CK550CommandReactivePunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABD21C5538E00574CF1 /* CK550CommandReactivePunch.swift */; };
+		8D75FAC021C58A5300574CF1 /* CK550CommandHeartbeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABF21C58A5300574CF1 /* CK550CommandHeartbeat.swift */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -186,6 +190,10 @@
 		8D7281AD21C42FE500963B1D /* ReactiveTornadoCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReactiveTornadoCommand.swift; path = cli/ReactiveTornadoCommand.swift; sourceTree = "<group>"; };
 		8D7281AF21C4323300963B1D /* CircleSpectrumCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleSpectrumCommand.swift; path = cli/CircleSpectrumCommand.swift; sourceTree = "<group>"; };
 		8D7281B121C4346300963B1D /* StarsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StarsCommand.swift; path = cli/StarsCommand.swift; sourceTree = "<group>"; };
+		8D75FAB921C5480A00574CF1 /* CK550CommandWaterRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandWaterRipple.swift; sourceTree = "<group>"; };
+		8D75FABB21C5518F00574CF1 /* CK550CommandFireball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandFireball.swift; sourceTree = "<group>"; };
+		8D75FABD21C5538E00574CF1 /* CK550CommandReactivePunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandReactivePunch.swift; sourceTree = "<group>"; };
+		8D75FABF21C58A5300574CF1 /* CK550CommandHeartbeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandHeartbeat.swift; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -371,13 +379,17 @@
 				8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */,
 				8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */,
 				8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */,
+				8D75FABB21C5518F00574CF1 /* CK550CommandFireball.swift */,
+				8D75FABF21C58A5300574CF1 /* CK550CommandHeartbeat.swift */,
 				8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */,
+				8D75FABD21C5538E00574CF1 /* CK550CommandReactivePunch.swift */,
 				8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */,
 				8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */,
 				8D34C71921B1E125007746B6 /* CK550CommandSingleKey.swift */,
 				8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */,
 				8D4281FB21B4738E00EB1F76 /* CK550CommandStars.swift */,
 				8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */,
+				8D75FAB921C5480A00574CF1 /* CK550CommandWaterRipple.swift */,
 				8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */,
 			);
 			name = "off effect overrides";
@@ -664,8 +676,10 @@
 				8D20655B21BC7394000FF8E4 /* CK550HIDClientCommand.swift in Sources */,
 				8D966E3A21BF0745009AF6E6 /* AssembleCommandSingleKey.swift in Sources */,
 				8D966E3E21BF0A68009AF6E6 /* AssembleCommandColorCycle.swift in Sources */,
+				8D75FABA21C5480A00574CF1 /* CK550CommandWaterRipple.swift in Sources */,
 				8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */,
 				8D72819E21C3D13E00963B1D /* WaveCommand.swift in Sources */,
+				8D75FABE21C5538E00574CF1 /* CK550CommandReactivePunch.swift in Sources */,
 				8D7281AA21C4289F00963B1D /* AssembleCommandCircleSpectrum.swift in Sources */,
 				8D966E4621C031C5009AF6E6 /* AssembleCommandProfile.swift in Sources */,
 				8D966E6121C1BD8D009AF6E6 /* BreathingCommand.swift in Sources */,
@@ -682,8 +696,10 @@
 				8D20656221BC7394000FF8E4 /* HIDEnumerationNotification.swift in Sources */,
 				8D966E4A21C0375F009AF6E6 /* Terminal.swift in Sources */,
 				8D966E3C21BF0826009AF6E6 /* AssembleCommandFirmwareVersion.swift in Sources */,
+				8D75FABC21C5518F00574CF1 /* CK550CommandFireball.swift in Sources */,
 				8D20656321BC7394000FF8E4 /* Data.swift in Sources */,
 				8D20656421BC7394000FF8E4 /* Logging.swift in Sources */,
+				8D75FAC021C58A5300574CF1 /* CK550CommandHeartbeat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
