@@ -27,7 +27,7 @@ public struct SnowingCommand: CommandProtocol {
         }
     }
     
-    public let verb = "snowing"
+    public let verb = "effect-snowing"
     public let function = "Set a snowing effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

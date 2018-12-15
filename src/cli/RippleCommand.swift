@@ -27,7 +27,7 @@ public struct RippleCommand: CommandProtocol {
         }
     }
     
-    public let verb = "ripple"
+    public let verb = "effect-ripple"
     public let function = "Set a ripple effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

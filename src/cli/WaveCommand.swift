@@ -44,7 +44,7 @@ public struct WaveCommand: CommandProtocol {
         }
     }
     
-    public let verb = "wave"
+    public let verb = "effect-wave"
     public let function = "Set a wave effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

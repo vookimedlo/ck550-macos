@@ -27,7 +27,7 @@ public struct WaterRippleCommand: CommandProtocol {
         }
     }
     
-    public let verb = "water-ripple"
+    public let verb = "effect-water-ripple"
     public let function = "Set a water ripple effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

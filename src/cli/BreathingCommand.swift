@@ -25,7 +25,7 @@ public struct BreathingCommand: CommandProtocol {
         }
     }
     
-    public let verb = "breathing"
+    public let verb = "effect-breathing"
     public let function = "Set a breathing effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

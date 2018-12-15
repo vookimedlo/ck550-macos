@@ -27,7 +27,7 @@ public struct ReactivePunchCommand: CommandProtocol {
         }
     }
     
-    public let verb = "reactive-punch"
+    public let verb = "effect-reactive-punch"
     public let function = "Set a reactive punch effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

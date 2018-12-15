@@ -27,7 +27,7 @@ public struct SingleKeyCommand: CommandProtocol {
         }
     }
     
-    public let verb = "single-key"
+    public let verb = "effect-single-key"
     public let function = "Set a single-key effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

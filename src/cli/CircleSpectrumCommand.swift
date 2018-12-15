@@ -40,7 +40,7 @@ public struct CircleSpectrumCommand: CommandProtocol {
         }
     }
     
-    public let verb = "circle-spectrum"
+    public let verb = "effect-circle-spectrum"
     public let function = "Set a circle spectrum effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

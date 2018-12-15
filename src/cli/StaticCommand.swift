@@ -23,7 +23,7 @@ public struct StaticCommand: CommandProtocol {
         }
     }
     
-    public let verb = "static"
+    public let verb = "effect-static"
     public let function = "Set a static effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

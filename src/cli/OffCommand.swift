@@ -21,7 +21,7 @@ public struct OffCommand: CommandProtocol {
         }
     }
     
-    public let verb = "off"
+    public let verb = "effect-off"
     public let function = "Set an off effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

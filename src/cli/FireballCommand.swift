@@ -27,7 +27,7 @@ public struct FireballCommand: CommandProtocol {
         }
     }
     
-    public let verb = "fireball"
+    public let verb = "effect-fireball"
     public let function = "Set a fireball effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

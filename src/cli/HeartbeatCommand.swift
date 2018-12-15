@@ -27,7 +27,7 @@ public struct HeartbeatCommand: CommandProtocol {
         }
     }
     
-    public let verb = "heartbeat"
+    public let verb = "effect-heartbeat"
     public let function = "Set a heartbeat effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

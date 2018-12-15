@@ -23,7 +23,7 @@ public struct ColorCycleCommand: CommandProtocol {
         }
     }
     
-    public let verb = "color-cycle"
+    public let verb = "effect-color-cycle"
     public let function = "Set a color-cycle effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

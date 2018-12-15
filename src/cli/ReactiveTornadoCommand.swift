@@ -40,7 +40,7 @@ public struct ReactiveTornadoCommand: CommandProtocol {
         }
     }
     
-    public let verb = "reactive-tornado"
+    public let verb = "effect-reactive-tornado"
     public let function = "Set a reactive tornado effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

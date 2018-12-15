@@ -27,7 +27,7 @@ public struct CrosshairCommand: CommandProtocol {
         }
     }
     
-    public let verb = "crosshair"
+    public let verb = "effect-crosshair"
     public let function = "Set a crosshair effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {

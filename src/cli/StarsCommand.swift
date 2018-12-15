@@ -27,7 +27,7 @@ public struct StarsCommand: CommandProtocol {
         }
     }
     
-    public let verb = "stars"
+    public let verb = "effect-stars"
     public let function = "Set a stars effect"
     
     public func run(_ options: Options) -> Result<(), CLIError> {
