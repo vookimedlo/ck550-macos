@@ -14,7 +14,7 @@ extension CK550Command {
         
         case Static          = 0x00 // CK550CommandStatic
         case Wave            = 0x01 // CK550CommandWave
-        case CrossMode       = 0x02 //
+        case CrossMode       = 0x02 // CK550CommandCrosshair
         case SingleKey       = 0x03 // CK550CommandSingleKey
         case Customization   = 0x04 // CK550CommandCustomization
         case Star            = 0x05 // CK550CommandStars

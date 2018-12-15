@@ -93,6 +93,9 @@
 		8D75FACC21C5988800574CF1 /* AssembleCommandHeartbeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FACB21C5988800574CF1 /* AssembleCommandHeartbeat.swift */; };
 		8D75FACE21C598A700574CF1 /* AssembleCommandReactivePunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FACD21C598A700574CF1 /* AssembleCommandReactivePunch.swift */; };
 		8D75FAD021C598C300574CF1 /* AssembleCommandWaterRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FACF21C598C300574CF1 /* AssembleCommandWaterRipple.swift */; };
+		8D75FAD221C5A4A800574CF1 /* CK550CommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */; };
+		8D75FAD421C5A6FC00574CF1 /* AssembleCommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */; };
+		8D75FAD621C5A88300574CF1 /* CrosshairCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD521C5A88300574CF1 /* CrosshairCommand.swift */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -210,6 +213,9 @@
 		8D75FACB21C5988800574CF1 /* AssembleCommandHeartbeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandHeartbeat.swift; sourceTree = "<group>"; };
 		8D75FACD21C598A700574CF1 /* AssembleCommandReactivePunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandReactivePunch.swift; sourceTree = "<group>"; };
 		8D75FACF21C598C300574CF1 /* AssembleCommandWaterRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWaterRipple.swift; sourceTree = "<group>"; };
+		8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandCrosshair.swift; sourceTree = "<group>"; };
+		8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCrosshair.swift; sourceTree = "<group>"; };
+		8D75FAD521C5A88300574CF1 /* CrosshairCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairCommand.swift; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -394,6 +400,7 @@
 				8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */,
 				8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */,
 				8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */,
+				8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */,
 				8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */,
 				8D75FABB21C5518F00574CF1 /* CK550CommandFireball.swift */,
 				8D75FABF21C58A5300574CF1 /* CK550CommandHeartbeat.swift */,
@@ -427,6 +434,7 @@
 				8D966E6021C1BD8D009AF6E6 /* BreathingCommand.swift */,
 				8D7281AF21C4323300963B1D /* CircleSpectrumCommand.swift */,
 				8D966E5E21C1B65E009AF6E6 /* ColorCycleCommand.swift */,
+				8D75FAD521C5A88300574CF1 /* CrosshairCommand.swift */,
 				8D966E5A21C19A75009AF6E6 /* CustomizationCommand.swift */,
 				8D75FAC121C592B400574CF1 /* FireballCommand.swift */,
 				8D75FAC321C595C100574CF1 /* HeartbeatCommand.swift */,
@@ -490,6 +498,7 @@
 				8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */,
 				8D7281A921C4289F00963B1D /* AssembleCommandCircleSpectrum.swift */,
 				8D966E3D21BF0A68009AF6E6 /* AssembleCommandColorCycle.swift */,
+				8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */,
 				8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */,
 				8D75FAC921C597DA00574CF1 /* AssembleCommandFireball.swift */,
 				8D966E3B21BF0826009AF6E6 /* AssembleCommandFirmwareVersion.swift */,
@@ -696,6 +705,8 @@
 				8D7281B221C4346300963B1D /* StarsCommand.swift in Sources */,
 				8D20655621BC7394000FF8E4 /* CK550Command.swift in Sources */,
 				8D966E5421C186A3009AF6E6 /* VersionCommand.swift in Sources */,
+				8D75FAD621C5A88300574CF1 /* CrosshairCommand.swift in Sources */,
+				8D75FAD421C5A6FC00574CF1 /* AssembleCommandCrosshair.swift in Sources */,
 				8D20655721BC7394000FF8E4 /* CK550CommandEffects.swift in Sources */,
 				8D966E5B21C19A75009AF6E6 /* CustomizationCommand.swift in Sources */,
 				8D966E4021BF0B8A009AF6E6 /* AssembleCommandStatic.swift in Sources */,
@@ -708,6 +719,7 @@
 				8D966E3E21BF0A68009AF6E6 /* AssembleCommandColorCycle.swift in Sources */,
 				8D75FABA21C5480A00574CF1 /* CK550CommandWaterRipple.swift in Sources */,
 				8D75FAC421C595C100574CF1 /* HeartbeatCommand.swift in Sources */,
+				8D75FAD221C5A4A800574CF1 /* CK550CommandCrosshair.swift in Sources */,
 				8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */,
 				8D72819E21C3D13E00963B1D /* WaveCommand.swift in Sources */,
 				8D75FABE21C5538E00574CF1 /* CK550CommandReactivePunch.swift in Sources */,

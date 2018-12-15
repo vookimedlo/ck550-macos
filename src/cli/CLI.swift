@@ -328,4 +328,17 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
+    
+    func setOffEffectCrosshair(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectCrosshairSpeed) -> Void {
+        if let hidDevice = self.hidDevice {
+            do {
+                Terminal.general("   - Setting a crosshair effect", "...", separator: " ", terminator: " ")
+                let command = try AssembleCommand.assembleCommandCrosshair(background: background, key: key, speed: speed)
+                hidDevice.write(command: command)
+                printCommandResult(command.result)
+            } catch {
+                Terminal.error("Unexpected error")
+            }
+        }
+    }
 }
