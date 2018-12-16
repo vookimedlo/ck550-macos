@@ -12,7 +12,7 @@ enum CommonColors {
     case white
     case black
     case random
-    
+
     func command() -> [Int] {
         switch self {
         case .white:

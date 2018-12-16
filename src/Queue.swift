@@ -10,15 +10,15 @@ import Foundation
 
 class Queue<T> {
     private var list = [T]()
-    
-    func enqueue(_ item : T) -> Void {
+
+    func enqueue(_ item: T) -> Void {
         list.append(item)
     }
-    
+
     func dequeue() -> T? {
         return list.isEmpty == false ? list.removeFirst() : nil
     }
-    
+
     func count() -> Int {
         return list.count
     }

@@ -9,13 +9,13 @@
 import Foundation
 
 protocol HIDDeviceProtocol {
-    var manufacturer : String? {get}
-    var product : String? {get}
-    var vendorID : UInt32 {get}
-    var productID : UInt32 {get}
-    var usagePage : UInt32 {get}
-    var usage : UInt32 {get}
-     
+    var manufacturer: String? { get }
+    var product: String? { get }
+    var vendorID: UInt32 { get }
+    var productID: UInt32 { get }
+    var usagePage: UInt32 { get }
+    var usage: UInt32 { get }
+
     init(manager: IOHIDManager, device: IOHIDDevice)
     func open(options: IOOptionBits) -> Bool
     func close(options: IOOptionBits) -> Bool

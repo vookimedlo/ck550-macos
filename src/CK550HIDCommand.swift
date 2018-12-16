@@ -8,10 +8,10 @@
 
 import Foundation
 
-class CK550HIDCommand : CK550HIDDeviceCommand, CK550HIDClientCommand {
+class CK550HIDCommand: CK550HIDDeviceCommand, CK550HIDClientCommand {
     private var messages: Queue<[uint8]> = Queue<[uint8]>()
     private var expectedResponses: Queue<[uint8]> = Queue<[uint8]>()
-    
+
     private(set) var responses: Queue<[uint8]> = Queue<[uint8]>()
     private(set) var processedMessage: [uint8]? = nil
     private(set) var processedResponse: [uint8]? = nil
@@ -24,9 +24,11 @@ class CK550HIDCommand : CK550HIDDeviceCommand, CK550HIDClientCommand {
             addExpectedResponse(Array<uint8>(packet.prefix(2)))
         }
     }
+
     func addExpectedResponse(_ packet: [uint8]) -> Void {
         expectedResponses.enqueue(packet)
     }
+
     func addIncomingResponse(_ packet: [uint8]) -> Void {
         processedResponse = packet
         if let processedExpectedResponse = expectedResponses.dequeue() {
@@ -35,19 +37,21 @@ class CK550HIDCommand : CK550HIDDeviceCommand, CK550HIDClientCommand {
                 if expectedResponses.count() == 0 {
                     result = .ok
                 }
-            }
-            else {
+            } else {
                 self.processedExpectedResponse = processedExpectedResponse
                 result = .responseFailed
             }
         }
     }
+
     func reportResponseTimeout() -> Void {
         result = .responseTimedout
     }
+
     func reportWriteFailure() -> Void {
         result = .writeFailed
     }
+
     func nextMessage() -> [uint8]? {
         processedMessage = messages.dequeue()
         if processedMessage == nil && !waitsForAnotherResponse() {
@@ -55,6 +59,7 @@ class CK550HIDCommand : CK550HIDDeviceCommand, CK550HIDClientCommand {
         }
         return processedMessage
     }
+
     func waitsForAnotherResponse() -> Bool {
         return expectedResponses.count() > 0 && result != .responseFailed
     }

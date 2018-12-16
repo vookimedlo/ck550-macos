@@ -13,7 +13,7 @@ import Result
 public struct VersionCommand: CommandProtocol {
     public let verb = "version"
     public let function = "Display the current ck550-cli version"
-    
+
     public func run(_ options: NoOptions<CLIError>) -> Result<(), CLIError> {
         Terminal.general("TODO: yyyy.mm.dd")
         return .success(())

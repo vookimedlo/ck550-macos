@@ -9,7 +9,7 @@
 import Foundation
 
 class AssembleCommand {
-    enum AssembleError : Error {
+    enum AssembleError: Error {
         case FileReadFailure(path: String)
         case InvalidFormatJSON
         case UnknownError

@@ -8,15 +8,15 @@
 
 import Foundation
 
-class CK550HIDDevice : HIDDevice {
+class CK550HIDDevice: HIDDevice {
     private var waitForResponseMutex = DispatchSemaphore(value: 0)
     private var commandAccessMutex = DispatchSemaphore(value: 1)
     private var command: CK550HIDDeviceCommand?
-    
+
     required init(manager: IOHIDManager, device: IOHIDDevice) {
         super.init(manager: manager, device: device)
     }
-    
+
     override func dataReceived(buffer: [uint8]) -> Void {
         commandAccessMutex.wait()
         if let command = self.command {
@@ -24,25 +24,23 @@ class CK550HIDDevice : HIDDevice {
                 // TODO: remove print
                 print(Data(buffer).hexString())
                 waitForResponseMutex.signal()
-            }
-            else {
+            } else {
                 command.addIncomingResponse(buffer)
                 if !command.waitsForAnotherResponse() {
                     waitForResponseMutex.signal()
                 }
             }
-        }
-        else {
+        } else {
             // TODO: remove print
             print(Data(buffer).hexString())
         }
         commandAccessMutex.signal()
     }
-    
+
     override func write(command: [uint8]) -> Bool {
         return super.write(command: command)
     }
-    
+
     func write(command: CK550HIDDeviceCommand) -> Void {
         let shallWait = command.waitsForAnotherResponse()
         if shallWait {
@@ -62,7 +60,7 @@ class CK550HIDDevice : HIDDevice {
             }
             packet = command.nextMessage()
         }
-        
+
         if shallWait {
             if .timedOut == waitForResponseMutex.wait(timeout: .now() + .milliseconds(500)) {
                 commandAccessMutex.signal()
@@ -70,7 +68,7 @@ class CK550HIDDevice : HIDDevice {
                 commandAccessMutex.wait()
             }
         }
-        
+
         commandAccessMutex.wait()
         self.command = nil
         commandAccessMutex.signal()

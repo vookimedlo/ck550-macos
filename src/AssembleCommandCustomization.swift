@@ -65,7 +65,7 @@ private let jsonCustomizationDecode: Dictionary<String, CK550OffEffectCustomizat
     "K": .K,
     "L": .L,
     "Semicolon": .Semicolon,
-    "Apostroph": .Apostroph,
+    "Apostrophe": .Apostrophe,
     "Enter": .Enter,
     "LeftShift": .LeftShift,
     "Z": .Z,
@@ -113,7 +113,7 @@ private let jsonCustomizationDecode: Dictionary<String, CK550OffEffectCustomizat
     "Numpad9": .Numpad9,
     "NumpadEnter": .NumpadEnter,
     "NumpadPlus": .NumpadPlus,
-    "NumpadPoint": .NumpadPoint ]
+    "NumpadPoint": .NumpadPoint]
 
 private let jsonCustomEncode: Dictionary<CK550OffEffectCustomizationLayoutUS.KeyUS, String> = [
     .Escape: "Escape",
@@ -171,7 +171,7 @@ private let jsonCustomEncode: Dictionary<CK550OffEffectCustomizationLayoutUS.Key
     .K: "K",
     .L: "L",
     .Semicolon: "Semicolon",
-    .Apostroph: "Apostroph",
+    .Apostrophe: "Apostrophe",
     .Enter: "Enter",
     .LeftShift: "LeftShift",
     .Z: "Z",
@@ -219,14 +219,14 @@ private let jsonCustomEncode: Dictionary<CK550OffEffectCustomizationLayoutUS.Key
     .Numpad9: "Numpad9",
     .NumpadEnter: "NumpadEnter",
     .NumpadPlus: "NumpadPlus",
-    .NumpadPoint: "NumpadPoint" ]
+    .NumpadPoint: "NumpadPoint"]
 
 extension AssembleCommand {
     static func assembleCommandCustomization(configPath: String) throws -> CK550HIDCommand {
         guard let jsonString = try? String(contentsOfFile: configPath, encoding: String.Encoding.utf8) else {
             throw AssembleError.FileReadFailure(path: configPath)
         }
-        
+
         let json = JSON(parseJSON: jsonString)
         if let error = json.error {
             switch error {
@@ -238,17 +238,17 @@ extension AssembleCommand {
         }
 
         let command = CK550HIDCommand()
-        
+
         // Changing the color of keys in Off effect
         let layout = CK550OffEffectCustomizationLayoutUS()
         let custom = CK550OffEffectCustomizationKeys(layout: layout)
-        
+
         if let jsonEffectCustomization = json["effect"]["customization"].dictionary {
             for key in jsonCustomizationDecode.keys {
-                let red   = jsonEffectCustomization[key]?["red"].uInt ?? 0
+                let red = jsonEffectCustomization[key]?["red"].uInt ?? 0
                 let green = jsonEffectCustomization[key]?["green"].uInt ?? 0
-                let blue  = jsonEffectCustomization[key]?["blue"].uInt ?? 0
-                
+                let blue = jsonEffectCustomization[key]?["blue"].uInt ?? 0
+
                 if red <= 0xFF && green <= 0xFF && blue <= 0xFF {
                     // use color only if its value is valid in #XXYYZZ format
                     layout.setColor(key: jsonCustomizationDecode[key]!, color: RGBColor(red: UInt16(red), green: UInt16(green), blue: UInt16(blue)))
@@ -260,15 +260,15 @@ extension AssembleCommand {
         command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
         command.addOutgoingMessage(CK550Command.enableOffEffectModification)
         command.addOutgoingMessage(CK550Command.setOffEffectCustomizationUNKNOWN_BEFORE_PACKETS)
-        
+
         let packets = custom.packets()
         for packet in packets {
             command.addOutgoingMessage(packet)
         }
-        
+
         command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
         command.addOutgoingMessage(CK550Command.setOffEffectCustomizationUNKNOWN_AFTER_PACKETS)
-        
+
         /*
          // Writes the color of keys in Off effect to flash
          _ = hidDevice.write(command: CK550Command.setProfileControl)
@@ -276,13 +276,13 @@ extension AssembleCommand {
          _ = hidDevice.write(command: CK550Command.saveCurrentProfile)
          _ = hidDevice.write(command: CK550Command.setFirmwareControl)
          */
-        
+
         //_ = hidDevice.write(command: CK550Command.setEffectControl)
         //_ = hidDevice.write(command: CK550Command.setActiveProfile(profileId: 4))
         //_ = hidDevice.write(command: CK550Command.setEffect(effectId: .Off))
-        
+
         command.addOutgoingMessage(CK550Command.setFirmwareControl)
-        
+
         return command
     }
 }

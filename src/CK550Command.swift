@@ -9,7 +9,7 @@
 import Foundation
 
 struct CK550Command {
-    static func newComand(request: [uint8]) -> [uint8] {
+    static func newCommand(request: [uint8]) -> [uint8] {
         var command = Array.init(repeating: UInt8(0x00), count: 64)
         command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: request.count)), with: request)
         return command

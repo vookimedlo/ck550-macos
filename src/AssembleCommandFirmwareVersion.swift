@@ -13,7 +13,7 @@ extension AssembleCommand {
         let command = CK550HIDCommand()
         command.addOutgoingMessage(CK550Command.setFirmwareControl)
         command.addOutgoingMessage(CK550Command.getFirmwareVersion)
-        
+
         return command
     }
 }

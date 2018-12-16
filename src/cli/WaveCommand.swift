@@ -17,36 +17,36 @@ public struct WaveCommand: CommandProtocol {
         case topToBottom = "top-to-bottom"
         case rightToLeft = "right-to-left"
         case bottomToTop = "bottom-to-top"
-        
+
         public var description: String {
             return self.rawValue
         }
-        
+
         public static let name = "wave-direction"
-        
+
         public static func from(string: String) -> WaveDirectionArgument? {
             return self.init(rawValue: string.lowercased())
         }
     }
-    
+
     public struct Options: OptionsProtocol {
         public let profileId: Int?
         public let speed: SpeedArgument
         public let direction: WaveDirectionArgument
         public let color: [Int]
-        
+
         public static func evaluate(_ mode: CommandMode) -> Result<Options, CommandantError<CLIError>> {
             return curry(self.init)
-                <*> mode <| Option(key: "profile", defaultValue: nil, usage: "keyboard profile to use for a modification")
-                <*> mode <| Option(key: "speed", defaultValue: .middle, usage: "effect speed (one of 'highest', 'higher', 'middle', 'lower', or 'lowest'), by default 'middle'")
-                <*> mode <| Option(key: "direction", defaultValue: .leftToRight, usage: "effect direction (one of 'left-to-right', 'top-to-bottom', 'right-to-left', or 'bottom-to-top'), by default 'left-to-right'")
-                <*> mode <| Option(key: "color", defaultValue: CommonColors.white.command(), usage: "color (format: --color \"255, 255, 255\"), by default the color is white")
+                    <*> mode <| Option(key: "profile", defaultValue: nil, usage: "keyboard profile to use for a modification")
+                    <*> mode <| Option(key: "speed", defaultValue: .middle, usage: "effect speed (one of 'highest', 'higher', 'middle', 'lower', or 'lowest'), by default 'middle'")
+                    <*> mode <| Option(key: "direction", defaultValue: .leftToRight, usage: "effect direction (one of 'left-to-right', 'top-to-bottom', 'right-to-left', or 'bottom-to-top'), by default 'left-to-right'")
+                    <*> mode <| Option(key: "color", defaultValue: CommonColors.white.command(), usage: "color (format: --color \"255, 255, 255\"), by default the color is white")
         }
     }
-    
+
     public let verb = "effect-wave"
     public let function = "Set a wave effect"
-    
+
     public func run(_ options: Options) -> Result<(), CLIError> {
         let evalSupport = EvaluationSupport()
         _ = evalSupport.evaluateColor(color: options.color)
@@ -54,7 +54,7 @@ public struct WaveCommand: CommandProtocol {
         if evalSupport.hasFailed {
             return .failure(evalSupport.firstFailure!)
         }
-        
+
         typealias CK550Speed = CK550Command.OffEffectWaveSpeed
         var speed: CK550Speed {
             switch options.speed {
@@ -65,7 +65,7 @@ public struct WaveCommand: CommandProtocol {
             case .lowest:  return CK550Speed.Lowest
             }
         }
-        
+
         typealias WaveDirection = CK550Command.OffEffectWaveDirection
         var direction: WaveDirection {
             switch options.direction {
@@ -75,29 +75,29 @@ public struct WaveCommand: CommandProtocol {
             case .topToBottom: return WaveDirection.TopToBottom
             }
         }
-        
+
         let cli = CLI()
         cli.onOpen {
-            var result : Bool = true
-            
+            var result: Bool = true
+
             if let profileId = options.profileId {
                 result = cli.setProfile(profileId: UInt8(profileId))
             }
-            
+
             if result {
                 cli.setOffEffectWave(color: createRGBColor(options.color)!, direction: direction, speed: speed)
             }
-            
+
             DispatchQueue.main.async {
                 CFRunLoopStop(CFRunLoopGetCurrent())
             }
         }
-        
+
         if cli.startHIDMonitoring() {
             Terminal.general(" - Monitoring HID ...")
             CFRunLoopRun()
         }
-        
+
         Terminal.important(" - Quitting ... Bye, Bye")
         return .success(())
     }

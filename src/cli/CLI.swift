@@ -12,76 +12,80 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
     private let dispatchQueue = DispatchQueue(label: "cli", qos: .utility)
     private let hid = HIDRaw(CK550HIDDevice.self)
     private var hidDevice: CK550HIDDevice? = nil
-    private var onOpenFunction : () -> Void = {}
-    
+    private var onOpenFunction: () -> Void = {
+    }
+
     override init() {
         super.init()
         startObserving()
     }
-    
+
     deinit {
         stopObserving()
     }
-    
+
     func startHIDMonitoring() -> Bool {
         return hid.monitorEnumeration(vid: 0x2516, pid: 0x007f, usagePage: 0xFF00, usage: 0x00)
     }
-    
+
     func deviceEnumerated(notification: Notification) {
-        guard notification.name == Notification.Name.CustomHIDDeviceEnumerated else {return}
-        
+        guard notification.name == Notification.Name.CustomHIDDeviceEnumerated else {
+            return
+        }
+
         let hidDevice = notification.userInfo?["device"] as! CK550HIDDevice
         //LogDebug("Enumerated device: %@", hidDevice.manufacturer!, hidDevice.product!)
-        
+
         dispatchQueue.async {
             _ = self.open(hidDevice: hidDevice)
         }
     }
-    
+
     func deviceRemoved(notification: Notification) {
-        guard notification.name == Notification.Name.CustomHIDDeviceRemoved else {return}
-        
+        guard notification.name == Notification.Name.CustomHIDDeviceRemoved else {
+            return
+        }
+
         let hidDevice = notification.userInfo?["device"] as! HIDDevice
         Terminal.important(" - Keyboard unplugged: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
-        
+
         dispatchQueue.async {
             self.hidDevice = nil
         }
     }
-    
+
     func open(hidDevice: CK550HIDDevice) -> Bool {
         guard hidDevice.open() else {
             return false
         }
         self.hidDevice = hidDevice
-        
-        
+
+
         Terminal.important(" - Keyboard detected: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
-        
+
         if let version = getFirmwareVersion() {
             Terminal.general("   - FW version: \(version)")
         }
-        
+
         dispatchQueue.async {
             self.onOpenFunction()
         }
 
         return true
     }
-    
+
     func onOpen(_ function: @escaping () -> Void) -> Void {
         onOpenFunction = function
     }
-    
+
     func printCommandResult(_ result: CK550HIDCommand.Result) {
         if result == .ok {
             Terminal.ok("[", result, "]", separator: "")
-        }
-        else {
+        } else {
             Terminal.error("[", result, "]", separator: "")
         }
     }
-    
+
     func setProfile(profileId: uint8) -> Bool {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Switching a keyboard profile to", profileId, "...", separator: " ", terminator: " ")
@@ -96,7 +100,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         }
         return false
     }
-    
+
     func setOffEffectSnowing(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSnowingSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Setting a snowing effect", "...", separator: " ", terminator: " ")
@@ -109,7 +113,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectOff() -> Void {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Setting an off effect", "...", separator: " ", terminator: " ")
@@ -122,7 +126,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectStatic(color: RGBColor) -> Void {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Setting a static effect", "...", separator: " ", terminator: " ")
@@ -135,7 +139,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectColorCycle(speed: CK550Command.OffEffectColorCycleSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Setting a color cycle effect", "...", separator: " ", terminator: " ")
@@ -148,7 +152,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectBreathing(speed: CK550Command.OffEffectBreathingSpeed, color: RGBColor? = nil) -> Void {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Setting a breathing effect", "...", separator: " ", terminator: " ")
@@ -161,7 +165,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectRipple(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectRippleSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Setting a ripple effect", "...", separator: " ", terminator: " ")
@@ -174,10 +178,10 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectWave(color: RGBColor, direction: CK550Command.OffEffectWaveDirection, speed: CK550Command.OffEffectWaveSpeed) -> Void {
         if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting a wave effect", "...", separator: " ", terminator: " " )
+            Terminal.general("   - Setting a wave effect", "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandWave(color: color, direction: direction, speed: speed)
                 hidDevice.write(command: command)
@@ -187,7 +191,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectSingleKey(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSingleKeySpeed) -> Void {
         if let hidDevice = self.hidDevice {
             do {
@@ -200,7 +204,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func getFirmwareVersion() -> String? {
         if let hidDevice = self.hidDevice {
             do {
@@ -210,17 +214,17 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
                     // Throw away a FW control response
                     _ = command.responses.dequeue()
                     let fwArray = command.responses.dequeue()?[0x08...0x21]
-                    let fwVersion = String(bytes: fwArray!, encoding: String.Encoding.utf16LittleEndian)?.filter({$0 != "\0"})
+                    let fwVersion = String(bytes: fwArray!, encoding: String.Encoding.utf16LittleEndian)?.filter({ $0 != "\0" })
                     return fwVersion
                 }
             } catch {
                 Terminal.error("Unexpected error")
             }
         }
-        
+
         return nil
     }
-    
+
     func setCustomColors(jsonPath: String) -> Void {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Setting a custom key color effect", "...", separator: " ", terminator: " ")
@@ -237,7 +241,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectStars(key: RGBColor, background: RGBColor, speed: CK550Command.OffEffectStarsSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             do {
@@ -250,7 +254,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectReactiveTornado(direction: CK550Command.OffEffectReactiveTornadoDirection, speed: CK550Command.OffEffectReactiveTornadoSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             do {
@@ -263,7 +267,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectCircleSpectrum(speed: CK550Command.OffEffectCircleSpectrumSpeed, direction: CK550Command.OffEffectCircleSpectrumDirection) -> Void {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Setting a circle spectrum effect", "...", separator: " ", terminator: " ")
@@ -276,7 +280,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectFireball(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectFireballSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             do {
@@ -289,7 +293,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectHeartbeat(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectHeartbeatSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             do {
@@ -302,7 +306,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectReactivePunch(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectReactivePunchSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             do {
@@ -315,7 +319,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectWaterRipple(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectWaterRippleSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             do {
@@ -328,7 +332,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             }
         }
     }
-    
+
     func setOffEffectCrosshair(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectCrosshairSpeed) -> Void {
         if let hidDevice = self.hidDevice {
             do {

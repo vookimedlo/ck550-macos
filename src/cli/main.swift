@@ -15,7 +15,7 @@ public enum CLIError: Error {
     case colorOutOfRange(Int, Int, Int)
     case colorIncomplete([Int])
     case invalidProfileId(Int)
-    
+
     var description: String {
         get {
             switch self {
@@ -62,5 +62,5 @@ let helpCommand = HelpCommand(registry: registry)
 registry.register(helpCommand)
 
 registry.main(defaultVerb: helpCommand.verb) { error in
-     Terminal.error(error.description)
+    Terminal.error(error.description)
 }

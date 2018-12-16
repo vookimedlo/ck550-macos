@@ -10,25 +10,25 @@ import Foundation
 
 class EvaluationSupport {
     private var errors: [CLIError] = []
-    
+
     var hasFailed: Bool {
         get {
             return !errors.isEmpty
         }
     }
-    
+
     var failedResults: [CLIError] {
         get {
             return errors
         }
     }
-    
+
     var firstFailure: CLIError? {
         get {
             return errors.first
         }
     }
-    
+
     func evaluateColor(color: [Int]) -> CLIError {
         if !color.isEmpty {
             if color.count == 3 {
@@ -38,8 +38,7 @@ class EvaluationSupport {
                         return errors.last!
                     }
                 }
-            }
-            else {
+            } else {
                 errors.append(CLIError.colorIncomplete(color))
                 return errors.last!
             }

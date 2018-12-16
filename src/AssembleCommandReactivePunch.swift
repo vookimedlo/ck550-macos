@@ -14,17 +14,17 @@ extension AssembleCommand {
         command.addOutgoingMessage(CK550Command.setEffectControl)
         command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
         command.addOutgoingMessage(CK550Command.enableOffEffectModification)
-        
+
         command.addOutgoingMessage(CK550Command.setOffEffectReactivePunchUNKNOWN_BEFORE_PACKETS)
-        
+
         let packets = CK550Command.setOffEffectReactivePunch(background: background, key: key, speed: speed)
         for packet in packets {
             command.addOutgoingMessage(packet)
         }
-        
+
         command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
         command.addOutgoingMessage(CK550Command.setFirmwareControl)
-        
+
         return command
     }
 }

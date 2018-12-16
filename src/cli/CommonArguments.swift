@@ -11,17 +11,17 @@ import Commandant
 
 public enum SpeedArgument: String, ArgumentProtocol, CustomStringConvertible {
     case highest = "highest"
-    case higher  = "higher"
-    case middle  = "middle"
-    case lower   = "lower"
-    case lowest  = "lowest"
-    
+    case higher = "higher"
+    case middle = "middle"
+    case lower = "lower"
+    case lowest = "lowest"
+
     public var description: String {
         return self.rawValue
     }
-    
+
     public static let name = "speed"
-    
+
     public static func from(string: String) -> SpeedArgument? {
         return self.init(rawValue: string.lowercased())
     }
