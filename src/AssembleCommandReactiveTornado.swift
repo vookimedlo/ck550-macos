@@ -9,20 +9,20 @@
 import Foundation
 
 extension AssembleCommand {
-    static func assembleCommandReactiveTornado(direction: CK550Command.OffEffectReactiveTornadoDirection, speed: CK550Command.OffEffectReactiveTornadoSpeed) throws -> CK550HIDCommand {
+    static func assembleCommandReactiveTornado(direction: CK550Command.OffEffectOverride.ReactiveTornado.Direction, speed: CK550Command.OffEffectOverride.ReactiveTornado.Speed) throws -> CK550HIDCommand {
         let command = CK550HIDCommand()
         command.addOutgoingMessage(CK550Command.setEffectControl)
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.enableOffEffectModification)
 
-        command.addOutgoingMessage(CK550Command.setOffEffectReactiveTornadoUNKNOWN_BEFORE_PACKETS)
+        command.addOutgoingMessage(CK550Command.OffEffectOverride.ReactiveTornado.setEffectUNKNOWN_BEFORE_PACKETS)
 
-        let packets = CK550Command.setOffEffectReactiveTornado(direction: direction, speed: speed)
+        let packets = CK550Command.OffEffectOverride.ReactiveTornado.setEffect(direction: direction, speed: speed)
         for packet in packets {
             command.addOutgoingMessage(packet)
         }
 
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.setFirmwareControl)
 
         return command

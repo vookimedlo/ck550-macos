@@ -11,23 +11,23 @@ import Commandant
 import Result
 
 public enum CLIError: Error {
+// swiftlint:disable identifier_name
     case ok
+// swiftlint:enable identifier_name
     case colorOutOfRange(Int, Int, Int)
     case colorIncomplete([Int])
     case invalidProfileId(Int)
 
     var description: String {
-        get {
-            switch self {
-            case .ok:
-                return "OK"
-            case .colorOutOfRange(let red, let green, let blue):
-                return "Color [\(red), \(green), \(blue)] out of valid range"
-            case .colorIncomplete(let array):
-                return "Incomplete color \(array)"
-            case .invalidProfileId(let profileId):
-                return "Invalid profile \(profileId)"
-            }
+        switch self {
+        case .ok:
+            return "OK"
+        case .colorOutOfRange(let red, let green, let blue):
+            return "Color [\(red), \(green), \(blue)] out of valid range"
+        case .colorIncomplete(let array):
+            return "Incomplete color \(array)"
+        case .invalidProfileId(let profileId):
+            return "Invalid profile \(profileId)"
         }
     }
 }

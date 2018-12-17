@@ -12,17 +12,17 @@ extension AssembleCommand {
     static func assembleCommandOff() throws -> CK550HIDCommand {
         let command = CK550HIDCommand()
         command.addOutgoingMessage(CK550Command.setEffectControl)
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.enableOffEffectModification)
 
-        command.addOutgoingMessage(CK550Command.setOffEffectOffUNKNOWN_BEFORE_PACKETS)
+        command.addOutgoingMessage(CK550Command.OffEffectOverride.Off.setEffectUNKNOWN_BEFORE_PACKETS)
 
-        let packets = CK550Command.setOffEffectOff()
+        let packets = CK550Command.OffEffectOverride.Off.setEffect()
         for packet in packets {
             command.addOutgoingMessage(packet)
         }
 
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.setFirmwareControl)
 
         return command

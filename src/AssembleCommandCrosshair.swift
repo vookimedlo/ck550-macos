@@ -9,20 +9,20 @@
 import Foundation
 
 extension AssembleCommand {
-    static func assembleCommandCrosshair(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectCrosshairSpeed) throws -> CK550HIDCommand {
+    static func assembleCommandCrosshair(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectOverride.Crosshair.Speed) throws -> CK550HIDCommand {
         let command = CK550HIDCommand()
         command.addOutgoingMessage(CK550Command.setEffectControl)
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.enableOffEffectModification)
 
-        command.addOutgoingMessage(CK550Command.setOffEffectCrosshairUNKNOWN_BEFORE_PACKETS)
+        command.addOutgoingMessage(CK550Command.OffEffectOverride.Crosshair.setEffectUNKNOWN_BEFORE_PACKETS)
 
-        let packets = CK550Command.setOffEffectCrosshair(speed: speed, background: background, key: key)
+        let packets = CK550Command.OffEffectOverride.Crosshair.setEffect(speed: speed, background: background, key: key)
         for packet in packets {
             command.addOutgoingMessage(packet)
         }
 
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.setFirmwareControl)
 
         return command

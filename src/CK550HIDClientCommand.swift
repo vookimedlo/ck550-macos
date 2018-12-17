@@ -10,7 +10,7 @@ import Foundation
 
 extension CK550HIDCommand {
     enum Result {
-        case ok
+        case succeeded
         case writeFailed
         case responseFailed
         case responseTimedout
@@ -25,6 +25,6 @@ protocol CK550HIDClientCommand {
     var processedExpectedResponse: [uint8]? { get }
     var result: CK550HIDCommand.Result { get }
 
-    func addOutgoingMessage(_ packet: [uint8], createExpectedResponse: Bool) -> Void
-    func addExpectedResponse(_ packet: [uint8]) -> Void
+    func addOutgoingMessage(_ packet: [uint8], createExpectedResponse: Bool)
+    func addExpectedResponse(_ packet: [uint8])
 }

@@ -11,7 +11,7 @@ import Foundation
 class Queue<T> {
     private var list = [T]()
 
-    func enqueue(_ item: T) -> Void {
+    func enqueue(_ item: T) {
         list.append(item)
     }
 

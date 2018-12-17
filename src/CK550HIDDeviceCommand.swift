@@ -9,9 +9,9 @@
 import Foundation
 
 protocol CK550HIDDeviceCommand {
-    func addIncomingResponse(_ packet: [uint8]) -> Void
-    func reportResponseTimeout() -> Void
-    func reportWriteFailure() -> Void
+    func addIncomingResponse(_ packet: [uint8])
+    func reportResponseTimeout()
+    func reportWriteFailure()
     func nextMessage() -> [uint8]?
     func waitsForAnotherResponse() -> Bool
 }

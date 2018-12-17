@@ -10,13 +10,10 @@ import Foundation
 
 extension CK550Command {
     static var getFirmwareVersion: [uint8] {
-        get {
-            return newCommand(request: [0x12, 0x20])
-        }
+        return newCommand(request: [0x12, 0x20])
     }
+
     static var setFirmwareControl: [uint8] {
-        get {
-            return newCommand(request: [0x41, 0x00])
-        }
+        return newCommand(request: [0x41, 0x00])
     }
 }

@@ -12,40 +12,36 @@ extension CK550Command {
     enum EffectID: uint8 {
         typealias RawValue = uint8
 
-        case Static = 0x00 // CK550CommandStatic
-        case Wave = 0x01 // CK550CommandWave
-        case CrossMode = 0x02 // CK550CommandCrosshair
-        case SingleKey = 0x03 // CK550CommandSingleKey
-        case Customization = 0x04 // CK550CommandCustomization
-        case Star = 0x05 // CK550CommandStars
-        case ColorCycle = 0x06 // CK550CommandColorCycle
-        case Breathing = 0x07 // CK550CommandBreathing
-        case Ripple = 0x08 // CK550CommandRipple
-        case Snowing = 0x09 // CK550CommandSnowing
-        case ReactivePunch = 0x0a // CK550CommandReactivePunch
-        case Heartbeat = 0x0b // CK550CommandHeartbeat
-        case Fireball = 0x0c // CK550CommandFireball
-        case CircleSpectrum = 0x0d // CK550CommandCircleSpectrum
-        case ReactiveTornado = 0x0e // CK550CommandReactiveTornado
-        case WaterRipple = 0x0f // CK550CommandWaterRipple
-        case GameSnake = 0x10 //
-        case Off = 0xff // CK550CommandOff
+        case staticKeys = 0x00 // CK550CommandStatic
+        case wave = 0x01 // CK550CommandWave
+        case crossMode = 0x02 // CK550CommandCrosshair
+        case singleKey = 0x03 // CK550CommandSingleKey
+        case customization = 0x04 // CK550CommandCustomization
+        case star = 0x05 // CK550CommandStars
+        case colorCycle = 0x06 // CK550CommandColorCycle
+        case breathing = 0x07 // CK550CommandBreathing
+        case ripple = 0x08 // CK550CommandRipple
+        case snowing = 0x09 // CK550CommandSnowing
+        case reactivePunch = 0x0a // CK550CommandReactivePunch
+        case heartbeat = 0x0b // CK550CommandHeartbeat
+        case fireball = 0x0c // CK550CommandFireball
+        case circleSpectrum = 0x0d // CK550CommandCircleSpectrum
+        case reactiveTornado = 0x0e // CK550CommandReactiveTornado
+        case waterRipple = 0x0f // CK550CommandWaterRipple
+        case gameSnake = 0x10 //
+        case off = 0xff // CK550CommandOff
     }
 
     static var getActiveEffects: [uint8] {
-        get {
-            return newCommand(request: [0x52, 0x28])
-        }
+        return newCommand(request: [0x52, 0x28])
     }
+
     static var setEffectControl: [uint8] {
-        get {
-            return newCommand(request: [0x41, 0x01])
-        }
+        return newCommand(request: [0x41, 0x01])
     }
+
     static private var setEffectTemplate: [uint8] {
-        get {
-            return newCommand(request: [0x51, 0x28])
-        }
+        return newCommand(request: [0x51, 0x28])
     }
 
     static func setEffect(effectId: EffectID) -> [uint8] {
@@ -55,8 +51,6 @@ extension CK550Command {
     }
 
     static var enableOffEffectModification: [uint8] {
-        get {
-            return newCommand(request: [0x41, 0x80])
-        }
+        return newCommand(request: [0x41, 0x80])
     }
 }

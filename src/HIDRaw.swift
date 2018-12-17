@@ -13,20 +13,20 @@ class HIDRaw {
     private let manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
     private var usagePage: UInt32 = 0
     private var usage: UInt32 = 0
-    private var enumeratedDevices: Dictionary<IOHIDDevice, HIDDeviceProtocol> = Dictionary<IOHIDDevice, HIDDeviceProtocol>()
+    private var enumeratedDevices: [IOHIDDevice: HIDDeviceProtocol] = [IOHIDDevice: HIDDeviceProtocol]()
     private let hidDeviceType: HIDDeviceProtocol.Type
 
-
-    required init<HID_DEVICE: HIDDeviceProtocol>(_ deviceType: HID_DEVICE.Type) {
+    required init<HIDDEVICE: HIDDeviceProtocol>(_ deviceType: HIDDEVICE.Type) {
         hidDeviceType = deviceType
     }
 
-    private func enumerated(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) -> Void {
+    private func enumerated(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) {
         guard result == kIOReturnSuccess else {
             return
         }
-
+// swiftlint:disable force_cast
         if (usagePage == 0 || usagePage == (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)) && (usage == 0 || usage == (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)) {
+// swiftlint:enable force_cast
 
             let hidDevice = hidDeviceType.init(manager: manager, device: device)
             let userInfo = ["device": hidDevice]
@@ -37,8 +37,10 @@ class HIDRaw {
         }
     }
 
-    private func removed(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) -> Void {
+    private func removed(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) {
+// swiftlint:disable force_cast
         if (usagePage == 0 || usagePage == (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)) && (usage == 0 || usage == (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)) {
+// swiftlint:enable force_cast
 
             if let removedDevice = enumeratedDevices[device] {
                 let userInfo = ["device": removedDevice]

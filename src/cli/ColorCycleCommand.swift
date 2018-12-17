@@ -29,19 +29,19 @@ public struct ColorCycleCommand: CommandProtocol {
     public func run(_ options: Options) -> Result<(), CLIError> {
         let cli = CLI()
 
-        typealias CK550Speed = CK550Command.OffEffectColorCycleSpeed
+        typealias CK550Speed = CK550Command.OffEffectOverride.ColorCycle.Speed
         var speed: CK550Speed {
             switch options.speed {
             case .highest:
-                return CK550Speed.Highest
+                return CK550Speed.highest
             case .higher:
-                return CK550Speed.Higher
+                return CK550Speed.higher
             case .middle:
-                return CK550Speed.Middle
+                return CK550Speed.middle
             case .lower:
-                return CK550Speed.Lower
+                return CK550Speed.lower
             case .lowest:
-                return CK550Speed.Lowest
+                return CK550Speed.lowest
             }
         }
 

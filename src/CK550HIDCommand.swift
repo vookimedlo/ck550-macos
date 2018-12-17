@@ -13,29 +13,29 @@ class CK550HIDCommand: CK550HIDDeviceCommand, CK550HIDClientCommand {
     private var expectedResponses: Queue<[uint8]> = Queue<[uint8]>()
 
     private(set) var responses: Queue<[uint8]> = Queue<[uint8]>()
-    private(set) var processedMessage: [uint8]? = nil
-    private(set) var processedResponse: [uint8]? = nil
-    private(set) var processedExpectedResponse: [uint8]? = nil
+    private(set) var processedMessage: [uint8]?
+    private(set) var processedResponse: [uint8]?
+    private(set) var processedExpectedResponse: [uint8]?
     private(set) var result: Result = .notProcessed
 
-    func addOutgoingMessage(_ packet: [uint8], createExpectedResponse: Bool = true) -> Void {
+    func addOutgoingMessage(_ packet: [uint8], createExpectedResponse: Bool = true) {
         messages.enqueue(packet)
         if createExpectedResponse {
-            addExpectedResponse(Array<uint8>(packet.prefix(2)))
+            addExpectedResponse([uint8](packet.prefix(2)))
         }
     }
 
-    func addExpectedResponse(_ packet: [uint8]) -> Void {
+    func addExpectedResponse(_ packet: [uint8]) {
         expectedResponses.enqueue(packet)
     }
 
-    func addIncomingResponse(_ packet: [uint8]) -> Void {
+    func addIncomingResponse(_ packet: [uint8]) {
         processedResponse = packet
         if let processedExpectedResponse = expectedResponses.dequeue() {
             if packet.starts(with: processedExpectedResponse) {
                 responses.enqueue(packet)
                 if expectedResponses.count() == 0 {
-                    result = .ok
+                    result = .succeeded
                 }
             } else {
                 self.processedExpectedResponse = processedExpectedResponse
@@ -44,18 +44,18 @@ class CK550HIDCommand: CK550HIDDeviceCommand, CK550HIDClientCommand {
         }
     }
 
-    func reportResponseTimeout() -> Void {
+    func reportResponseTimeout() {
         result = .responseTimedout
     }
 
-    func reportWriteFailure() -> Void {
+    func reportWriteFailure() {
         result = .writeFailed
     }
 
     func nextMessage() -> [uint8]? {
         processedMessage = messages.dequeue()
         if processedMessage == nil && !waitsForAnotherResponse() {
-            result = .ok
+            result = .succeeded
         }
         return processedMessage
     }

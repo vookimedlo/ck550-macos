@@ -9,20 +9,20 @@
 import Foundation
 
 extension AssembleCommand {
-    static func assembleCommandStars(key: RGBColor, background: RGBColor, speed: CK550Command.OffEffectStarsSpeed) throws -> CK550HIDCommand {
+    static func assembleCommandStars(key: RGBColor, background: RGBColor, speed: CK550Command.OffEffectOverride.Stars.Speed) throws -> CK550HIDCommand {
         let command = CK550HIDCommand()
         command.addOutgoingMessage(CK550Command.setEffectControl)
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.enableOffEffectModification)
 
-        command.addOutgoingMessage(CK550Command.setOffEffectStarsUNKNOWN_BEFORE_PACKETS)
+        command.addOutgoingMessage(CK550Command.OffEffectOverride.Stars.setEffectUNKNOWN_BEFORE_PACKETS)
 
-        let packets = CK550Command.setOffEffectStars(background: background, key: key, speed: speed)
+        let packets = CK550Command.OffEffectOverride.Stars.setEffect(background: background, key: key, speed: speed)
         for packet in packets {
             command.addOutgoingMessage(packet)
         }
 
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.setFirmwareControl)
 
         return command

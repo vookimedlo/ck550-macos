@@ -1,0 +1,10 @@
+# rule identifiers to exclude from running
+disabled_rules:
+- function_body_length
+- line_length
+- nesting
+
+force_cast: warning
+cyclomatic_complexity:
+  ignores_case_statements: true
+  

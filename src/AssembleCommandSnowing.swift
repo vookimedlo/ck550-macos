@@ -9,20 +9,20 @@
 import Foundation
 
 extension AssembleCommand {
-    static func assembleCommandSnowing(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSnowingSpeed) throws -> CK550HIDCommand {
+    static func assembleCommandSnowing(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectOverride.Snowing.Speed) throws -> CK550HIDCommand {
         let command = CK550HIDCommand()
         command.addOutgoingMessage(CK550Command.setEffectControl)
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.enableOffEffectModification)
 
-        command.addOutgoingMessage(CK550Command.setOffEffectSnowingUNKNOWN_BEFORE_PACKETS)
+        command.addOutgoingMessage(CK550Command.OffEffectOverride.Snowing.setEffectUNKNOWN_BEFORE_PACKETS)
 
-        let packets = CK550Command.setOffEffectSnowing(background: background, key: key, speed: speed)
+        let packets = CK550Command.OffEffectOverride.Snowing.setEffect(background: background, key: key, speed: speed)
         for packet in packets {
             command.addOutgoingMessage(packet)
         }
 
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.setFirmwareControl)
 
         return command

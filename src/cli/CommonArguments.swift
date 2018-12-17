@@ -10,11 +10,11 @@ import Foundation
 import Commandant
 
 public enum SpeedArgument: String, ArgumentProtocol, CustomStringConvertible {
-    case highest = "highest"
-    case higher = "higher"
-    case middle = "middle"
-    case lower = "lower"
-    case lowest = "lowest"
+    case highest
+    case higher
+    case middle
+    case lower
+    case lowest
 
     public var description: String {
         return self.rawValue

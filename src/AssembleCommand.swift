@@ -10,12 +10,8 @@ import Foundation
 
 class AssembleCommand {
     enum AssembleError: Error {
-        case FileReadFailure(path: String)
-        case InvalidFormatJSON
-        case UnknownError
+        case fileReadFailure(path: String)
+        case invalidFormatJSON
+        case unknownError
     }
 }
-
-
-
-

@@ -12,21 +12,14 @@ class EvaluationSupport {
     private var errors: [CLIError] = []
 
     var hasFailed: Bool {
-        get {
-            return !errors.isEmpty
-        }
+        return !errors.isEmpty
     }
-
     var failedResults: [CLIError] {
-        get {
-            return errors
-        }
+        return errors
     }
 
     var firstFailure: CLIError? {
-        get {
-            return errors.first
-        }
+        return errors.first
     }
 
     func evaluateColor(color: [Int]) -> CLIError {

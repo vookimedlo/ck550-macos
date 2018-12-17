@@ -13,8 +13,8 @@ import Curry
 
 public struct CircleSpectrumCommand: CommandProtocol {
     public enum CircleSpectrumDirectionArgument: String, ArgumentProtocol, CustomStringConvertible {
-        case clockwise = "clockwise"
-        case counterclockwise = "counterclockwise"
+        case clockwise
+        case counterclockwise
 
         public var description: String {
             return self.rawValue
@@ -50,22 +50,22 @@ public struct CircleSpectrumCommand: CommandProtocol {
             return .failure(evalSupport.firstFailure!)
         }
 
-        typealias CK550Speed = CK550Command.OffEffectCircleSpectrumSpeed
+        typealias CK550Speed = CK550Command.OffEffectOverride.CircleSpectrum.Speed
         var speed: CK550Speed {
             switch options.speed {
-            case .highest: return CK550Speed.Highest
-            case .higher:  return CK550Speed.Higher
-            case .middle:  return CK550Speed.Middle
-            case .lower:   return CK550Speed.Lower
-            case .lowest:  return CK550Speed.Lowest
+            case .highest: return CK550Speed.highest
+            case .higher:  return CK550Speed.higher
+            case .middle:  return CK550Speed.middle
+            case .lower:   return CK550Speed.lower
+            case .lowest:  return CK550Speed.lowest
             }
         }
 
-        typealias CircleSpectrumDirection = CK550Command.OffEffectCircleSpectrumDirection
+        typealias CircleSpectrumDirection = CK550Command.OffEffectOverride.CircleSpectrum.Direction
         var direction: CircleSpectrumDirection {
             switch options.direction {
-            case .clockwise: return CircleSpectrumDirection.Clockwise
-            case .counterclockwise: return CircleSpectrumDirection.Counterclockwise
+            case .clockwise: return CircleSpectrumDirection.clockwise
+            case .counterclockwise: return CircleSpectrumDirection.counterclockwise
             }
         }
 

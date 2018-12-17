@@ -16,36 +16,26 @@ class HIDDevice: HIDDeviceProtocol {
     private let inputBufferSize = 64
     private let inputBuffer: UnsafeMutablePointer<UInt8>
 
+// swiftlint:disable force_cast
     var manufacturer: String? {
-        get {
-            return IOHIDDeviceGetProperty(device, "Manufacturer" as CFString) as! String?
-        }
+        return IOHIDDeviceGetProperty(device, "Manufacturer" as CFString) as! String?
     }
     var product: String? {
-        get {
-            return IOHIDDeviceGetProperty(device, "Product" as CFString) as! String?
-        }
+        return IOHIDDeviceGetProperty(device, "Product" as CFString) as! String?
     }
     var vendorID: UInt32 {
-        get {
-            return (IOHIDDeviceGetProperty(device, "VendorID" as CFString) as! UInt32)
-        }
+        return (IOHIDDeviceGetProperty(device, "VendorID" as CFString) as! UInt32)
     }
     var productID: UInt32 {
-        get {
-            return (IOHIDDeviceGetProperty(device, "ProductID" as CFString) as! UInt32)
-        }
+        return (IOHIDDeviceGetProperty(device, "ProductID" as CFString) as! UInt32)
     }
     var usagePage: UInt32 {
-        get {
-            return (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)
-        }
+        return (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)
     }
     var usage: UInt32 {
-        get {
-            return (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)
-        }
+        return (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)
     }
+// swiftlint:enable force_cast
 
     required init(manager: IOHIDManager, device: IOHIDDevice) {
         self.manager = manager
@@ -69,13 +59,13 @@ class HIDDevice: HIDDeviceProtocol {
             }
             let this: HIDDevice = Unmanaged<HIDDevice>.fromOpaque(context!).takeUnretainedValue()
             let buffer = UnsafeMutableBufferPointer(start: inputBuffer, count: inputBufferLength)
-            let receivedData = Array<uint8>(buffer)
+            let receivedData = [uint8](buffer)
             this.dataReceived(buffer: receivedData)
         }
 
         let this = Unmanaged.passRetained(self).toOpaque()
         IOHIDDeviceRegisterInputReportCallback(device, inputBuffer, inputBufferSize, inputCallback, this)
-        IOHIDDeviceScheduleWithRunLoop(device, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue);
+        IOHIDDeviceScheduleWithRunLoop(device, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue)
 
         return true
     }
@@ -86,10 +76,10 @@ class HIDDevice: HIDDeviceProtocol {
 
     func write(command: [uint8]) -> Bool {
         let pointerToCommand = UnsafePointer<uint8>(command)
-        return kIOReturnSuccess == IOHIDDeviceSetReport(device, kIOHIDReportTypeOutput, 0, pointerToCommand, command.count);
+        return kIOReturnSuccess == IOHIDDeviceSetReport(device, kIOHIDReportTypeOutput, 0, pointerToCommand, command.count)
     }
 
-    func dataReceived(buffer: [uint8]) -> Void {
+    func dataReceived(buffer: [uint8]) {
         // Override in a subclass
     }
 }

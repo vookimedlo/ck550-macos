@@ -9,20 +9,20 @@
 import Foundation
 
 extension AssembleCommand {
-    static func assembleCommandCircleSpectrum(direction: CK550Command.OffEffectCircleSpectrumDirection, speed: CK550Command.OffEffectCircleSpectrumSpeed) throws -> CK550HIDCommand {
+    static func assembleCommandCircleSpectrum(direction: CK550Command.OffEffectOverride.CircleSpectrum.Direction, speed: CK550Command.OffEffectOverride.CircleSpectrum.Speed) throws -> CK550HIDCommand {
         let command = CK550HIDCommand()
         command.addOutgoingMessage(CK550Command.setEffectControl)
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.enableOffEffectModification)
 
-        command.addOutgoingMessage(CK550Command.setOffEffectCircleSpectrumUNKNOWN_BEFORE_PACKETS)
+        command.addOutgoingMessage(CK550Command.OffEffectOverride.CircleSpectrum.setEffectUNKNOWN_BEFORE_PACKETS)
 
-        let packets = CK550Command.setOffEffectCircleSpectrum(direction: direction, speed: speed)
+        let packets = CK550Command.OffEffectOverride.CircleSpectrum.setEffect(direction: direction, speed: speed)
         for packet in packets {
             command.addOutgoingMessage(packet)
         }
 
-        command.addOutgoingMessage(CK550Command.setEffect(effectId: .Off))
+        command.addOutgoingMessage(CK550Command.setEffect(effectId: .off))
         command.addOutgoingMessage(CK550Command.setFirmwareControl)
 
         return command

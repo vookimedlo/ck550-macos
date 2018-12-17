@@ -17,12 +17,11 @@ class CK550HIDDevice: HIDDevice {
         super.init(manager: manager, device: device)
     }
 
-    override func dataReceived(buffer: [uint8]) -> Void {
+    override func dataReceived(buffer: [uint8]) {
         commandAccessMutex.wait()
         if let command = self.command {
             if !command.waitsForAnotherResponse() {
-                // TODO: remove print
-                print(Data(buffer).hexString())
+                Terminal.debug(Data(buffer).hexString())
                 waitForResponseMutex.signal()
             } else {
                 command.addIncomingResponse(buffer)
@@ -31,8 +30,7 @@ class CK550HIDDevice: HIDDevice {
                 }
             }
         } else {
-            // TODO: remove print
-            print(Data(buffer).hexString())
+            Terminal.debug(Data(buffer).hexString())
         }
         commandAccessMutex.signal()
     }
@@ -41,7 +39,7 @@ class CK550HIDDevice: HIDDevice {
         return super.write(command: command)
     }
 
-    func write(command: CK550HIDDeviceCommand) -> Void {
+    func write(command: CK550HIDDeviceCommand) {
         let shallWait = command.waitsForAnotherResponse()
         if shallWait {
             waitForResponseMutex = DispatchSemaphore(value: 0)

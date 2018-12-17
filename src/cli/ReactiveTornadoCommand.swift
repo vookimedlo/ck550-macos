@@ -13,8 +13,8 @@ import Curry
 
 public struct ReactiveTornadoCommand: CommandProtocol {
     public enum ReactiveTornadoDirectionArgument: String, ArgumentProtocol, CustomStringConvertible {
-        case clockwise = "clockwise"
-        case counterclockwise = "counterclockwise"
+        case clockwise
+        case counterclockwise
 
         public var description: String {
             return self.rawValue
@@ -50,22 +50,22 @@ public struct ReactiveTornadoCommand: CommandProtocol {
             return .failure(evalSupport.firstFailure!)
         }
 
-        typealias CK550Speed = CK550Command.OffEffectReactiveTornadoSpeed
+        typealias CK550Speed = CK550Command.OffEffectOverride.ReactiveTornado.Speed
         var speed: CK550Speed {
             switch options.speed {
-            case .highest: return CK550Speed.Highest
-            case .higher:  return CK550Speed.Higher
-            case .middle:  return CK550Speed.Middle
-            case .lower:   return CK550Speed.Lower
-            case .lowest:  return CK550Speed.Lowest
+            case .highest: return CK550Speed.highest
+            case .higher:  return CK550Speed.higher
+            case .middle:  return CK550Speed.middle
+            case .lower:   return CK550Speed.lower
+            case .lowest:  return CK550Speed.lowest
             }
         }
 
-        typealias ReactiveTornadoDirection = CK550Command.OffEffectReactiveTornadoDirection
+        typealias ReactiveTornadoDirection = CK550Command.OffEffectOverride.ReactiveTornado.Direction
         var direction: ReactiveTornadoDirection {
             switch options.direction {
-            case .clockwise: return ReactiveTornadoDirection.Clockwise
-            case .counterclockwise: return ReactiveTornadoDirection.Counterclockwise
+            case .clockwise: return ReactiveTornadoDirection.clockwise
+            case .counterclockwise: return ReactiveTornadoDirection.counterclockwise
             }
         }
 

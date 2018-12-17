@@ -11,9 +11,8 @@ import Foundation
 class CLI: NSObject, HIDDeviceEnumeratedHandler {
     private let dispatchQueue = DispatchQueue(label: "cli", qos: .utility)
     private let hid = HIDRaw(CK550HIDDevice.self)
-    private var hidDevice: CK550HIDDevice? = nil
-    private var onOpenFunction: () -> Void = {
-    }
+    private var hidDevice: CK550HIDDevice?
+    private var onOpenFunction: () -> Void = {}
 
     override init() {
         super.init()
@@ -33,8 +32,11 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             return
         }
 
+// swiftlint:disable force_cast
         let hidDevice = notification.userInfo?["device"] as! CK550HIDDevice
-        //LogDebug("Enumerated device: %@", hidDevice.manufacturer!, hidDevice.product!)
+// swiftlint:enable force_cast
+
+        logDebug("Enumerated device: %@", hidDevice.manufacturer!, hidDevice.product!)
 
         dispatchQueue.async {
             _ = self.open(hidDevice: hidDevice)
@@ -46,7 +48,9 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             return
         }
 
+// swiftlint:disable force_cast
         let hidDevice = notification.userInfo?["device"] as! HIDDevice
+// swiftlint:enable force_cast
         Terminal.important(" - Keyboard unplugged: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
 
         dispatchQueue.async {
@@ -59,7 +63,6 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
             return false
         }
         self.hidDevice = hidDevice
-
 
         Terminal.important(" - Keyboard detected: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
 
@@ -74,12 +77,12 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         return true
     }
 
-    func onOpen(_ function: @escaping () -> Void) -> Void {
+    func onOpen(_ function: @escaping () -> Void) {
         onOpenFunction = function
     }
 
     func printCommandResult(_ result: CK550HIDCommand.Result) {
-        if result == .ok {
+        if result == .succeeded {
             Terminal.ok("[", result, "]", separator: "")
         } else {
             Terminal.error("[", result, "]", separator: "")
@@ -93,7 +96,7 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
                 let command = try AssembleCommand.assembleCommandChangeProfile(profileId: profileId)
                 hidDevice.write(command: command)
                 printCommandResult(command.result)
-                return CK550HIDCommand.Result.ok == command.result
+                return CK550HIDCommand.Result.succeeded == command.result
             } catch {
                 Terminal.error("Unexpected error")
             }
@@ -101,116 +104,12 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         return false
     }
 
-    func setOffEffectSnowing(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSnowingSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting a snowing effect", "...", separator: " ", terminator: " ")
-            do {
-                let command = try AssembleCommand.assembleCommandSnowing(background: background, key: key, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
-    }
-
-    func setOffEffectOff() -> Void {
-        if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting an off effect", "...", separator: " ", terminator: " ")
-            do {
-                let command = try AssembleCommand.assembleCommandOff()
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
-    }
-
-    func setOffEffectStatic(color: RGBColor) -> Void {
-        if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting a static effect", "...", separator: " ", terminator: " ")
-            do {
-                let command = try AssembleCommand.assembleCommandStatic(color: color)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
-    }
-
-    func setOffEffectColorCycle(speed: CK550Command.OffEffectColorCycleSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting a color cycle effect", "...", separator: " ", terminator: " ")
-            do {
-                let command = try AssembleCommand.assembleCommandColorCycle(speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
-    }
-
-    func setOffEffectBreathing(speed: CK550Command.OffEffectBreathingSpeed, color: RGBColor? = nil) -> Void {
-        if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting a breathing effect", "...", separator: " ", terminator: " ")
-            do {
-                let command = try AssembleCommand.assembleCommandBreathing(speed: speed, color: color)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
-    }
-
-    func setOffEffectRipple(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectRippleSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting a ripple effect", "...", separator: " ", terminator: " ")
-            do {
-                let command = try AssembleCommand.assembleCommandRipple(background: background, key: key, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
-    }
-
-    func setOffEffectWave(color: RGBColor, direction: CK550Command.OffEffectWaveDirection, speed: CK550Command.OffEffectWaveSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting a wave effect", "...", separator: " ", terminator: " ")
-            do {
-                let command = try AssembleCommand.assembleCommandWave(color: color, direction: direction, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
-    }
-
-    func setOffEffectSingleKey(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectSingleKeySpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            do {
-                Terminal.general("   - Setting a single key effect", "...", separator: " ", terminator: " ")
-                let command = try AssembleCommand.assembleCommandSingleKey(background: background, key: key, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
-    }
-
     func getFirmwareVersion() -> String? {
         if let hidDevice = self.hidDevice {
             do {
                 let command = try AssembleCommand.assembleCommandFirmwareVersion()
                 hidDevice.write(command: command)
-                if command.result == .ok {
+                if command.result == .succeeded {
                     // Throw away a FW control response
                     _ = command.responses.dequeue()
                     let fwArray = command.responses.dequeue()?[0x08...0x21]
@@ -225,16 +124,16 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         return nil
     }
 
-    func setCustomColors(jsonPath: String) -> Void {
+    func setCustomColors(jsonPath: String) {
         if let hidDevice = self.hidDevice {
             Terminal.general("   - Setting a custom key color effect", "...", separator: " ", terminator: " ")
             do {
                 let command = try AssembleCommand.assembleCommandCustomization(configPath: jsonPath)
                 hidDevice.write(command: command)
                 printCommandResult(command.result)
-            } catch AssembleCommand.AssembleError.FileReadFailure(let path) {
+            } catch AssembleCommand.AssembleError.fileReadFailure(let path) {
                 Terminal.error("Cannot read configuration file:", path)
-            } catch AssembleCommand.AssembleError.InvalidFormatJSON {
+            } catch AssembleCommand.AssembleError.invalidFormatJSON {
                 Terminal.error("Configuration file has a wrong format", jsonPath)
             } catch {
                 Terminal.error("Unexpected error")
@@ -242,102 +141,91 @@ class CLI: NSObject, HIDDeviceEnumeratedHandler {
         }
     }
 
-    func setOffEffectStars(key: RGBColor, background: RGBColor, speed: CK550Command.OffEffectStarsSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            do {
-                Terminal.general("   - Setting a stars effect", "...", separator: " ", terminator: " ")
-                let command = try AssembleCommand.assembleCommandStars(key: key, background: background, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
+    func setOffEffectSnowing(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectOverride.Snowing.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandSnowing(background: background, key: key, speed: speed)},
+                                 description: "Setting a snowing effect")
     }
 
-    func setOffEffectReactiveTornado(direction: CK550Command.OffEffectReactiveTornadoDirection, speed: CK550Command.OffEffectReactiveTornadoSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            do {
-                Terminal.general("   - Setting a reactive tornado effect", "...", separator: " ", terminator: " ")
-                let command = try AssembleCommand.assembleCommandReactiveTornado(direction: direction, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
+    func setOffEffectOff() {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandOff()},
+                                 description: "Setting an off effect")
     }
 
-    func setOffEffectCircleSpectrum(speed: CK550Command.OffEffectCircleSpectrumSpeed, direction: CK550Command.OffEffectCircleSpectrumDirection) -> Void {
-        if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting a circle spectrum effect", "...", separator: " ", terminator: " ")
-            do {
-                let command = try AssembleCommand.assembleCommandCircleSpectrum(direction: direction, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
+    func setOffEffectStatic(color: RGBColor) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandStatic(color: color)},
+                                 description: "Setting a static effect")
     }
 
-    func setOffEffectFireball(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectFireballSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            do {
-                Terminal.general("   - Setting a fireball effect", "...", separator: " ", terminator: " ")
-                let command = try AssembleCommand.assembleCommandFireball(background: background, key: key, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
+    func setOffEffectColorCycle(speed: CK550Command.OffEffectOverride.ColorCycle.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandColorCycle(speed: speed)},
+                                 description: "Setting a color cycle effect")
     }
 
-    func setOffEffectHeartbeat(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectHeartbeatSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            do {
-                Terminal.general("   - Setting a heartbeat effect", "...", separator: " ", terminator: " ")
-                let command = try AssembleCommand.assembleCommandHeartbeat(background: background, key: key, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
+    func setOffEffectBreathing(speed: CK550Command.OffEffectOverride.Breathing.Speed, color: RGBColor? = nil) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandBreathing(speed: speed, color: color)},
+                                 description: "Setting a breathing effect")
     }
 
-    func setOffEffectReactivePunch(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectReactivePunchSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            do {
-                Terminal.general("   - Setting a reactive punch effect", "...", separator: " ", terminator: " ")
-                let command = try AssembleCommand.assembleCommandReactivePunch(background: background, key: key, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
+    func setOffEffectRipple(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectOverride.Ripple.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandRipple(background: background, key: key, speed: speed)},
+                                 description: "Setting a ripple effect")
     }
 
-    func setOffEffectWaterRipple(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectWaterRippleSpeed) -> Void {
-        if let hidDevice = self.hidDevice {
-            do {
-                Terminal.general("   - Setting a water ripple effect", "...", separator: " ", terminator: " ")
-                let command = try AssembleCommand.assembleCommandWaterRipple(background: background, key: key, speed: speed)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
+    func setOffEffectWave(color: RGBColor, direction: CK550Command.OffEffectOverride.Wave.Direction, speed: CK550Command.OffEffectOverride.Wave.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandWave(color: color, direction: direction, speed: speed)},
+                                 description: "Setting a wave effect")
     }
 
-    func setOffEffectCrosshair(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectCrosshairSpeed) -> Void {
+    func setOffEffectSingleKey(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectOverride.SingleKey.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandSingleKey(background: background, key: key, speed: speed)},
+                                 description: "Setting a single key effect")
+    }
+
+    func setOffEffectStars(key: RGBColor, background: RGBColor, speed: CK550Command.OffEffectOverride.Stars.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandStars(key: key, background: background, speed: speed)},
+                                 description: "Setting a stars effect")
+    }
+
+    func setOffEffectReactiveTornado(direction: CK550Command.OffEffectOverride.ReactiveTornado.Direction, speed: CK550Command.OffEffectOverride.ReactiveTornado.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandReactiveTornado(direction: direction, speed: speed)},
+                                 description: "Setting a reactive tornado effect")
+    }
+
+    func setOffEffectCircleSpectrum(speed: CK550Command.OffEffectOverride.CircleSpectrum.Speed, direction: CK550Command.OffEffectOverride.CircleSpectrum.Direction) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandCircleSpectrum(direction: direction, speed: speed)},
+                                 description: "Setting a circle spectrum effect")
+    }
+
+    func setOffEffectFireball(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectOverride.Fireball.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandFireball(background: background, key: key, speed: speed)},
+                                 description: "Setting a fireball effect")
+    }
+
+    func setOffEffectHeartbeat(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectOverride.Heartbeat.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandHeartbeat(background: background, key: key, speed: speed)},
+                                 description: "Setting a heartbeat effect")
+    }
+
+    func setOffEffectReactivePunch(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectOverride.ReactivePunch.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandReactivePunch(background: background, key: key, speed: speed)},
+                                 description: "Setting a reactive punch effect")
+    }
+
+    func setOffEffectWaterRipple(background: RGBColor, key: RGBColor?, speed: CK550Command.OffEffectOverride.WaterRipple.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandWaterRipple(background: background, key: key, speed: speed)},
+                                 description: "Setting a water ripple effect")
+    }
+
+    func setOffEffectCrosshair(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectOverride.Crosshair.Speed) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandCrosshair(background: background, key: key, speed: speed)},
+                                 description: "Setting a crosshair effect")
+    }
+
+    func executeOffOverrideEffect(_ commandCreation: () throws -> CK550HIDCommand, description: String) {
         if let hidDevice = self.hidDevice {
             do {
-                Terminal.general("   - Setting a crosshair effect", "...", separator: " ", terminator: " ")
-                let command = try AssembleCommand.assembleCommandCrosshair(background: background, key: key, speed: speed)
+                Terminal.general("   - " + description, "...", separator: " ", terminator: " ")
+                let command = try commandCreation()
                 hidDevice.write(command: command)
                 printCommandResult(command.result)
             } catch {

@@ -9,16 +9,31 @@
 import Foundation
 import os.log
 
-func LogDebug(_ format: StaticString, _ args: CVarArg...) {
+#if DEBUG
+private func inDebugSession() -> Bool {
+    var info = kinfo_proc()
+    var mib: [Int32] = [CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()]
+    var size = MemoryLayout<kinfo_proc>.size(ofValue: info)
+    let junk = sysctl(&mib, UInt32(mib.count), &info, &size, nil, 0)
+    assert(junk == 0, "sysctl failed")
+    return (info.kp_proc.p_flag & P_TRACED) != 0
+}
+
+private let isDebugged: Bool = inDebugSession()
+#endif
+
+func logDebug(_ format: StaticString, _ args: CVarArg...) {
     #if DEBUG
-    os_log(format, type: .debug, args)
+    if isDebugged {
+        os_log(format, type: .debug, args)
+    }
     #endif
 }
 
-func LogError(_ format: StaticString, _ args: CVarArg...) {
+func logError(_ format: StaticString, _ args: CVarArg...) {
     os_log(format, type: .error, args)
 }
 
-func LogInfo(_ format: StaticString, _ args: CVarArg...) {
+func logInfo(_ format: StaticString, _ args: CVarArg...) {
     os_log(format, type: .info, args)
 }

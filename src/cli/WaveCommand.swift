@@ -55,24 +55,24 @@ public struct WaveCommand: CommandProtocol {
             return .failure(evalSupport.firstFailure!)
         }
 
-        typealias CK550Speed = CK550Command.OffEffectWaveSpeed
+        typealias CK550Speed = CK550Command.OffEffectOverride.Wave.Speed
         var speed: CK550Speed {
             switch options.speed {
-            case .highest: return CK550Speed.Highest
-            case .higher:  return CK550Speed.Higher
-            case .middle:  return CK550Speed.Middle
-            case .lower:   return CK550Speed.Lower
-            case .lowest:  return CK550Speed.Lowest
+            case .highest: return CK550Speed.highest
+            case .higher:  return CK550Speed.higher
+            case .middle:  return CK550Speed.middle
+            case .lower:   return CK550Speed.lower
+            case .lowest:  return CK550Speed.lowest
             }
         }
 
-        typealias WaveDirection = CK550Command.OffEffectWaveDirection
+        typealias WaveDirection = CK550Command.OffEffectOverride.Wave.Direction
         var direction: WaveDirection {
             switch options.direction {
-            case .bottomToTop: return WaveDirection.BottomToTop
-            case .leftToRight: return WaveDirection.LeftToRight
-            case .rightToLeft: return WaveDirection.RightToLeft
-            case .topToBottom: return WaveDirection.TopToBottom
+            case .bottomToTop: return WaveDirection.bottomToTop
+            case .leftToRight: return WaveDirection.leftToRight
+            case .rightToLeft: return WaveDirection.rightToLeft
+            case .topToBottom: return WaveDirection.topToBottom
             }
         }
 

@@ -37,35 +37,8 @@
 		8D20656321BC7394000FF8E4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C421AD63BB007746B6 /* Data.swift */; };
 		8D20656421BC7394000FF8E4 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C521AD63BB007746B6 /* Logging.swift */; };
 		8D20656521BC7469000FF8E4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6CF21AD64A7007746B6 /* main.swift */; };
-		8D34C6F621AD7B11007746B6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6CF21AD64A7007746B6 /* main.swift */; };
-		8D34C6F721AD7B11007746B6 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C821AD63CA007746B6 /* Bridging-Header.h */; };
-		8D34C6F821AD7B11007746B6 /* CK550Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B521AD6393007746B6 /* CK550Command.swift */; };
-		8D34C6F921AD7B11007746B6 /* CK550CommandEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */; };
-		8D34C6FA21AD7B11007746B6 /* CK550CommandCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */; };
-		8D34C6FB21AD7B11007746B6 /* CK550CommandFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */; };
-		8D34C6FC21AD7B11007746B6 /* CK550CommandProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B821AD6393007746B6 /* CK550CommandProfiles.swift */; };
-		8D34C6FD21AD7B11007746B6 /* HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */; };
-		8D34C6FE21AD7B11007746B6 /* HIDRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */; };
-		8D34C6FF21AD7B11007746B6 /* HIDEnumerationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C221AD63B2007746B6 /* HIDEnumerationNotification.swift */; };
-		8D34C70021AD7B11007746B6 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C421AD63BB007746B6 /* Data.swift */; };
-		8D34C70121AD7B11007746B6 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C521AD63BB007746B6 /* Logging.swift */; };
-		8D34C70321ADE932007746B6 /* HIDDeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C70221ADE932007746B6 /* HIDDeviceProtocol.swift */; };
-		8D34C70821ADF458007746B6 /* CK550HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C70721ADF458007746B6 /* CK550HIDDevice.swift */; };
-		8D34C70A21AED604007746B6 /* CK550HIDCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C70921AED604007746B6 /* CK550HIDCommand.swift */; };
-		8D34C71121AEDC19007746B6 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71021AEDC19007746B6 /* Queue.swift */; };
-		8D34C71321AF168F007746B6 /* CK550HIDDeviceCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71221AF168F007746B6 /* CK550HIDDeviceCommand.swift */; };
-		8D34C71521AF173C007746B6 /* CK550HIDClientCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71421AF173C007746B6 /* CK550HIDClientCommand.swift */; };
-		8D34C71A21B1E125007746B6 /* CK550CommandSingleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71921B1E125007746B6 /* CK550CommandSingleKey.swift */; };
-		8D34C71C21B315A1007746B6 /* CK550CommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */; };
-		8D34C71E21B32665007746B6 /* CK550CommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */; };
-		8D4281F821B4684500EB1F76 /* CK550CommandColorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */; };
-		8D4281FA21B46B2D00EB1F76 /* CK550CommandSnowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */; };
-		8D4281FC21B4738E00EB1F76 /* CK550CommandStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FB21B4738E00EB1F76 /* CK550CommandStars.swift */; };
-		8D4281FE21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */; };
-		8D42820021B4842100EB1F76 /* CK550CommandCircleSpectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */; };
-		8D49DCA221B5A8B900BAC6F8 /* CK550CommandStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */; };
-		8D49DCA421B5A9AC00BAC6F8 /* CK550CommandOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */; };
-		8D49DCA621B5BD1500BAC6F8 /* CK550CommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */; };
+		8D2214C921C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2214C821C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift */; };
+		8D2214CB21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2214CA21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift */; };
 		8D72819321C2F5DB00963B1D /* EvaluationSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819021C2F27A00963B1D /* EvaluationSupport.swift */; };
 		8D72819621C307CD00963B1D /* CommonArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819421C307B100963B1D /* CommonArguments.swift */; };
 		8D72819821C30EA900963B1D /* SingleKeyCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819721C30EA900963B1D /* SingleKeyCommand.swift */; };
@@ -141,21 +114,14 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D34C6ED21AD7A85007746B6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		8D20653321BC72CF000FF8E4 /* ck550-cli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ck550-cli.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D20654221BC7359000FF8E4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cli/Info.plist; sourceTree = "<group>"; };
+		8D2214C821C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550OffEffectCustomizationLayout.swift; sourceTree = "<group>"; };
+		8D2214CA21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550OffEffectCustomizationLayoutUS.swift; sourceTree = "<group>"; };
 		8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandFirmware.swift; sourceTree = "<group>"; };
 		8D34C6B521AD6393007746B6 /* CK550Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550Command.swift; sourceTree = "<group>"; };
 		8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandEffects.swift; sourceTree = "<group>"; };
@@ -168,7 +134,6 @@
 		8D34C6C521AD63BB007746B6 /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		8D34C6C821AD63CA007746B6 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8D34C6CF21AD64A7007746B6 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = cli/main.swift; sourceTree = "<group>"; };
-		8D34C6EF21AD7A85007746B6 /* ck550-cli-dev */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ck550-cli-dev"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D34C70221ADE932007746B6 /* HIDDeviceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIDDeviceProtocol.swift; sourceTree = "<group>"; };
 		8D34C70721ADF458007746B6 /* CK550HIDDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550HIDDevice.swift; sourceTree = "<group>"; };
 		8D34C70921AED604007746B6 /* CK550HIDCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550HIDCommand.swift; sourceTree = "<group>"; };
@@ -255,16 +220,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D34C6EC21AD7A85007746B6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D2214C721C83603006609D3 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				8D2214C821C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift */,
+				8D2214CA21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
 		8D34C6A521AD62E1007746B6 /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +364,7 @@
 		8D34C71821B1E0AA007746B6 /* off effect overrides */ = {
 			isa = PBXGroup;
 			children = (
+				8D2214C721C83603006609D3 /* Layout */,
 				8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */,
 				8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */,
 				8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */,
@@ -476,7 +444,6 @@
 		8DADC2AA219857FA008F0641 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D34C6EF21AD7A85007746B6 /* ck550-cli-dev */,
 				8D20653321BC72CF000FF8E4 /* ck550-cli.app */,
 			);
 			name = Products;
@@ -525,6 +492,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D20653E21BC72D1000FF8E4 /* Build configuration list for PBXNativeTarget "ck550-cli" */;
 			buildPhases = (
+				8D389ABB21C6FC3D00C4BAC8 /* Lint Sources */,
 				8D20652F21BC72CF000FF8E4 /* Sources */,
 				8D20653021BC72CF000FF8E4 /* Frameworks */,
 				8D20653121BC72CF000FF8E4 /* Resources */,
@@ -540,23 +508,6 @@
 			productName = "ck550-cli";
 			productReference = 8D20653321BC72CF000FF8E4 /* ck550-cli.app */;
 			productType = "com.apple.product-type.application";
-		};
-		8D34C6EE21AD7A85007746B6 /* ck550-cli-dev */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8D34C6F321AD7A85007746B6 /* Build configuration list for PBXNativeTarget "ck550-cli-dev" */;
-			buildPhases = (
-				8D34C6EB21AD7A85007746B6 /* Sources */,
-				8D34C6EC21AD7A85007746B6 /* Frameworks */,
-				8D34C6ED21AD7A85007746B6 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ck550-cli-dev";
-			productName = "ck550-cli";
-			productReference = 8D34C6EF21AD7A85007746B6 /* ck550-cli-dev */;
-			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -577,9 +528,6 @@
 							};
 						};
 					};
-					8D34C6EE21AD7A85007746B6 = {
-						CreatedOnToolsVersion = 10.0;
-					};
 				};
 			};
 			buildConfigurationList = 8DADC2A4219857FA008F0641 /* Build configuration list for PBXProject "ck550" */;
@@ -595,7 +543,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D34C6EE21AD7A85007746B6 /* ck550-cli-dev */,
 				8D20653221BC72CF000FF8E4 /* ck550-cli */,
 			);
 		};
@@ -660,6 +607,24 @@
 			shellPath = /bin/sh;
 			shellScript = "cp -v \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}\"\n";
 		};
+		8D389ABB21C6FC3D00C4BAC8 /* Lint Sources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Lint Sources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -704,6 +669,7 @@
 				8D7281A221C3EA8B00963B1D /* StaticCommand.swift in Sources */,
 				8D7281B221C4346300963B1D /* StarsCommand.swift in Sources */,
 				8D20655621BC7394000FF8E4 /* CK550Command.swift in Sources */,
+				8D2214CB21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift in Sources */,
 				8D966E5421C186A3009AF6E6 /* VersionCommand.swift in Sources */,
 				8D75FAD621C5A88300574CF1 /* CrosshairCommand.swift in Sources */,
 				8D75FAD421C5A6FC00574CF1 /* AssembleCommandCrosshair.swift in Sources */,
@@ -724,6 +690,7 @@
 				8D72819E21C3D13E00963B1D /* WaveCommand.swift in Sources */,
 				8D75FABE21C5538E00574CF1 /* CK550CommandReactivePunch.swift in Sources */,
 				8D7281AA21C4289F00963B1D /* AssembleCommandCircleSpectrum.swift in Sources */,
+				8D2214C921C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift in Sources */,
 				8D966E4621C031C5009AF6E6 /* AssembleCommandProfile.swift in Sources */,
 				8D75FAC821C596BB00574CF1 /* WaterRippleCommand.swift in Sources */,
 				8D966E6121C1BD8D009AF6E6 /* BreathingCommand.swift in Sources */,
@@ -744,42 +711,6 @@
 				8D20656321BC7394000FF8E4 /* Data.swift in Sources */,
 				8D20656421BC7394000FF8E4 /* Logging.swift in Sources */,
 				8D75FAC021C58A5300574CF1 /* CK550CommandHeartbeat.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8D34C6EB21AD7A85007746B6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D42820021B4842100EB1F76 /* CK550CommandCircleSpectrum.swift in Sources */,
-				8D34C70321ADE932007746B6 /* HIDDeviceProtocol.swift in Sources */,
-				8D49DCA421B5A9AC00BAC6F8 /* CK550CommandOff.swift in Sources */,
-				8D34C6F621AD7B11007746B6 /* main.swift in Sources */,
-				8D34C6F721AD7B11007746B6 /* Bridging-Header.h in Sources */,
-				8D4281FE21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift in Sources */,
-				8D34C71C21B315A1007746B6 /* CK550CommandWave.swift in Sources */,
-				8D34C71321AF168F007746B6 /* CK550HIDDeviceCommand.swift in Sources */,
-				8D34C6F821AD7B11007746B6 /* CK550Command.swift in Sources */,
-				8D4281FC21B4738E00EB1F76 /* CK550CommandStars.swift in Sources */,
-				8D34C71521AF173C007746B6 /* CK550HIDClientCommand.swift in Sources */,
-				8D34C6F921AD7B11007746B6 /* CK550CommandEffects.swift in Sources */,
-				8D34C6FA21AD7B11007746B6 /* CK550CommandCustomization.swift in Sources */,
-				8D34C71A21B1E125007746B6 /* CK550CommandSingleKey.swift in Sources */,
-				8D34C70821ADF458007746B6 /* CK550HIDDevice.swift in Sources */,
-				8D34C6FB21AD7B11007746B6 /* CK550CommandFirmware.swift in Sources */,
-				8D34C6FC21AD7B11007746B6 /* CK550CommandProfiles.swift in Sources */,
-				8D34C6FD21AD7B11007746B6 /* HIDDevice.swift in Sources */,
-				8D34C6FE21AD7B11007746B6 /* HIDRaw.swift in Sources */,
-				8D4281FA21B46B2D00EB1F76 /* CK550CommandSnowing.swift in Sources */,
-				8D34C71121AEDC19007746B6 /* Queue.swift in Sources */,
-				8D49DCA621B5BD1500BAC6F8 /* CK550CommandBreathing.swift in Sources */,
-				8D34C6FF21AD7B11007746B6 /* HIDEnumerationNotification.swift in Sources */,
-				8D34C70021AD7B11007746B6 /* Data.swift in Sources */,
-				8D49DCA221B5A8B900BAC6F8 /* CK550CommandStatic.swift in Sources */,
-				8D34C70121AD7B11007746B6 /* Logging.swift in Sources */,
-				8D34C70A21AED604007746B6 /* CK550HIDCommand.swift in Sources */,
-				8D34C71E21B32665007746B6 /* CK550CommandRipple.swift in Sources */,
-				8D4281F821B4684500EB1F76 /* CK550CommandColorCycle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,26 +752,6 @@
 					"@executable_path/ck550-cli.app/Contents/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.vookimedlo.coolmaster.hid.ck550-cli";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-			};
-			name = Release;
-		};
-		8D34C6F421AD7A85007746B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3HRQ8E2SZ4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-			};
-			name = Debug;
-		};
-		8D34C6F521AD7A85007746B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3HRQ8E2SZ4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -971,15 +882,6 @@
 			buildConfigurations = (
 				8D20653F21BC72D1000FF8E4 /* Debug */,
 				8D20654021BC72D1000FF8E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8D34C6F321AD7A85007746B6 /* Build configuration list for PBXNativeTarget "ck550-cli-dev" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8D34C6F421AD7A85007746B6 /* Debug */,
-				8D34C6F521AD7A85007746B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

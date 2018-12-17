@@ -36,19 +36,19 @@ public struct BreathingCommand: CommandProtocol {
             return .failure(evalSupport.firstFailure!)
         }
 
-        typealias CK550Speed = CK550Command.OffEffectBreathingSpeed
+        typealias CK550Speed = CK550Command.OffEffectOverride.Breathing.Speed
         var speed: CK550Speed {
             switch options.speed {
             case .highest:
-                return CK550Speed.Highest
+                return CK550Speed.highest
             case .higher:
-                return CK550Speed.Higher
+                return CK550Speed.higher
             case .middle:
-                return CK550Speed.Middle
+                return CK550Speed.middle
             case .lower:
-                return CK550Speed.Lower
+                return CK550Speed.lower
             case .lowest:
-                return CK550Speed.Lowest
+                return CK550Speed.lowest
             }
         }
 

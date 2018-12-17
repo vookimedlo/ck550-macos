@@ -19,6 +19,6 @@ protocol HIDDeviceProtocol {
     init(manager: IOHIDManager, device: IOHIDDevice)
     func open(options: IOOptionBits) -> Bool
     func close(options: IOOptionBits) -> Bool
-    func dataReceived(buffer: [uint8]) -> Void
+    func dataReceived(buffer: [uint8])
     func write(command: [uint8]) -> Bool
 }
