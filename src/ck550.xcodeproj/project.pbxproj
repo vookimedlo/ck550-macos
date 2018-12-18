@@ -76,6 +76,9 @@
 		8D84AAD321C9723600087947 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D84AAD221C9723600087947 /* MainMenu.xib */; };
 		8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAD621C9799C00087947 /* StatusMenuController.swift */; };
 		8D84AAD921C9824D00087947 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAD821C9824D00087947 /* BundleExtension.swift */; };
+		8D84AADC21C989CE00087947 /* ToggleMonitoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */; };
+		8D84AADF21C9932E00087947 /* MonitoringNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AADE21C9932E00087947 /* MonitoringNotification.swift */; };
+		8D84AAE021C994FE00087947 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C521AD63BB007746B6 /* Logging.swift */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -198,6 +201,8 @@
 		8D84AAD221C9723600087947 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		8D84AAD621C9799C00087947 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		8D84AAD821C9824D00087947 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleMonitoringViewController.swift; sourceTree = "<group>"; };
+		8D84AADE21C9932E00087947 /* MonitoringNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringNotification.swift; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -447,6 +452,7 @@
 		8D84AAC321C970CE00087947 /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				8D84AADD21C992F900087947 /* Notifications */,
 				8D84AADA21C982AE00087947 /* Controllers */,
 				8D84AAD521C977F300087947 /* XIBs */,
 				8D84AAC421C970CE00087947 /* AppDelegate.swift */,
@@ -472,8 +478,17 @@
 			isa = PBXGroup;
 			children = (
 				8D84AAD621C9799C00087947 /* StatusMenuController.swift */,
+				8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8D84AADD21C992F900087947 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				8D84AADE21C9932E00087947 /* MonitoringNotification.swift */,
+			);
+			name = Notifications;
 			sourceTree = "<group>";
 		};
 		8D966E5221C1866D009AF6E6 /* command */ = {
@@ -812,7 +827,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D84AAE021C994FE00087947 /* Logging.swift in Sources */,
 				8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */,
+				8D84AADC21C989CE00087947 /* ToggleMonitoringViewController.swift in Sources */,
+				8D84AADF21C9932E00087947 /* MonitoringNotification.swift in Sources */,
 				8D84AAC721C970CE00087947 /* ViewController.swift in Sources */,
 				8D84AAC521C970CE00087947 /* AppDelegate.swift in Sources */,
 				8D84AAD921C9824D00087947 /* BundleExtension.swift in Sources */,
