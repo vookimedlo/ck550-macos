@@ -69,6 +69,13 @@
 		8D75FAD221C5A4A800574CF1 /* CK550CommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */; };
 		8D75FAD421C5A6FC00574CF1 /* AssembleCommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */; };
 		8D75FAD621C5A88300574CF1 /* CrosshairCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD521C5A88300574CF1 /* CrosshairCommand.swift */; };
+		8D84AAC521C970CE00087947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAC421C970CE00087947 /* AppDelegate.swift */; };
+		8D84AAC721C970CE00087947 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAC621C970CE00087947 /* ViewController.swift */; };
+		8D84AAC921C970D300087947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D84AAC821C970D300087947 /* Assets.xcassets */; };
+		8D84AACC21C970D300087947 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D84AACA21C970D300087947 /* Main.storyboard */; };
+		8D84AAD321C9723600087947 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D84AAD221C9723600087947 /* MainMenu.xib */; };
+		8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAD621C9799C00087947 /* StatusMenuController.swift */; };
+		8D84AAD921C9824D00087947 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAD821C9824D00087947 /* BundleExtension.swift */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -181,6 +188,16 @@
 		8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandCrosshair.swift; sourceTree = "<group>"; };
 		8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCrosshair.swift; sourceTree = "<group>"; };
 		8D75FAD521C5A88300574CF1 /* CrosshairCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairCommand.swift; sourceTree = "<group>"; };
+		8D84AAC221C970CE00087947 /* ck550.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ck550.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D84AAC421C970CE00087947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8D84AAC621C970CE00087947 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8D84AAC821C970D300087947 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D84AACB21C970D300087947 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8D84AACD21C970D300087947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D84AACE21C970D300087947 /* ck550.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ck550.entitlements; sourceTree = "<group>"; };
+		8D84AAD221C9723600087947 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		8D84AAD621C9799C00087947 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		8D84AAD821C9824D00087947 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -217,6 +234,13 @@
 				8D109A3821BC80D9007F2C30 /* SwiftyJSON.framework in Frameworks */,
 				8D966E5021C1859C009AF6E6 /* Result.framework in Frameworks */,
 				8D966E5821C19993009AF6E6 /* Curry.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D84AABF21C970CE00087947 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +444,38 @@
 			name = effects;
 			sourceTree = "<group>";
 		};
+		8D84AAC321C970CE00087947 /* gui */ = {
+			isa = PBXGroup;
+			children = (
+				8D84AADA21C982AE00087947 /* Controllers */,
+				8D84AAD521C977F300087947 /* XIBs */,
+				8D84AAC421C970CE00087947 /* AppDelegate.swift */,
+				8D84AAC821C970D300087947 /* Assets.xcassets */,
+				8D84AAD821C9824D00087947 /* BundleExtension.swift */,
+				8D84AACE21C970D300087947 /* ck550.entitlements */,
+				8D84AACD21C970D300087947 /* Info.plist */,
+				8D84AAC621C970CE00087947 /* ViewController.swift */,
+			);
+			path = gui;
+			sourceTree = "<group>";
+		};
+		8D84AAD521C977F300087947 /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				8D84AACA21C970D300087947 /* Main.storyboard */,
+				8D84AAD221C9723600087947 /* MainMenu.xib */,
+			);
+			name = XIBs;
+			sourceTree = "<group>";
+		};
+		8D84AADA21C982AE00087947 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8D84AAD621C9799C00087947 /* StatusMenuController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		8D966E5221C1866D009AF6E6 /* command */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				8D20653321BC72CF000FF8E4 /* ck550-cli.app */,
+				8D84AAC221C970CE00087947 /* ck550.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -453,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				8DFD0D0221BDAC94009905CD /* shared */,
+				8D84AAC321C970CE00087947 /* gui */,
 				8D34C6CE21AD648B007746B6 /* cli */,
 			);
 			name = app;
@@ -509,6 +567,23 @@
 			productReference = 8D20653321BC72CF000FF8E4 /* ck550-cli.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8D84AAC121C970CE00087947 /* ck550 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D84AAD121C970D300087947 /* Build configuration list for PBXNativeTarget "ck550" */;
+			buildPhases = (
+				8D84AABE21C970CE00087947 /* Sources */,
+				8D84AABF21C970CE00087947 /* Frameworks */,
+				8D84AAC021C970CE00087947 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ck550;
+			productName = ck550;
+			productReference = 8D84AAC221C970CE00087947 /* ck550.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -528,6 +603,14 @@
 							};
 						};
 					};
+					8D84AAC121C970CE00087947 = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 8DADC2A4219857FA008F0641 /* Build configuration list for PBXProject "ck550" */;
@@ -544,6 +627,7 @@
 			projectRoot = "";
 			targets = (
 				8D20653221BC72CF000FF8E4 /* ck550-cli */,
+				8D84AAC121C970CE00087947 /* ck550 */,
 			);
 		};
 /* End PBXProject section */
@@ -553,6 +637,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D84AAC021C970CE00087947 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D84AAC921C970D300087947 /* Assets.xcassets in Resources */,
+				8D84AACC21C970D300087947 /* Main.storyboard in Resources */,
+				8D84AAD321C9723600087947 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,7 +808,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D84AABE21C970CE00087947 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */,
+				8D84AAC721C970CE00087947 /* ViewController.swift in Sources */,
+				8D84AAC521C970CE00087947 /* AppDelegate.swift in Sources */,
+				8D84AAD921C9824D00087947 /* BundleExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8D84AACA21C970D300087947 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D84AACB21C970D300087947 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8D20653F21BC72D1000FF8E4 /* Debug */ = {
@@ -752,6 +868,44 @@
 					"@executable_path/ck550-cli.app/Contents/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.vookimedlo.coolmaster.hid.ck550-cli";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		8D84AACF21C970D300087947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = gui/ck550.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3HRQ8E2SZ4;
+				INFOPLIST_FILE = gui/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.vookimedlo.coolmaster.hid.ck550;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		8D84AAD021C970D300087947 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = gui/ck550.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3HRQ8E2SZ4;
+				INFOPLIST_FILE = gui/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.vookimedlo.coolmaster.hid.ck550;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -882,6 +1036,15 @@
 			buildConfigurations = (
 				8D20653F21BC72D1000FF8E4 /* Debug */,
 				8D20654021BC72D1000FF8E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D84AAD121C970D300087947 /* Build configuration list for PBXNativeTarget "ck550" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D84AACF21C970D300087947 /* Debug */,
+				8D84AAD021C970D300087947 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
