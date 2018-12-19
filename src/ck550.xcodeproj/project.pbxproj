@@ -41,6 +41,8 @@
 		8D2214CB21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2214CA21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift */; };
 		8D6FB4C721C9A4B400C25DA6 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6FB4C621C9A4B400C25DA6 /* AboutWindow.xib */; };
 		8D6FB4C921CA614E00C25DA6 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */; };
+		8D6FB4CC21CA774B00C25DA6 /* LicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6FB4CB21CA774B00C25DA6 /* LicenseWindow.xib */; };
+		8D6FB4CE21CA77E100C25DA6 /* LicenseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */; };
 		8D72819321C2F5DB00963B1D /* EvaluationSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819021C2F27A00963B1D /* EvaluationSupport.swift */; };
 		8D72819621C307CD00963B1D /* CommonArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819421C307B100963B1D /* CommonArguments.swift */; };
 		8D72819821C30EA900963B1D /* SingleKeyCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819721C30EA900963B1D /* SingleKeyCommand.swift */; };
@@ -165,6 +167,8 @@
 		8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandBreathing.swift; sourceTree = "<group>"; };
 		8D6FB4C621C9A4B400C25DA6 /* AboutWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
 		8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
+		8D6FB4CB21CA774B00C25DA6 /* LicenseWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseWindow.xib; sourceTree = "<group>"; };
+		8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseWindowController.swift; sourceTree = "<group>"; };
 		8D72819021C2F27A00963B1D /* EvaluationSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EvaluationSupport.swift; path = cli/EvaluationSupport.swift; sourceTree = "<group>"; };
 		8D72819421C307B100963B1D /* CommonArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonArguments.swift; path = cli/CommonArguments.swift; sourceTree = "<group>"; };
 		8D72819721C30EA900963B1D /* SingleKeyCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingleKeyCommand.swift; path = cli/SingleKeyCommand.swift; sourceTree = "<group>"; };
@@ -481,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6FB4C621C9A4B400C25DA6 /* AboutWindow.xib */,
+				8D6FB4CB21CA774B00C25DA6 /* LicenseWindow.xib */,
 				8D84AACA21C970D300087947 /* Main.storyboard */,
 				8D84AAD221C9723600087947 /* MainMenu.xib */,
 			);
@@ -493,6 +498,7 @@
 				8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */,
 				8D84AAD621C9799C00087947 /* StatusMenuController.swift */,
 				8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */,
+				8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				8D84AACC21C970D300087947 /* Main.storyboard in Resources */,
 				8D84AAD321C9723600087947 /* MainMenu.xib in Resources */,
 				8D6FB4C721C9A4B400C25DA6 /* AboutWindow.xib in Resources */,
+				8D6FB4CC21CA774B00C25DA6 /* LicenseWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +851,7 @@
 			files = (
 				8D84AAE021C994FE00087947 /* Logging.swift in Sources */,
 				8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */,
+				8D6FB4CE21CA77E100C25DA6 /* LicenseWindowController.swift in Sources */,
 				8D84AADC21C989CE00087947 /* ToggleMonitoringViewController.swift in Sources */,
 				8D84AADF21C9932E00087947 /* MonitoringNotification.swift in Sources */,
 				8D84AAC721C970CE00087947 /* ViewController.swift in Sources */,

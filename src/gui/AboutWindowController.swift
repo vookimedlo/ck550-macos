@@ -11,8 +11,10 @@ import Cocoa
 
 class AboutWindowController: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var versionTextField: NSTextField!
+    private var licenseWindowController: LicenseWindowController?
     
     func windowWillClose(_ notification: Notification) {
+        licenseWindowController?.window?.close()
     }
     
     override func windowDidLoad() {
@@ -22,10 +24,21 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
     }
 
     @objc private func windowWillClose(notification: Notification) {
-
+        guard let object = notification.object as? NSWindow else { return }
+        NotificationCenter.default.removeObserver(self, name: NSWindow.willCloseNotification, object: object)
+        if object.isEqual(licenseWindowController?.window) {
+            licenseWindowController = nil
+        }
     }
     
     @IBAction func licenseAction(_ sender: NSButton) {
+        guard licenseWindowController == nil else {
+            licenseWindowController?.window?.orderFrontRegardless()
+            return
+        }
+        licenseWindowController = LicenseWindowController(windowNibName: NSNib.Name("LicenseWindow"))
+        NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: licenseWindowController?.window)
+        licenseWindowController?.window?.orderFrontRegardless()
     }
     
     @IBAction func releaseNotesAction(_ sender: NSButton) {
