@@ -13,7 +13,8 @@ class StatusMenuController: NSObject, MonitoringToggledHandler {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var toggleMonitoringViewController: ToggleMonitoringViewController!
     
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    private var aboutWindowController: AboutWindowController?
 
     override func awakeFromNib() {
         let monitoringPlaceHolder = statusMenu.item(withTag: 1)
@@ -34,7 +35,22 @@ class StatusMenuController: NSObject, MonitoringToggledHandler {
         logDebug("monitoring %@", notification.userInfo?["isEnabled"] as! Bool ? "enabled" : "disabled")
     }
     
+    @objc private func windowWillClose(notification: Notification) {
+        guard let object = notification.object as? NSWindow else { return }
+        NotificationCenter.default.removeObserver(self, name: NSWindow.willCloseNotification, object: object)
+        if object.isEqual(aboutWindowController?.window) {
+            aboutWindowController = nil
+        }
+    }
+    
     @IBAction func aboutAction(_ sender: NSMenuItem) {
+        guard aboutWindowController == nil else {
+            aboutWindowController?.window?.orderFrontRegardless()
+            return
+        }
+        aboutWindowController = AboutWindowController(windowNibName: NSNib.Name("AboutWindow"))
+        NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: aboutWindowController?.window)
+        aboutWindowController?.window?.orderFrontRegardless()
     }
     
     @IBAction func quitAction(_ sender: NSMenuItem) {

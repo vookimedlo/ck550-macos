@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AboutWindowController" customModule="ck550" customModuleProvider="target">
+            <connections>
+                <outlet property="versionTextField" destination="KfR-Kr-h5B" id="MKd-mj-6qV"/>
+                <outlet property="window" destination="gVi-N8-gCK" id="NbV-U9-JZo"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="gVi-N8-gCK" userLabel="AboutWindow" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
+            <rect key="contentRect" x="461" y="292" width="554" height="252"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <value key="minSize" type="size" width="554" height="252"/>
+            <value key="maxSize" type="size" width="554" height="252"/>
+            <value key="minFullScreenContentSize" type="size" width="554" height="252"/>
+            <value key="maxFullScreenContentSize" type="size" width="554" height="252"/>
+            <view key="contentView" id="ZfC-7C-KA9">
+                <rect key="frame" x="0.0" y="0.0" width="554" height="252"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <visualEffectView wantsLayer="YES" appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="Wkc-C7-5M2">
+                        <rect key="frame" x="0.0" y="0.0" width="554" height="252"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WkQ-zo-08v">
+                                <rect key="frame" x="20" y="20" width="32" height="212"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="JUB-12-0tZ"/>
+                            </imageView>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3h-ja-Ki8">
+                                <rect key="frame" x="102" y="60" width="432" height="132"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Irn-6X-eYg">
+                                        <rect key="frame" x="-2" y="98" width="436" height="34"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="CK550 MacOS Effect Controller" id="lSS-NV-5bF">
+                                            <font key="font" size="28" name=".AppleSystemUIFontDemi"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KfR-Kr-h5B">
+                                        <rect key="frame" x="-2" y="73" width="436" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" placeholderString="version" id="l2l-cR-S04">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Cr-1X-CzA">
+                                        <rect key="frame" x="-2" y="51" width="436" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="https://github.com/vookimedlo/CoolerMaster-ck550-macos" id="W3f-uB-ffB">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ohM-F9-b8Q">
+                                        <rect key="frame" x="-2" y="29" width="436" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Michal Duda - github@vookimedlo.cz" id="ecP-8F-oD8">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClS-f9-YiU">
+                                        <rect key="frame" x="0.0" y="0.0" width="221" height="21"/>
+                                        <subviews>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jKt-b3-1yp">
+                                                <rect key="frame" x="-6" y="-7" width="98" height="32"/>
+                                                <buttonCell key="cell" type="push" title="License..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sJG-xU-ReZ">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="licenseAction:" target="-2" id="weh-Ko-w44"/>
+                                                </connections>
+                                            </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NrW-a9-Z5t">
+                                                <rect key="frame" x="88" y="-7" width="139" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Release Notes..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ffQ-pg-c3D">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="releaseNotesAction:" target="-2" id="tEE-W2-CWc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="jKt-b3-1yp" firstAttribute="leading" secondItem="ClS-f9-YiU" secondAttribute="leading" id="sQt-3E-fSt"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ohM-F9-b8Q" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="0Ms-aT-vnp"/>
+                                    <constraint firstItem="ClS-f9-YiU" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="7Rb-wb-QiF"/>
+                                    <constraint firstItem="3Cr-1X-CzA" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="7cp-nY-x8O"/>
+                                    <constraint firstAttribute="trailing" secondItem="KfR-Kr-h5B" secondAttribute="trailing" id="PXj-Jw-pRr"/>
+                                    <constraint firstItem="Irn-6X-eYg" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="Var-q0-6pk"/>
+                                    <constraint firstItem="KfR-Kr-h5B" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="ZiH-eH-uEU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Irn-6X-eYg" secondAttribute="trailing" id="Zj1-kk-3av"/>
+                                    <constraint firstAttribute="trailing" secondItem="ohM-F9-b8Q" secondAttribute="trailing" id="axH-Sn-IGZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Cr-1X-CzA" secondAttribute="trailing" id="e5h-FV-9Il"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="WkQ-zo-08v" firstAttribute="leading" secondItem="Wkc-C7-5M2" secondAttribute="leading" constant="20" id="229-r5-aqa"/>
+                            <constraint firstItem="WkQ-zo-08v" firstAttribute="centerY" secondItem="Wkc-C7-5M2" secondAttribute="centerY" id="7c6-4b-ktf"/>
+                            <constraint firstItem="F3h-ja-Ki8" firstAttribute="leading" secondItem="WkQ-zo-08v" secondAttribute="trailing" constant="50" id="E74-JB-ekf"/>
+                            <constraint firstItem="WkQ-zo-08v" firstAttribute="top" secondItem="Wkc-C7-5M2" secondAttribute="top" constant="20" id="Uj6-aZ-vTE"/>
+                            <constraint firstAttribute="bottom" secondItem="WkQ-zo-08v" secondAttribute="bottom" constant="20" id="ZQZ-0P-lLc"/>
+                            <constraint firstAttribute="trailing" secondItem="F3h-ja-Ki8" secondAttribute="trailing" constant="20" id="mEG-8c-9XG"/>
+                            <constraint firstItem="F3h-ja-Ki8" firstAttribute="centerY" secondItem="Wkc-C7-5M2" secondAttribute="centerY" id="myq-h2-Mi2"/>
+                        </constraints>
+                    </visualEffectView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Wkc-C7-5M2" firstAttribute="top" secondItem="ZfC-7C-KA9" secondAttribute="top" id="44t-zm-CFc"/>
+                    <constraint firstAttribute="bottom" secondItem="Wkc-C7-5M2" secondAttribute="bottom" id="45Q-cU-rqW"/>
+                    <constraint firstAttribute="trailing" secondItem="Wkc-C7-5M2" secondAttribute="trailing" id="69f-Px-yUK"/>
+                    <constraint firstItem="Wkc-C7-5M2" firstAttribute="leading" secondItem="ZfC-7C-KA9" secondAttribute="leading" id="oz6-F4-9TR"/>
+                </constraints>
+            </view>
+            <contentBorderThickness minY="22"/>
+            <connections>
+                <outlet property="delegate" destination="-2" id="AHD-va-iE3"/>
+            </connections>
+            <point key="canvasLocation" x="171" y="92"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSApplicationIcon" width="32" height="32"/>
+    </resources>
+</document>

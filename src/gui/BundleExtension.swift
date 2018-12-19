@@ -18,4 +18,17 @@ extension Bundle {
         }
         return version
     }
+    
+    static func bundleVersion() -> (version: String, build: String) {
+        guard let dictionary = Bundle.main.infoDictionary else {
+            return ("", "")
+        }
+        guard let version = dictionary["CFBundleShortVersionString"]  as? String else {
+            return ("", "")
+        }
+        guard let build = dictionary[kCFBundleVersionKey as String] as? String else {
+            return (version, "")
+        }        
+        return (version, build)
+    }
 }
