@@ -12,9 +12,11 @@ import Cocoa
 class AboutWindowController: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var versionTextField: NSTextField!
     private var licenseWindowController: LicenseWindowController?
+    private var releaseNotesWindowController: ReleaseNotesWindowController?
     
     func windowWillClose(_ notification: Notification) {
         licenseWindowController?.window?.close()
+        releaseNotesWindowController?.window?.close()
     }
     
     override func windowDidLoad() {
@@ -29,6 +31,9 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
         if object.isEqual(licenseWindowController?.window) {
             licenseWindowController = nil
         }
+        if object.isEqual(releaseNotesWindowController?.window) {
+            releaseNotesWindowController = nil
+        }
     }
     
     @IBAction func licenseAction(_ sender: NSButton) {
@@ -41,6 +46,15 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
         licenseWindowController?.window?.orderFrontRegardless()
     }
     
+    
+    
     @IBAction func releaseNotesAction(_ sender: NSButton) {
+        guard releaseNotesWindowController == nil else {
+            releaseNotesWindowController?.window?.orderFrontRegardless()
+            return
+        }
+        releaseNotesWindowController = ReleaseNotesWindowController(windowNibName: NSNib.Name("ReleaseNotesWindow"))
+        NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: releaseNotesWindowController?.window)
+        releaseNotesWindowController?.window?.orderFrontRegardless()
     }
 }

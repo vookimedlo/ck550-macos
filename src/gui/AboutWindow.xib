@@ -87,7 +87,7 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                                 <connections>
-                                                    <action selector="releaseNotesAction:" target="-2" id="tEE-W2-CWc"/>
+                                                    <action selector="releaseNotesAction:" target="-2" id="MEQ-Oo-1ct"/>
                                                 </connections>
                                             </button>
                                         </subviews>
