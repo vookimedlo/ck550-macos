@@ -46,8 +46,6 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
         licenseWindowController?.window?.orderFrontRegardless()
     }
     
-    
-    
     @IBAction func releaseNotesAction(_ sender: NSButton) {
         guard releaseNotesWindowController == nil else {
             releaseNotesWindowController?.window?.orderFrontRegardless()

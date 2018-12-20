@@ -15,6 +15,7 @@
         <customObject id="blt-F1-bs0" userLabel="Delegate" customClass="AppDelegate" customModule="ck550" customModuleProvider="target"/>
         <customObject id="js7-Sd-Hgq" userLabel="Status Menu Controller" customClass="StatusMenuController" customModule="ck550" customModuleProvider="target">
             <connections>
+                <outlet property="statusEffectMenu" destination="DEa-Py-zfA" id="CdW-dF-bgd"/>
                 <outlet property="statusMenu" destination="48C-yD-jno" id="zrE-G2-knL"/>
                 <outlet property="toggleMonitoringViewController" destination="nqJ-pM-HzU" id="HHl-Vr-QMF"/>
             </connections>
@@ -28,67 +29,13 @@
             <items>
                 <menuItem title="Effects" id="PEt-gV-fUV">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Effects" id="DEa-Py-zfA">
-                        <items>
-                            <menuItem title="Breathing" id="Hdy-uO-F63">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Circle Spectrum" id="Yl9-WN-EEM">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Color Cycle" id="hIm-J1-bWl">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Crosshair" id="vBX-vv-GxU">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Customization" id="V2Q-vU-Nmw">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Fireball" id="RbT-PP-aC1">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Heartbeat" id="K4Q-ow-b9e">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Off" id="5ru-3U-Xnn">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Reactive Punch" id="fPY-O6-1jq">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Reactive Tornado" id="bMG-x2-8Zq">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Ripple" id="tvw-Gl-Ory">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Single Key" id="SAU-Ie-g8u">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Snowing" id="wjL-ca-gyy">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Stars" id="MQ4-ce-gpv">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Static" id="YRb-0p-n9S">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Water Ripple" id="gXt-ep-HFg">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem title="Wave" id="haj-yP-peK">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                        </items>
-                    </menu>
+                    <menu key="submenu" title="Effects" id="DEa-Py-zfA"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="KGP-Km-Y0l"/>
-                <menuItem title="Preferences..." keyEquivalent="" id="4V9-BN-BZw">
+                <menuItem title="Preferences..." id="4V9-BN-BZw">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="About..." keyEquivalent="" id="bmb-Jt-aHo">
+                <menuItem title="About..." id="bmb-Jt-aHo">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="aboutAction:" target="js7-Sd-Hgq" id="JZ2-Rc-Utf"/>
@@ -108,9 +55,10 @@
             <connections>
                 <outlet property="delegate" destination="blt-F1-bs0" id="jkC-u4-8dU"/>
             </connections>
+            <point key="canvasLocation" x="-44" y="-319"/>
         </menu>
-        <customView misplaced="YES" id="YEC-XN-hWW">
-            <rect key="frame" x="0.0" y="0.0" width="337" height="29"/>
+        <customView id="YEC-XN-hWW" userLabel="MonitoringView">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="29"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="xo8-og-WWj">
@@ -164,7 +112,7 @@
                 <constraint firstItem="xo8-og-WWj" firstAttribute="leading" secondItem="YEC-XN-hWW" secondAttribute="leading" id="TDt-8Z-But"/>
                 <constraint firstAttribute="bottom" secondItem="xo8-og-WWj" secondAttribute="bottom" id="kVF-HD-2Mm"/>
             </constraints>
-            <point key="canvasLocation" x="140" y="288"/>
+            <point key="canvasLocation" x="47" y="-190"/>
         </customView>
     </objects>
 </document>

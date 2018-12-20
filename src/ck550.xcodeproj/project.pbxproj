@@ -45,6 +45,11 @@
 		8D6FB4CE21CA77E100C25DA6 /* LicenseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */; };
 		8D6FB4D021CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4CF21CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift */; };
 		8D6FB4D221CAB8C700C25DA6 /* ReleaseNotesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6FB4D121CAB8C700C25DA6 /* ReleaseNotesWindow.xib */; };
+		8D6FB4D621CAEEEA00C25DA6 /* EffectMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6FB4D521CAEEEA00C25DA6 /* EffectMenuView.xib */; };
+		8D6FB4D821CAEF6E00C25DA6 /* EffectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4D721CAEF6E00C25DA6 /* EffectMenuViewController.swift */; };
+		8D6FB4DA21CBC6F600C25DA6 /* SupportedEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4D921CBC6F600C25DA6 /* SupportedEffects.swift */; };
+		8D6FB4DC21CBD79C00C25DA6 /* NSViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4DB21CBD79C00C25DA6 /* NSViewExtension.swift */; };
+		8D6FB4DE21CC142D00C25DA6 /* EffectNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4DD21CC142D00C25DA6 /* EffectNotification.swift */; };
 		8D72819321C2F5DB00963B1D /* EvaluationSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819021C2F27A00963B1D /* EvaluationSupport.swift */; };
 		8D72819621C307CD00963B1D /* CommonArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819421C307B100963B1D /* CommonArguments.swift */; };
 		8D72819821C30EA900963B1D /* SingleKeyCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D72819721C30EA900963B1D /* SingleKeyCommand.swift */; };
@@ -173,6 +178,11 @@
 		8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseWindowController.swift; sourceTree = "<group>"; };
 		8D6FB4CF21CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseNotesWindowController.swift; sourceTree = "<group>"; };
 		8D6FB4D121CAB8C700C25DA6 /* ReleaseNotesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseNotesWindow.xib; sourceTree = "<group>"; };
+		8D6FB4D521CAEEEA00C25DA6 /* EffectMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectMenuView.xib; sourceTree = "<group>"; };
+		8D6FB4D721CAEF6E00C25DA6 /* EffectMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectMenuViewController.swift; sourceTree = "<group>"; };
+		8D6FB4D921CBC6F600C25DA6 /* SupportedEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedEffects.swift; sourceTree = "<group>"; };
+		8D6FB4DB21CBD79C00C25DA6 /* NSViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewExtension.swift; sourceTree = "<group>"; };
+		8D6FB4DD21CC142D00C25DA6 /* EffectNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectNotification.swift; sourceTree = "<group>"; };
 		8D72819021C2F27A00963B1D /* EvaluationSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EvaluationSupport.swift; path = cli/EvaluationSupport.swift; sourceTree = "<group>"; };
 		8D72819421C307B100963B1D /* CommonArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonArguments.swift; path = cli/CommonArguments.swift; sourceTree = "<group>"; };
 		8D72819721C30EA900963B1D /* SingleKeyCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SingleKeyCommand.swift; path = cli/SingleKeyCommand.swift; sourceTree = "<group>"; };
@@ -431,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				8D84AAD821C9824D00087947 /* BundleExtension.swift */,
+				8D6FB4DB21CBD79C00C25DA6 /* NSViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -480,6 +491,7 @@
 				8D84AAC821C970D300087947 /* Assets.xcassets */,
 				8D84AACE21C970D300087947 /* ck550.entitlements */,
 				8D84AACD21C970D300087947 /* Info.plist */,
+				8D6FB4D921CBC6F600C25DA6 /* SupportedEffects.swift */,
 				8D84AAC621C970CE00087947 /* ViewController.swift */,
 			);
 			path = gui;
@@ -489,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6FB4C621C9A4B400C25DA6 /* AboutWindow.xib */,
+				8D6FB4D521CAEEEA00C25DA6 /* EffectMenuView.xib */,
 				8D6FB4CB21CA774B00C25DA6 /* LicenseWindow.xib */,
 				8D84AACA21C970D300087947 /* Main.storyboard */,
 				8D84AAD221C9723600087947 /* MainMenu.xib */,
@@ -501,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */,
+				8D6FB4D721CAEF6E00C25DA6 /* EffectMenuViewController.swift */,
 				8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */,
 				8D6FB4CF21CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift */,
 				8D84AAD621C9799C00087947 /* StatusMenuController.swift */,
@@ -512,6 +526,7 @@
 		8D84AADD21C992F900087947 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				8D6FB4DD21CC142D00C25DA6 /* EffectNotification.swift */,
 				8D84AADE21C9932E00087947 /* MonitoringNotification.swift */,
 			);
 			name = Notifications;
@@ -688,6 +703,7 @@
 				8D84AAC921C970D300087947 /* Assets.xcassets in Resources */,
 				8D84AACC21C970D300087947 /* Main.storyboard in Resources */,
 				8D84AAD321C9723600087947 /* MainMenu.xib in Resources */,
+				8D6FB4D621CAEEEA00C25DA6 /* EffectMenuView.xib in Resources */,
 				8D6FB4D221CAB8C700C25DA6 /* ReleaseNotesWindow.xib in Resources */,
 				8D6FB4C721C9A4B400C25DA6 /* AboutWindow.xib in Resources */,
 				8D6FB4CC21CA774B00C25DA6 /* LicenseWindow.xib in Resources */,
@@ -856,7 +872,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D6FB4D821CAEF6E00C25DA6 /* EffectMenuViewController.swift in Sources */,
 				8D84AAE021C994FE00087947 /* Logging.swift in Sources */,
+				8D6FB4DC21CBD79C00C25DA6 /* NSViewExtension.swift in Sources */,
+				8D6FB4DE21CC142D00C25DA6 /* EffectNotification.swift in Sources */,
 				8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */,
 				8D6FB4CE21CA77E100C25DA6 /* LicenseWindowController.swift in Sources */,
 				8D84AADC21C989CE00087947 /* ToggleMonitoringViewController.swift in Sources */,
@@ -866,6 +885,7 @@
 				8D6FB4D021CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift in Sources */,
 				8D84AAC521C970CE00087947 /* AppDelegate.swift in Sources */,
 				8D84AAD921C9824D00087947 /* BundleExtension.swift in Sources */,
+				8D6FB4DA21CBC6F600C25DA6 /* SupportedEffects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
