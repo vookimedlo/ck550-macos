@@ -16,6 +16,7 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var aboutWindowController: AboutWindowController?
+    private var preferencesWindowController: NSWindowController?
     private var effectViewControllers = [Effect: EffectMenuViewController]()
 
     override func awakeFromNib() {
@@ -94,6 +95,8 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
         NotificationCenter.default.removeObserver(self, name: NSWindow.willCloseNotification, object: object)
         if object.isEqual(aboutWindowController?.window) {
             aboutWindowController = nil
+        } else if object.isEqual(preferencesWindowController?.window) {
+            preferencesWindowController = nil
         }
     }
     
@@ -108,6 +111,25 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
         aboutWindowController = AboutWindowController(windowNibName: NSNib.Name("AboutWindow"))
         NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: aboutWindowController?.window)
         aboutWindowController?.window?.orderFrontRegardless()
+    }
+    
+    @IBAction func preferencesAction(_ sender: NSMenuItem) {
+        guard preferencesWindowController == nil else {
+            preferencesWindowController?.window?.makeKeyAndOrderFront(self)
+            preferencesWindowController?.window?.makeMain()
+            NSApp.activate(ignoringOtherApps: true)
+            return
+        }
+        if let controller = NSStoryboard(name: .preferences, bundle: nil).instantiateInitialController() as? NSWindowController {
+            preferencesWindowController = controller
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(windowWillClose(notification:)),
+                                                   name: NSWindow.willCloseNotification,
+                                                   object: preferencesWindowController?.window)
+            preferencesWindowController?.window?.makeKeyAndOrderFront(self)
+            preferencesWindowController?.window?.makeMain()
+            NSApp.activate(ignoringOtherApps: true)
+        }
     }
     
     @IBAction func quitAction(_ sender: NSMenuItem) {

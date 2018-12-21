@@ -34,6 +34,9 @@
                 <menuItem isSeparatorItem="YES" id="KGP-Km-Y0l"/>
                 <menuItem title="Preferences..." id="4V9-BN-BZw">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesAction:" target="js7-Sd-Hgq" id="a7v-Ix-sy4"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="About..." id="bmb-Jt-aHo">
                     <modifierMask key="keyEquivalentModifierMask"/>

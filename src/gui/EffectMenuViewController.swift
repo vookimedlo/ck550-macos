@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class EffectMenuViewController: ViewController {
+class EffectMenuViewController: NSViewController {
     @IBOutlet weak var effectTextField: NSTextField!
     @IBOutlet weak var enablingSegmentedControl: NSSegmentedControl!
     

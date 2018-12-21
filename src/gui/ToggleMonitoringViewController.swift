@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class ToggleMonitoringViewController: ViewController {
+class ToggleMonitoringViewController: NSViewController {
     @IBAction func toggledAction(_ sender: NSSegmentedCell) {
         let userInfo = ["isEnabled": sender.isSelected(forSegment: 0)]
         let notification = Notification(name: .CustomMonitoringToggled, object: self, userInfo: userInfo)
