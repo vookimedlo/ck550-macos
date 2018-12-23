@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 extension NSView {
-    func findViewController<T: NSViewController>(type: T.Type) -> T? {
+    func findViewController<T>(type: T.Type) -> T? {
         if let nextResponder = self.nextResponder as? T {
             return nextResponder
         } else if let nextResponder = self.nextResponder as? NSView {

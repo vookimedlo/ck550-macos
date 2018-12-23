@@ -9,25 +9,27 @@
 import Foundation
 import Cocoa
 
-class PreferencesViewController: NSViewController, NSOutlineViewDelegate, NSOutlineViewDataSource {
+class PreferencesViewController: NSViewController {
     @IBOutlet weak var listView: NSOutlineView!
     @IBOutlet weak var headerView: NSView!
     @IBOutlet weak var mainView: NSView!
     @IBOutlet weak var footerView: NSView!
     @IBOutlet weak var headerTitleTextField: NSTextField!
  
-    static private var effectPreferences = EffectPreferences(name: "Effects")
-    static private var allPreferences = [effectPreferences]
+    private var effectPreferenceViewControllers = [Effect: PreferenceViewController]()
+    
+    required override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         headerView.wantsLayer = true
         footerView.wantsLayer = true
-        
-        Effect.allCases.forEach() { effect in
-            let preference = EffectPreference(effect: effect)
-            PreferencesViewController.effectPreferences.preferences.append(preference)
-        }
         
         self.listView.expandItem(nil, expandChildren: true)
     }
@@ -38,130 +40,101 @@ class PreferencesViewController: NSViewController, NSOutlineViewDelegate, NSOutl
         headerView.addBottomBorder(color: NSColor.white, width: 2)
         headerTitleTextField.textColor = NSColor.white
         footerView.addTopBorder(color: NSColor.white, width: 2)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didResignKeyNotification(notification:)),
+                                               name: NSWindow.didResignKeyNotification,
+                                               object: view.window)
     }
     
+    override func viewWillDisappear() {
+        NotificationCenter.default.removeObserver(self, name: NSWindow.didResignKeyNotification, object: view.window)
+        logDebug("time to save all configuration changes")
+    }
+
     override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
         }
     }
     
-    func outlineView(_ outlineView: NSOutlineView, viewFor viewForTableColumn: NSTableColumn?, item: Any) -> NSView? {
-        switch item {
-        case let preferences as EffectPreferences:
-            let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderCell"), owner: self) as! NSTableCellView
-            if let textField = view.textField {
-                textField.stringValue = preferences.name
-            }
-            return view
-        case let preference as EffectPreference:
-            let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "DataCell"), owner: self) as! NSTableCellView
-            if let textField = view.textField {
-                textField.stringValue = preference.name
-            }
-            if let image = preference.icon {
-                view.imageView!.image = image
-            }
-            return view
-        default:
-            return nil
-        }
-    }
-    
-    func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
-        switch item {
-        case _ as EffectPreferences:
-            return true
-        default:
-            return false
-        }
-    }
-    
-    func outlineViewSelectionDidChange(_ notification: Notification){
-        let listView = notification.object as! NSOutlineView
-        let selectedIndex = listView.selectedRow
-        let object: AnyObject? = listView.item(atRow: selectedIndex) as AnyObject
-        
-        switch object {
-        case _ as EffectPreferences:
-            headerTitleTextField.stringValue = "Effect Preferences"
-        case let
-            effectPreference as EffectPreference:
-            headerTitleTextField.stringValue = effectPreference.name
-        default:
-            headerTitleTextField.stringValue = "Preferences"
+    @objc private func didResignKeyNotification(notification: Notification) {
+        guard let object = notification.object as? NSWindow else { return }
+        if object.isEqual(view.window) {
+            view.window?.performClose(self)
         }
     }
 
-    
-    func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
-        if let item: Any = item {
-            switch item {
-            case let preferences as EffectPreferences:
-                return preferences.preferences[index]
-            default:
-                return self
+    private func removeMainViewSubviews() {
+        mainView.subviews.forEach { subview in
+            if let index = effectPreferenceViewControllers.values.firstIndex(where: { controller in
+                return controller.view == subview
+            }) {
+                effectPreferenceViewControllers[index].value.deactivated()
             }
+        }
+        
+        // Remove a previously used effect preference view
+        mainView.subviews = []
+    }
+    
+    private func createEffectPreferenceViewController<T: PreferenceViewController>(name: NSNib.Name, type: T.Type) -> PreferenceViewController? {
+        var resultingController: PreferenceViewController?
+        
+        // This is a file-owner
+        let controller = (T.self as! NSViewController.Type).init(nibName: name, bundle: nil)
+        controller.loadView()
+        
+        // This is the real controller defined in XIB
+        if let controller = controller.view.findViewController(type: T.self) {
+            controller.setup()
+            resultingController = controller
         } else {
-            switch index {
+            logError("Unknown effect preference controller")
+        }
+        
+        return resultingController
+    }
+    
+    private func useEffectPreferenceViewController(for effect: Effect, controller: PreferenceViewController?) {
+        if let controller = controller {
+            effectPreferenceViewControllers[effect] = controller
+            mainView.addSubview(controller.view)
+        }
+    }
+    
+    func preferenceSelected(effect: Effect) {
+        headerTitleTextField.stringValue = effect.name()
+        removeMainViewSubviews()
+
+        if let controller = effectPreferenceViewControllers[effect] {
+            logDebug("restoring a preference mainView")
+            mainView.addSubview(controller.view)
+        } else {
+            switch effect {
+            case .off:
+                let controller = createEffectPreferenceViewController(name: NSNib.Name("EffectNoPreferenceView"),
+                                                  type: EffectNoPreferenceViewController.self)
+                useEffectPreferenceViewController(for: effect, controller: controller)
             default:
-                return PreferencesViewController.effectPreferences
-/*
-            case 0:
-                return effectPreferences
-            default:
-                return otherPreferences
- */
+                let controller = createEffectPreferenceViewController(name: NSNib.Name("EffectPreferenceView"),
+                                                  type: EffectPreferenceViewController.self)
+                useEffectPreferenceViewController(for: effect, controller: controller)
             }
         }
     }
     
-    func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
-        switch item {
-        case let preferences as EffectPreferences:
-            return (preferences.preferences.count > 0) ? true : false
-        default:
-            return false
-        }
+    func preferenceSelected() {
+        headerTitleTextField.stringValue = "Effect Preferences"
+        removeMainViewSubviews()
     }
     
-    func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
-        if let item: Any = item {
-            switch item {
-            case let preferences as EffectPreferences:
-                return preferences.preferences.count
-            default:
-                return 0
-            }
-        } else {
-            return PreferencesViewController.allPreferences.count
-        }
+    func preferenceNotSelected() {
+        headerTitleTextField.stringValue = "Preferences"
+        removeMainViewSubviews()
     }
     
     @IBAction func closeAction(_ sender: NSButton) {
-        self.view.window?.performClose(self)
-    }
-}
-
-fileprivate class EffectPreferences: NSObject {
-    let name: String
-    var preferences: [EffectPreference] = [EffectPreference]()
-    let icon: NSImage?
-    
-    init (name:String, icon:NSImage? = nil){
-        self.name = name
-        self.icon = icon
-    }
-}
-
-fileprivate class EffectPreference: NSObject {
-    var name: String
-    var effect: Effect
-    let icon: NSImage?
-    
-    init (effect: Effect, icon: NSImage? = nil){
-        self.effect = effect
-        self.name = effect.name()
-        self.icon = icon
+        view.window?.performClose(self)
     }
 }

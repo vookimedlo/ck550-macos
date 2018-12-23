@@ -67,6 +67,11 @@
 		8D7281B021C4323300963B1D /* CircleSpectrumCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281AF21C4323300963B1D /* CircleSpectrumCommand.swift */; };
 		8D7281B221C4346300963B1D /* StarsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281B121C4346300963B1D /* StarsCommand.swift */; };
 		8D73C64921CE82310021FA4B /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C64821CE82310021FA4B /* PreferencesViewController.swift */; };
+		8D73C64B21CFDBB30021FA4B /* EffectPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D73C64A21CFDBB30021FA4B /* EffectPreferenceView.xib */; };
+		8D73C64D21CFED820021FA4B /* EffectPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C64C21CFED820021FA4B /* EffectPreferenceViewController.swift */; };
+		8D73C64F21D01C4F0021FA4B /* EffectNoPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D73C64E21D01C4F0021FA4B /* EffectNoPreferenceView.xib */; };
+		8D73C65121D022910021FA4B /* EffectNoPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65021D022910021FA4B /* EffectNoPreferenceViewController.swift */; };
+		8D73C65321D0DE520021FA4B /* PreferencesViewControllerOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65221D0DE520021FA4B /* PreferencesViewControllerOutline.swift */; };
 		8D75FABA21C5480A00574CF1 /* CK550CommandWaterRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAB921C5480A00574CF1 /* CK550CommandWaterRipple.swift */; };
 		8D75FABC21C5518F00574CF1 /* CK550CommandFireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABB21C5518F00574CF1 /* CK550CommandFireball.swift */; };
 		8D75FABE21C5538E00574CF1 /* CK550CommandReactivePunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABD21C5538E00574CF1 /* CK550CommandReactivePunch.swift */; };
@@ -201,6 +206,11 @@
 		8D7281AF21C4323300963B1D /* CircleSpectrumCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleSpectrumCommand.swift; path = cli/CircleSpectrumCommand.swift; sourceTree = "<group>"; };
 		8D7281B121C4346300963B1D /* StarsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StarsCommand.swift; path = cli/StarsCommand.swift; sourceTree = "<group>"; };
 		8D73C64821CE82310021FA4B /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		8D73C64A21CFDBB30021FA4B /* EffectPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectPreferenceView.xib; sourceTree = "<group>"; };
+		8D73C64C21CFED820021FA4B /* EffectPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectPreferenceViewController.swift; sourceTree = "<group>"; };
+		8D73C64E21D01C4F0021FA4B /* EffectNoPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectNoPreferenceView.xib; sourceTree = "<group>"; };
+		8D73C65021D022910021FA4B /* EffectNoPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectNoPreferenceViewController.swift; sourceTree = "<group>"; };
+		8D73C65221D0DE520021FA4B /* PreferencesViewControllerOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewControllerOutline.swift; sourceTree = "<group>"; };
 		8D75FAB921C5480A00574CF1 /* CK550CommandWaterRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandWaterRipple.swift; sourceTree = "<group>"; };
 		8D75FABB21C5518F00574CF1 /* CK550CommandFireball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandFireball.swift; sourceTree = "<group>"; };
 		8D75FABD21C5538E00574CF1 /* CK550CommandReactivePunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandReactivePunch.swift; sourceTree = "<group>"; };
@@ -504,6 +514,8 @@
 			children = (
 				8D6FB4C621C9A4B400C25DA6 /* AboutWindow.xib */,
 				8D6FB4D521CAEEEA00C25DA6 /* EffectMenuView.xib */,
+				8D73C64E21D01C4F0021FA4B /* EffectNoPreferenceView.xib */,
+				8D73C64A21CFDBB30021FA4B /* EffectPreferenceView.xib */,
 				8D6FB4CB21CA774B00C25DA6 /* LicenseWindow.xib */,
 				8D84AAD221C9723600087947 /* MainMenu.xib */,
 				8D84AACA21C970D300087947 /* Preferences.storyboard */,
@@ -517,8 +529,11 @@
 			children = (
 				8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */,
 				8D6FB4D721CAEF6E00C25DA6 /* EffectMenuViewController.swift */,
+				8D73C65021D022910021FA4B /* EffectNoPreferenceViewController.swift */,
+				8D73C64C21CFED820021FA4B /* EffectPreferenceViewController.swift */,
 				8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */,
 				8D73C64821CE82310021FA4B /* PreferencesViewController.swift */,
+				8D73C65221D0DE520021FA4B /* PreferencesViewControllerOutline.swift */,
 				8D6FB4CF21CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift */,
 				8D84AAD621C9799C00087947 /* StatusMenuController.swift */,
 				8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */,
@@ -703,8 +718,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D73C64B21CFDBB30021FA4B /* EffectPreferenceView.xib in Resources */,
 				8D84AAC921C970D300087947 /* Assets.xcassets in Resources */,
 				8D84AACC21C970D300087947 /* Preferences.storyboard in Resources */,
+				8D73C64F21D01C4F0021FA4B /* EffectNoPreferenceView.xib in Resources */,
 				8D84AAD321C9723600087947 /* MainMenu.xib in Resources */,
 				8D6FB4D621CAEEEA00C25DA6 /* EffectMenuView.xib in Resources */,
 				8D6FB4D221CAB8C700C25DA6 /* ReleaseNotesWindow.xib in Resources */,
@@ -877,9 +894,11 @@
 			files = (
 				8D73C64921CE82310021FA4B /* PreferencesViewController.swift in Sources */,
 				8D6FB4D821CAEF6E00C25DA6 /* EffectMenuViewController.swift in Sources */,
+				8D73C64D21CFED820021FA4B /* EffectPreferenceViewController.swift in Sources */,
 				8D84AAE021C994FE00087947 /* Logging.swift in Sources */,
 				8D6FB4DC21CBD79C00C25DA6 /* NSViewExtension.swift in Sources */,
 				8D6FB4DE21CC142D00C25DA6 /* EffectNotification.swift in Sources */,
+				8D73C65121D022910021FA4B /* EffectNoPreferenceViewController.swift in Sources */,
 				8D6FB4E021CD89B400C25DA6 /* NSStoryboardExtension.swift in Sources */,
 				8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */,
 				8D6FB4CE21CA77E100C25DA6 /* LicenseWindowController.swift in Sources */,
@@ -889,6 +908,7 @@
 				8D6FB4D021CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift in Sources */,
 				8D84AAC521C970CE00087947 /* AppDelegate.swift in Sources */,
 				8D84AAD921C9824D00087947 /* BundleExtension.swift in Sources */,
+				8D73C65321D0DE520021FA4B /* PreferencesViewControllerOutline.swift in Sources */,
 				8D6FB4DA21CBC6F600C25DA6 /* SupportedEffects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
