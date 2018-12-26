@@ -31,18 +31,26 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
     func outlineView(_ outlineView: NSOutlineView, viewFor viewForTableColumn: NSTableColumn?, item: Any) -> NSView? {
         switch item {
         case let preferences as EffectPreferences:
-            let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderCell"), owner: self) as! NSTableCellView
-            if let textField = view.textField {
-                textField.stringValue = preferences.name
+            guard let view = effectListViewContainer else {
+                let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderCell"), owner: self) as! NSTableCellView
+                if let textField = view.textField {
+                    textField.stringValue = preferences.name
+                }
+                effectListViewContainer = view
+                return view
             }
             return view
         case let preference as EffectPreference:
-            let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "DataCell"), owner: self) as! NSTableCellView
-            if let textField = view.textField {
-                textField.stringValue = preference.name
-            }
-            if let image = preference.icon {
-                view.imageView!.image = image
+            guard let view = effectListViewItems[preference.effect] else {
+                let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "DataCell"), owner: self) as! NSTableCellView
+                if let textField = view.textField {
+                    textField.stringValue = preference.name
+                }
+                if let image = preference.icon {
+                    view.imageView!.image = image
+                }
+                effectListViewItems[preference.effect] = view
+                return view
             }
             return view
         default:

@@ -1,0 +1,235 @@
+{
+  "effect" : {
+    "Fireball" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Circle Spectrum" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : 0,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Cross Mode" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Ripple" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Static" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Single Key" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Snowing" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Heartbeat" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Reactive Punch" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Customization" : {
+
+    },
+    "Star" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Wave" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : 0,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Water Ripple" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Off" : {
+
+    },
+    "Breathing" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Color Cycle" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : -1,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    },
+    "Reactive Tornado" : {
+      "color" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "speed" : 2,
+      "direction" : 0,
+      "backgroundColor" : {
+        "red" : 14,
+        "green" : 14,
+        "blue" : 255
+      },
+      "isColorRandom" : false
+    }
+  }
+}

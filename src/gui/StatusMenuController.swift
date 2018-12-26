@@ -46,6 +46,12 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
         
         // Hide whole menu
         statusMenu.cancelTracking()
+        
+        showPreferences()
+        
+        let userInfo = ["effect": effect]
+        let notification = Notification(name: .CustomEffectSelectConfiguration, object: self, userInfo: userInfo)
+        NotificationCenter.default.post(notification)
     }
 
     func effectToggled(notification: Notification) {
@@ -103,17 +109,7 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
     @objc private func effectHandler(sender: NSMenuItem) {
     }
     
-    @IBAction func aboutAction(_ sender: NSMenuItem) {
-        guard aboutWindowController == nil else {
-            aboutWindowController?.window?.orderFrontRegardless()
-            return
-        }
-        aboutWindowController = AboutWindowController(windowNibName: NSNib.Name("AboutWindow"))
-        NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: aboutWindowController?.window)
-        aboutWindowController?.window?.orderFrontRegardless()
-    }
-    
-    @IBAction func preferencesAction(_ sender: NSMenuItem) {
+    func showPreferences() {
         guard preferencesWindowController == nil else {
             preferencesWindowController?.window?.makeKeyAndOrderFront(self)
             preferencesWindowController?.window?.makeMain()
@@ -130,6 +126,20 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
             preferencesWindowController?.window?.makeMain()
             NSApp.activate(ignoringOtherApps: true)
         }
+    }
+    
+    @IBAction func aboutAction(_ sender: NSMenuItem) {
+        guard aboutWindowController == nil else {
+            aboutWindowController?.window?.orderFrontRegardless()
+            return
+        }
+        aboutWindowController = AboutWindowController(windowNibName: NSNib.Name("AboutWindow"))
+        NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: aboutWindowController?.window)
+        aboutWindowController?.window?.orderFrontRegardless()
+    }
+    
+    @IBAction func preferencesAction(_ sender: NSMenuItem) {
+        showPreferences()
     }
     
     @IBAction func quitAction(_ sender: NSMenuItem) {

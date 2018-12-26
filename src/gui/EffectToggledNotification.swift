@@ -24,22 +24,3 @@ extension EffectToggledHandler {
         NotificationCenter.default.removeObserver(self, name: Notification.Name.CustomEffectToggled, object: nil)
     }
 }
-
-//---------
-
-extension Notification.Name {
-    public static let CustomEffectConfigure = Notification.Name("kCustomEffectConfigure")
-}
-
-@objc protocol EffectConfigureHandler {
-    @objc func effectConfigure(notification: Notification)
-}
-
-extension EffectConfigureHandler {
-    func startObserving() {
-        NotificationCenter.default.addObserver(self, selector: #selector(effectConfigure(notification:)), name: Notification.Name.CustomEffectConfigure, object: nil)
-    }
-    func stopObserving() {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.CustomEffectConfigure, object: nil)
-    }
-}
