@@ -12,7 +12,7 @@ import Cocoa
 class EffectMenuViewController: NSViewController {
     @IBOutlet weak var effectTextField: NSTextField!
     @IBOutlet weak var enablingSegmentedControl: NSSegmentedControl!
-    
+
     var effect: Effect?
     var effectEnabled: Bool {
         get {
@@ -27,13 +27,13 @@ class EffectMenuViewController: NSViewController {
         self.effect = effect
         effectTextField.stringValue = self.effect?.name() ?? ""
     }
-    
+
     @IBAction func configurationAction(_ sender: NSButton) {
         let userInfo = ["effect": effect!]
         let notification = Notification(name: .CustomEffectConfigure, object: self, userInfo: userInfo)
         NotificationCenter.default.post(notification)
     }
-    
+
     @IBAction func enablingToggledAction(_ sender: NSSegmentedControl) {
         let userInfo = ["isEnabled": sender.isSelected(forSegment: 0), "effect": effect!] as [String : Any]
         let notification = Notification(name: .CustomEffectToggled, object: self, userInfo: userInfo)

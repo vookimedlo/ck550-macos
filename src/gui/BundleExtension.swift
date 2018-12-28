@@ -18,7 +18,7 @@ extension Bundle {
         }
         return version
     }
-    
+
     static func bundleVersion() -> (version: String, build: String) {
         guard let dictionary = Bundle.main.infoDictionary else {
             return ("", "")
@@ -28,7 +28,7 @@ extension Bundle {
         }
         guard let build = dictionary[kCFBundleVersionKey as String] as? String else {
             return (version, "")
-        }        
+        }
         return (version, build)
     }
 }

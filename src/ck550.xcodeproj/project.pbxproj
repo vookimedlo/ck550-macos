@@ -72,7 +72,6 @@
 		8D73C64F21D01C4F0021FA4B /* EffectNoPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D73C64E21D01C4F0021FA4B /* EffectNoPreferenceView.xib */; };
 		8D73C65121D022910021FA4B /* EffectNoPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65021D022910021FA4B /* EffectNoPreferenceViewController.swift */; };
 		8D73C65321D0DE520021FA4B /* PreferencesViewControllerOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65221D0DE520021FA4B /* PreferencesViewControllerOutline.swift */; };
-		8D73C65521D179D00021FA4B /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65421D179D00021FA4B /* Defaults.swift */; };
 		8D73C65621D1855C0021FA4B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; };
 		8D73C65721D1855C0021FA4B /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D73C65A21D2C45D0021FA4B /* RGBColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65921D2C45D0021FA4B /* RGBColorExtension.swift */; };
@@ -233,7 +232,6 @@
 		8D73C64E21D01C4F0021FA4B /* EffectNoPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectNoPreferenceView.xib; sourceTree = "<group>"; };
 		8D73C65021D022910021FA4B /* EffectNoPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectNoPreferenceViewController.swift; sourceTree = "<group>"; };
 		8D73C65221D0DE520021FA4B /* PreferencesViewControllerOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewControllerOutline.swift; sourceTree = "<group>"; };
-		8D73C65421D179D00021FA4B /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		8D73C65921D2C45D0021FA4B /* RGBColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBColorExtension.swift; sourceTree = "<group>"; };
 		8D73C65B21D40E240021FA4B /* NSColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColorExtension.swift; sourceTree = "<group>"; };
 		8D73C65D21D420330021FA4B /* EffectsPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectsPreferenceView.xib; sourceTree = "<group>"; };
@@ -538,7 +536,6 @@
 				8D73C66721D6BBDB0021FA4B /* AppPreferences.swift */,
 				8D84AAC821C970D300087947 /* Assets.xcassets */,
 				8D84AACE21C970D300087947 /* ck550.entitlements */,
-				8D73C65421D179D00021FA4B /* Defaults.swift */,
 				8D84AACD21C970D300087947 /* Info.plist */,
 				8D6FB4D921CBC6F600C25DA6 /* SupportedEffects.swift */,
 			);
@@ -948,7 +945,6 @@
 				8D6FB4E021CD89B400C25DA6 /* NSStoryboardExtension.swift in Sources */,
 				8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */,
 				8D6FB4CE21CA77E100C25DA6 /* LicenseWindowController.swift in Sources */,
-				8D73C65521D179D00021FA4B /* Defaults.swift in Sources */,
 				8D84AADC21C989CE00087947 /* ToggleMonitoringViewController.swift in Sources */,
 				8D84AADF21C9932E00087947 /* MonitoringNotification.swift in Sources */,
 				8D6FB4C921CA614E00C25DA6 /* AboutWindowController.swift in Sources */,

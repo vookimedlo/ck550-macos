@@ -28,7 +28,7 @@ extension RGBColor: JSONEncodable, JSONDecodable {
                     "blue": JSON(integerLiteral: IntegerLiteralType(blue))]
         }
     }
-    
+
     init(red: UInt8, green: UInt8, blue: UInt8) {
         self.init(red: UInt16(red), green: UInt16(green), blue: UInt16(blue))
     }
@@ -39,7 +39,7 @@ extension RGBColor: JSONEncodable, JSONDecodable {
                   green: UInt8((color?.greenComponent)! * eightBitMultiplicator),
                   blue: UInt8((color?.blueComponent)! * eightBitMultiplicator))
     }
-    
+
     init(json: JSON) {
         self.init(red: json["red"].uInt8!, green: json["green"].uInt8!, blue: json["blue"].uInt8!)
     }

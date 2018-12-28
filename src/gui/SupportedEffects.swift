@@ -26,7 +26,7 @@ enum Effect: CaseIterable {
     case reactiveTornado
     case waterRipple
     case off
-    
+
     func name() -> String {
         switch self {
         case .staticKeys: return "Static"

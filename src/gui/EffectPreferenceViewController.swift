@@ -27,11 +27,11 @@ class EffectPreferenceViewController: NSViewController, PreferenceViewController
     @IBOutlet weak var backgroundColorWell: NSColorWell!
     @IBOutlet weak var directionTextField: NSTextField!
     @IBOutlet weak var directionComboBox: NSComboBox!
-    
+
     private enum JSONKeys: String {
         case backgroundColor, color, isColorRandom, speed, direction
     }
-    
+
     var settings: JSON {
         get {
             return [JSONKeys.backgroundColor.rawValue: RGBColor((backgroundColorWell?.color)!).json,
@@ -45,22 +45,22 @@ class EffectPreferenceViewController: NSViewController, PreferenceViewController
             speedComboBox.selectItem(at: json[JSONKeys.speed.rawValue].int ?? -1)
             colorWell.color = NSColor(RGBColor(json: json[JSONKeys.color.rawValue]))
             backgroundColorWell.color = NSColor(RGBColor(json: json[JSONKeys.backgroundColor.rawValue]))
-            
+
             let directionIndex = json[JSONKeys.direction.rawValue].int ?? -1
             if directionIndex > -1 {
                 directionComboBox.selectItem(at: directionIndex)
             }
         }
     }
-    
+
     func setup() {
         if speedComboBox.indexOfSelectedItem == -1 {
             speedComboBox.selectItem(at: 2)
         }
-        
+
         colorWell.isEnabled = !(randomColorButton.state == .on)
     }
-    
+
     func adjustView(showColor: Bool = true,
                     showRandom: Bool = true,
                     showBackgroundColor: Bool = true,
@@ -76,20 +76,20 @@ class EffectPreferenceViewController: NSViewController, PreferenceViewController
         directionTextField.isHidden = !showDirection
         directionComboBox.isHidden = !showDirection
     }
-    
+
     func setupDirectionComboBox(item: String) {
         directionComboBox.addItem(withObjectValue: item)
         directionComboBox.selectItem(at: 0)
     }
-    
+
     func deactivated() {
         NSColorPanel.shared.orderOut(nil)
     }
-    
+
     @IBAction func colorWellAction(_ sender: NSColorWell) {
 
     }
-    
+
     @IBAction func randomColorAction(_ sender: NSButton) {
         colorWell.isEnabled = !(sender.state == .on)
     }

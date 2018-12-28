@@ -12,7 +12,7 @@ import Cocoa
 class ReleaseNotesWindowController: NSWindowController {
     @IBOutlet var releaseNotesTextView: NSTextView!
     @objc dynamic private var contentURL: URL?
-    
+
     override func windowDidLoad() {
         super.windowDidLoad()
         // TODO: load a release notes from resources

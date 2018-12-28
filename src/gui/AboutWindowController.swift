@@ -13,12 +13,12 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var versionTextField: NSTextField!
     private var licenseWindowController: LicenseWindowController?
     private var releaseNotesWindowController: ReleaseNotesWindowController?
-    
+
     func windowWillClose(_ notification: Notification) {
         licenseWindowController?.window?.close()
         releaseNotesWindowController?.window?.close()
     }
-    
+
     override func windowDidLoad() {
         super.windowDidLoad()
         let bundleVersion = Bundle.bundleVersion()
@@ -35,7 +35,7 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
             releaseNotesWindowController = nil
         }
     }
-    
+
     @IBAction func licenseAction(_ sender: NSButton) {
         guard licenseWindowController == nil else {
             licenseWindowController?.window?.orderFrontRegardless()
@@ -45,7 +45,7 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: licenseWindowController?.window)
         licenseWindowController?.window?.orderFrontRegardless()
     }
-    
+
     @IBAction func releaseNotesAction(_ sender: NSButton) {
         guard releaseNotesWindowController == nil else {
             releaseNotesWindowController?.window?.orderFrontRegardless()

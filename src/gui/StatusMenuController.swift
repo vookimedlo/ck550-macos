@@ -13,7 +13,7 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var statusEffectMenu: NSMenu!
     @IBOutlet weak var toggleMonitoringViewController: ToggleMonitoringViewController!
-    
+
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var aboutWindowController: AboutWindowController?
     private var preferencesWindowController: NSWindowController?
@@ -27,28 +27,28 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
 
         statusItem.button?.title = Bundle.appName()
         statusItem.menu = statusMenu
-        
+
         (self as EffectConfigureHandler).startObserving()
         (self as EffectToggledHandler).startObserving()
         (self as MonitoringToggledHandler).startObserving()
     }
-    
+
     deinit {
         (self as MonitoringToggledHandler).stopObserving()
         (self as EffectToggledHandler).stopObserving()
         (self as EffectConfigureHandler).stopObserving()
     }
-    
+
     func effectConfigure(notification: Notification) {
         guard notification.name == Notification.Name.CustomEffectConfigure else {return}
         guard let effect = notification.userInfo?["effect"] as? Effect else {return}
         logDebug("effect[configure] %@", effect.name())
-        
+
         // Hide whole menu
         statusMenu.cancelTracking()
-        
+
         showPreferences()
-        
+
         let userInfo = ["effect": effect]
         let notification = Notification(name: .CustomEffectSelectConfiguration, object: self, userInfo: userInfo)
         NotificationCenter.default.post(notification)
@@ -61,7 +61,7 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
         logDebug("effect[on/off] %@",
                  effect.name(),
                  isEnabled ? "enabled" : "disabled")
-        
+
         if isEnabled {
             Effect.allCases.forEach() { item in
                 if item != effect {
@@ -69,24 +69,24 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
                 }
             }
         }
-        
+
         // Hide whole menu
         statusMenu.cancelTracking()
     }
-    
+
     func monitoringToggled(notification: Notification) {
         guard notification.name == Notification.Name.CustomMonitoringToggled else {return}
         guard let isEnabled = notification.userInfo?["isEnabled"] as? Bool else {return}
         logDebug("monitoring %@", isEnabled)
     }
-    
+
     private func populateEffects() {
         Effect.allCases.forEach {item in
             let menuItem = statusEffectMenu.addItem(withTitle: "", action: #selector(effectHandler(sender:)), keyEquivalent: "")
             // This is a file-owner
             let controller = EffectMenuViewController(nibName: NSNib.Name("EffectMenuView"), bundle: nil)
             controller.loadView()
-            
+
             // This is the real controller defined in XIB
             if let controller = controller.view.findViewController(type: EffectMenuViewController.self) {
                 effectViewControllers[item] = controller
@@ -95,7 +95,7 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
             menuItem.view = controller.view
         }
     }
-    
+
     @objc private func windowWillClose(notification: Notification) {
         guard let object = notification.object as? NSWindow else { return }
         NotificationCenter.default.removeObserver(self, name: NSWindow.willCloseNotification, object: object)
@@ -105,10 +105,10 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
             preferencesWindowController = nil
         }
     }
-    
+
     @objc private func effectHandler(sender: NSMenuItem) {
     }
-    
+
     func showPreferences() {
         guard preferencesWindowController == nil else {
             preferencesWindowController?.window?.makeKeyAndOrderFront(self)
@@ -127,7 +127,7 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
             NSApp.activate(ignoringOtherApps: true)
         }
     }
-    
+
     @IBAction func aboutAction(_ sender: NSMenuItem) {
         guard aboutWindowController == nil else {
             aboutWindowController?.window?.orderFrontRegardless()
@@ -137,11 +137,11 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
         NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: aboutWindowController?.window)
         aboutWindowController?.window?.orderFrontRegardless()
     }
-    
+
     @IBAction func preferencesAction(_ sender: NSMenuItem) {
         showPreferences()
     }
-    
+
     @IBAction func quitAction(_ sender: NSMenuItem) {
         NSApp.terminate(self)
     }

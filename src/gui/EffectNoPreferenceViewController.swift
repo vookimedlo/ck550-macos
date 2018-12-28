@@ -16,14 +16,14 @@ class EffectNoPreferenceViewController: NSViewController, PreferenceViewControll
             return [:]
         }
         set {
-            
+
         }
     }
-    
+
     func setup() {
         // No implementation, because no preferences are not available for given effect
     }
-    
+
     func deactivated() {
         // No implementation, because no preferences are not available for given effect
     }

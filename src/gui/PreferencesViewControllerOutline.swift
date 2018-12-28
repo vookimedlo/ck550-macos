@@ -25,9 +25,9 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
         }
         return effectPreferences
     }()
-    
+
     static private var allPreferences = [effectPreferences]
-    
+
     func outlineView(_ outlineView: NSOutlineView, viewFor viewForTableColumn: NSTableColumn?, item: Any) -> NSView? {
         switch item {
         case let preferences as EffectPreferences:
@@ -57,7 +57,7 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
             return nil
         }
     }
-    
+
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         switch item {
         case _ as EffectPreferences:
@@ -88,7 +88,7 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
             }
         }
     }
-    
+
     func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
         switch item {
         case let preferences as EffectPreferences:
@@ -97,7 +97,7 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
             return false
         }
     }
-    
+
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         if let item: Any = item {
             switch item {
@@ -110,12 +110,12 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
             return PreferencesViewController.allPreferences.count
         }
     }
-    
+
     func outlineViewSelectionDidChange(_ notification: Notification){
         let listView = notification.object as! NSOutlineView
         let selectedIndex = listView.selectedRow
         let object: AnyObject? = listView.item(atRow: selectedIndex) as AnyObject
-        
+
         switch object {
         case _ as EffectPreferences:
             preferenceSelected()
@@ -132,7 +132,7 @@ fileprivate class EffectPreferences: NSObject {
     let name: String
     var preferences: [EffectPreference] = [EffectPreference]()
     let icon: NSImage?
-    
+
     init (name:String, icon:NSImage? = nil){
         self.name = name
         self.icon = icon
@@ -143,7 +143,7 @@ fileprivate class EffectPreference: NSObject {
     var name: String
     var effect: Effect
     let icon: NSImage?
-    
+
     init (effect: Effect, icon: NSImage? = nil) {
         self.effect = effect
         self.name = effect.name()

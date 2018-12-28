@@ -13,7 +13,7 @@ import SwiftyJSON
 class AppPreferences {
     var configuration: JSON?
     var configurationPath: URL = URL(fileURLWithPath: "")
-    
+
     subscript(key: String) -> JSON {
         get {
             return configuration?[key] ?? JSON()
@@ -22,7 +22,7 @@ class AppPreferences {
             configuration?[key] = newValue
         }
     }
-    
+
     init(file: String = "config.json") {
         let urls = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
         if let url = urls.last {
@@ -30,7 +30,7 @@ class AppPreferences {
             try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
         }
     }
-    
+
     func readDefaultPreferences() {
         let asset = NSDataAsset(name: "guiDefaultSettings", bundle: Bundle.main)
         if let configuration = try? JSON(data: asset!.data,
@@ -40,7 +40,7 @@ class AppPreferences {
             logError("Cannot read default configuration")
         }
     }
-    
+
     func read() {
         if let string = try? String(contentsOf: configurationPath, encoding: String.Encoding.utf8) {
             configuration = JSON(parseJSON: string)
@@ -48,7 +48,7 @@ class AppPreferences {
             readDefaultPreferences()
         }
     }
-    
+
     func write() {
         if let output = configuration?.rawString(String.Encoding.utf8,
                                                 options: JSONSerialization.WritingOptions.prettyPrinted) {
