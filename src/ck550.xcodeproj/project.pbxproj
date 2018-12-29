@@ -683,6 +683,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D84AAD121C970D300087947 /* Build configuration list for PBXNativeTarget "ck550" */;
 			buildPhases = (
+				8D90271221D7A7BA00D0EC40 /* Lint Sources */,
 				8D84AABE21C970CE00087947 /* Sources */,
 				8D84AABF21C970CE00087947 /* Frameworks */,
 				8D84AAC021C970CE00087947 /* Resources */,
@@ -822,6 +823,24 @@
 			shellScript = "cp -v \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}\"\n";
 		};
 		8D389ABB21C6FC3D00C4BAC8 /* Lint Sources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Lint Sources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		8D90271221D7A7BA00D0EC40 /* Lint Sources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

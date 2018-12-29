@@ -57,7 +57,7 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         populateConfigurationToViews()
 
         // Select an 'Effects' item in shown in a list view
-        if let effectPreferencesView = self.effectListViewContainer{
+        if let effectPreferencesView = self.effectListViewContainer {
             let index = listView.row(for: effectPreferencesView)
             listView.selectRowIndexes(IndexSet(integer: index), byExtendingSelection: false)
         }
@@ -74,7 +74,7 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         (self as EffectDefaultConfigurationHandler).stopObserving()
 
         var json = JSON()
-        effectPreferenceViewControllers.forEach() { controller in
+        effectPreferenceViewControllers.forEach { controller in
             json[controller.key.name()] = controller.value.settings
         }
 
@@ -100,7 +100,7 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         logDebug("effect[config selection] %@", effect.name())
 
         // Select an 'Effects' item in shown in a list view
-        if let effectPreferenceView = self.effectListViewItems[effect]{
+        if let effectPreferenceView = self.effectListViewItems[effect] {
             let index = listView.row(for: effectPreferenceView)
             listView.selectRowIndexes(IndexSet(integer: index), byExtendingSelection: false)
         }
@@ -134,11 +134,13 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
     }
 
     private func createEffectPreferenceViewController<T: PreferenceViewController>(name: NSNib.Name, type: T.Type) -> PreferenceViewController? {
-        var resultingController: PreferenceViewController?
 
         // This is a file-owner
-        let controller = (T.self as! NSViewController.Type).init(nibName: name, bundle: nil)
+        guard let controllerType = T.self as? NSViewController.Type else {return nil}
+        let controller = controllerType.init(nibName: name, bundle: nil)
         controller.loadView()
+
+        var resultingController: PreferenceViewController?
 
         // This is the real controller defined in XIB
         if let controller = controller.view.findViewController(type: T.self) {
@@ -158,10 +160,10 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
     }
 
     private func createEffectPreferenceViewController(showColor: Bool = true,
-                            showRandom: Bool = true,
-                            showBackgroundColor: Bool = true,
-                            showSpeed: Bool = true,
-                            showDirection: Bool = false) -> EffectPreferenceViewController? {
+                                                      showRandom: Bool = true,
+                                                      showBackgroundColor: Bool = true,
+                                                      showSpeed: Bool = true,
+                                                      showDirection: Bool = false) -> EffectPreferenceViewController? {
         let controller = createEffectPreferenceViewController(name: NSNib.Name("EffectPreferenceView"),
                                                               type: EffectPreferenceViewController.self) as? EffectPreferenceViewController
         controller?.adjustView(showColor: showColor, showRandom: showRandom, showBackgroundColor: showBackgroundColor, showSpeed: showSpeed, showDirection: showDirection)

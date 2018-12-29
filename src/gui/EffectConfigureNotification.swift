@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension Notification.Name {
     public static let CustomEffectConfigure = Notification.Name("kCustomEffectConfigure")
 }

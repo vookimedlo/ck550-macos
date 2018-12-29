@@ -22,6 +22,7 @@ extension NSView {
 }
 
 extension NSView {
+    // swiftlint:disable identifier_name
     private func addBorderSublayer(color: NSColor, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
         let layer = CALayer()
         layer.borderColor = color.cgColor
@@ -29,6 +30,7 @@ extension NSView {
         layer.frame = CGRect(x: x, y: y, width: width, height: height)
         self.layer?.addSublayer(layer)
     }
+    // swiftlint:enable identifier_name
     @discardableResult func addRightBorder(color: NSColor, width: CGFloat) -> NSView {
         addBorderSublayer(color: color, x: self.frame.size.width-width, y: 0, width: width, height: self.frame.size.height)
         return self

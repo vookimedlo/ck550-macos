@@ -19,7 +19,7 @@ protocol PreferencesViewControllerOutline {
 extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSource, PreferencesViewControllerOutline {
     static private var effectPreferences: EffectPreferences = {
         let effectPreferences = EffectPreferences(name: "Effects")
-        Effect.allCases.forEach() { effect in
+        Effect.allCases.forEach { effect in
             let preference = EffectPreference(effect: effect)
             effectPreferences.preferences.append(preference)
         }
@@ -32,7 +32,7 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
         switch item {
         case let preferences as EffectPreferences:
             guard let view = effectListViewContainer else {
-                let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderCell"), owner: self) as! NSTableCellView
+                guard let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "HeaderCell"), owner: self) as? NSTableCellView else {return nil}
                 if let textField = view.textField {
                     textField.stringValue = preferences.name
                 }
@@ -42,7 +42,7 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
             return view
         case let preference as EffectPreference:
             guard let view = effectListViewItems[preference.effect] else {
-                let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "DataCell"), owner: self) as! NSTableCellView
+                guard let view = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "DataCell"), owner: self) as? NSTableCellView else {return nil}
                 if let textField = view.textField {
                     textField.stringValue = preference.name
                 }
@@ -111,8 +111,8 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
         }
     }
 
-    func outlineViewSelectionDidChange(_ notification: Notification){
-        let listView = notification.object as! NSOutlineView
+    func outlineViewSelectionDidChange(_ notification: Notification) {
+        guard let listView = notification.object as? NSOutlineView else {return}
         let selectedIndex = listView.selectedRow
         let object: AnyObject? = listView.item(atRow: selectedIndex) as AnyObject
 
@@ -128,18 +128,18 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
     }
 }
 
-fileprivate class EffectPreferences: NSObject {
+private class EffectPreferences: NSObject {
     let name: String
     var preferences: [EffectPreference] = [EffectPreference]()
     let icon: NSImage?
 
-    init (name:String, icon:NSImage? = nil){
+    init (name: String, icon: NSImage? = nil) {
         self.name = name
         self.icon = icon
     }
 }
 
-fileprivate class EffectPreference: NSObject {
+private class EffectPreference: NSObject {
     var name: String
     var effect: Effect
     let icon: NSImage?

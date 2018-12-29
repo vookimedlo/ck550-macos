@@ -63,7 +63,7 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
                  isEnabled ? "enabled" : "disabled")
 
         if isEnabled {
-            Effect.allCases.forEach() { item in
+            Effect.allCases.forEach { item in
                 if item != effect {
                     effectViewControllers[item]?.effectEnabled = false
                 }

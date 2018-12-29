@@ -35,7 +35,7 @@ class EffectMenuViewController: NSViewController {
     }
 
     @IBAction func enablingToggledAction(_ sender: NSSegmentedControl) {
-        let userInfo = ["isEnabled": sender.isSelected(forSegment: 0), "effect": effect!] as [String : Any]
+        let userInfo = ["isEnabled": sender.isSelected(forSegment: 0), "effect": effect!] as [String: Any]
         let notification = Notification(name: .CustomEffectToggled, object: self, userInfo: userInfo)
         NotificationCenter.default.post(notification)
     }

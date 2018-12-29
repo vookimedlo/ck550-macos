@@ -18,15 +18,13 @@ protocol JSONEncodable {
     var json: JSON {get}
 }
 
-fileprivate let eightBitMultiplicator: CGFloat = 255
+private let eightBitMultiplicator: CGFloat = 255
 
 extension RGBColor: JSONEncodable, JSONDecodable {
     var json: JSON {
-        get {
-            return ["red": JSON(integerLiteral: IntegerLiteralType(red)),
-                    "green": JSON(integerLiteral: IntegerLiteralType(green)),
-                    "blue": JSON(integerLiteral: IntegerLiteralType(blue))]
-        }
+        return ["red": JSON(integerLiteral: IntegerLiteralType(red)),
+                "green": JSON(integerLiteral: IntegerLiteralType(green)),
+                "blue": JSON(integerLiteral: IntegerLiteralType(blue))]
     }
 
     init(red: UInt8, green: UInt8, blue: UInt8) {
