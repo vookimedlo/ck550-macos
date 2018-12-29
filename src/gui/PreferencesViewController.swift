@@ -80,7 +80,7 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
 
         var json = JSON()
         effectPreferenceViewControllers.forEach { controller in
-            json[controller.key.name] = controller.value.settings
+            json[controller.key.rawValue] = controller.value.settings
         }
 
         configuration[.effect] = json
@@ -95,7 +95,7 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
 
     func populateConfigurationToViews() {
         for effect in effectPreferenceViewControllers.keys {
-            effectPreferenceViewControllers[effect]?.settings = configuration[.effect][effect.name]
+            effectPreferenceViewControllers[effect]?.settings = configuration[.effect][effect.rawValue]
         }
     }
 

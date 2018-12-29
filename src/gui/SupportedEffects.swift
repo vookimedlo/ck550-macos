@@ -8,25 +8,29 @@
 
 import Foundation
 
-enum Effect: CaseIterable {
-    case staticKeys
-    case wave
-    case crossMode
-    case singleKey
-    case customization
-    case star
-    case colorCycle
-    case breathing
-    case ripple
-    case snowing
-    case reactivePunch
-    case heartbeat
-    case fireball
-    case circleSpectrum
-    case reactiveTornado
-    case waterRipple
-    case off
+/// Available effects in GUI.
+/// - Important:
+/// RawValues cannot be changed anymore once declared, thus they are suitable for configuration files
+enum Effect: String, CaseIterable {
+    case staticKeys = "Static"
+    case wave = "Wave"
+    case crossMode = "Cross Mode"
+    case singleKey = "Single Key"
+    case customization = "Customization"
+    case star = "Star"
+    case colorCycle = "Color Cycle"
+    case breathing = "Breathing"
+    case ripple = "Ripple"
+    case snowing = "Snowing"
+    case reactivePunch = "Reactive Punch"
+    case heartbeat = "Heartbeat"
+    case fireball = "Fireball"
+    case circleSpectrum = "Circle Spectrum"
+    case reactiveTornado = "Reactive Tornado"
+    case waterRipple = "Water Ripple"
+    case off = "Off"
 
+    /// Strings for displaying in GUI
     var name: String {
         switch self {
         case .staticKeys: return "Static"
