@@ -14,20 +14,27 @@ class AppPreferences {
     var configuration: JSON?
     var configurationPath: URL = URL(fileURLWithPath: "")
 
-    subscript(key: String) -> JSON {
+    enum Preferences: String {
+        case effect
+    }
+
+    subscript(key: Preferences) -> JSON {
         get {
-            return configuration?[key] ?? JSON()
+            return configuration?[key.rawValue] ?? JSON()
         }
         set(newValue) {
-            configuration?[key] = newValue
+            configuration?[key.rawValue] = newValue
         }
     }
 
     init(file: String = "config.json") {
-        let urls = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
+        let urls = FileManager.default.urls(for: .applicationSupportDirectory,
+                                            in: .userDomainMask)
         if let url = urls.last {
             configurationPath = url.appendingPathComponent(file)
-            try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+            try? FileManager.default.createDirectory(at: url,
+                                                     withIntermediateDirectories: true,
+                                                     attributes: nil)
         }
     }
 
@@ -42,7 +49,8 @@ class AppPreferences {
     }
 
     func read() {
-        if let string = try? String(contentsOf: configurationPath, encoding: String.Encoding.utf8) {
+        if let string = try? String(contentsOf: configurationPath,
+                                    encoding: String.Encoding.utf8) {
             configuration = JSON(parseJSON: string)
         } else {
             readDefaultPreferences()

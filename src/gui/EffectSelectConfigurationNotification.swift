@@ -18,9 +18,14 @@ extension Notification.Name {
 
 extension EffectSelectConfigurationHandler {
     func startObserving() {
-        NotificationCenter.default.addObserver(self, selector: #selector(effectSelectConfiguration(notification:)), name: Notification.Name.CustomEffectSelectConfiguration, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(effectSelectConfiguration(notification:)),
+                                               name: Notification.Name.CustomEffectSelectConfiguration,
+                                               object: nil)
     }
     func stopObserving() {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.CustomEffectSelectConfiguration, object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: Notification.Name.CustomEffectSelectConfiguration,
+                                                  object: nil)
     }
 }

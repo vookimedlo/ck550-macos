@@ -42,7 +42,7 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
     func effectConfigure(notification: Notification) {
         guard notification.name == Notification.Name.CustomEffectConfigure else {return}
         guard let effect = notification.userInfo?["effect"] as? Effect else {return}
-        logDebug("effect[configure] %@", effect.name())
+        logDebug("effect[configure] %@", effect.name)
 
         // Hide whole menu
         statusMenu.cancelTracking()
@@ -59,7 +59,7 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
         guard let effect = notification.userInfo?["effect"] as? Effect else {return}
         guard let isEnabled = notification.userInfo?["isEnabled"] as? Bool else {return}
         logDebug("effect[on/off] %@",
-                 effect.name(),
+                 effect.name,
                  isEnabled ? "enabled" : "disabled")
 
         if isEnabled {

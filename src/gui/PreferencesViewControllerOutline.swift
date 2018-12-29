@@ -115,7 +115,6 @@ extension PreferencesViewController: NSOutlineViewDelegate, NSOutlineViewDataSou
         guard let listView = notification.object as? NSOutlineView else {return}
         let selectedIndex = listView.selectedRow
         let object: AnyObject? = listView.item(atRow: selectedIndex) as AnyObject
-
         switch object {
         case _ as EffectPreferences:
             preferenceSelected()
@@ -146,7 +145,7 @@ private class EffectPreference: NSObject {
 
     init (effect: Effect, icon: NSImage? = nil) {
         self.effect = effect
-        self.name = effect.name()
+        self.name = effect.name
         self.icon = icon
     }
 }

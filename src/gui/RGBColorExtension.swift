@@ -39,6 +39,8 @@ extension RGBColor: JSONEncodable, JSONDecodable {
     }
 
     init(json: JSON) {
-        self.init(red: json["red"].uInt8!, green: json["green"].uInt8!, blue: json["blue"].uInt8!)
+        self.init(red: json["red"].uInt8!,
+                  green: json["green"].uInt8!,
+                  blue: json["blue"].uInt8!)
     }
 }

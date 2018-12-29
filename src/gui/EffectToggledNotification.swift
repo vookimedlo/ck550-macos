@@ -18,9 +18,14 @@ extension Notification.Name {
 
 extension EffectToggledHandler {
     func startObserving() {
-        NotificationCenter.default.addObserver(self, selector: #selector(effectToggled(notification:)), name: Notification.Name.CustomEffectToggled, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(effectToggled(notification:)),
+                                               name: Notification.Name.CustomEffectToggled,
+                                               object: nil)
     }
     func stopObserving() {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.CustomEffectToggled, object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: Notification.Name.CustomEffectToggled,
+                                                  object: nil)
     }
 }

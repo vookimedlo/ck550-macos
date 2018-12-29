@@ -13,10 +13,11 @@ import SwiftyJSON
 class EffectNoPreferenceViewController: NSViewController, PreferenceViewController {
     var settings: JSON {
         get {
+            // No implementation, because no preferences are not available for given effect
             return [:]
         }
         set {
-
+            // No implementation, because no preferences are not available for given effect
         }
     }
 

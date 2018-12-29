@@ -66,6 +66,7 @@ class EffectPreferenceViewController: NSViewController, PreferenceViewController
                     showBackgroundColor: Bool = true,
                     showSpeed: Bool = true,
                     showDirection: Bool = false) {
+
         colorTextField.isHidden = !showColor
         colorWell.isHidden = !showColor
         randomColorButton.isHidden = !showRandom

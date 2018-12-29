@@ -13,10 +13,11 @@ import SwiftyJSON
 class EffectsPreferenceViewController: NSViewController, PreferenceViewController {
     var settings: JSON {
         get {
+            // No implementation, because no preferences are not available for given effect
             return [:]
         }
         set {
-
+            // No implementation, because no preferences are not available for given effect
         }
     }
 
@@ -29,7 +30,9 @@ class EffectsPreferenceViewController: NSViewController, PreferenceViewControlle
     }
 
     @IBAction func restoreDefaultEffectsSettingsAction(_ sender: NSButton) {
-        let notification = Notification(name: .CustomEffectDefaultConfiguration, object: self, userInfo: nil)
+        let notification = Notification(name: .CustomEffectDefaultConfiguration,
+                                        object: self,
+                                        userInfo: nil)
         NotificationCenter.default.post(notification)
     }
 }

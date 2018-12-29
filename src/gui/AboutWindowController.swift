@@ -27,7 +27,9 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
 
     @objc private func windowWillClose(notification: Notification) {
         guard let object = notification.object as? NSWindow else { return }
-        NotificationCenter.default.removeObserver(self, name: NSWindow.willCloseNotification, object: object)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSWindow.willCloseNotification,
+                                                  object: object)
         if object.isEqual(licenseWindowController?.window) {
             licenseWindowController = nil
         }
@@ -42,7 +44,10 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
             return
         }
         licenseWindowController = LicenseWindowController(windowNibName: NSNib.Name("LicenseWindow"))
-        NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: licenseWindowController?.window)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(windowWillClose(notification:)),
+                                               name: NSWindow.willCloseNotification,
+                                               object: licenseWindowController?.window)
         licenseWindowController?.window?.orderFrontRegardless()
     }
 
@@ -52,7 +57,10 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
             return
         }
         releaseNotesWindowController = ReleaseNotesWindowController(windowNibName: NSNib.Name("ReleaseNotesWindow"))
-        NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: releaseNotesWindowController?.window)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(windowWillClose(notification:)),
+                                               name: NSWindow.willCloseNotification,
+                                               object: releaseNotesWindowController?.window)
         releaseNotesWindowController?.window?.orderFrontRegardless()
     }
 }

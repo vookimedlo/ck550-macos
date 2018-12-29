@@ -24,7 +24,8 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
     var effectListViewItems = [Effect: NSView]()
 
     required override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(nibName: nibNameOrNil,
+                   bundle: nibBundleOrNil)
     }
 
     required init?(coder: NSCoder) {
@@ -36,7 +37,8 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         headerView.wantsLayer = true
         footerView.wantsLayer = true
 
-        self.listView.expandItem(nil, expandChildren: true)
+        self.listView.expandItem(nil,
+                                 expandChildren: true)
     }
 
     override func viewWillAppear() {
@@ -59,7 +61,8 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         // Select an 'Effects' item in shown in a list view
         if let effectPreferencesView = self.effectListViewContainer {
             let index = listView.row(for: effectPreferencesView)
-            listView.selectRowIndexes(IndexSet(integer: index), byExtendingSelection: false)
+            listView.selectRowIndexes(IndexSet(integer: index),
+                                      byExtendingSelection: false)
         }
 
         (self as EffectDefaultConfigurationHandler).startObserving()
@@ -67,7 +70,9 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
     }
 
     override func viewWillDisappear() {
-        NotificationCenter.default.removeObserver(self, name: NSWindow.didResignKeyNotification, object: view.window)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: NSWindow.didResignKeyNotification,
+                                                  object: view.window)
         logDebug("time to save all configuration changes")
 
         (self as EffectSelectConfigurationHandler).stopObserving()
@@ -75,10 +80,10 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
 
         var json = JSON()
         effectPreferenceViewControllers.forEach { controller in
-            json[controller.key.name()] = controller.value.settings
+            json[controller.key.name] = controller.value.settings
         }
 
-        configuration["effect"] = json
+        configuration[.effect] = json
         configuration.write()
     }
 
@@ -90,19 +95,20 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
 
     func populateConfigurationToViews() {
         for effect in effectPreferenceViewControllers.keys {
-            effectPreferenceViewControllers[effect]?.settings = configuration["effect"][effect.name()]
+            effectPreferenceViewControllers[effect]?.settings = configuration[.effect][effect.name]
         }
     }
 
     func effectSelectConfiguration(notification: Notification) {
         guard notification.name == Notification.Name.CustomEffectSelectConfiguration else {return}
         guard let effect = notification.userInfo?["effect"] as? Effect else {return}
-        logDebug("effect[config selection] %@", effect.name())
+        logDebug("effect[config selection] %@", effect.name)
 
         // Select an 'Effects' item in shown in a list view
         if let effectPreferenceView = self.effectListViewItems[effect] {
             let index = listView.row(for: effectPreferenceView)
-            listView.selectRowIndexes(IndexSet(integer: index), byExtendingSelection: false)
+            listView.selectRowIndexes(IndexSet(integer: index),
+                                      byExtendingSelection: false)
         }
     }
 
@@ -133,7 +139,8 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         mainView.subviews = []
     }
 
-    private func createEffectPreferenceViewController<T: PreferenceViewController>(name: NSNib.Name, type: T.Type) -> PreferenceViewController? {
+    private func createEffectPreferenceViewController<T: PreferenceViewController>(name: NSNib.Name,
+                                                                                   type: T.Type) -> PreferenceViewController? {
 
         // This is a file-owner
         guard let controllerType = T.self as? NSViewController.Type else {return nil}
@@ -153,7 +160,8 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         return resultingController
     }
 
-    private func useEffectPreferenceViewController(for effect: Effect, controller: PreferenceViewController?) {
+    private func useEffectPreferenceViewController(for effect: Effect,
+                                                   controller: PreferenceViewController?) {
         if let controller = controller {
             effectPreferenceViewControllers[effect] = controller
         }
@@ -166,7 +174,11 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
                                                       showDirection: Bool = false) -> EffectPreferenceViewController? {
         let controller = createEffectPreferenceViewController(name: NSNib.Name("EffectPreferenceView"),
                                                               type: EffectPreferenceViewController.self) as? EffectPreferenceViewController
-        controller?.adjustView(showColor: showColor, showRandom: showRandom, showBackgroundColor: showBackgroundColor, showSpeed: showSpeed, showDirection: showDirection)
+        controller?.adjustView(showColor: showColor,
+                               showRandom: showRandom,
+                               showBackgroundColor: showBackgroundColor,
+                               showSpeed: showSpeed,
+                               showDirection: showDirection)
         return controller
     }
 
@@ -179,45 +191,62 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
                  .ripple,
                  .snowing:
                 let controller = createEffectPreferenceViewController(showRandom: false)
-                useEffectPreferenceViewController(for: effect, controller: controller)
+                useEffectPreferenceViewController(for: effect,
+                                                  controller: controller)
             case .reactivePunch,
                  .heartbeat,
                  .fireball,
                  .waterRipple:
                 let controller = createEffectPreferenceViewController()
-                useEffectPreferenceViewController(for: effect, controller: controller)
+                useEffectPreferenceViewController(for: effect,
+                                                  controller: controller)
             case .circleSpectrum,
                  .reactiveTornado:
-                let controller = createEffectPreferenceViewController(showColor: false, showRandom: false, showBackgroundColor: false, showDirection: true)
+                let controller = createEffectPreferenceViewController(showColor: false,
+                                                                      showRandom: false,
+                                                                      showBackgroundColor: false,
+                                                                      showDirection: true)
                 controller?.setupDirectionComboBox(item: "clockwise")
                 controller?.setupDirectionComboBox(item: "counterclockwise")
-                useEffectPreferenceViewController(for: effect, controller: controller)
+                useEffectPreferenceViewController(for: effect,
+                                                  controller: controller)
             case .breathing:
                 let controller = createEffectPreferenceViewController(showBackgroundColor: false)
-                useEffectPreferenceViewController(for: effect, controller: controller)
+                useEffectPreferenceViewController(for: effect,
+                                                  controller: controller)
             case .wave:
-                let controller = createEffectPreferenceViewController(showRandom: false, showBackgroundColor: false, showDirection: true)
+                let controller = createEffectPreferenceViewController(showRandom: false,
+                                                                      showBackgroundColor: false,
+                                                                      showDirection: true)
                 controller?.setupDirectionComboBox(item: "left to right")
                 controller?.setupDirectionComboBox(item: "top to bottom")
                 controller?.setupDirectionComboBox(item: "right to left")
                 controller?.setupDirectionComboBox(item: "bottom to top")
-                useEffectPreferenceViewController(for: effect, controller: controller)
+                useEffectPreferenceViewController(for: effect,
+                                                  controller: controller)
             case .staticKeys:
-                let controller = createEffectPreferenceViewController(showRandom: false, showBackgroundColor: false, showSpeed: false)
-                useEffectPreferenceViewController(for: effect, controller: controller)
+                let controller = createEffectPreferenceViewController(showRandom: false,
+                                                                      showBackgroundColor: false,
+                                                                      showSpeed: false)
+                useEffectPreferenceViewController(for: effect,
+                                                  controller: controller)
             case .colorCycle:
-                let controller = createEffectPreferenceViewController(showColor: false, showRandom: false, showBackgroundColor: false)
-                useEffectPreferenceViewController(for: effect, controller: controller)
+                let controller = createEffectPreferenceViewController(showColor: false,
+                                                                      showRandom: false,
+                                                                      showBackgroundColor: false)
+                useEffectPreferenceViewController(for: effect,
+                                                  controller: controller)
             default:
                 let controller = createEffectPreferenceViewController(name: NSNib.Name("EffectNoPreferenceView"),
                                                                       type: EffectNoPreferenceViewController.self)
-                useEffectPreferenceViewController(for: effect, controller: controller)
+                useEffectPreferenceViewController(for: effect,
+                                                  controller: controller)
             }
         }
     }
 
     func preferenceSelected(effect: Effect) {
-        headerTitleTextField.stringValue = effect.name()
+        headerTitleTextField.stringValue = effect.name
         removeMainViewSubviews()
 
         if let controller = effectPreferenceViewControllers[effect] {
