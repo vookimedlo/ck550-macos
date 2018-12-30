@@ -21,7 +21,7 @@ class CK550HIDDevice: HIDDevice {
         commandAccessMutex.wait()
         if let command = self.command {
             if !command.waitsForAnotherResponse() {
-                Terminal.debug(Data(buffer).hexString())
+//                Terminal.debug(Data(buffer).hexString())
                 waitForResponseMutex.signal()
             } else {
                 command.addIncomingResponse(buffer)
@@ -30,7 +30,7 @@ class CK550HIDDevice: HIDDevice {
                 }
             }
         } else {
-            Terminal.debug(Data(buffer).hexString())
+//            Terminal.debug(Data(buffer).hexString())
         }
         commandAccessMutex.signal()
     }

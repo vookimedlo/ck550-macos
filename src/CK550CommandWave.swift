@@ -27,16 +27,21 @@ extension CK550Command.OffEffectOverride {
             }
         }
 
-        enum Speed {
-            case lowest, lower, middle, higher, highest
+        enum Speed: Int {
+            case lowest = 0, lower, middle, higher, highest
         }
 
-        enum Direction: uint8 {
-            typealias RawValue = uint8
-            case leftToRight = 0x00
-            case topToBottom = 0x02
-            case rightToLeft = 0x04
-            case bottomToTop = 0x06
+        enum Direction: Int {
+            case leftToRight = 0, topToBottom, rightToLeft, bottomToTop
+
+            var byte: uint8 {
+                switch self {
+                case .leftToRight: return 0x00
+                case .topToBottom: return 0x02
+                case .rightToLeft: return 0x04
+                case .bottomToTop: return 0x06
+               }
+            }
         }
 
 // swiftlint:disable identifier_name
@@ -54,7 +59,7 @@ extension CK550Command.OffEffectOverride {
             result[0][17] = UInt8(color.green)
             result[0][18] = UInt8(color.blue)
 
-            result[0][21] = direction.rawValue
+            result[0][21] = direction.byte
 
             let bytes = SpeedBytes.bytes(speed: speed)
             result[0][12] = bytes[0]

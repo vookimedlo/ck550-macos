@@ -10,13 +10,18 @@ import Foundation
 
 extension CK550Command.OffEffectOverride {
     struct WaterRipple {
-        enum Speed: uint8 {
-            typealias RawValue = uint8
-            case lowest = 0x36
-            case lower = 0x18
-            case middle = 0x0C
-            case higher = 0x06
-            case highest = 0x02
+        enum Speed: Int {
+            case lowest = 0, lower, middle, higher, highest
+
+            fileprivate var byte: uint8 {
+                switch self {
+                case .lowest: return 0x36
+                case .lower: return 0x18
+                case .middle: return 0x0C
+                case .higher: return 0x06
+                case .highest: return 0x02
+                }
+            }
         }
 
 // swiftlint:disable identifier_name
@@ -36,7 +41,7 @@ extension CK550Command.OffEffectOverride {
             result[0][25] = UInt8(background.green)
             result[0][26] = UInt8(background.blue)
 
-            result[0][36] = speed.rawValue
+            result[0][36] = speed.byte
 
             if let key = key {
                 result[0][40] = UInt8(key.red)

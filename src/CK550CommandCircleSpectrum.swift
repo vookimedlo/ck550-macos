@@ -44,12 +44,12 @@ extension CK550Command.OffEffectOverride {
             }
         }
 
-        enum Speed {
-            case lowest, lower, middle, higher, highest
+        enum Speed: Int {
+            case lowest = 0, lower, middle, higher, highest
         }
 
-        enum Direction {
-            case clockwise, counterclockwise
+        enum Direction: Int {
+            case clockwise = 0, counterclockwise
         }
 
 // swiftlint:disable identifier_name

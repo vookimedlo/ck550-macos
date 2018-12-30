@@ -34,7 +34,9 @@ class CK550OffEffectCustomizationLayoutUS: CK550OffEffectCustomizationLayout {
         init(packet: Int, offset: Int) {
             self.packet = packet
             self.offset = offset
-            self.color = RGBColor(red: 0, green: 0, blue: 0)
+            self.color = RGBColor(red: UInt16(0),
+                                  green: UInt16(0),
+                                  blue: UInt16(0))
         }
     }
 

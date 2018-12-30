@@ -10,13 +10,18 @@ import Foundation
 
 extension CK550Command.OffEffectOverride {
     struct SingleKey {
-        enum Speed: uint8 {
-            typealias RawValue = uint8
-            case lowest = 0x17
-            case lower = 0x0E
-            case middle = 0x0B
-            case higher = 0x0A
-            case highest = 0x04
+        enum Speed: Int {
+            case lowest = 0, lower, middle, higher, highest
+
+            fileprivate var byte: uint8 {
+                switch self {
+                case .lowest: return 0x17
+                case .lower: return 0x0E
+                case .middle: return 0x0B
+                case .higher: return 0x0A
+                case .highest: return 0x04
+                }
+            }
         }
 
 // swiftlint:disable identifier_name
@@ -36,7 +41,7 @@ extension CK550Command.OffEffectOverride {
             result[0][25] = UInt8(background.green)
             result[0][26] = UInt8(background.blue)
 
-            result[0][36] = speed.rawValue
+            result[0][36] = speed.byte
 
             result[0][40] = UInt8(key.red)
             result[0][41] = UInt8(key.green)

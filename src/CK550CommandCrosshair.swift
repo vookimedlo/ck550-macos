@@ -27,8 +27,8 @@ extension CK550Command.OffEffectOverride {
             }
         }
 
-        enum Speed {
-            case lowest, lower, middle, higher, highest
+        enum Speed: Int {
+            case lowest = 0, lower, middle, higher, highest
         }
 
 // swiftlint:disable identifier_name

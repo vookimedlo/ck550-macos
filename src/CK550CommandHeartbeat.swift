@@ -10,13 +10,18 @@ import Foundation
 
 extension CK550Command.OffEffectOverride {
     struct Heartbeat {
-        enum Speed: uint8 {
-            typealias RawValue = uint8
-            case lowest = 0x01
-            case lower = 0x02
-            case middle = 0x03
-            case higher = 0x05
-            case highest = 0x09
+        enum Speed: Int {
+            case lowest = 0, lower, middle, higher, highest
+
+            fileprivate var byte: uint8 {
+                switch self {
+                case .lowest: return 0x01
+                case .lower: return 0x02
+                case .middle: return 0x03
+                case .higher: return 0x05
+                case .highest: return 0x09
+                }
+            }
         }
 
 // swiftlint:disable identifier_name
@@ -36,7 +41,7 @@ extension CK550Command.OffEffectOverride {
             result[0][25] = UInt8(background.green)
             result[0][26] = UInt8(background.blue)
 
-            result[0][46] = speed.rawValue
+            result[0][46] = speed.byte
 
             if let key = key {
                 result[0][40] = UInt8(key.red)
