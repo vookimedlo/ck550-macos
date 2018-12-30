@@ -85,6 +85,12 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
 
         configuration[.effect] = json
         configuration.write()
+
+        let userInfo = ["configuration": configuration]
+        let notification = Notification(name: .CustomConfigurationChanged,
+                                        object: self,
+                                        userInfo: userInfo)
+        NotificationCenter.default.post(notification)
     }
 
     override var representedObject: Any? {

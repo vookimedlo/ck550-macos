@@ -28,28 +28,26 @@ class EffectPreferenceViewController: NSViewController, PreferenceViewController
     @IBOutlet weak var directionTextField: NSTextField!
     @IBOutlet weak var directionComboBox: NSComboBox!
 
-    private enum JSONKeys: String {
-        case backgroundColor, color, isColorRandom, speed, direction
-    }
-
     var settings: JSON {
         get {
-            return [JSONKeys.backgroundColor.rawValue: RGBColor((backgroundColorWell?.color)!).json,
-                    JSONKeys.color.rawValue: RGBColor((colorWell?.color)!).json,
-                    JSONKeys.isColorRandom.rawValue: randomColorButton.state == .on,
-                    JSONKeys.speed.rawValue: speedComboBox.indexOfSelectedItem,
-                    JSONKeys.direction.rawValue: directionComboBox.indexOfSelectedItem]
+            return [AppPreferences.EffectKeys.backgroundColor.rawValue: RGBColor((backgroundColorWell?.color)!).json,
+                    AppPreferences.EffectKeys.color.rawValue: RGBColor((colorWell?.color)!).json,
+                    AppPreferences.EffectKeys.isColorRandom.rawValue: randomColorButton.state == .on,
+                    AppPreferences.EffectKeys.speed.rawValue: speedComboBox.indexOfSelectedItem,
+                    AppPreferences.EffectKeys.direction.rawValue: directionComboBox.indexOfSelectedItem]
         }
         set(json) {
-            randomColorButton.state = json[JSONKeys.isColorRandom.rawValue].boolValue ? .on : .off
-            speedComboBox.selectItem(at: json[JSONKeys.speed.rawValue].int ?? -1)
-            colorWell.color = NSColor(RGBColor(json: json[JSONKeys.color.rawValue]))
-            backgroundColorWell.color = NSColor(RGBColor(json: json[JSONKeys.backgroundColor.rawValue]))
+            randomColorButton.state = json[AppPreferences.EffectKeys.isColorRandom.rawValue].boolValue ? .on : .off
+            speedComboBox.selectItem(at: json[AppPreferences.EffectKeys.speed.rawValue].int ?? -1)
+            colorWell.color = NSColor(RGBColor(json: json[AppPreferences.EffectKeys.color.rawValue]))
+            backgroundColorWell.color = NSColor(RGBColor(json: json[AppPreferences.EffectKeys.backgroundColor.rawValue]))
 
-            let directionIndex = json[JSONKeys.direction.rawValue].int ?? -1
+            let directionIndex = json[AppPreferences.EffectKeys.direction.rawValue].int ?? -1
             if directionIndex > -1 {
                 directionComboBox.selectItem(at: directionIndex)
             }
+
+            setup()
         }
     }
 

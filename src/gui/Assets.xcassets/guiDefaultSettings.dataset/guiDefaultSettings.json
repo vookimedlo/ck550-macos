@@ -2,136 +2,136 @@
   "effect" : {
     "Fireball" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Circle Spectrum" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : 0,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Cross Mode" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Ripple" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Static" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Single Key" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Snowing" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Heartbeat" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Reactive Punch" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
@@ -140,46 +140,46 @@
     },
     "Star" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Wave" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : 0,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Water Ripple" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
@@ -188,46 +188,46 @@
     },
     "Breathing" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
-      "isColorRandom" : false
+      "isColorRandom" : true
     },
     "Color Cycle" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : -1,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     },
     "Reactive Tornado" : {
       "color" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 255,
+        "green" : 153,
+        "blue" : 51
       },
       "speed" : 2,
       "direction" : 0,
       "backgroundColor" : {
-        "red" : 14,
-        "green" : 14,
-        "blue" : 255
+        "red" : 76,
+        "green" : 0,
+        "blue" : 153
       },
       "isColorRandom" : false
     }

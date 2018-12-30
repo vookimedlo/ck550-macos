@@ -18,6 +18,10 @@ class AppPreferences {
         case effect
     }
 
+    enum EffectKeys: String {
+        case backgroundColor, color, isColorRandom, speed, direction
+    }
+
     subscript(key: Preferences) -> JSON {
         get {
             return configuration?[key.rawValue] ?? JSON()

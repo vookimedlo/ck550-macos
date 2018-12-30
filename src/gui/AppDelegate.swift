@@ -10,12 +10,13 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    let keyboard: KeyboardGUIHandler = KeyboardGUIHandler()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-
+        keyboard.start()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-
+        keyboard.stop()
     }
 }

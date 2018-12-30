@@ -106,6 +106,72 @@
 		8D84AADC21C989CE00087947 /* ToggleMonitoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */; };
 		8D84AADF21C9932E00087947 /* MonitoringNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AADE21C9932E00087947 /* MonitoringNotification.swift */; };
 		8D84AAE021C994FE00087947 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C521AD63BB007746B6 /* Logging.swift */; };
+		8D90271421D7FF9200D0EC40 /* KeyboardGUIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90271321D7FF9200D0EC40 /* KeyboardGUIHandler.swift */; };
+		8D90271521D8003E00D0EC40 /* AssembleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0721BDB765009905CD /* AssembleCommand.swift */; };
+		8D90271621D8003E00D0EC40 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
+		8D90271721D8003E00D0EC40 /* AssembleCommandCircleSpectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281A921C4289F00963B1D /* AssembleCommandCircleSpectrum.swift */; };
+		8D90271821D8003E00D0EC40 /* AssembleCommandColorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3D21BF0A68009AF6E6 /* AssembleCommandColorCycle.swift */; };
+		8D90271921D8003E00D0EC40 /* AssembleCommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */; };
+		8D90271A21D8003E00D0EC40 /* AssembleCommandCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */; };
+		8D90271B21D8003E00D0EC40 /* AssembleCommandFireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAC921C597DA00574CF1 /* AssembleCommandFireball.swift */; };
+		8D90271C21D8003E00D0EC40 /* AssembleCommandFirmwareVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3B21BF0826009AF6E6 /* AssembleCommandFirmwareVersion.swift */; };
+		8D90271D21D8003E00D0EC40 /* AssembleCommandHeartbeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FACB21C5988800574CF1 /* AssembleCommandHeartbeat.swift */; };
+		8D90271E21D8003E00D0EC40 /* AssembleCommandOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4121BF0C07009AF6E6 /* AssembleCommandOff.swift */; };
+		8D90271F21D8003E00D0EC40 /* AssembleCommandProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */; };
+		8D90272021D8003E00D0EC40 /* AssembleCommandReactivePunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FACD21C598A700574CF1 /* AssembleCommandReactivePunch.swift */; };
+		8D90272121D8003E00D0EC40 /* AssembleCommandReactiveTornado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281A721C4269000963B1D /* AssembleCommandReactiveTornado.swift */; };
+		8D90272221D8003E00D0EC40 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
+		8D90272321D8003E00D0EC40 /* AssembleCommandSingleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3921BF0745009AF6E6 /* AssembleCommandSingleKey.swift */; };
+		8D90272421D8003E00D0EC40 /* AssembleCommandSnowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4321BF0C93009AF6E6 /* AssembleCommandSnowing.swift */; };
+		8D90272521D8003E00D0EC40 /* AssembleCommandStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7281AB21C429BD00963B1D /* AssembleCommandStars.swift */; };
+		8D90272621D8003E00D0EC40 /* AssembleCommandStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3F21BF0B8A009AF6E6 /* AssembleCommandStatic.swift */; };
+		8D90272721D8003E00D0EC40 /* AssembleCommandWaterRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FACF21C598C300574CF1 /* AssembleCommandWaterRipple.swift */; };
+		8D90272821D8003E00D0EC40 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
+		8D90272921D8006600D0EC40 /* Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C821AD63CA007746B6 /* Bridging-Header.h */; };
+		8D90272A21D8006600D0EC40 /* CK550OffEffectCustomizationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2214C821C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift */; };
+		8D90272B21D8006600D0EC40 /* CK550OffEffectCustomizationLayoutUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2214CA21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift */; };
+		8D90272C21D8006600D0EC40 /* CK550CommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */; };
+		8D90272D21D8006600D0EC40 /* CK550CommandCircleSpectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */; };
+		8D90272E21D8006600D0EC40 /* CK550CommandColorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */; };
+		8D90272F21D8006600D0EC40 /* CK550CommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */; };
+		8D90273021D8006600D0EC40 /* CK550CommandCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */; };
+		8D90273121D8006600D0EC40 /* CK550CommandFireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABB21C5518F00574CF1 /* CK550CommandFireball.swift */; };
+		8D90273221D8006600D0EC40 /* CK550CommandHeartbeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABF21C58A5300574CF1 /* CK550CommandHeartbeat.swift */; };
+		8D90273321D8006600D0EC40 /* CK550CommandOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA321B5A9AC00BAC6F8 /* CK550CommandOff.swift */; };
+		8D90273421D8006600D0EC40 /* CK550CommandReactivePunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FABD21C5538E00574CF1 /* CK550CommandReactivePunch.swift */; };
+		8D90273521D8006600D0EC40 /* CK550CommandReactiveTornado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FD21B47F9D00EB1F76 /* CK550CommandReactiveTornado.swift */; };
+		8D90273621D8006600D0EC40 /* CK550CommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71D21B32665007746B6 /* CK550CommandRipple.swift */; };
+		8D90273721D8006600D0EC40 /* CK550CommandSingleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71921B1E125007746B6 /* CK550CommandSingleKey.swift */; };
+		8D90273821D8006600D0EC40 /* CK550CommandSnowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F921B46B2D00EB1F76 /* CK550CommandSnowing.swift */; };
+		8D90273921D8006600D0EC40 /* CK550CommandStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FB21B4738E00EB1F76 /* CK550CommandStars.swift */; };
+		8D90273A21D8006600D0EC40 /* CK550CommandStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA121B5A8B900BAC6F8 /* CK550CommandStatic.swift */; };
+		8D90273B21D8006600D0EC40 /* CK550CommandWaterRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAB921C5480A00574CF1 /* CK550CommandWaterRipple.swift */; };
+		8D90273C21D8006600D0EC40 /* CK550CommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71B21B315A1007746B6 /* CK550CommandWave.swift */; };
+		8D90273D21D8006600D0EC40 /* CK550Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B521AD6393007746B6 /* CK550Command.swift */; };
+		8D90273E21D8006600D0EC40 /* CK550CommandEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */; };
+		8D90273F21D8006600D0EC40 /* CK550CommandFirmware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */; };
+		8D90274021D8006600D0EC40 /* CK550CommandProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6B821AD6393007746B6 /* CK550CommandProfiles.swift */; };
+		8D90274121D8006600D0EC40 /* CK550HIDDeviceCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71221AF168F007746B6 /* CK550HIDDeviceCommand.swift */; };
+		8D90274221D8006600D0EC40 /* CK550HIDClientCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71421AF173C007746B6 /* CK550HIDClientCommand.swift */; };
+		8D90274321D8006600D0EC40 /* CK550HIDCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C70921AED604007746B6 /* CK550HIDCommand.swift */; };
+		8D90274421D8006600D0EC40 /* CK550HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C70721ADF458007746B6 /* CK550HIDDevice.swift */; };
+		8D90274521D8006600D0EC40 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71021AEDC19007746B6 /* Queue.swift */; };
+		8D90274621D8006600D0EC40 /* HIDDeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C70221ADE932007746B6 /* HIDDeviceProtocol.swift */; };
+		8D90274721D8006600D0EC40 /* HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */; };
+		8D90274821D8006600D0EC40 /* HIDRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */; };
+		8D90274921D8006600D0EC40 /* HIDEnumerationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C221AD63B2007746B6 /* HIDEnumerationNotification.swift */; };
+		8D90274A21D8006600D0EC40 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C421AD63BB007746B6 /* Data.swift */; };
+		8D90274B21D800B700D0EC40 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; };
+		8D90274C21D800B700D0EC40 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D90274D21D800B700D0EC40 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; };
+		8D90274E21D800B700D0EC40 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D90274F21D800B700D0EC40 /* PrettyColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; };
+		8D90275021D800B700D0EC40 /* PrettyColors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D90275121D800B700D0EC40 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4F21C1859C009AF6E6 /* Result.framework */; };
+		8D90275221D800B700D0EC40 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4F21C1859C009AF6E6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D90275321D801DA00D0EC40 /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4921C0375F009AF6E6 /* Terminal.swift */; };
+		8D90275521D950F200D0EC40 /* ConfigurationChangedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90275421D950F200D0EC40 /* ConfigurationChangedNotification.swift */; };
+		8D90275A21D969FF00D0EC40 /* guiDefaultSettings.json in Sync a default configuration with assets */ = {isa = PBXBuildFile; fileRef = 8D90275821D969D800D0EC40 /* guiDefaultSettings.json */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -157,9 +223,24 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8D90275021D800B700D0EC40 /* PrettyColors.framework in Embed Frameworks */,
+				8D90274C21D800B700D0EC40 /* Commandant.framework in Embed Frameworks */,
+				8D90275221D800B700D0EC40 /* Result.framework in Embed Frameworks */,
 				8D73C65721D1855C0021FA4B /* SwiftyJSON.framework in Embed Frameworks */,
+				8D90274E21D800B700D0EC40 /* Curry.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D90275621D9697600D0EC40 /* Sync a default configuration with assets */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SRCROOT)/gui/Assets.xcassets/guiDefaultSettings.dataset";
+			dstSubfolderSpec = 0;
+			files = (
+				8D90275A21D969FF00D0EC40 /* guiDefaultSettings.json in Sync a default configuration with assets */,
+			);
+			name = "Sync a default configuration with assets";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -266,6 +347,9 @@
 		8D84AAD821C9824D00087947 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleMonitoringViewController.swift; sourceTree = "<group>"; };
 		8D84AADE21C9932E00087947 /* MonitoringNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringNotification.swift; sourceTree = "<group>"; };
+		8D90271321D7FF9200D0EC40 /* KeyboardGUIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGUIHandler.swift; sourceTree = "<group>"; };
+		8D90275421D950F200D0EC40 /* ConfigurationChangedNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationChangedNotification.swift; sourceTree = "<group>"; };
+		8D90275821D969D800D0EC40 /* guiDefaultSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = guiDefaultSettings.json; path = ../../config/guiDefaultSettings.json; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -309,7 +393,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D90274F21D800B700D0EC40 /* PrettyColors.framework in Frameworks */,
+				8D90274B21D800B700D0EC40 /* Commandant.framework in Frameworks */,
+				8D90275121D800B700D0EC40 /* Result.framework in Frameworks */,
 				8D73C65621D1855C0021FA4B /* SwiftyJSON.framework in Frameworks */,
+				8D90274D21D800B700D0EC40 /* Curry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +616,7 @@
 		8D84AAC321C970CE00087947 /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				8D90275721D969BE00D0EC40 /* config */,
 				8D84AADA21C982AE00087947 /* controllers */,
 				8D6FB4CA21CA703200C25DA6 /* extensions */,
 				8D84AADD21C992F900087947 /* notifications */,
@@ -537,6 +626,7 @@
 				8D84AAC821C970D300087947 /* Assets.xcassets */,
 				8D84AACE21C970D300087947 /* ck550.entitlements */,
 				8D84AACD21C970D300087947 /* Info.plist */,
+				8D90271321D7FF9200D0EC40 /* KeyboardGUIHandler.swift */,
 				8D6FB4D921CBC6F600C25DA6 /* SupportedEffects.swift */,
 			);
 			path = gui;
@@ -561,17 +651,9 @@
 		8D84AADA21C982AE00087947 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */,
-				8D6FB4D721CAEF6E00C25DA6 /* EffectMenuViewController.swift */,
-				8D73C65021D022910021FA4B /* EffectNoPreferenceViewController.swift */,
-				8D73C64C21CFED820021FA4B /* EffectPreferenceViewController.swift */,
-				8D73C65F21D4252E0021FA4B /* EffectsPreferenceViewController.swift */,
-				8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */,
-				8D73C64821CE82310021FA4B /* PreferencesViewController.swift */,
-				8D73C65221D0DE520021FA4B /* PreferencesViewControllerOutline.swift */,
-				8D6FB4CF21CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift */,
+				8D90275C21D9704500D0EC40 /* view */,
+				8D90275B21D9703700D0EC40 /* window */,
 				8D84AAD621C9799C00087947 /* StatusMenuController.swift */,
-				8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -579,6 +661,7 @@
 		8D84AADD21C992F900087947 /* notifications */ = {
 			isa = PBXGroup;
 			children = (
+				8D90275421D950F200D0EC40 /* ConfigurationChangedNotification.swift */,
 				8D73C66121D6705F0021FA4B /* EffectConfigureNotification.swift */,
 				8D73C66521D671120021FA4B /* EffectDefaultConfigurationNotification.swift */,
 				8D73C66321D670920021FA4B /* EffectSelectConfigurationNotification.swift */,
@@ -586,6 +669,38 @@
 				8D84AADE21C9932E00087947 /* MonitoringNotification.swift */,
 			);
 			name = notifications;
+			sourceTree = "<group>";
+		};
+		8D90275721D969BE00D0EC40 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				8D90275821D969D800D0EC40 /* guiDefaultSettings.json */,
+			);
+			name = config;
+			sourceTree = "<group>";
+		};
+		8D90275B21D9703700D0EC40 /* window */ = {
+			isa = PBXGroup;
+			children = (
+				8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */,
+				8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */,
+				8D6FB4CF21CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift */,
+			);
+			name = window;
+			sourceTree = "<group>";
+		};
+		8D90275C21D9704500D0EC40 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8D6FB4D721CAEF6E00C25DA6 /* EffectMenuViewController.swift */,
+				8D73C65021D022910021FA4B /* EffectNoPreferenceViewController.swift */,
+				8D73C64C21CFED820021FA4B /* EffectPreferenceViewController.swift */,
+				8D73C65F21D4252E0021FA4B /* EffectsPreferenceViewController.swift */,
+				8D73C64821CE82310021FA4B /* PreferencesViewController.swift */,
+				8D73C65221D0DE520021FA4B /* PreferencesViewControllerOutline.swift */,
+				8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 		8D966E5221C1866D009AF6E6 /* command */ = {
@@ -621,9 +736,9 @@
 		8DFD0D0121BDAC59009905CD /* app */ = {
 			isa = PBXGroup;
 			children = (
-				8DFD0D0221BDAC94009905CD /* shared */,
-				8D84AAC321C970CE00087947 /* gui */,
 				8D34C6CE21AD648B007746B6 /* cli */,
+				8D84AAC321C970CE00087947 /* gui */,
+				8DFD0D0221BDAC94009905CD /* shared */,
 			);
 			name = app;
 			sourceTree = "<group>";
@@ -683,6 +798,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D84AAD121C970D300087947 /* Build configuration list for PBXNativeTarget "ck550" */;
 			buildPhases = (
+				8D90275621D9697600D0EC40 /* Sync a default configuration with assets */,
 				8D90271221D7A7BA00D0EC40 /* Lint Sources */,
 				8D84AABE21C970CE00087947 /* Sources */,
 				8D84AABF21C970CE00087947 /* Frameworks */,
@@ -951,6 +1067,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D90275321D801DA00D0EC40 /* Terminal.swift in Sources */,
+				8D90272921D8006600D0EC40 /* Bridging-Header.h in Sources */,
+				8D90272A21D8006600D0EC40 /* CK550OffEffectCustomizationLayout.swift in Sources */,
+				8D90272B21D8006600D0EC40 /* CK550OffEffectCustomizationLayoutUS.swift in Sources */,
+				8D90272C21D8006600D0EC40 /* CK550CommandBreathing.swift in Sources */,
+				8D90272D21D8006600D0EC40 /* CK550CommandCircleSpectrum.swift in Sources */,
+				8D90272E21D8006600D0EC40 /* CK550CommandColorCycle.swift in Sources */,
+				8D90272F21D8006600D0EC40 /* CK550CommandCrosshair.swift in Sources */,
+				8D90273021D8006600D0EC40 /* CK550CommandCustomization.swift in Sources */,
+				8D90273121D8006600D0EC40 /* CK550CommandFireball.swift in Sources */,
+				8D90275521D950F200D0EC40 /* ConfigurationChangedNotification.swift in Sources */,
+				8D90273221D8006600D0EC40 /* CK550CommandHeartbeat.swift in Sources */,
+				8D90273321D8006600D0EC40 /* CK550CommandOff.swift in Sources */,
+				8D90273421D8006600D0EC40 /* CK550CommandReactivePunch.swift in Sources */,
+				8D90273521D8006600D0EC40 /* CK550CommandReactiveTornado.swift in Sources */,
+				8D90273621D8006600D0EC40 /* CK550CommandRipple.swift in Sources */,
+				8D90273721D8006600D0EC40 /* CK550CommandSingleKey.swift in Sources */,
+				8D90273821D8006600D0EC40 /* CK550CommandSnowing.swift in Sources */,
+				8D90273921D8006600D0EC40 /* CK550CommandStars.swift in Sources */,
+				8D90273A21D8006600D0EC40 /* CK550CommandStatic.swift in Sources */,
+				8D90273B21D8006600D0EC40 /* CK550CommandWaterRipple.swift in Sources */,
+				8D90273C21D8006600D0EC40 /* CK550CommandWave.swift in Sources */,
+				8D90273D21D8006600D0EC40 /* CK550Command.swift in Sources */,
+				8D90273E21D8006600D0EC40 /* CK550CommandEffects.swift in Sources */,
+				8D90273F21D8006600D0EC40 /* CK550CommandFirmware.swift in Sources */,
+				8D90274021D8006600D0EC40 /* CK550CommandProfiles.swift in Sources */,
+				8D90274121D8006600D0EC40 /* CK550HIDDeviceCommand.swift in Sources */,
+				8D90274221D8006600D0EC40 /* CK550HIDClientCommand.swift in Sources */,
+				8D90274321D8006600D0EC40 /* CK550HIDCommand.swift in Sources */,
+				8D90274421D8006600D0EC40 /* CK550HIDDevice.swift in Sources */,
+				8D90274521D8006600D0EC40 /* Queue.swift in Sources */,
+				8D90274621D8006600D0EC40 /* HIDDeviceProtocol.swift in Sources */,
+				8D90274721D8006600D0EC40 /* HIDDevice.swift in Sources */,
+				8D90274821D8006600D0EC40 /* HIDRaw.swift in Sources */,
+				8D90274921D8006600D0EC40 /* HIDEnumerationNotification.swift in Sources */,
+				8D90274A21D8006600D0EC40 /* Data.swift in Sources */,
+				8D90271521D8003E00D0EC40 /* AssembleCommand.swift in Sources */,
+				8D90271621D8003E00D0EC40 /* AssembleCommandBreathing.swift in Sources */,
+				8D90271721D8003E00D0EC40 /* AssembleCommandCircleSpectrum.swift in Sources */,
+				8D90271821D8003E00D0EC40 /* AssembleCommandColorCycle.swift in Sources */,
+				8D90271921D8003E00D0EC40 /* AssembleCommandCrosshair.swift in Sources */,
+				8D90271A21D8003E00D0EC40 /* AssembleCommandCustomization.swift in Sources */,
+				8D90271B21D8003E00D0EC40 /* AssembleCommandFireball.swift in Sources */,
+				8D90271C21D8003E00D0EC40 /* AssembleCommandFirmwareVersion.swift in Sources */,
+				8D90271D21D8003E00D0EC40 /* AssembleCommandHeartbeat.swift in Sources */,
+				8D90271E21D8003E00D0EC40 /* AssembleCommandOff.swift in Sources */,
+				8D90271F21D8003E00D0EC40 /* AssembleCommandProfile.swift in Sources */,
+				8D90272021D8003E00D0EC40 /* AssembleCommandReactivePunch.swift in Sources */,
+				8D90272121D8003E00D0EC40 /* AssembleCommandReactiveTornado.swift in Sources */,
+				8D90272221D8003E00D0EC40 /* AssembleCommandRipple.swift in Sources */,
+				8D90272321D8003E00D0EC40 /* AssembleCommandSingleKey.swift in Sources */,
+				8D90272421D8003E00D0EC40 /* AssembleCommandSnowing.swift in Sources */,
+				8D90272521D8003E00D0EC40 /* AssembleCommandStars.swift in Sources */,
+				8D90272621D8003E00D0EC40 /* AssembleCommandStatic.swift in Sources */,
+				8D90272721D8003E00D0EC40 /* AssembleCommandWaterRipple.swift in Sources */,
+				8D90272821D8003E00D0EC40 /* AssembleCommandWave.swift in Sources */,
 				8D73C64921CE82310021FA4B /* PreferencesViewController.swift in Sources */,
 				8D6FB4D821CAEF6E00C25DA6 /* EffectMenuViewController.swift in Sources */,
 				8D73C65C21D40E240021FA4B /* NSColorExtension.swift in Sources */,
@@ -969,6 +1141,7 @@
 				8D6FB4C921CA614E00C25DA6 /* AboutWindowController.swift in Sources */,
 				8D73C66021D4252E0021FA4B /* EffectsPreferenceViewController.swift in Sources */,
 				8D6FB4D021CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift in Sources */,
+				8D90271421D7FF9200D0EC40 /* KeyboardGUIHandler.swift in Sources */,
 				8D73C66421D670920021FA4B /* EffectSelectConfigurationNotification.swift in Sources */,
 				8D84AAC521C970CE00087947 /* AppDelegate.swift in Sources */,
 				8D73C66221D6705F0021FA4B /* EffectConfigureNotification.swift in Sources */,
