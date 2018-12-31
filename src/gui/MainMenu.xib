@@ -140,7 +140,7 @@
                             <rect key="frame" x="18" y="54" width="143" height="18"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keyboard detected ..." id="JTd-Ih-z9x">
                                 <font key="font" metaFont="menuBar"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" red="0.12838425213234855" green="0.6607836787564767" blue="0.21243645533198738" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
