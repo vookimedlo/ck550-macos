@@ -30,7 +30,11 @@ class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandl
 
         populateEffects()
 
-        statusItem.button?.title = Bundle.appName()
+        let icon = NSImage(named: "statusMenuIcon")
+        icon?.isTemplate = true
+        statusItem.button?.image = icon
+        statusItem.button?.toolTip = Bundle.appName()
+//        statusItem.button?.title = Bundle.appName()
         statusItem.menu = statusMenu
 
         (self as EffectConfigureHandler).startObserving()
