@@ -16,12 +16,13 @@
         <customObject id="js7-Sd-Hgq" userLabel="Status Menu Controller" customClass="StatusMenuController" customModule="ck550" customModuleProvider="target">
             <connections>
                 <outlet property="keyboardInfoViewController" destination="e1a-zo-mRm" id="z1b-we-BCd"/>
+                <outlet property="sleepWakeViewController" destination="5y1-Rd-ts3" id="6YH-Sn-aL6"/>
                 <outlet property="statusEffectMenu" destination="DEa-Py-zfA" id="CdW-dF-bgd"/>
                 <outlet property="statusMenu" destination="48C-yD-jno" id="zrE-G2-knL"/>
                 <outlet property="toggleMonitoringViewController" destination="nqJ-pM-HzU" id="HHl-Vr-QMF"/>
             </connections>
         </customObject>
-        <viewController id="nqJ-pM-HzU" userLabel="Toggle Monitoring View Controller" customClass="ToggleMonitoringViewController" customModule="ck550" customModuleProvider="target">
+        <viewController id="nqJ-pM-HzU" userLabel="Toggle Monitoring View Controller" customClass="MonitoringViewController" customModule="ck550" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="YEC-XN-hWW" id="MXp-Lz-YxO"/>
             </connections>
@@ -31,6 +32,11 @@
                 <outlet property="firmwareTextField" destination="hYv-1S-dsF" id="ANJ-f4-QqR"/>
                 <outlet property="productTextField" destination="cHq-Sl-x9U" id="qP0-bI-fSa"/>
                 <outlet property="view" destination="Jy4-FR-UfB" id="OIi-ae-Xns"/>
+            </connections>
+        </viewController>
+        <viewController id="5y1-Rd-ts3" customClass="SleepWakeViewController" customModule="ck550" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="wIi-Ny-p0f" id="wrf-0V-AaI"/>
             </connections>
         </viewController>
         <menu id="48C-yD-jno">
@@ -44,6 +50,15 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="xDB-rb-anP"/>
+                <menuItem isSeparatorItem="YES" id="XRx-tD-1oL"/>
+                <menuItem title="Sleep/Wake" tag="3" id="yqh-Ta-Q9s">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="XzF-1z-hLi"/>
+                <menuItem title="Monitoring" tag="1" id="AUE-wd-ZCf">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="aLn-8C-xn0"/>
                 <menuItem title="Preferences..." id="4V9-BN-BZw">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -56,10 +71,6 @@
                         <action selector="aboutAction:" target="js7-Sd-Hgq" id="JZ2-Rc-Utf"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="XRx-tD-1oL"/>
-                <menuItem title="Monitoring" tag="1" id="AUE-wd-ZCf">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
                 <menuItem title="Quit" id="KMR-rH-QEG">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -70,17 +81,17 @@
             <connections>
                 <outlet property="delegate" destination="blt-F1-bs0" id="jkC-u4-8dU"/>
             </connections>
-            <point key="canvasLocation" x="-44" y="-319"/>
+            <point key="canvasLocation" x="-45" y="-343"/>
         </menu>
         <customView id="YEC-XN-hWW" userLabel="MonitoringView">
-            <rect key="frame" x="0.0" y="0.0" width="341" height="29"/>
+            <rect key="frame" x="0.0" y="0.0" width="370" height="29"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="xo8-og-WWj">
-                    <rect key="frame" x="0.0" y="0.0" width="341" height="29"/>
+                    <rect key="frame" x="0.0" y="0.0" width="370" height="29"/>
                     <subviews>
                         <customView appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="IG7-F4-hDx">
-                            <rect key="frame" x="254" y="4" width="67" height="21"/>
+                            <rect key="frame" x="283" y="4" width="67" height="21"/>
                             <subviews>
                                 <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3mm-OB-1Ig">
                                     <rect key="frame" x="-2" y="-2" width="71" height="24"/>
@@ -127,7 +138,7 @@
                 <constraint firstItem="xo8-og-WWj" firstAttribute="leading" secondItem="YEC-XN-hWW" secondAttribute="leading" id="TDt-8Z-But"/>
                 <constraint firstAttribute="bottom" secondItem="xo8-og-WWj" secondAttribute="bottom" id="kVF-HD-2Mm"/>
             </constraints>
-            <point key="canvasLocation" x="30" y="-188"/>
+            <point key="canvasLocation" x="44" y="-188.5"/>
         </customView>
         <customView id="Jy4-FR-UfB" userLabel="KeyboardsInfoView">
             <rect key="frame" x="0.0" y="0.0" width="341" height="80"/>
@@ -140,7 +151,7 @@
                             <rect key="frame" x="18" y="54" width="143" height="18"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keyboard detected ..." id="JTd-Ih-z9x">
                                 <font key="font" metaFont="menuBar"/>
-                                <color key="textColor" red="0.12838425213234855" green="0.6607836787564767" blue="0.21243645533198738" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
@@ -149,7 +160,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="- firmware version:" id="OnQ-4D-2ID">
                                 <font key="font" size="11" name=".AppleSystemUIFont"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" red="1" green="0.46162869719999999" blue="0.93630124309999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
@@ -157,7 +168,7 @@
                             <rect key="frame" x="25" y="32" width="89" height="14"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="- product name:" id="a1y-OO-6ci">
                                 <font key="font" size="11" name=".AppleSystemUIFont"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" red="1" green="0.4616286971970307" blue="0.93630124305104867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
@@ -168,7 +179,7 @@
                             </constraints>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="placeholder" id="zSk-Nf-8dN">
                                 <font key="font" size="11" name=".AppleSystemUIFont"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" red="1" green="0.46162869719999999" blue="0.93630124309999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
@@ -176,7 +187,7 @@
                             <rect key="frame" x="137" y="10" width="196" height="14"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="placeholder" id="7dL-JF-Iha">
                                 <font key="font" size="11" name=".AppleSystemUIFont"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" red="1" green="0.46162869719999999" blue="0.93630124309999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
@@ -201,6 +212,63 @@
                 <constraint firstAttribute="bottom" secondItem="lfK-mL-cZK" secondAttribute="bottom" id="TiM-Z2-Gha"/>
             </constraints>
             <point key="canvasLocation" x="29.5" y="-87"/>
+        </customView>
+        <customView id="wIi-Ny-p0f" userLabel="SleepWakeView">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="29"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ija-eP-h6h">
+                    <rect key="frame" x="0.0" y="0.0" width="370" height="29"/>
+                    <subviews>
+                        <customView appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="NEo-bQ-Qvz">
+                            <rect key="frame" x="283" y="4" width="67" height="21"/>
+                            <subviews>
+                                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W3f-k5-g0i">
+                                    <rect key="frame" x="-2" y="-2" width="71" height="24"/>
+                                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="2bR-S9-j2U">
+                                        <font key="font" metaFont="system"/>
+                                        <segments>
+                                            <segment label="On" width="32" selected="YES"/>
+                                            <segment label="Off" width="32" tag="1"/>
+                                        </segments>
+                                    </segmentedCell>
+                                    <connections>
+                                        <action selector="sleepWakeToggledAction:" target="5y1-Rd-ts3" id="djL-HY-W9s"/>
+                                    </connections>
+                                </segmentedControl>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="W3f-k5-g0i" secondAttribute="bottom" id="461-Tw-by0"/>
+                                <constraint firstItem="W3f-k5-g0i" firstAttribute="leading" secondItem="NEo-bQ-Qvz" secondAttribute="leading" id="OQE-ZY-Rzg"/>
+                                <constraint firstAttribute="trailing" secondItem="W3f-k5-g0i" secondAttribute="trailing" id="Yta-xU-r7z"/>
+                                <constraint firstItem="W3f-k5-g0i" firstAttribute="top" secondItem="NEo-bQ-Qvz" secondAttribute="top" id="pJM-hz-dGw"/>
+                            </constraints>
+                        </customView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GoI-hS-I3W">
+                            <rect key="frame" x="18" y="6" width="237" height="18"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Adjust LEDs on a sleep and wake up" id="upf-M8-NpQ">
+                                <font key="font" metaFont="menuBar"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="NEo-bQ-Qvz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GoI-hS-I3W" secondAttribute="trailing" constant="10" id="7x0-wd-R5P"/>
+                        <constraint firstAttribute="trailing" secondItem="NEo-bQ-Qvz" secondAttribute="trailing" constant="20" id="CHH-ly-XhR"/>
+                        <constraint firstItem="GoI-hS-I3W" firstAttribute="centerY" secondItem="Ija-eP-h6h" secondAttribute="centerY" id="OV8-gG-pRn"/>
+                        <constraint firstItem="NEo-bQ-Qvz" firstAttribute="centerY" secondItem="Ija-eP-h6h" secondAttribute="centerY" id="WLC-ff-2Tt"/>
+                        <constraint firstItem="GoI-hS-I3W" firstAttribute="leading" secondItem="Ija-eP-h6h" secondAttribute="leading" constant="20" id="lCO-EU-MaZ"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Ija-eP-h6h" firstAttribute="leading" secondItem="wIi-Ny-p0f" secondAttribute="leading" id="Zsd-n4-a8L"/>
+                <constraint firstAttribute="trailing" secondItem="Ija-eP-h6h" secondAttribute="trailing" id="dPd-XU-MUu"/>
+                <constraint firstItem="Ija-eP-h6h" firstAttribute="top" secondItem="wIi-Ny-p0f" secondAttribute="top" id="pwu-ta-rLz"/>
+                <constraint firstAttribute="bottom" secondItem="Ija-eP-h6h" secondAttribute="bottom" id="qll-Ot-9lQ"/>
+            </constraints>
+            <point key="canvasLocation" x="44" y="11.5"/>
         </customView>
     </objects>
 </document>

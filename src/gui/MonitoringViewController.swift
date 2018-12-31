@@ -1,5 +1,5 @@
 //
-//  ToggleMonitoringViewController.swift
+//  MonitoringViewController.swift
 //  ck550
 //
 //  Created by Michal Duda on 18/12/2018.
@@ -9,10 +9,10 @@
 import Foundation
 import Cocoa
 
-class ToggleMonitoringViewController: NSViewController {
+class MonitoringViewController: NSViewController {
     @IBAction func toggledAction(_ sender: NSSegmentedCell) {
-        let userInfo = ["isEnabled": sender.isSelected(forSegment: 0)]
-        let notification = Notification(name: .CustomMonitoringToggled,
+        let userInfo = [UserInfoNotificationType.isMonitoringEnabled.rawValue: sender.isSelected(forSegment: 0)]
+        let notification = Notification(name: .CustomMenuToggled,
                                         object: self,
                                         userInfo: userInfo)
         NotificationCenter.default.post(notification)

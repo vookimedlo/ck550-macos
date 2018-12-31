@@ -9,11 +9,12 @@
 import Cocoa
 import Foundation
 
-class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHandler, EffectConfigureHandler, KeyboardInfoHandler {
+class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandler, KeyboardInfoHandler {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var statusEffectMenu: NSMenu!
-    @IBOutlet weak var toggleMonitoringViewController: ToggleMonitoringViewController!
+    @IBOutlet weak var toggleMonitoringViewController: MonitoringViewController!
     @IBOutlet weak var keyboardInfoViewController: KeyboardInfoViewController!
+    @IBOutlet weak var sleepWakeViewController: SleepWakeViewController!
 
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var aboutWindowController: AboutWindowController?
@@ -24,6 +25,9 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
         let monitoringPlaceHolder = statusMenu.item(withTag: 1)
         monitoringPlaceHolder?.view = toggleMonitoringViewController.view
 
+        let sleepWakePlaceHolder = statusMenu.item(withTag: 3)
+        sleepWakePlaceHolder?.view = sleepWakeViewController.view
+
         populateEffects()
 
         statusItem.button?.title = Bundle.appName()
@@ -31,13 +35,11 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
 
         (self as EffectConfigureHandler).startObserving()
         (self as EffectToggledHandler).startObserving()
-        (self as MonitoringToggledHandler).startObserving()
         (self as KeyboardInfoHandler).startObserving()
         keyboardInfoViewController.startObserving()
     }
 
     deinit {
-        (self as MonitoringToggledHandler).stopObserving()
         (self as EffectToggledHandler).stopObserving()
         (self as EffectConfigureHandler).stopObserving()
         (self as KeyboardInfoHandler).stopObserving()
@@ -87,12 +89,6 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
 
         // Hide whole menu
         statusMenu.cancelTracking()
-    }
-
-    func monitoringToggled(notification: Notification) {
-        guard notification.name == Notification.Name.CustomMonitoringToggled else {return}
-        guard let isEnabled = notification.userInfo?["isEnabled"] as? Bool else {return}
-        logDebug("monitoring %@", isEnabled)
     }
 
     private func populateEffects() {

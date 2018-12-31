@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D04E32621DB893400707E63 /* MonitoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04E32521DB893400707E63 /* MonitoringViewController.swift */; };
 		8D109A3821BC80D9007F2C30 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; };
 		8D109A3921BC80D9007F2C30 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D20654A21BC7394000FF8E4 /* CK550CommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */; };
@@ -103,8 +104,7 @@
 		8D84AAD321C9723600087947 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D84AAD221C9723600087947 /* MainMenu.xib */; };
 		8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAD621C9799C00087947 /* StatusMenuController.swift */; };
 		8D84AAD921C9824D00087947 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAD821C9824D00087947 /* BundleExtension.swift */; };
-		8D84AADC21C989CE00087947 /* ToggleMonitoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */; };
-		8D84AADF21C9932E00087947 /* MonitoringNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AADE21C9932E00087947 /* MonitoringNotification.swift */; };
+		8D84AADF21C9932E00087947 /* MenuToggleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AADE21C9932E00087947 /* MenuToggleNotification.swift */; };
 		8D84AAE021C994FE00087947 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C521AD63BB007746B6 /* Logging.swift */; };
 		8D90271421D7FF9200D0EC40 /* KeyboardGUIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90271321D7FF9200D0EC40 /* KeyboardGUIHandler.swift */; };
 		8D90271521D8003E00D0EC40 /* AssembleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0721BDB765009905CD /* AssembleCommand.swift */; };
@@ -174,6 +174,8 @@
 		8D90275A21D969FF00D0EC40 /* guiDefaultSettings.json in Sync a default configuration with assets */ = {isa = PBXBuildFile; fileRef = 8D90275821D969D800D0EC40 /* guiDefaultSettings.json */; };
 		8D90275E21D9776700D0EC40 /* KeyboardInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90275D21D9776700D0EC40 /* KeyboardInfoViewController.swift */; };
 		8D90276021DA847600D0EC40 /* KeyboardInfoNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90275F21DA847600D0EC40 /* KeyboardInfoNotification.swift */; };
+		8D90276221DADE1F00D0EC40 /* SleepWakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90276121DADE1F00D0EC40 /* SleepWakeViewController.swift */; };
+		8D90276421DB858900D0EC40 /* UserInfoNotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90276321DB858900D0EC40 /* UserInfoNotificationType.swift */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -248,6 +250,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8D04E32521DB893400707E63 /* MonitoringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringViewController.swift; sourceTree = "<group>"; };
 		8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		8D20653321BC72CF000FF8E4 /* ck550-cli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ck550-cli.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D20654221BC7359000FF8E4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cli/Info.plist; sourceTree = "<group>"; };
@@ -347,13 +350,14 @@
 		8D84AAD221C9723600087947 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		8D84AAD621C9799C00087947 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		8D84AAD821C9824D00087947 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
-		8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleMonitoringViewController.swift; sourceTree = "<group>"; };
-		8D84AADE21C9932E00087947 /* MonitoringNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringNotification.swift; sourceTree = "<group>"; };
+		8D84AADE21C9932E00087947 /* MenuToggleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuToggleNotification.swift; sourceTree = "<group>"; };
 		8D90271321D7FF9200D0EC40 /* KeyboardGUIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGUIHandler.swift; sourceTree = "<group>"; };
 		8D90275421D950F200D0EC40 /* ConfigurationChangedNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationChangedNotification.swift; sourceTree = "<group>"; };
 		8D90275821D969D800D0EC40 /* guiDefaultSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = guiDefaultSettings.json; path = ../../config/guiDefaultSettings.json; sourceTree = "<group>"; };
 		8D90275D21D9776700D0EC40 /* KeyboardInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInfoViewController.swift; sourceTree = "<group>"; };
 		8D90275F21DA847600D0EC40 /* KeyboardInfoNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInfoNotification.swift; sourceTree = "<group>"; };
+		8D90276121DADE1F00D0EC40 /* SleepWakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepWakeViewController.swift; sourceTree = "<group>"; };
+		8D90276321DB858900D0EC40 /* UserInfoNotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoNotificationType.swift; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -671,7 +675,8 @@
 				8D73C66321D670920021FA4B /* EffectSelectConfigurationNotification.swift */,
 				8D6FB4DD21CC142D00C25DA6 /* EffectToggledNotification.swift */,
 				8D90275F21DA847600D0EC40 /* KeyboardInfoNotification.swift */,
-				8D84AADE21C9932E00087947 /* MonitoringNotification.swift */,
+				8D84AADE21C9932E00087947 /* MenuToggleNotification.swift */,
+				8D90276321DB858900D0EC40 /* UserInfoNotificationType.swift */,
 			);
 			name = notifications;
 			sourceTree = "<group>";
@@ -702,9 +707,10 @@
 				8D73C64C21CFED820021FA4B /* EffectPreferenceViewController.swift */,
 				8D73C65F21D4252E0021FA4B /* EffectsPreferenceViewController.swift */,
 				8D90275D21D9776700D0EC40 /* KeyboardInfoViewController.swift */,
+				8D04E32521DB893400707E63 /* MonitoringViewController.swift */,
 				8D73C64821CE82310021FA4B /* PreferencesViewController.swift */,
 				8D73C65221D0DE520021FA4B /* PreferencesViewControllerOutline.swift */,
-				8D84AADB21C989CE00087947 /* ToggleMonitoringViewController.swift */,
+				8D90276121DADE1F00D0EC40 /* SleepWakeViewController.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -1084,6 +1090,7 @@
 				8D90273021D8006600D0EC40 /* CK550CommandCustomization.swift in Sources */,
 				8D90276021DA847600D0EC40 /* KeyboardInfoNotification.swift in Sources */,
 				8D90273121D8006600D0EC40 /* CK550CommandFireball.swift in Sources */,
+				8D90276221DADE1F00D0EC40 /* SleepWakeViewController.swift in Sources */,
 				8D90275521D950F200D0EC40 /* ConfigurationChangedNotification.swift in Sources */,
 				8D90273221D8006600D0EC40 /* CK550CommandHeartbeat.swift in Sources */,
 				8D90273321D8006600D0EC40 /* CK550CommandOff.swift in Sources */,
@@ -1100,6 +1107,7 @@
 				8D90273E21D8006600D0EC40 /* CK550CommandEffects.swift in Sources */,
 				8D90273F21D8006600D0EC40 /* CK550CommandFirmware.swift in Sources */,
 				8D90274021D8006600D0EC40 /* CK550CommandProfiles.swift in Sources */,
+				8D04E32621DB893400707E63 /* MonitoringViewController.swift in Sources */,
 				8D90274121D8006600D0EC40 /* CK550HIDDeviceCommand.swift in Sources */,
 				8D90274221D8006600D0EC40 /* CK550HIDClientCommand.swift in Sources */,
 				8D90274321D8006600D0EC40 /* CK550HIDCommand.swift in Sources */,
@@ -1141,11 +1149,11 @@
 				8D6FB4DE21CC142D00C25DA6 /* EffectToggledNotification.swift in Sources */,
 				8D73C65121D022910021FA4B /* EffectNoPreferenceViewController.swift in Sources */,
 				8D6FB4E021CD89B400C25DA6 /* NSStoryboardExtension.swift in Sources */,
+				8D90276421DB858900D0EC40 /* UserInfoNotificationType.swift in Sources */,
 				8D90275E21D9776700D0EC40 /* KeyboardInfoViewController.swift in Sources */,
 				8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */,
 				8D6FB4CE21CA77E100C25DA6 /* LicenseWindowController.swift in Sources */,
-				8D84AADC21C989CE00087947 /* ToggleMonitoringViewController.swift in Sources */,
-				8D84AADF21C9932E00087947 /* MonitoringNotification.swift in Sources */,
+				8D84AADF21C9932E00087947 /* MenuToggleNotification.swift in Sources */,
 				8D6FB4C921CA614E00C25DA6 /* AboutWindowController.swift in Sources */,
 				8D73C66021D4252E0021FA4B /* EffectsPreferenceViewController.swift in Sources */,
 				8D6FB4D021CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift in Sources */,

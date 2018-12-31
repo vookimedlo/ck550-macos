@@ -7,24 +7,38 @@
 //
 
 import Foundation
+import Cocoa
 
 // swiftlint:disable type_body_length file_length
-class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MonitoringToggledHandler, EffectToggledHandler, ConfigurationChangedHandler {
+class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandler, EffectToggledHandler, ConfigurationChangedHandler {
     private let dispatchQueue = DispatchQueue(label: "keyboardGUI", qos: .utility)
     private let hidQueue = DispatchQueue(label: "hidGUI", qos: .utility)
     private let hid = HIDRaw(CK550HIDDevice.self)
     private var hidDevice: CK550HIDDevice?
     private var onOpenFunction: () -> Void = {}
     private var onOpenEnabled: Bool = true
+    private var onSleepWakeEnabled: Bool = true
     private var configuration = AppPreferences()
     private var activeEffect: Effect?
 
     func start() {
         configuration.read()
         (self as HIDDeviceEnumeratedHandler).startObserving()
-        (self as MonitoringToggledHandler).startObserving()
+        (self as MenuToggledHandler).startObserving()
         (self as EffectToggledHandler).startObserving()
         (self as ConfigurationChangedHandler).startObserving()
+
+        // Sleep / wake notifications
+        NSWorkspace.shared.notificationCenter.addObserver(self,
+                                                          selector: #selector(receiveSleepNotification(notification:)),
+                                                          name: NSWorkspace.willSleepNotification,
+                                                          object: nil)
+
+        NSWorkspace.shared.notificationCenter.addObserver(self,
+                                                          selector: #selector(receiveWakeNotification(notification:)),
+                                                          name: NSWorkspace.didWakeNotification,
+                                                          object: nil)
+
         hidQueue.async {
             _ = self.startHIDMonitoring()
             CFRunLoopRun()
@@ -34,12 +48,40 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MonitoringToggle
     func stop() {
         // tear down our effect changes and restore the previously selected profile configuration
         _ = resetProfile()
+
         (self as ConfigurationChangedHandler).stopObserving()
-        (self as MonitoringToggledHandler).stopObserving()
+        (self as MenuToggledHandler).stopObserving()
         (self as HIDDeviceEnumeratedHandler).stopObserving()
         (self as EffectToggledHandler).stopObserving()
+
+        NSWorkspace.shared.notificationCenter.removeObserver(self,
+                                                             name: NSWorkspace.willSleepNotification,
+                                                             object: nil)
+
+        NSWorkspace.shared.notificationCenter.removeObserver(self,
+                                                             name: NSWorkspace.didWakeNotification,
+                                                             object: nil)
+
         hidQueue.async {
             CFRunLoopStop(CFRunLoopGetCurrent())
+        }
+    }
+
+    @objc func receiveSleepNotification(notification: Notification) {
+        logDebug("System sleep notification")
+        if onSleepWakeEnabled {
+            setOffEffectOff()
+        }
+    }
+
+    @objc func receiveWakeNotification(notification: Notification) {
+        logDebug("System wake notification")
+        if onSleepWakeEnabled {
+            if let effect = activeEffect {
+                scheduleEffect(effect)
+            } else {
+                _ = resetProfile()
+            }
         }
     }
 
@@ -209,13 +251,17 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MonitoringToggle
         }
     }
 
-    func monitoringToggled(notification: Notification) {
-        guard notification.name == Notification.Name.CustomMonitoringToggled else {return}
-        guard let isEnabled = notification.userInfo?["isEnabled"] as? Bool else {return}
-        if isEnabled {
-            onOpenFunction()
+    func menuToggled(notification: Notification) {
+        guard notification.name == Notification.Name.CustomMenuToggled else {return}
+        if let isEnabled = notification.userInfo?[UserInfoNotificationType.isMonitoringEnabled.rawValue] as? Bool {
+            if isEnabled {
+                onOpenFunction()
+            }
+            onOpenEnabled = isEnabled
+        } else
+        if let isEnabled = notification.userInfo?[UserInfoNotificationType.isSleepWakeEnabled.rawValue] as? Bool {
+            onSleepWakeEnabled = isEnabled
         }
-        onOpenEnabled = isEnabled
     }
 
     func startHIDMonitoring() -> Bool {
