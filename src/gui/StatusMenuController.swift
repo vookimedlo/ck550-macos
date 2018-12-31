@@ -9,10 +9,11 @@
 import Cocoa
 import Foundation
 
-class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHandler, EffectConfigureHandler {
+class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHandler, EffectConfigureHandler, KeyboardInfoHandler {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var statusEffectMenu: NSMenu!
     @IBOutlet weak var toggleMonitoringViewController: ToggleMonitoringViewController!
+    @IBOutlet weak var keyboardInfoViewController: KeyboardInfoViewController!
 
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var aboutWindowController: AboutWindowController?
@@ -31,12 +32,26 @@ class StatusMenuController: NSObject, MonitoringToggledHandler, EffectToggledHan
         (self as EffectConfigureHandler).startObserving()
         (self as EffectToggledHandler).startObserving()
         (self as MonitoringToggledHandler).startObserving()
+        (self as KeyboardInfoHandler).startObserving()
+        keyboardInfoViewController.startObserving()
     }
 
     deinit {
         (self as MonitoringToggledHandler).stopObserving()
         (self as EffectToggledHandler).stopObserving()
         (self as EffectConfigureHandler).stopObserving()
+        (self as KeyboardInfoHandler).stopObserving()
+        keyboardInfoViewController.stopObserving()
+    }
+
+    func keyboardInfo(notification: Notification) {
+        guard notification.name == Notification.Name.CustomKeyboardInfo else {return}
+        guard let isPlugged = notification.userInfo?["isPlugged"] as? Bool else {return}
+        guard let keyboardInfoPlaceHolder = statusMenu.item(withTag: 2) else {return}
+
+        DispatchQueue.main.sync {
+            keyboardInfoPlaceHolder.view = isPlugged ? keyboardInfoViewController.view : nil
+        }
     }
 
     func effectConfigure(notification: Notification) {

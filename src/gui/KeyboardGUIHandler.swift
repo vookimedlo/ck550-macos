@@ -248,6 +248,12 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MonitoringToggle
         // swiftlint:enable force_cast
         Terminal.important(" - Keyboard unplugged: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
 
+        let userInfo = ["isPlugged": false]
+        let notification = Notification(name: .CustomKeyboardInfo,
+                                        object: self,
+                                        userInfo: userInfo)
+        NotificationCenter.default.post(notification)
+
         dispatchQueue.async {
             self.hidDevice = nil
         }
@@ -259,11 +265,22 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MonitoringToggle
         }
         self.hidDevice = hidDevice
 
+        var userInfo = [String: Any]()
+        userInfo["isPlugged"] = true
+        userInfo["product"] = hidDevice.product!
+        userInfo["manufacturer"] = hidDevice.manufacturer!
+
         Terminal.important(" - Keyboard detected: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
 
         if let version = getFirmwareVersion() {
+            userInfo["fwVersion"] = version
             Terminal.general("   - FW version: \(version)")
         }
+
+        let notification = Notification(name: .CustomKeyboardInfo,
+                                        object: self,
+                                        userInfo: userInfo)
+        NotificationCenter.default.post(notification)
 
         dispatchQueue.async {
             if self.onOpenEnabled {

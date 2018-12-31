@@ -15,6 +15,7 @@
         <customObject id="blt-F1-bs0" userLabel="Delegate" customClass="AppDelegate" customModule="ck550" customModuleProvider="target"/>
         <customObject id="js7-Sd-Hgq" userLabel="Status Menu Controller" customClass="StatusMenuController" customModule="ck550" customModuleProvider="target">
             <connections>
+                <outlet property="keyboardInfoViewController" destination="e1a-zo-mRm" id="z1b-we-BCd"/>
                 <outlet property="statusEffectMenu" destination="DEa-Py-zfA" id="CdW-dF-bgd"/>
                 <outlet property="statusMenu" destination="48C-yD-jno" id="zrE-G2-knL"/>
                 <outlet property="toggleMonitoringViewController" destination="nqJ-pM-HzU" id="HHl-Vr-QMF"/>
@@ -25,6 +26,13 @@
                 <outlet property="view" destination="YEC-XN-hWW" id="MXp-Lz-YxO"/>
             </connections>
         </viewController>
+        <viewController id="e1a-zo-mRm" customClass="KeyboardInfoViewController" customModule="ck550" customModuleProvider="target">
+            <connections>
+                <outlet property="firmwareTextField" destination="hYv-1S-dsF" id="ANJ-f4-QqR"/>
+                <outlet property="productTextField" destination="cHq-Sl-x9U" id="qP0-bI-fSa"/>
+                <outlet property="view" destination="Jy4-FR-UfB" id="OIi-ae-Xns"/>
+            </connections>
+        </viewController>
         <menu id="48C-yD-jno">
             <items>
                 <menuItem title="Effects" id="PEt-gV-fUV">
@@ -32,6 +40,10 @@
                     <menu key="submenu" title="Effects" id="DEa-Py-zfA"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="KGP-Km-Y0l"/>
+                <menuItem title="Keyboard is not detected!" tag="2" id="Tuq-3a-Ziu">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="xDB-rb-anP"/>
                 <menuItem title="Preferences..." id="4V9-BN-BZw">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -115,7 +127,80 @@
                 <constraint firstItem="xo8-og-WWj" firstAttribute="leading" secondItem="YEC-XN-hWW" secondAttribute="leading" id="TDt-8Z-But"/>
                 <constraint firstAttribute="bottom" secondItem="xo8-og-WWj" secondAttribute="bottom" id="kVF-HD-2Mm"/>
             </constraints>
-            <point key="canvasLocation" x="47" y="-190"/>
+            <point key="canvasLocation" x="30" y="-188"/>
+        </customView>
+        <customView id="Jy4-FR-UfB" userLabel="KeyboardsInfoView">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="lfK-mL-cZK">
+                    <rect key="frame" x="0.0" y="0.0" width="341" height="80"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wd1-gh-6Ov">
+                            <rect key="frame" x="18" y="54" width="143" height="18"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keyboard detected ..." id="JTd-Ih-z9x">
+                                <font key="font" metaFont="menuBar"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DxL-0y-LHF">
+                            <rect key="frame" x="25" y="10" width="103" height="14"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="- firmware version:" id="OnQ-4D-2ID">
+                                <font key="font" size="11" name=".AppleSystemUIFont"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-tu-eJf">
+                            <rect key="frame" x="25" y="32" width="89" height="14"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="- product name:" id="a1y-OO-6ci">
+                                <font key="font" size="11" name=".AppleSystemUIFont"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHq-Sl-x9U" userLabel="ProductPlaceholder">
+                            <rect key="frame" x="137" y="32" width="196" height="14"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="192" id="swL-1E-NBx"/>
+                            </constraints>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="placeholder" id="zSk-Nf-8dN">
+                                <font key="font" size="11" name=".AppleSystemUIFont"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hYv-1S-dsF" userLabel="FWplaceholder">
+                            <rect key="frame" x="137" y="10" width="196" height="14"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="placeholder" id="7dL-JF-Iha">
+                                <font key="font" size="11" name=".AppleSystemUIFont"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="wd1-gh-6Ov" firstAttribute="top" secondItem="lfK-mL-cZK" secondAttribute="top" constant="8" id="5ez-pz-G0g"/>
+                        <constraint firstItem="cHq-Sl-x9U" firstAttribute="leading" secondItem="pKq-tu-eJf" secondAttribute="trailing" constant="27" id="6wc-Fl-zIx"/>
+                        <constraint firstItem="cHq-Sl-x9U" firstAttribute="leading" secondItem="hYv-1S-dsF" secondAttribute="leading" id="9od-cI-ckZ"/>
+                        <constraint firstAttribute="trailing" secondItem="cHq-Sl-x9U" secondAttribute="trailing" constant="10" id="GoE-uy-fiK"/>
+                        <constraint firstItem="hYv-1S-dsF" firstAttribute="top" secondItem="cHq-Sl-x9U" secondAttribute="bottom" constant="8" symbolic="YES" id="LVt-np-Xrf"/>
+                        <constraint firstItem="cHq-Sl-x9U" firstAttribute="top" secondItem="wd1-gh-6Ov" secondAttribute="bottom" constant="8" symbolic="YES" id="bIG-RK-KAV"/>
+                        <constraint firstItem="pKq-tu-eJf" firstAttribute="top" secondItem="wd1-gh-6Ov" secondAttribute="bottom" constant="8" symbolic="YES" id="fZx-SV-I1V"/>
+                        <constraint firstItem="wd1-gh-6Ov" firstAttribute="leading" secondItem="lfK-mL-cZK" secondAttribute="leading" constant="20" id="ikG-KS-mV0"/>
+                        <constraint firstItem="cHq-Sl-x9U" firstAttribute="trailing" secondItem="hYv-1S-dsF" secondAttribute="trailing" id="oqK-dJ-FfH"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="lfK-mL-cZK" firstAttribute="top" secondItem="Jy4-FR-UfB" secondAttribute="top" id="17Y-ms-Ay8"/>
+                <constraint firstItem="lfK-mL-cZK" firstAttribute="leading" secondItem="Jy4-FR-UfB" secondAttribute="leading" id="35a-Uz-uEQ"/>
+                <constraint firstAttribute="trailing" secondItem="lfK-mL-cZK" secondAttribute="trailing" id="9lN-F4-YJL"/>
+                <constraint firstAttribute="bottom" secondItem="lfK-mL-cZK" secondAttribute="bottom" id="TiM-Z2-Gha"/>
+            </constraints>
+            <point key="canvasLocation" x="29.5" y="-87"/>
         </customView>
     </objects>
 </document>
