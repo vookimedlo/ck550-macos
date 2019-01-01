@@ -29,19 +29,21 @@ class EffectMenuViewController: NSViewController {
     }
 
     @IBAction func configurationAction(_ sender: NSButton) {
-        let userInfo = ["effect": effect!]
+        var userInfoBuilder = UserInfo()
+        userInfoBuilder[.effect] = effect!
         let notification = Notification(name: .CustomEffectConfigure,
                                         object: self,
-                                        userInfo: userInfo)
+                                        userInfo: userInfoBuilder.userInfo)
         NotificationCenter.default.post(notification)
     }
 
     @IBAction func enablingToggledAction(_ sender: NSSegmentedControl) {
-        let userInfo = ["isEnabled": sender.isSelected(forSegment: 0),
-                        "effect": effect!] as [String: Any]
+        var userInfoBuilder = UserInfo()
+        userInfoBuilder[.isEnabled] = sender.isSelected(forSegment: 0)
+        userInfoBuilder[.effect] = effect!
         let notification = Notification(name: .CustomEffectToggled,
                                         object: self,
-                                        userInfo: userInfo)
+                                        userInfo: userInfoBuilder.userInfo)
         NotificationCenter.default.post(notification)
     }
 }

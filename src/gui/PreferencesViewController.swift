@@ -86,10 +86,11 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         configuration[.effect] = json
         configuration.write()
 
-        let userInfo = ["configuration": configuration]
+        var userInfoBuilder = UserInfo()
+        userInfoBuilder[.configuration] = configuration
         let notification = Notification(name: .CustomConfigurationChanged,
                                         object: self,
-                                        userInfo: userInfo)
+                                        userInfo: userInfoBuilder.userInfo)
         NotificationCenter.default.post(notification)
     }
 
@@ -106,8 +107,10 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
     }
 
     func effectSelectConfiguration(notification: Notification) {
-        guard notification.name == Notification.Name.CustomEffectSelectConfiguration else {return}
-        guard let effect = notification.userInfo?["effect"] as? Effect else {return}
+        guard let userInfo = UserInfo(notification: notification,
+                                      expected: Notification.Name.CustomEffectSelectConfiguration)
+            else {return}
+        guard let effect = userInfo[.effect] as? Effect else {return}
         logDebug("effect[config selection] %@", effect.name)
 
         // Select an 'Effects' item in shown in a list view

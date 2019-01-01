@@ -229,8 +229,10 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandl
     }
 
     func configurationChanged(notification: Notification) {
-        guard notification.name == Notification.Name.CustomConfigurationChanged else {return}
-        guard let configuration = notification.userInfo?["configuration"] as? AppPreferences else {return}
+        guard let userInfo = UserInfo(notification: notification,
+                                      expected: Notification.Name.CustomConfigurationChanged)
+            else {return}
+        guard let configuration = userInfo[.configuration] as? AppPreferences else {return}
         self.configuration = configuration
         if let effect = activeEffect {
             scheduleEffect(effect)
@@ -238,9 +240,11 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandl
     }
 
     func effectToggled(notification: Notification) {
-        guard notification.name == Notification.Name.CustomEffectToggled else {return}
-        guard let effect = notification.userInfo?["effect"] as? Effect else {return}
-        guard let isEnabled = notification.userInfo?["isEnabled"] as? Bool else {return}
+        guard let userInfo = UserInfo(notification: notification,
+                                      expected: Notification.Name.CustomEffectToggled)
+            else {return}
+        guard let effect = userInfo[.effect] as? Effect else {return}
+        guard let isEnabled = userInfo[.isEnabled] as? Bool else {return}
         if !isEnabled {
             activeEffect = nil
             onOpen {}
@@ -252,14 +256,17 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandl
     }
 
     func menuToggled(notification: Notification) {
-        guard notification.name == Notification.Name.CustomMenuToggled else {return}
-        if let isEnabled = notification.userInfo?[UserInfoNotificationType.isMonitoringEnabled.rawValue] as? Bool {
+        guard let userInfo = UserInfo(notification: notification,
+                                      expected: Notification.Name.CustomMenuToggled)
+            else {return}
+
+        if let isEnabled = userInfo[.isMonitoringEnabled] as? Bool {
             if isEnabled {
                 onOpenFunction()
             }
             onOpenEnabled = isEnabled
         } else
-        if let isEnabled = notification.userInfo?[UserInfoNotificationType.isSleepWakeEnabled.rawValue] as? Bool {
+        if let isEnabled = userInfo[.isSleepWakeEnabled] as? Bool {
             onSleepWakeEnabled = isEnabled
         }
     }
@@ -294,10 +301,11 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandl
         // swiftlint:enable force_cast
         Terminal.important(" - Keyboard unplugged: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
 
-        let userInfo = ["isPlugged": false]
+        var userInfoBuilder = UserInfo()
+        userInfoBuilder[.isPlugged] = false
         let notification = Notification(name: .CustomKeyboardInfo,
                                         object: self,
-                                        userInfo: userInfo)
+                                        userInfo: userInfoBuilder.userInfo)
         NotificationCenter.default.post(notification)
 
         dispatchQueue.async {
@@ -311,21 +319,21 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandl
         }
         self.hidDevice = hidDevice
 
-        var userInfo = [String: Any]()
-        userInfo["isPlugged"] = true
-        userInfo["product"] = hidDevice.product!
-        userInfo["manufacturer"] = hidDevice.manufacturer!
+        var userInfoBuilder = UserInfo()
+        userInfoBuilder[.isPlugged] = true
+        userInfoBuilder[.product] = hidDevice.product!
+        userInfoBuilder[.manufacturer] = hidDevice.manufacturer!
 
         Terminal.important(" - Keyboard detected: \(hidDevice.product!) by \(hidDevice.manufacturer!)")
 
         if let version = getFirmwareVersion() {
-            userInfo["fwVersion"] = version
+            userInfoBuilder[.fwVersion] = version
             Terminal.general("   - FW version: \(version)")
         }
 
         let notification = Notification(name: .CustomKeyboardInfo,
                                         object: self,
-                                        userInfo: userInfo)
+                                        userInfo: userInfoBuilder.userInfo)
         NotificationCenter.default.post(notification)
 
         dispatchQueue.async {

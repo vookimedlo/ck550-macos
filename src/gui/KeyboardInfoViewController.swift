@@ -14,18 +14,20 @@ class KeyboardInfoViewController: NSViewController, KeyboardInfoHandler {
     @IBOutlet weak var firmwareTextField: NSTextField!
 
     func keyboardInfo(notification: Notification) {
-        guard notification.name == Notification.Name.CustomKeyboardInfo else {return}
-        guard let isPlugged = notification.userInfo?["isPlugged"] as? Bool else {return}
+        guard let userInfo = UserInfo(notification: notification,
+                                      expected: Notification.Name.CustomKeyboardInfo)
+            else {return}
+        guard let isPlugged = userInfo[.isPlugged] as? Bool else {return}
 
         DispatchQueue.main.sync {
             if isPlugged {
-                if let fwVersion = notification.userInfo?["fwVersion"] as? String {
+                if let fwVersion = userInfo[.fwVersion] as? String {
                     firmwareTextField?.stringValue = fwVersion
                 }
-                if let product = notification.userInfo?["product"] as? String {
+                if let product = userInfo[.product] as? String {
                     productTextField?.stringValue = product
 
-                    if let manufacturer = notification.userInfo?["manufacturer"] as? String {
+                    if let manufacturer = userInfo[.manufacturer] as? String {
                         productTextField?.toolTip = product + " by " + manufacturer
                     }
                 }

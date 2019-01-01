@@ -11,10 +11,11 @@ import Cocoa
 
 class SleepWakeViewController: NSViewController {
     @IBAction func sleepWakeToggledAction(_ sender: NSSegmentedControl) {
-        let userInfo = [UserInfoNotificationType.isSleepWakeEnabled.rawValue: sender.isSelected(forSegment: 0)]
+        var userInfoBuilder = UserInfo()
+        userInfoBuilder[.isSleepWakeEnabled] = sender.isSelected(forSegment: 0)
         let notification = Notification(name: .CustomMenuToggled,
                                         object: self,
-                                        userInfo: userInfo)
+                                        userInfo: userInfoBuilder.userInfo)
         NotificationCenter.default.post(notification)
     }
 }

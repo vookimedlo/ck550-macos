@@ -11,10 +11,11 @@ import Cocoa
 
 class MonitoringViewController: NSViewController {
     @IBAction func toggledAction(_ sender: NSSegmentedCell) {
-        let userInfo = [UserInfoNotificationType.isMonitoringEnabled.rawValue: sender.isSelected(forSegment: 0)]
+        var userInfoBuilder = UserInfo()
+        userInfoBuilder[.isMonitoringEnabled] = sender.isSelected(forSegment: 0)
         let notification = Notification(name: .CustomMenuToggled,
                                         object: self,
-                                        userInfo: userInfo)
+                                        userInfo: userInfoBuilder.userInfo)
         NotificationCenter.default.post(notification)
     }
 }

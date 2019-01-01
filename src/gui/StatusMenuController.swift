@@ -51,8 +51,10 @@ class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandl
     }
 
     func keyboardInfo(notification: Notification) {
-        guard notification.name == Notification.Name.CustomKeyboardInfo else {return}
-        guard let isPlugged = notification.userInfo?["isPlugged"] as? Bool else {return}
+        guard let userInfo = UserInfo(notification: notification,
+                                      expected: Notification.Name.CustomKeyboardInfo)
+            else {return}
+        guard let isPlugged = userInfo[.isPlugged] as? Bool else {return}
         guard let keyboardInfoPlaceHolder = statusMenu.item(withTag: 2) else {return}
 
         DispatchQueue.main.sync {
@@ -61,8 +63,10 @@ class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandl
     }
 
     func effectConfigure(notification: Notification) {
-        guard notification.name == Notification.Name.CustomEffectConfigure else {return}
-        guard let effect = notification.userInfo?["effect"] as? Effect else {return}
+        guard let userInfo = UserInfo(notification: notification,
+                                      expected: Notification.Name.CustomEffectConfigure)
+            else {return}
+        guard let effect = userInfo[.effect] as? Effect else {return}
         logDebug("effect[configure] %@", effect.name)
 
         // Hide whole menu
@@ -70,15 +74,20 @@ class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandl
 
         showPreferences()
 
-        let userInfo = ["effect": effect]
-        let notification = Notification(name: .CustomEffectSelectConfiguration, object: self, userInfo: userInfo)
+        var userInfoBuilder = UserInfo()
+        userInfoBuilder[.effect] = effect
+        let notification = Notification(name: .CustomEffectSelectConfiguration,
+                                        object: self,
+                                        userInfo: userInfoBuilder.userInfo)
         NotificationCenter.default.post(notification)
     }
 
     func effectToggled(notification: Notification) {
-        guard notification.name == Notification.Name.CustomEffectToggled else {return}
-        guard let effect = notification.userInfo?["effect"] as? Effect else {return}
-        guard let isEnabled = notification.userInfo?["isEnabled"] as? Bool else {return}
+        guard let userInfo = UserInfo(notification: notification,
+                                      expected: Notification.Name.CustomEffectToggled)
+            else {return}
+        guard let effect = userInfo[.effect] as? Effect else {return}
+        guard let isEnabled = userInfo[.isEnabled] as? Bool else {return}
         logDebug("effect[on/off] %@",
                  effect.name,
                  isEnabled ? "enabled" : "disabled")
