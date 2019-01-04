@@ -1,6 +1,6 @@
 {
     "effect": {
-        "customization": {
+        "Customization": {
             "Escape": {"red": 0, "green": 0, "blue": 0},
             "F1": {"red": 0, "green": 0, "blue": 0},
             "F2": {"red": 0, "green": 0, "blue": 0},

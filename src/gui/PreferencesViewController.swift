@@ -10,7 +10,8 @@ import Foundation
 import Cocoa
 import SwiftyJSON
 
-class PreferencesViewController: NSViewController, EffectSelectConfigurationHandler, EffectDefaultConfigurationHandler {
+// swiftlint:disable type_body_length
+class PreferencesViewController: NSViewController, EffectSelectConfigurationHandler, EffectDefaultConfigurationHandler, FileLoadedHandler {
     @IBOutlet weak var listView: NSOutlineView!
     @IBOutlet weak var headerView: NSView!
     @IBOutlet weak var mainView: NSView!
@@ -39,6 +40,16 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
 
         self.listView.expandItem(nil,
                                  expandChildren: true)
+
+        createAndRegisterEffectPreferenceViewControllers()
+        configuration.read()
+        populateConfigurationToViews()
+
+        (self as FileLoadedHandler).startObserving()
+    }
+
+    deinit {
+         (self as FileLoadedHandler).stopObserving()
     }
 
     override func viewWillAppear() {
@@ -52,11 +63,6 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
                                                selector: #selector(didResignKeyNotification(notification:)),
                                                name: NSWindow.didResignKeyNotification,
                                                object: view.window)
-
-        createAndRegisterEffectPreferenceViewControllers()
-
-        configuration.read()
-        populateConfigurationToViews()
 
         // Select an 'Effects' item in shown in a list view
         if let effectPreferencesView = self.effectListViewContainer {
@@ -126,6 +132,32 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         logDebug("using a default configuration")
         configuration.readDefaultPreferences()
         populateConfigurationToViews()
+    }
+
+    func fileLoaded(notification: Notification) {
+        guard let userInfo = UserInfo(notification: notification,
+                                      expected: Notification.Name.CustomFileLoaded)
+            else {return}
+        guard let url = userInfo[.customizationFile] as? URL else {return}
+
+        var json: JSON = [:]
+        if let string = try? String(contentsOf: url, encoding: String.Encoding.utf8) {
+            // TODO: weird
+            if isJSONParsable(string) {
+                json = JSON(parseJSON: string)
+            }
+        }
+
+        let settings: JSON = json[AppPreferences.Preferences.effect.rawValue][Effect.customization.rawValue]
+        configuration[.effect][Effect.customization.rawValue] = settings
+        configuration.write()
+
+        var userInfoBuilder = UserInfo()
+        userInfoBuilder[.effect] = Effect.customization
+        let notification = Notification(name: .CustomEffectConfigure,
+                                        object: self,
+                                        userInfo: userInfoBuilder.userInfo)
+        NotificationCenter.default.post(notification)
     }
 
     @objc private func didResignKeyNotification(notification: Notification) {
@@ -245,6 +277,11 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
                                                                       showBackgroundColor: false)
                 useEffectPreferenceViewController(for: effect,
                                                   controller: controller)
+            case .customization:
+                let controller = createEffectPreferenceViewController(name: NSNib.Name("EffectCustomizationPreferenceView"),
+                                                                      type: EffectCustomizationPreferenceViewController.self)
+                useEffectPreferenceViewController(for: effect,
+                                                  controller: controller)
             default:
                 let controller = createEffectPreferenceViewController(name: NSNib.Name("EffectNoPreferenceView"),
                                                                       type: EffectNoPreferenceViewController.self)
@@ -291,3 +328,4 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
         view.window?.performClose(self)
     }
 }
+// swiftlint:enable type_body_length

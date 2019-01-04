@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8D04E32621DB893400707E63 /* MonitoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04E32521DB893400707E63 /* MonitoringViewController.swift */; };
+		8D04E32821DBE7A300707E63 /* EffectCustomizationPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D04E32721DBE7A300707E63 /* EffectCustomizationPreferenceView.xib */; };
+		8D04E32A21DBFC5B00707E63 /* EffectCustomizationPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04E32921DBFC5B00707E63 /* EffectCustomizationPreferenceViewController.swift */; };
+		8D04E32C21DD5C1D00707E63 /* FileLoadNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04E32B21DD5C1D00707E63 /* FileLoadNotification.swift */; };
+		8D04E32E21DEA58C00707E63 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04E32D21DEA58C00707E63 /* Utils.swift */; };
 		8D109A3821BC80D9007F2C30 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; };
 		8D109A3921BC80D9007F2C30 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D20654A21BC7394000FF8E4 /* CK550CommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */; };
@@ -201,6 +205,7 @@
 		8D966E5D21C1A60A009AF6E6 /* CLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5C21C1A60A009AF6E6 /* CLI.swift */; };
 		8D966E5F21C1B65E009AF6E6 /* ColorCycleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5E21C1B65E009AF6E6 /* ColorCycleCommand.swift */; };
 		8D966E6121C1BD8D009AF6E6 /* BreathingCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E6021C1BD8D009AF6E6 /* BreathingCommand.swift */; };
+		8DAB658121E145850084D5B6 /* NSButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB658021E145850084D5B6 /* NSButtonExtension.swift */; };
 		8DFD0D0621BDB105009905CD /* AssembleCommandCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */; };
 		8DFD0D0821BDB765009905CD /* AssembleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0721BDB765009905CD /* AssembleCommand.swift */; };
 /* End PBXBuildFile section */
@@ -251,6 +256,10 @@
 
 /* Begin PBXFileReference section */
 		8D04E32521DB893400707E63 /* MonitoringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitoringViewController.swift; sourceTree = "<group>"; };
+		8D04E32721DBE7A300707E63 /* EffectCustomizationPreferenceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EffectCustomizationPreferenceView.xib; sourceTree = "<group>"; };
+		8D04E32921DBFC5B00707E63 /* EffectCustomizationPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectCustomizationPreferenceViewController.swift; sourceTree = "<group>"; };
+		8D04E32B21DD5C1D00707E63 /* FileLoadNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoadNotification.swift; sourceTree = "<group>"; };
+		8D04E32D21DEA58C00707E63 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		8D20653321BC72CF000FF8E4 /* ck550-cli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ck550-cli.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D20654221BC7359000FF8E4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cli/Info.plist; sourceTree = "<group>"; };
@@ -379,6 +388,7 @@
 		8D966E5C21C1A60A009AF6E6 /* CLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLI.swift; path = cli/CLI.swift; sourceTree = "<group>"; };
 		8D966E5E21C1B65E009AF6E6 /* ColorCycleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorCycleCommand.swift; path = cli/ColorCycleCommand.swift; sourceTree = "<group>"; };
 		8D966E6021C1BD8D009AF6E6 /* BreathingCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BreathingCommand.swift; path = cli/BreathingCommand.swift; sourceTree = "<group>"; };
+		8DAB658021E145850084D5B6 /* NSButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSButtonExtension.swift; sourceTree = "<group>"; };
 		8DFD0D0421BDADCB009905CD /* ck550-cli.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ck550-cli.entitlements"; sourceTree = "<group>"; };
 		8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCustomization.swift; sourceTree = "<group>"; };
 		8DFD0D0721BDB765009905CD /* AssembleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommand.swift; sourceTree = "<group>"; };
@@ -579,6 +589,7 @@
 			isa = PBXGroup;
 			children = (
 				8D84AAD821C9824D00087947 /* BundleExtension.swift */,
+				8DAB658021E145850084D5B6 /* NSButtonExtension.swift */,
 				8D73C65B21D40E240021FA4B /* NSColorExtension.swift */,
 				8D6FB4DF21CD89B400C25DA6 /* NSStoryboardExtension.swift */,
 				8D6FB4DB21CBD79C00C25DA6 /* NSViewExtension.swift */,
@@ -636,6 +647,7 @@
 				8D84AACD21C970D300087947 /* Info.plist */,
 				8D90271321D7FF9200D0EC40 /* KeyboardGUIHandler.swift */,
 				8D6FB4D921CBC6F600C25DA6 /* SupportedEffects.swift */,
+				8D04E32D21DEA58C00707E63 /* Utils.swift */,
 			);
 			path = gui;
 			sourceTree = "<group>";
@@ -644,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6FB4C621C9A4B400C25DA6 /* AboutWindow.xib */,
+				8D04E32721DBE7A300707E63 /* EffectCustomizationPreferenceView.xib */,
 				8D6FB4D521CAEEEA00C25DA6 /* EffectMenuView.xib */,
 				8D73C64E21D01C4F0021FA4B /* EffectNoPreferenceView.xib */,
 				8D73C64A21CFDBB30021FA4B /* EffectPreferenceView.xib */,
@@ -674,6 +687,7 @@
 				8D73C66521D671120021FA4B /* EffectDefaultConfigurationNotification.swift */,
 				8D73C66321D670920021FA4B /* EffectSelectConfigurationNotification.swift */,
 				8D6FB4DD21CC142D00C25DA6 /* EffectToggledNotification.swift */,
+				8D04E32B21DD5C1D00707E63 /* FileLoadNotification.swift */,
 				8D90275F21DA847600D0EC40 /* KeyboardInfoNotification.swift */,
 				8D84AADE21C9932E00087947 /* MenuToggleNotification.swift */,
 				8D90276321DB858900D0EC40 /* UserInfoNotificationType.swift */,
@@ -702,6 +716,7 @@
 		8D90275C21D9704500D0EC40 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				8D04E32921DBFC5B00707E63 /* EffectCustomizationPreferenceViewController.swift */,
 				8D6FB4D721CAEF6E00C25DA6 /* EffectMenuViewController.swift */,
 				8D73C65021D022910021FA4B /* EffectNoPreferenceViewController.swift */,
 				8D73C64C21CFED820021FA4B /* EffectPreferenceViewController.swift */,
@@ -893,6 +908,7 @@
 				8D84AAD321C9723600087947 /* MainMenu.xib in Resources */,
 				8D6FB4D621CAEEEA00C25DA6 /* EffectMenuView.xib in Resources */,
 				8D6FB4D221CAB8C700C25DA6 /* ReleaseNotesWindow.xib in Resources */,
+				8D04E32821DBE7A300707E63 /* EffectCustomizationPreferenceView.xib in Resources */,
 				8D6FB4C721C9A4B400C25DA6 /* AboutWindow.xib in Resources */,
 				8D73C65E21D420330021FA4B /* EffectsPreferenceView.xib in Resources */,
 				8D6FB4CC21CA774B00C25DA6 /* LicenseWindow.xib in Resources */,
@@ -1107,9 +1123,11 @@
 				8D90273E21D8006600D0EC40 /* CK550CommandEffects.swift in Sources */,
 				8D90273F21D8006600D0EC40 /* CK550CommandFirmware.swift in Sources */,
 				8D90274021D8006600D0EC40 /* CK550CommandProfiles.swift in Sources */,
+				8D04E32C21DD5C1D00707E63 /* FileLoadNotification.swift in Sources */,
 				8D04E32621DB893400707E63 /* MonitoringViewController.swift in Sources */,
 				8D90274121D8006600D0EC40 /* CK550HIDDeviceCommand.swift in Sources */,
 				8D90274221D8006600D0EC40 /* CK550HIDClientCommand.swift in Sources */,
+				8D04E32A21DBFC5B00707E63 /* EffectCustomizationPreferenceViewController.swift in Sources */,
 				8D90274321D8006600D0EC40 /* CK550HIDCommand.swift in Sources */,
 				8D90274421D8006600D0EC40 /* CK550HIDDevice.swift in Sources */,
 				8D90274521D8006600D0EC40 /* Queue.swift in Sources */,
@@ -1132,6 +1150,7 @@
 				8D90272021D8003E00D0EC40 /* AssembleCommandReactivePunch.swift in Sources */,
 				8D90272121D8003E00D0EC40 /* AssembleCommandReactiveTornado.swift in Sources */,
 				8D90272221D8003E00D0EC40 /* AssembleCommandRipple.swift in Sources */,
+				8D04E32E21DEA58C00707E63 /* Utils.swift in Sources */,
 				8D90272321D8003E00D0EC40 /* AssembleCommandSingleKey.swift in Sources */,
 				8D90272421D8003E00D0EC40 /* AssembleCommandSnowing.swift in Sources */,
 				8D90272521D8003E00D0EC40 /* AssembleCommandStars.swift in Sources */,
@@ -1152,6 +1171,7 @@
 				8D90276421DB858900D0EC40 /* UserInfoNotificationType.swift in Sources */,
 				8D90275E21D9776700D0EC40 /* KeyboardInfoViewController.swift in Sources */,
 				8D84AAD721C9799C00087947 /* StatusMenuController.swift in Sources */,
+				8DAB658121E145850084D5B6 /* NSButtonExtension.swift in Sources */,
 				8D6FB4CE21CA77E100C25DA6 /* LicenseWindowController.swift in Sources */,
 				8D84AADF21C9932E00087947 /* MenuToggleNotification.swift in Sources */,
 				8D6FB4C921CA614E00C25DA6 /* AboutWindowController.swift in Sources */,

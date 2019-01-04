@@ -32,7 +32,7 @@ extension RGBColor: JSONEncodable, JSONDecodable {
     }
 
     init(_ nscolor: NSColor) {
-        let color = nscolor.colorSpace != NSColorSpace.genericRGB ? nscolor : nscolor.usingColorSpace(NSColorSpace.genericRGB)
+        let color = nscolor.colorSpace == NSColorSpace.genericRGB ? nscolor : nscolor.usingColorSpace(NSColorSpace.genericRGB)
         self.init(red: UInt8((color?.redComponent)! * eightBitMultiplicator),
                   green: UInt8((color?.greenComponent)! * eightBitMultiplicator),
                   blue: UInt8((color?.blueComponent)! * eightBitMultiplicator))

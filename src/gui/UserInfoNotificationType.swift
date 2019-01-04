@@ -1,5 +1,5 @@
 //
-//  UserInfoNotificationTypes.swift
+//  UserInfoNotificationType.swift
 //  ck550
 //
 //  Created by Michal Duda on 01/01/2019.
@@ -12,12 +12,14 @@ enum UserInfoNotificationType: String {
     case isMonitoringEnabled, isSleepWakeEnabled
     case isEnabled
     case configuration
-    case device
     case effect
     case isPlugged
     case fwVersion
     case product
     case manufacturer
+    case customizationFile
+    case isValid
+    case isSelected
 }
 
 struct UserInfo {

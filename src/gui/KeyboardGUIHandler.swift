@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import SwiftyJSON
 
 // swiftlint:disable type_body_length file_length
 class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandler, EffectToggledHandler, ConfigurationChangedHandler {
@@ -138,7 +139,12 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandl
             execute()
             onOpen {execute()}
         case .customization:
-            print("")
+            let execute = {
+                let json = self.configuration[.effect][Effect.customization.rawValue]
+                self.setCustomColors(json: json)
+            }
+            execute()
+            onOpen {execute()}
         case .star:
             let execute = {
                 self.setOffEffectStars(key: preferences.color,
@@ -406,21 +412,9 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandl
         return nil
     }
 
-    func setCustomColors(jsonPath: String) {
-        if let hidDevice = self.hidDevice {
-            Terminal.general("   - Setting a custom key color effect", "...", separator: " ", terminator: " ")
-            do {
-                let command = try AssembleCommand.assembleCommandCustomization(configPath: jsonPath)
-                hidDevice.write(command: command)
-                printCommandResult(command.result)
-            } catch AssembleCommand.AssembleError.fileReadFailure(let path) {
-                Terminal.error("Cannot read configuration file:", path)
-            } catch AssembleCommand.AssembleError.invalidFormatJSON {
-                Terminal.error("Configuration file has a wrong format", jsonPath)
-            } catch {
-                Terminal.error("Unexpected error")
-            }
-        }
+    func setCustomColors(json: JSON) {
+        executeOffOverrideEffect({ return try AssembleCommand.assembleCommandCustomization(json: json)},
+                                 description: "Setting a custom key color effect")
     }
 
     func setOffEffectSnowing(background: RGBColor, key: RGBColor, speed: CK550Command.OffEffectOverride.Snowing.Speed) {

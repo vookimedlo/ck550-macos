@@ -32,7 +32,7 @@
             <objects>
                 <viewController id="Fnv-LI-sg6" customClass="PreferencesViewController" customModule="ck550" customModuleProvider="target" sceneMemberID="viewController">
                     <stackView key="view" distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" horizontalClippingResistancePriority="250" verticalClippingResistancePriority="250" detachesHiddenViews="YES" id="cZR-0K-evn">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="910" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmJ-J1-23y">
@@ -136,13 +136,13 @@
                                 </scroller>
                             </scrollView>
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="DHC-e7-6Q9">
-                                <rect key="frame" x="200" y="0.0" width="600" height="400"/>
+                                <rect key="frame" x="200" y="0.0" width="710" height="400"/>
                                 <subviews>
                                     <view translatesAutoresizingMaskIntoConstraints="NO" id="G3f-Bg-XXI" userLabel="Preference Header View">
-                                        <rect key="frame" x="0.0" y="350" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="350" width="710" height="50"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4x-yF-K12">
-                                                <rect key="frame" x="18" y="14" width="564" height="19"/>
+                                                <rect key="frame" x="18" y="14" width="674" height="19"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" allowsUndo="NO" placeholderString="Effect Name" usesSingleLineMode="YES" id="Hbb-Yl-49h">
                                                     <font key="font" metaFont="systemHeavy" size="14"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -159,13 +159,13 @@
                                         </constraints>
                                     </view>
                                     <view translatesAutoresizingMaskIntoConstraints="NO" id="sn5-2d-z4L" userLabel="Preference View">
-                                        <rect key="frame" x="20" y="50" width="560" height="300"/>
+                                        <rect key="frame" x="0.0" y="50" width="710" height="300"/>
                                     </view>
                                     <view translatesAutoresizingMaskIntoConstraints="NO" id="ksI-3H-Man" userLabel="Preference Footer View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="710" height="50"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pot-Hk-1Cv">
-                                                <rect key="frame" x="511" y="8" width="75" height="32"/>
+                                                <rect key="frame" x="621" y="8" width="75" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V6S-gV-Ffn">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -188,12 +188,12 @@
                                     <constraint firstItem="sn5-2d-z4L" firstAttribute="bottom" secondItem="ksI-3H-Man" secondAttribute="top" id="AEw-xx-RDS"/>
                                     <constraint firstItem="G3f-Bg-XXI" firstAttribute="top" secondItem="DHC-e7-6Q9" secondAttribute="top" id="Gyz-2r-SjB"/>
                                     <constraint firstItem="G3f-Bg-XXI" firstAttribute="trailing" secondItem="DHC-e7-6Q9" secondAttribute="trailing" id="Nbg-Y9-I4X"/>
-                                    <constraint firstItem="sn5-2d-z4L" firstAttribute="trailing" secondItem="DHC-e7-6Q9" secondAttribute="trailing" constant="-20" id="QHJ-41-1eV"/>
+                                    <constraint firstItem="sn5-2d-z4L" firstAttribute="trailing" secondItem="DHC-e7-6Q9" secondAttribute="trailing" id="QHJ-41-1eV"/>
                                     <constraint firstAttribute="trailing" secondItem="ksI-3H-Man" secondAttribute="trailing" id="Rmf-PM-lTn"/>
                                     <constraint firstAttribute="trailing" secondItem="ksI-3H-Man" secondAttribute="trailing" id="UfH-e8-VNR"/>
                                     <constraint firstAttribute="bottom" secondItem="ksI-3H-Man" secondAttribute="bottom" id="Wm4-Er-ocu"/>
                                     <constraint firstItem="G3f-Bg-XXI" firstAttribute="leading" secondItem="DHC-e7-6Q9" secondAttribute="leading" id="XGK-sH-Dnz"/>
-                                    <constraint firstItem="sn5-2d-z4L" firstAttribute="leading" secondItem="DHC-e7-6Q9" secondAttribute="leading" constant="20" id="dmk-A6-G0G"/>
+                                    <constraint firstItem="sn5-2d-z4L" firstAttribute="leading" secondItem="DHC-e7-6Q9" secondAttribute="leading" id="dmk-A6-G0G"/>
                                     <constraint firstItem="ksI-3H-Man" firstAttribute="leading" secondItem="DHC-e7-6Q9" secondAttribute="leading" id="rVM-c0-wTE"/>
                                 </constraints>
                             </view>
