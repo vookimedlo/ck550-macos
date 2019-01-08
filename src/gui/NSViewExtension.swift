@@ -66,4 +66,12 @@ extension NSView {
                           height: width)
         return self
     }
+
+    @discardableResult func addBorder(color: NSColor, width: CGFloat) -> NSView {
+        addTopBorder(color: color, width: width)
+        addBottomBorder(color: color, width: width)
+        addLeftBorder(color: color, width: width)
+        addRightBorder(color: color, width: width)
+        return self
+    }
 }

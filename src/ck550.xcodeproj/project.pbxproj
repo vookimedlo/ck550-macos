@@ -181,6 +181,7 @@
 		8D90276221DADE1F00D0EC40 /* SleepWakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90276121DADE1F00D0EC40 /* SleepWakeViewController.swift */; };
 		8D90276421DB858900D0EC40 /* UserInfoNotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90276321DB858900D0EC40 /* UserInfoNotificationType.swift */; };
 		8D91DB2D21E401D300F22A27 /* ColorPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91DB2C21E401D300F22A27 /* ColorPopover.swift */; };
+		8D91DB2F21E52D5300F22A27 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91DB2E21E52D5300F22A27 /* ColorButton.swift */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -369,6 +370,7 @@
 		8D90276121DADE1F00D0EC40 /* SleepWakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepWakeViewController.swift; sourceTree = "<group>"; };
 		8D90276321DB858900D0EC40 /* UserInfoNotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoNotificationType.swift; sourceTree = "<group>"; };
 		8D91DB2C21E401D300F22A27 /* ColorPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPopover.swift; sourceTree = "<group>"; };
+		8D91DB2E21E52D5300F22A27 /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -638,6 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				8D90275721D969BE00D0EC40 /* config */,
+				8D91DB3021E682F900F22A27 /* controls */,
 				8D84AADA21C982AE00087947 /* controllers */,
 				8D6FB4CA21CA703200C25DA6 /* extensions */,
 				8D84AADD21C992F900087947 /* notifications */,
@@ -646,7 +649,6 @@
 				8D73C66721D6BBDB0021FA4B /* AppPreferences.swift */,
 				8D84AAC821C970D300087947 /* Assets.xcassets */,
 				8D84AACE21C970D300087947 /* ck550.entitlements */,
-				8D91DB2C21E401D300F22A27 /* ColorPopover.swift */,
 				8D84AACD21C970D300087947 /* Info.plist */,
 				8D90271321D7FF9200D0EC40 /* KeyboardGUIHandler.swift */,
 				8D6FB4D921CBC6F600C25DA6 /* SupportedEffects.swift */,
@@ -731,6 +733,15 @@
 				8D90276121DADE1F00D0EC40 /* SleepWakeViewController.swift */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		8D91DB3021E682F900F22A27 /* controls */ = {
+			isa = PBXGroup;
+			children = (
+				8D91DB2E21E52D5300F22A27 /* ColorButton.swift */,
+				8D91DB2C21E401D300F22A27 /* ColorPopover.swift */,
+			);
+			name = controls;
 			sourceTree = "<group>";
 		};
 		8D966E5221C1866D009AF6E6 /* command */ = {
@@ -1117,6 +1128,7 @@
 				8D90273521D8006600D0EC40 /* CK550CommandReactiveTornado.swift in Sources */,
 				8D90273621D8006600D0EC40 /* CK550CommandRipple.swift in Sources */,
 				8D90273721D8006600D0EC40 /* CK550CommandSingleKey.swift in Sources */,
+				8D91DB2F21E52D5300F22A27 /* ColorButton.swift in Sources */,
 				8D90273821D8006600D0EC40 /* CK550CommandSnowing.swift in Sources */,
 				8D90273921D8006600D0EC40 /* CK550CommandStars.swift in Sources */,
 				8D90273A21D8006600D0EC40 /* CK550CommandStatic.swift in Sources */,
