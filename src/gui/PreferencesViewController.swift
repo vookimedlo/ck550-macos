@@ -324,7 +324,6 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
     }
 
     @IBAction func closeAction(_ sender: NSButton) {
-        NSColorPanel.shared.orderOut(nil)
         view.window?.performClose(self)
     }
 }

@@ -82,7 +82,7 @@ class EffectPreferenceViewController: NSViewController, PreferenceViewController
     }
 
     func deactivated() {
-        NSColorPanel.shared.orderOut(nil)
+        // Nothing for these types of effect settings
     }
 
     @IBAction func colorWellAction(_ sender: NSColorWell) {

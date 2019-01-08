@@ -13,12 +13,12 @@ import SwiftyJSON
 // swiftlint:disable type_name
 class EffectCustomizationPreferenceViewController: NSViewController, PreferenceViewController {
 // swiftlint:enable type_name
-    @IBOutlet weak var loadedFileTextField: NSTextField!
     @IBOutlet weak var saveFileButton: NSButton!
     @IBOutlet weak var keyboardGridView: NSGridView!
 
     let openPanel = NSOpenPanel()
     let savePanel = NSSavePanel()
+    let popover = ColorPopover()
 
     var keyboardButtons: [CK550OffEffectCustomizationLayoutUS.KeyUS: NSButton] = [:]
     var internalSettings: JSON = [:]
@@ -97,8 +97,6 @@ class EffectCustomizationPreferenceViewController: NSViewController, PreferenceV
     }
 
     func deactivated() {
-        NSColorPanel.shared.orderOut(nil)
-
         keyboardButtons.values.forEach { button in
             button.target = nil
             button.action = nil
@@ -108,12 +106,10 @@ class EffectCustomizationPreferenceViewController: NSViewController, PreferenceV
     }
 
     @objc func keyboardButtonAction(_ sender: NSButton) {
-        NSColorPanel.shared.mode = .RGB
-        NSColorPanel.shared.colorSpace = NSColorSpace.genericRGB
-        NSColorPanel.shared.setTarget(sender)
-        NSColorPanel.shared.setAction(#selector(NSButton.textColorChangedAction(_:)))
-        NSColorPanel.shared.color = sender.getTextColor()
-        NSColorPanel.shared.orderFrontRegardless()
+        popover.setAction(target: sender,
+                          selector: #selector(NSButton.textColorChangedAction(_:)))
+        popover.show(parent: sender,
+                     initialColor: sender.getTextColor())
     }
 
     @objc func allColorsChangedAction(_ sender: NSColorPanel) {
@@ -176,10 +172,9 @@ class EffectCustomizationPreferenceViewController: NSViewController, PreferenceV
     }
 
     @IBAction func setAllColorsAction(_ sender: NSButton) {
-        NSColorPanel.shared.mode = .RGB
-        NSColorPanel.shared.colorSpace = NSColorSpace.genericRGB
-        NSColorPanel.shared.setTarget(self)
-        NSColorPanel.shared.setAction(#selector(allColorsChangedAction(_:)))
-        NSColorPanel.shared.orderFrontRegardless()
+        popover.setAction(target: self,
+                          selector: #selector(allColorsChangedAction(_:)))
+        popover.show(parent: sender,
+                     initialColor: sender.getTextColor())
     }
 }

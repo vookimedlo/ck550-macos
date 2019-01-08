@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IA1-4F-oK3">
-                    <rect key="frame" x="14" y="212" width="216" height="32"/>
+                    <rect key="frame" x="14" y="252" width="216" height="32"/>
                     <buttonCell key="cell" type="push" title="Import a customization file ..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eLl-oI-lND">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -26,32 +26,6 @@
                         <action selector="loadFileAction:" target="YE1-nf-mtn" id="Kbw-XY-YQE"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4h6-Eu-aJS">
-                    <rect key="frame" x="230" y="212" width="216" height="32"/>
-                    <buttonCell key="cell" type="push" title="Export a customization file ..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dcs-YT-u84">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="saveFileAction:" target="YE1-nf-mtn" id="SbE-cr-LWE"/>
-                    </connections>
-                </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5b8-z1-BPX">
-                    <rect key="frame" x="18" y="263" width="75" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Loaded file:" id="h0Q-c2-BNa">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ugj-VL-utj">
-                    <rect key="frame" x="97" y="260" width="595" height="17"/>
-                    <textFieldCell key="cell" controlSize="small" lineBreakMode="clipping" placeholderString="nothing has been imported yet" id="KII-LO-J7A">
-                        <font key="font" metaFont="smallSystem"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <gridView xPlacement="leading" yPlacement="center" rowAlignment="firstBaseline" rowSpacing="0.0" columnSpacing="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="QOC-6d-vAS">
                     <rect key="frame" x="20" y="67" width="670" height="132"/>
                     <rows>
@@ -1080,34 +1054,35 @@
                         <action selector="setAllColorsAction:" target="YE1-nf-mtn" id="ATc-RC-GB2"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4h6-Eu-aJS">
+                    <rect key="frame" x="14" y="219" width="216" height="32"/>
+                    <buttonCell key="cell" type="push" title="Export a customization file ..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dcs-YT-u84">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="saveFileAction:" target="YE1-nf-mtn" id="SbE-cr-LWE"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="m1z-tR-UT8" firstAttribute="leading" secondItem="jbq-dg-IDo" secondAttribute="trailing" constant="11" id="15G-oA-jaa"/>
-                <constraint firstItem="ugj-VL-utj" firstAttribute="leading" secondItem="5b8-z1-BPX" secondAttribute="trailing" constant="8" id="36Z-qo-eXw"/>
-                <constraint firstItem="ugj-VL-utj" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="23" id="8ti-O9-PJq"/>
-                <constraint firstAttribute="trailing" secondItem="ugj-VL-utj" secondAttribute="trailing" constant="20" id="B0T-TJ-kj5"/>
                 <constraint firstItem="m1z-tR-UT8" firstAttribute="top" secondItem="QOC-6d-vAS" secondAttribute="bottom" constant="26" id="CrK-hr-lK8"/>
                 <constraint firstAttribute="bottom" secondItem="jbq-dg-IDo" secondAttribute="bottom" constant="20" id="GiZ-O2-RIQ"/>
-                <constraint firstItem="IA1-4F-oK3" firstAttribute="top" secondItem="5b8-z1-BPX" secondAttribute="bottom" constant="23" id="Hie-Ud-NRR"/>
-                <constraint firstItem="5b8-z1-BPX" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Hrs-WO-I9g"/>
-                <constraint firstItem="4h6-Eu-aJS" firstAttribute="top" secondItem="ugj-VL-utj" secondAttribute="bottom" constant="20" id="JCD-uz-Pex"/>
-                <constraint firstItem="4h6-Eu-aJS" firstAttribute="leading" secondItem="IA1-4F-oK3" secondAttribute="trailing" constant="12" id="Jk6-Uw-y5w"/>
-                <constraint firstItem="4h6-Eu-aJS" firstAttribute="leading" secondItem="IA1-4F-oK3" secondAttribute="trailing" constant="12" id="TDR-fO-EIC"/>
+                <constraint firstItem="4h6-Eu-aJS" firstAttribute="leading" secondItem="IA1-4F-oK3" secondAttribute="trailing" constant="-204" id="Jk6-Uw-y5w"/>
+                <constraint firstItem="4h6-Eu-aJS" firstAttribute="leading" secondItem="IA1-4F-oK3" secondAttribute="trailing" constant="-204" id="TDR-fO-EIC"/>
                 <constraint firstItem="IA1-4F-oK3" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="Twy-4r-1BD"/>
+                <constraint firstItem="4h6-Eu-aJS" firstAttribute="top" secondItem="IA1-4F-oK3" secondAttribute="bottom" constant="12" symbolic="YES" id="XWz-1E-kxr"/>
                 <constraint firstItem="QOC-6d-vAS" firstAttribute="leading" secondItem="IA1-4F-oK3" secondAttribute="leading" id="Xs5-BA-61H"/>
                 <constraint firstAttribute="bottom" secondItem="m1z-tR-UT8" secondAttribute="bottom" constant="20" id="Xyx-Bu-lpJ"/>
-                <constraint firstItem="4h6-Eu-aJS" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="60" id="bJk-d2-gJJ"/>
+                <constraint firstItem="4h6-Eu-aJS" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="53" id="bJk-d2-gJJ"/>
                 <constraint firstItem="jbq-dg-IDo" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="bsE-L4-PqQ"/>
-                <constraint firstItem="ugj-VL-utj" firstAttribute="leading" secondItem="5b8-z1-BPX" secondAttribute="trailing" constant="8" id="d4X-Db-s0A"/>
-                <constraint firstItem="5b8-z1-BPX" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="hIC-ly-KZT"/>
-                <constraint firstItem="ugj-VL-utj" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="23" id="uae-BN-zYC"/>
                 <constraint firstItem="jbq-dg-IDo" firstAttribute="top" secondItem="QOC-6d-vAS" secondAttribute="bottom" constant="26" id="v0q-qt-kX0"/>
             </constraints>
         </customView>
         <viewController id="YE1-nf-mtn" customClass="EffectCustomizationPreferenceViewController" customModule="ck550" customModuleProvider="target">
             <connections>
                 <outlet property="keyboardGridView" destination="QOC-6d-vAS" id="4kN-wl-cAI"/>
-                <outlet property="loadedFileTextField" destination="ugj-VL-utj" id="g6Q-eo-3iq"/>
                 <outlet property="saveFileButton" destination="4h6-Eu-aJS" id="20I-7B-gQo"/>
                 <outlet property="view" destination="c22-O7-iKe" id="JOg-9o-S0Z"/>
             </connections>
