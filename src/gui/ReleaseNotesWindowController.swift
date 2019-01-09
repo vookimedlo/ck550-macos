@@ -11,11 +11,11 @@ import Cocoa
 
 class ReleaseNotesWindowController: NSWindowController {
     @IBOutlet var releaseNotesTextView: NSTextView!
-    @objc dynamic private var contentURL: URL?
+    @objc dynamic private var contentData: Data?
+    let asset = NSDataAsset(name: "changelog", bundle: Bundle.main)
 
     override func windowDidLoad() {
         super.windowDidLoad()
-        // TODO: load a release notes from resources
-        // contentURL = Bundle.main.url(forResource: "TODO", withExtension: "rtf")
+        contentData = asset?.data
     }
 }

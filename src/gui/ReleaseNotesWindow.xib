@@ -39,7 +39,7 @@
                                             <size key="maxSize" width="480" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
-                                                <binding destination="-2" name="valueURL" keyPath="self.contentURL" id="0G8-Sv-fRO">
+                                                <binding destination="-2" name="data" keyPath="contentData" id="GjU-eR-ZVO">
                                                     <dictionary key="options">
                                                         <bool key="NSConditionallySetsEditable" value="NO"/>
                                                     </dictionary>
@@ -71,5 +71,6 @@
             </view>
             <point key="canvasLocation" x="115" y="260.5"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="Yr0-5A-vc9"/>
     </objects>
 </document>
