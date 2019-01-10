@@ -33,10 +33,10 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="JUB-12-0tZ"/>
                             </imageView>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3h-ja-Ki8">
-                                <rect key="frame" x="102" y="60" width="432" height="132"/>
+                                <rect key="frame" x="102" y="48" width="432" height="157"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Irn-6X-eYg">
-                                        <rect key="frame" x="-2" y="98" width="436" height="34"/>
+                                        <rect key="frame" x="-2" y="123" width="436" height="34"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="CK550 MacOS Effect Controller" id="lSS-NV-5bF">
                                             <font key="font" size="28" name=".AppleSystemUIFontDemi"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -44,7 +44,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KfR-Kr-h5B">
-                                        <rect key="frame" x="-2" y="73" width="436" height="17"/>
+                                        <rect key="frame" x="-2" y="98" width="436" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" placeholderString="version" id="l2l-cR-S04">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -52,7 +52,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Cr-1X-CzA">
-                                        <rect key="frame" x="-2" y="51" width="436" height="14"/>
+                                        <rect key="frame" x="-2" y="76" width="436" height="14"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="https://github.com/vookimedlo/CoolerMaster-ck550-macos" id="W3f-uB-ffB">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -60,7 +60,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ohM-F9-b8Q">
-                                        <rect key="frame" x="-2" y="29" width="436" height="14"/>
+                                        <rect key="frame" x="-2" y="29" width="436" height="39"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Michal Duda - github@vookimedlo.cz" id="ecP-8F-oD8">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -68,7 +68,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ClS-f9-YiU">
-                                        <rect key="frame" x="0.0" y="0.0" width="221" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jKt-b3-1yp">
                                                 <rect key="frame" x="-6" y="-7" width="98" height="32"/>
@@ -90,6 +90,16 @@
                                                     <action selector="releaseNotesAction:" target="-2" id="MEQ-Oo-1ct"/>
                                                 </connections>
                                             </button>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RZX-f7-ZTZ">
+                                                <rect key="frame" x="223" y="-7" width="133" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Components ..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Xbm-B7-oIp">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="componentsLicenseAction:" target="-2" id="ZUn-PF-wpj"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="jKt-b3-1yp" firstAttribute="leading" secondItem="ClS-f9-YiU" secondAttribute="leading" id="sQt-3E-fSt"/>
@@ -97,8 +107,10 @@
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
@@ -108,6 +120,7 @@
                                     <constraint firstItem="ohM-F9-b8Q" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="0Ms-aT-vnp"/>
                                     <constraint firstItem="ClS-f9-YiU" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="7Rb-wb-QiF"/>
                                     <constraint firstItem="3Cr-1X-CzA" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="7cp-nY-x8O"/>
+                                    <constraint firstItem="ClS-f9-YiU" firstAttribute="top" secondItem="ohM-F9-b8Q" secondAttribute="top" constant="47" id="IKA-yR-9T6"/>
                                     <constraint firstAttribute="trailing" secondItem="KfR-Kr-h5B" secondAttribute="trailing" id="PXj-Jw-pRr"/>
                                     <constraint firstItem="Irn-6X-eYg" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="Var-q0-6pk"/>
                                     <constraint firstItem="KfR-Kr-h5B" firstAttribute="leading" secondItem="F3h-ja-Ki8" secondAttribute="leading" id="ZiH-eH-uEU"/>

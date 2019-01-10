@@ -44,6 +44,9 @@
 		8D20656521BC7469000FF8E4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6CF21AD64A7007746B6 /* main.swift */; };
 		8D2214C921C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2214C821C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift */; };
 		8D2214CB21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2214CA21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift */; };
+		8D29901B21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29901A21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift */; };
+		8D29901C21E7EC42007E8314 /* ComponentsLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D29901921E7E87E007E8314 /* ComponentsLicenseWindow.xib */; };
+		8D29901F21E7F2AE007E8314 /* COMPONENTS.rtf in Sync a COMPONENTS with assets */ = {isa = PBXBuildFile; fileRef = 8D29901D21E7F045007E8314 /* COMPONENTS.rtf */; };
 		8D6FB4C721C9A4B400C25DA6 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6FB4C621C9A4B400C25DA6 /* AboutWindow.xib */; };
 		8D6FB4C921CA614E00C25DA6 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */; };
 		8D6FB4CC21CA774B00C25DA6 /* LicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6FB4CB21CA774B00C25DA6 /* LicenseWindow.xib */; };
@@ -230,6 +233,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D29901E21E7F28D007E8314 /* Sync a COMPONENTS with assets */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SRCROOT)/gui/Assets.xcassets/COMPONENTS.dataset";
+			dstSubfolderSpec = 0;
+			files = (
+				8D29901F21E7F2AE007E8314 /* COMPONENTS.rtf in Sync a COMPONENTS with assets */,
+			);
+			name = "Sync a COMPONENTS with assets";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D73C65821D1855D0021FA4B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,7 +284,7 @@
 		8D91DB3521E7D9FC00F22A27 /* Sync a LICENSE with assets */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
+			dstPath = "$(SRCROOT)/gui/Assets.xcassets/LICENSE.dataset";
 			dstSubfolderSpec = 0;
 			files = (
 				8D91DB3621E7DA3200F22A27 /* LICENSE in Sync a LICENSE with assets */,
@@ -291,6 +305,9 @@
 		8D20654221BC7359000FF8E4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cli/Info.plist; sourceTree = "<group>"; };
 		8D2214C821C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550OffEffectCustomizationLayout.swift; sourceTree = "<group>"; };
 		8D2214CA21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550OffEffectCustomizationLayoutUS.swift; sourceTree = "<group>"; };
+		8D29901921E7E87E007E8314 /* ComponentsLicenseWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComponentsLicenseWindow.xib; sourceTree = "<group>"; };
+		8D29901A21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsLicenseWindowController.swift; sourceTree = "<group>"; };
+		8D29901D21E7F045007E8314 /* COMPONENTS.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = COMPONENTS.rtf; path = ../../COMPONENTS.rtf; sourceTree = "<group>"; };
 		8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandFirmware.swift; sourceTree = "<group>"; };
 		8D34C6B521AD6393007746B6 /* CK550Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550Command.swift; sourceTree = "<group>"; };
 		8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandEffects.swift; sourceTree = "<group>"; };
@@ -676,6 +693,7 @@
 				8D84AAC821C970D300087947 /* Assets.xcassets */,
 				8D91DB3121E687BF00F22A27 /* changelog.rtf */,
 				8D84AACE21C970D300087947 /* ck550.entitlements */,
+				8D29901D21E7F045007E8314 /* COMPONENTS.rtf */,
 				8D84AACD21C970D300087947 /* Info.plist */,
 				8D90271321D7FF9200D0EC40 /* KeyboardGUIHandler.swift */,
 				8D91DB3421E7D51000F22A27 /* LICENSE */,
@@ -695,6 +713,7 @@
 				8D73C64A21CFDBB30021FA4B /* EffectPreferenceView.xib */,
 				8D73C65D21D420330021FA4B /* EffectsPreferenceView.xib */,
 				8D6FB4CB21CA774B00C25DA6 /* LicenseWindow.xib */,
+				8D29901921E7E87E007E8314 /* ComponentsLicenseWindow.xib */,
 				8D84AAD221C9723600087947 /* MainMenu.xib */,
 				8D84AACA21C970D300087947 /* Preferences.storyboard */,
 				8D6FB4D121CAB8C700C25DA6 /* ReleaseNotesWindow.xib */,
@@ -740,6 +759,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */,
+				8D29901A21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift */,
 				8D6FB4CD21CA77E100C25DA6 /* LicenseWindowController.swift */,
 				8D6FB4CF21CAB7BD00C25DA6 /* ReleaseNotesWindowController.swift */,
 			);
@@ -870,6 +890,7 @@
 				8D90275621D9697600D0EC40 /* Sync a default configuration with assets */,
 				8D91DB3221E68D8D00F22A27 /* Sync a changelog with assets */,
 				8D91DB3521E7D9FC00F22A27 /* Sync a LICENSE with assets */,
+				8D29901E21E7F28D007E8314 /* Sync a COMPONENTS with assets */,
 				8D90271221D7A7BA00D0EC40 /* Lint Sources */,
 				8D84AABE21C970CE00087947 /* Sources */,
 				8D84AABF21C970CE00087947 /* Frameworks */,
@@ -945,6 +966,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D29901C21E7EC42007E8314 /* ComponentsLicenseWindow.xib in Resources */,
 				8D73C64B21CFDBB30021FA4B /* EffectPreferenceView.xib in Resources */,
 				8D84AAC921C970D300087947 /* Assets.xcassets in Resources */,
 				8D84AACC21C970D300087947 /* Preferences.storyboard in Resources */,
@@ -1202,6 +1224,7 @@
 				8D90272521D8003E00D0EC40 /* AssembleCommandStars.swift in Sources */,
 				8D90272621D8003E00D0EC40 /* AssembleCommandStatic.swift in Sources */,
 				8D90272721D8003E00D0EC40 /* AssembleCommandWaterRipple.swift in Sources */,
+				8D29901B21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift in Sources */,
 				8D90272821D8003E00D0EC40 /* AssembleCommandWave.swift in Sources */,
 				8D73C64921CE82310021FA4B /* PreferencesViewController.swift in Sources */,
 				8D6FB4D821CAEF6E00C25DA6 /* EffectMenuViewController.swift in Sources */,

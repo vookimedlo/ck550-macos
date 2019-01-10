@@ -11,10 +11,12 @@ import Cocoa
 
 class AboutWindowController: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var versionTextField: NSTextField!
+    private var componentsLicenseWindowController: ComponentsLicenseWindowController?
     private var licenseWindowController: LicenseWindowController?
     private var releaseNotesWindowController: ReleaseNotesWindowController?
 
     func windowWillClose(_ notification: Notification) {
+        componentsLicenseWindowController?.window?.close()
         licenseWindowController?.window?.close()
         releaseNotesWindowController?.window?.close()
     }
@@ -30,6 +32,9 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
         NotificationCenter.default.removeObserver(self,
                                                   name: NSWindow.willCloseNotification,
                                                   object: object)
+        if object.isEqual(componentsLicenseWindowController?.window) {
+            componentsLicenseWindowController = nil
+        }
         if object.isEqual(licenseWindowController?.window) {
             licenseWindowController = nil
         }
@@ -62,5 +67,18 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
                                                name: NSWindow.willCloseNotification,
                                                object: releaseNotesWindowController?.window)
         releaseNotesWindowController?.window?.orderFrontRegardless()
+    }
+
+    @IBAction func componentsLicenseAction(_ sender: NSButton) {
+        guard licenseWindowController == nil else {
+            licenseWindowController?.window?.orderFrontRegardless()
+            return
+        }
+        componentsLicenseWindowController = ComponentsLicenseWindowController(windowNibName: NSNib.Name("ComponentsLicenseWindow"))
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(windowWillClose(notification:)),
+                                               name: NSWindow.willCloseNotification,
+                                               object: componentsLicenseWindowController?.window)
+        componentsLicenseWindowController?.window?.orderFrontRegardless()
     }
 }
