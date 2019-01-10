@@ -11,11 +11,11 @@ import Cocoa
 
 class LicenseWindowController: NSWindowController {
     @IBOutlet var licenseTextView: NSTextView!
-    @objc dynamic private var contentURL: URL?
+    @objc dynamic private var contentData: Data?
+    let asset = NSDataAsset(name: "LICENSE", bundle: Bundle.main)
 
     override func windowDidLoad() {
         super.windowDidLoad()
-        // TODO: decide what license will be used and load a license file from resources
-        // contentURL = Bundle.main.url(forResource: "TODO", withExtension: "rtf")
+        contentData = asset?.data
     }
 }

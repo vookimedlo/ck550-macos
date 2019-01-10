@@ -183,6 +183,7 @@
 		8D91DB2D21E401D300F22A27 /* ColorPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91DB2C21E401D300F22A27 /* ColorPopover.swift */; };
 		8D91DB2F21E52D5300F22A27 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D91DB2E21E52D5300F22A27 /* ColorButton.swift */; };
 		8D91DB3321E68DDB00F22A27 /* changelog.rtf in Sync a changelog with assets */ = {isa = PBXBuildFile; fileRef = 8D91DB3121E687BF00F22A27 /* changelog.rtf */; };
+		8D91DB3621E7DA3200F22A27 /* LICENSE in Sync a LICENSE with assets */ = {isa = PBXBuildFile; fileRef = 8D91DB3421E7D51000F22A27 /* LICENSE */; };
 		8D966E3421BF03A5009AF6E6 /* AssembleCommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */; };
 		8D966E3621BF0535009AF6E6 /* AssembleCommandRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */; };
 		8D966E3821BF0667009AF6E6 /* AssembleCommandWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */; };
@@ -264,6 +265,17 @@
 				8D91DB3321E68DDB00F22A27 /* changelog.rtf in Sync a changelog with assets */,
 			);
 			name = "Sync a changelog with assets";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D91DB3521E7D9FC00F22A27 /* Sync a LICENSE with assets */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 0;
+			files = (
+				8D91DB3621E7DA3200F22A27 /* LICENSE in Sync a LICENSE with assets */,
+			);
+			name = "Sync a LICENSE with assets";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -384,6 +396,7 @@
 		8D91DB2C21E401D300F22A27 /* ColorPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPopover.swift; sourceTree = "<group>"; };
 		8D91DB2E21E52D5300F22A27 /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
 		8D91DB3121E687BF00F22A27 /* changelog.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = changelog.rtf; path = ../../changelog.rtf; sourceTree = "<group>"; };
+		8D91DB3421E7D51000F22A27 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../../LICENSE; sourceTree = "<group>"; };
 		8D966E3321BF03A5009AF6E6 /* AssembleCommandBreathing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandBreathing.swift; sourceTree = "<group>"; };
 		8D966E3521BF0535009AF6E6 /* AssembleCommandRipple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandRipple.swift; sourceTree = "<group>"; };
 		8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandWave.swift; sourceTree = "<group>"; };
@@ -665,6 +678,7 @@
 				8D84AACE21C970D300087947 /* ck550.entitlements */,
 				8D84AACD21C970D300087947 /* Info.plist */,
 				8D90271321D7FF9200D0EC40 /* KeyboardGUIHandler.swift */,
+				8D91DB3421E7D51000F22A27 /* LICENSE */,
 				8D6FB4D921CBC6F600C25DA6 /* SupportedEffects.swift */,
 				8D04E32D21DEA58C00707E63 /* Utils.swift */,
 			);
@@ -855,6 +869,7 @@
 			buildPhases = (
 				8D90275621D9697600D0EC40 /* Sync a default configuration with assets */,
 				8D91DB3221E68D8D00F22A27 /* Sync a changelog with assets */,
+				8D91DB3521E7D9FC00F22A27 /* Sync a LICENSE with assets */,
 				8D90271221D7A7BA00D0EC40 /* Lint Sources */,
 				8D84AABE21C970CE00087947 /* Sources */,
 				8D84AABF21C970CE00087947 /* Frameworks */,
