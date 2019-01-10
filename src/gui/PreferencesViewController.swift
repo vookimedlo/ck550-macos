@@ -142,9 +142,9 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
 
         var json: JSON = [:]
         if let string = try? String(contentsOf: url, encoding: String.Encoding.utf8) {
-            // TODO: weird
-            if isJSONParsable(string) {
-                json = JSON(parseJSON: string)
+            json = JSON(parseJSON: string)
+            if json.error != nil {
+                logError("Not a JSON data")
             }
         }
 
