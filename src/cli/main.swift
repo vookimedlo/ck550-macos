@@ -52,10 +52,11 @@ public enum CLIError: Error {
 
 Terminal.important("-= CK550 MacOS Utility =-")
 
-let monitorCommand = MonitorCommand()
 let registry = CommandRegistry<CLIError>()
-registry.register(monitorCommand)
+registry.register(MonitorCommand())
 registry.register(VersionCommand())
+registry.register(LicenseCommand())
+registry.register(ComponentsCommand())
 
 // effects
 registry.register(BreathingCommand())
