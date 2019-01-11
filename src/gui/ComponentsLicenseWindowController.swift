@@ -30,7 +30,7 @@ import Cocoa
 class ComponentsLicenseWindowController: NSWindowController {
     @IBOutlet var licenseTextView: NSTextView!
     @objc dynamic private var contentData: Data?
-    let asset = NSDataAsset(name: "COMPONENTS", bundle: Bundle.main)
+    private let asset = NSDataAsset(name: "COMPONENTS", bundle: Bundle.main)
 
     override func windowDidLoad() {
         super.windowDidLoad()

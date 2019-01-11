@@ -29,6 +29,7 @@ import Cocoa
 
 class AboutWindowController: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var versionTextField: NSTextField!
+    @IBOutlet weak var imageView: NSImageView!
     private var componentsLicenseWindowController: ComponentsLicenseWindowController?
     private var licenseWindowController: LicenseWindowController?
     private var releaseNotesWindowController: ReleaseNotesWindowController?
@@ -43,6 +44,7 @@ class AboutWindowController: NSWindowController, NSWindowDelegate {
         super.windowDidLoad()
         let bundleVersion = Bundle.bundleVersion()
         versionTextField.stringValue = "Version \(bundleVersion.version) build \(bundleVersion.build)"
+        imageView.image = NSImage(named: "icon")
     }
 
     @objc private func windowWillClose(notification: Notification) {

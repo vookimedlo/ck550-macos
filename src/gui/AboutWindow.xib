@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AboutWindowController" customModule="ck550" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="WkQ-zo-08v" id="D6f-QG-AJU"/>
                 <outlet property="versionTextField" destination="KfR-Kr-h5B" id="MKd-mj-6qV"/>
                 <outlet property="window" destination="gVi-N8-gCK" id="NbV-U9-JZo"/>
             </connections>
