@@ -915,6 +915,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D84AAD121C970D300087947 /* Build configuration list for PBXNativeTarget "ck550" */;
 			buildPhases = (
+				8DA5D68C21EA9B510062560B /* Update App Version */,
 				8D90275621D9697600D0EC40 /* Sync a default configuration with assets */,
 				8D91DB3221E68D8D00F22A27 /* Sync a changelog with assets */,
 				8D91DB3521E7D9FC00F22A27 /* Sync a LICENSE with assets */,
@@ -1097,6 +1098,24 @@
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		8DA5D68821EA889E0062560B /* Update App Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update App Version";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/scripts/versionUpdate.sh\n";
+		};
+		8DA5D68C21EA9B510062560B /* Update App Version */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
