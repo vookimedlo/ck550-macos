@@ -37,7 +37,7 @@
 		8D20655E21BC7394000FF8E4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71021AEDC19007746B6 /* Queue.swift */; };
 		8D20655F21BC7394000FF8E4 /* HIDDeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C70221ADE932007746B6 /* HIDDeviceProtocol.swift */; };
 		8D20656021BC7394000FF8E4 /* HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */; };
-		8D20656121BC7394000FF8E4 /* HIDRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */; };
+		8D20656121BC7394000FF8E4 /* HIDEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BE21AD63A6007746B6 /* HIDEnumerator.swift */; };
 		8D20656221BC7394000FF8E4 /* HIDEnumerationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C221AD63B2007746B6 /* HIDEnumerationNotification.swift */; };
 		8D20656321BC7394000FF8E4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C421AD63BB007746B6 /* Data.swift */; };
 		8D20656421BC7394000FF8E4 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C521AD63BB007746B6 /* Logging.swift */; };
@@ -165,7 +165,7 @@
 		8D90274521D8006600D0EC40 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C71021AEDC19007746B6 /* Queue.swift */; };
 		8D90274621D8006600D0EC40 /* HIDDeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C70221ADE932007746B6 /* HIDDeviceProtocol.swift */; };
 		8D90274721D8006600D0EC40 /* HIDDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */; };
-		8D90274821D8006600D0EC40 /* HIDRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */; };
+		8D90274821D8006600D0EC40 /* HIDEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BE21AD63A6007746B6 /* HIDEnumerator.swift */; };
 		8D90274921D8006600D0EC40 /* HIDEnumerationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C221AD63B2007746B6 /* HIDEnumerationNotification.swift */; };
 		8D90274A21D8006600D0EC40 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C421AD63BB007746B6 /* Data.swift */; };
 		8D90274B21D800B700D0EC40 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; };
@@ -316,7 +316,7 @@
 		8D34C6B621AD6393007746B6 /* CK550CommandEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandEffects.swift; sourceTree = "<group>"; };
 		8D34C6B721AD6393007746B6 /* CK550CommandCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandCustomization.swift; sourceTree = "<group>"; };
 		8D34C6B821AD6393007746B6 /* CK550CommandProfiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandProfiles.swift; sourceTree = "<group>"; };
-		8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDRaw.swift; sourceTree = "<group>"; };
+		8D34C6BE21AD63A6007746B6 /* HIDEnumerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDEnumerator.swift; sourceTree = "<group>"; };
 		8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDDevice.swift; sourceTree = "<group>"; };
 		8D34C6C221AD63B2007746B6 /* HIDEnumerationNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIDEnumerationNotification.swift; sourceTree = "<group>"; };
 		8D34C6C421AD63BB007746B6 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -512,7 +512,7 @@
 			children = (
 				8D34C71721AF1A23007746B6 /* protocols */,
 				8D34C6BF21AD63A6007746B6 /* HIDDevice.swift */,
-				8D34C6BE21AD63A6007746B6 /* HIDRaw.swift */,
+				8D34C6BE21AD63A6007746B6 /* HIDEnumerator.swift */,
 			);
 			name = hid;
 			sourceTree = "<group>";
@@ -557,7 +557,7 @@
 		8D34C6CE21AD648B007746B6 /* cli */ = {
 			isa = PBXGroup;
 			children = (
-				8D966E5221C1866D009AF6E6 /* command */,
+				8D966E5221C1866D009AF6E6 /* commands */,
 				8DA5D68521EA83BF0062560B /* extensions */,
 				8DFD0D0421BDADCB009905CD /* ck550-cli.entitlements */,
 				8D966E5C21C1A60A009AF6E6 /* CLI.swift */,
@@ -800,7 +800,7 @@
 			name = controls;
 			sourceTree = "<group>";
 		};
-		8D966E5221C1866D009AF6E6 /* command */ = {
+		8D966E5221C1866D009AF6E6 /* commands */ = {
 			isa = PBXGroup;
 			children = (
 				8D72819B21C3D0B600963B1D /* effects */,
@@ -810,7 +810,7 @@
 				8D966E5521C18B79009AF6E6 /* MonitorCommand.swift */,
 				8D966E5321C186A3009AF6E6 /* VersionCommand.swift */,
 			);
-			name = command;
+			name = commands;
 			sourceTree = "<group>";
 		};
 		8DA5D68521EA83BF0062560B /* extensions */ = {
@@ -1214,7 +1214,7 @@
 				8D966E4421BF0C93009AF6E6 /* AssembleCommandSnowing.swift in Sources */,
 				8D20655F21BC7394000FF8E4 /* HIDDeviceProtocol.swift in Sources */,
 				8D20656021BC7394000FF8E4 /* HIDDevice.swift in Sources */,
-				8D20656121BC7394000FF8E4 /* HIDRaw.swift in Sources */,
+				8D20656121BC7394000FF8E4 /* HIDEnumerator.swift in Sources */,
 				8D20656221BC7394000FF8E4 /* HIDEnumerationNotification.swift in Sources */,
 				8D966E4A21C0375F009AF6E6 /* Terminal.swift in Sources */,
 				8D966E3C21BF0826009AF6E6 /* AssembleCommandFirmwareVersion.swift in Sources */,
@@ -1268,7 +1268,7 @@
 				8D90274521D8006600D0EC40 /* Queue.swift in Sources */,
 				8D90274621D8006600D0EC40 /* HIDDeviceProtocol.swift in Sources */,
 				8D90274721D8006600D0EC40 /* HIDDevice.swift in Sources */,
-				8D90274821D8006600D0EC40 /* HIDRaw.swift in Sources */,
+				8D90274821D8006600D0EC40 /* HIDEnumerator.swift in Sources */,
 				8D90274921D8006600D0EC40 /* HIDEnumerationNotification.swift in Sources */,
 				8D90274A21D8006600D0EC40 /* Data.swift in Sources */,
 				8D90271521D8003E00D0EC40 /* AssembleCommand.swift in Sources */,

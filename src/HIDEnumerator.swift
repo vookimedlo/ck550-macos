@@ -27,7 +27,7 @@ SOFTWARE.
 import Foundation
 import IOKit
 
-class HIDRaw {
+class HIDEnumerator {
     private let manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
     private var usagePage: UInt32 = 0
     private var usage: UInt32 = 0
@@ -79,12 +79,12 @@ class HIDRaw {
         self.usage = usage
 
         let matchingCallback: IOHIDDeviceCallback = { context, result, sender, device in
-            let this: HIDRaw = Unmanaged<HIDRaw>.fromOpaque(context!).takeUnretainedValue()
+            let this: HIDEnumerator = Unmanaged<HIDEnumerator>.fromOpaque(context!).takeUnretainedValue()
             this.enumerated(result: result, sender: sender!, device: device)
         }
 
         let removalCallback: IOHIDDeviceCallback = { context, result, sender, device in
-            let this: HIDRaw = Unmanaged<HIDRaw>.fromOpaque(context!).takeUnretainedValue()
+            let this: HIDEnumerator = Unmanaged<HIDEnumerator>.fromOpaque(context!).takeUnretainedValue()
             this.removed(result: result, sender: sender!, device: device)
         }
 
