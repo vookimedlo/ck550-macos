@@ -26,11 +26,14 @@ SOFTWARE.
 
 import Foundation
 
+// MARK: - CK550 firmware related data.
 extension CK550Command {
+    /// Creates a command to get a current firmware version.
     static var getFirmwareVersion: [uint8] {
         return newCommand(request: [0x12, 0x20])
     }
 
+    /// Creates a command to enable firmware commands.
     static var setFirmwareControl: [uint8] {
         return newCommand(request: [0x41, 0x00])
     }

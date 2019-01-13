@@ -27,7 +27,13 @@ SOFTWARE.
 import Foundation
 import Commandant
 import Result
-
+
+/// Errors related to the CLI arguments.
+///
+/// - ok: Argument was proccessed successfully.
+/// - colorOutOfRange: Specified color has a component greater than 255.
+/// - colorIncomplete: Specified color has not all components.
+/// - invalidProfileId: Wrong (Out of range) profile ID.
 public enum CLIError: Error {
 // swiftlint:disable identifier_name
     case ok
@@ -52,6 +58,7 @@ public enum CLIError: Error {
 
 Terminal.important("-= CK550 MacOS Utility =-")
 
+/// All available CLI arguments.
 let registry = CommandRegistry<CLIError>()
 registry.register(MonitorCommand())
 registry.register(VersionCommand())

@@ -26,12 +26,21 @@ SOFTWARE.
 
 import Foundation
 
+/// A base device implementation providing a default implementation.
+/// - note: This class has does not provide any implementation of 'dataReceived' method.
+///         Such implementation shall be provided by any subclass to process received data.
 class HIDDevice: HIDDeviceProtocol {
-
     private let manager: IOHIDManager
     private let device: IOHIDDevice
 
-    private let inputBufferSize = 64
+    /// High speed device could receive up to 1024 bytes in case of interrupt transfers
+    /// and 64 bytes in case of control transfers.
+    /// - note: HID uses only the interrupt and control transfers.
+    /// - note: The worst case is the high speed device, full or lower speed device
+    ///         requires less space.
+    private let inputBufferSize = 1024
+
+    /// Received USB HID data.
     private let inputBuffer: UnsafeMutablePointer<UInt8>
 
 // swiftlint:disable force_cast
@@ -92,11 +101,16 @@ class HIDDevice: HIDDeviceProtocol {
         return kIOReturnSuccess == IOHIDDeviceClose(device, IOOptionBits(kIOHIDOptionsTypeNone))
     }
 
-    func write(command: [uint8]) -> Bool {
-        let pointerToCommand = UnsafePointer<uint8>(command)
-        return kIOReturnSuccess == IOHIDDeviceSetReport(device, kIOHIDReportTypeOutput, 0, pointerToCommand, command.count)
+    func write(buffer: [uint8]) -> Bool {
+        let pointerToBuffer = UnsafePointer<uint8>(buffer)
+        return kIOReturnSuccess == IOHIDDeviceSetReport(device, kIOHIDReportTypeOutput, 0, pointerToBuffer, buffer.count)
     }
 
+    /// A callback providing data received from the device.
+    ///
+    /// - Parameter buffer: Bytes received from the device.
+    /// - note: This class has does not provide any implementation of 'dataReceived' method.
+    ///         Such implementation shall be provided by any subclass to process received data.
     func dataReceived(buffer: [uint8]) {
         // Override in a subclass
     }

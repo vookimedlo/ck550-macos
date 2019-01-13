@@ -26,6 +26,7 @@ SOFTWARE.
 
 import Foundation
 
+/// CK550 layout protocol for an Customization 'Off' effect override.
 protocol CK550OffEffectCustomizationLayout {
     init()
     associatedtype Key

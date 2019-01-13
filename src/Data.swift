@@ -27,11 +27,17 @@ SOFTWARE.
 import Foundation
 
 extension Data {
+    /// Options for a hexadecimal formatting.
     struct HexEncodingOptions: OptionSet {
         let rawValue: Int
+        /// Produces an upper case output.
         static let upperCase = HexEncodingOptions(rawValue: 1 << 0)
     }
 
+    /// Formats data to the hexadecimal string
+    ///
+    /// - Parameter options: Formatting options, by default output is lower cased.
+    /// - Returns: The hexadecimal string.
     func hexString(options: HexEncodingOptions = []) -> String {
         let format = options.contains(.upperCase) ? "%02hhX" : "%02hhx"
         return map {

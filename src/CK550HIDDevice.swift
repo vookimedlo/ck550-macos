@@ -26,25 +26,41 @@ SOFTWARE.
 
 import Foundation
 
+/// Represents a CK550 control HID device.
 class CK550HIDDevice: HIDDevice {
-    private var waitForResponseMutex = DispatchSemaphore(value: 0)
+    /// Signalizes if a waiting condition of currently processed `command` has already occured.
+    private var waitForResponseEvent = DispatchSemaphore(value: 0)
+
+    /// Guards access to the `command`.
     private var commandAccessMutex = DispatchSemaphore(value: 1)
+
+    /// CK550 command, which is currently processed.
     private var command: CK550HIDDeviceCommand?
 
+    /// Creates a device.
+    ///
+    /// - Parameters:
+    ///   - manager: Instance of a IOHIDManager, which was responsible for a device enumeration.
+    ///   - device: Underlying device reported by the 'manager'.
     required init(manager: IOHIDManager, device: IOHIDDevice) {
         super.init(manager: manager, device: device)
     }
 
+    /// A callback providing data received from the device.
+    ///
+    /// - Parameter buffer: Bytes received from the device.
+    /// - note: Passes incoming data to the currently processed `CK550HIDDeviceCommand`.
+    ///         If no command is processed right now, incoming data are silently discarded.
     override func dataReceived(buffer: [uint8]) {
         commandAccessMutex.wait()
         if let command = self.command {
             if !command.waitsForAnotherResponse() {
 //                Terminal.debug(Data(buffer).hexString())
-                waitForResponseMutex.signal()
+                waitForResponseEvent.signal()
             } else {
                 command.addIncomingResponse(buffer)
                 if !command.waitsForAnotherResponse() {
-                    waitForResponseMutex.signal()
+                    waitForResponseEvent.signal()
                 }
             }
         } else {
@@ -53,21 +69,24 @@ class CK550HIDDevice: HIDDevice {
         commandAccessMutex.signal()
     }
 
-    override func write(command: [uint8]) -> Bool {
-        return super.write(command: command)
-    }
-
-    func write(command: CK550HIDDeviceCommand) {
+    /// Sends a CK550 `command` to the device.
+    ///
+    /// - Parameters:
+    ///   - command: CK550 command.
+    ///   - timeoutForResponse: Timeout value defining how much time
+    ///                         it shall wait for required responses.
+    /// - Note: Waiting for incoming responses is fully driven by the `command` itself.
+    func write(command: CK550HIDDeviceCommand, timeoutForResponse: Int = 500) {
         let shallWait = command.waitsForAnotherResponse()
         if shallWait {
-            waitForResponseMutex = DispatchSemaphore(value: 0)
+            waitForResponseEvent = DispatchSemaphore(value: 0)
             commandAccessMutex.wait()
             self.command = command
             commandAccessMutex.signal()
         }
         var packet = command.nextMessage()
         while packet != nil {
-            if !write(command: packet!) {
+            if !write(buffer: packet!) {
                 commandAccessMutex.wait()
                 command.reportWriteFailure()
                 self.command = nil
@@ -78,7 +97,7 @@ class CK550HIDDevice: HIDDevice {
         }
 
         if shallWait {
-            if .timedOut == waitForResponseMutex.wait(timeout: .now() + .milliseconds(500)) {
+            if .timedOut == waitForResponseEvent.wait(timeout: .now() + .milliseconds(timeoutForResponse)) {
                 commandAccessMutex.signal()
                 command.reportResponseTimeout()
                 commandAccessMutex.wait()

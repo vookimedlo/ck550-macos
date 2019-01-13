@@ -26,8 +26,14 @@ SOFTWARE.
 
 import Foundation
 
+/// Contains CK550 messages and their expected responses.
+/// During a command processing, incoming data are collected and evaluated.
+/// Evaluation is based on the expected responses.
 class CK550HIDCommand: CK550HIDDeviceCommand, CK550HIDClientCommand {
+    /// CK550 data which shall be sent to the keyboard.
     private var messages: Queue<[uint8]> = Queue<[uint8]>()
+
+    /// CK550 data which are expected from the keyboard.
     private var expectedResponses: Queue<[uint8]> = Queue<[uint8]>()
 
     private(set) var responses: Queue<[uint8]> = Queue<[uint8]>()

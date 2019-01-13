@@ -26,10 +26,26 @@ SOFTWARE.
 
 import Foundation
 
+/// The device side of the `CK550HIDCommand`.
 protocol CK550HIDDeviceCommand {
+    /// Appends incoming keyboard data.
+    ///
+    /// - Parameter packet: Incoming CK550 keyboard data.
     func addIncomingResponse(_ packet: [uint8])
+
+    /// Sets the command result to the `CK550HIDCommand.Result.responseTimedout`.
     func reportResponseTimeout()
+
+    /// Sets the command result to the `CK550HIDCommand.Result.writeFailed`.
     func reportWriteFailure()
+
+    /// Provides the next data, which shall be sent to the CK550 keyboard.
+    ///
+    /// - Returns: CK550 data. Nil if no unsent data is available.
     func nextMessage() -> [uint8]?
+
+    /// Checks if additional data is expected from the keyboard.
+    ///
+    /// - Returns: True if command expects another response from the keyboard. False otherwise.
     func waitsForAnotherResponse() -> Bool
 }

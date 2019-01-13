@@ -26,17 +26,54 @@ SOFTWARE.
 
 import Foundation
 
+/// HIDEnumerator creates a HIDDeviceProtocol compatible instances
+/// and provides them to registered observers.
 protocol HIDDeviceProtocol {
+    /// The USB Msnufacturer string representation.
     var manufacturer: String? { get }
+
+    /// The USB Product string representation.
     var product: String? { get }
+
+    /// The USB Vendor ID.
     var vendorID: UInt32 { get }
+
+    /// The USB Product ID.
     var productID: UInt32 { get }
+
+    /// The USB HID Usage Page ID.
     var usagePage: UInt32 { get }
+
+    /// The USB HID Usage ID
     var usage: UInt32 { get }
 
+    /// Creates a device.
+    ///
+    /// - Parameters:
+    ///   - manager: Instance of a IOHIDManager, which was responsible for a device enumeration.
+    ///   - device: Underlying device reported by the 'manager'.
     init(manager: IOHIDManager, device: IOHIDDevice)
+
+    /// Opens the device.
+    ///
+    /// - Parameter options: <#options description#>
+    /// - Returns: <#return value description#>
     func open(options: IOOptionBits) -> Bool
-    func close(options: IOOptionBits) -> Bool
+
+    /// Closes the device
+    ///
+    /// - Parameter options: <#options description#>
+    /// - Returns: True if the device was closed successfully.
+    @discardableResult func close(options: IOOptionBits) -> Bool
+
+    /// A callback providing data received from the device.
+    ///
+    /// - Parameter buffer: Bytes received from the device.
     func dataReceived(buffer: [uint8])
-    func write(command: [uint8]) -> Bool
+
+    /// Writes data to the device.
+    ///
+    /// - Parameter buffer: Bytes which shall be sent to the device.
+    /// - Returns: True if data was written successfuly. False otherwise
+    func write(buffer: [uint8]) -> Bool
 }

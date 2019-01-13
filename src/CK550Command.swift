@@ -26,7 +26,14 @@ SOFTWARE.
 
 import Foundation
 
+/// Creates a valid CK550 keyboard data.
 struct CK550Command {
+    /// Creates a CK550 data which could be sent to a keyboard.
+    ///
+    /// - Parameter request: <#request description#>
+    /// - Returns: Data which could be sent to a keyboard by a single write HID request.
+    /// - Note: CK550 keyboard is an USB Full Speed device, therefore requires data of 64 bytes,
+    ///         padded with 0. Padding is also a part of this function.
     static func newCommand(request: [uint8]) -> [uint8] {
         var command = Array.init(repeating: UInt8(0x00), count: 64)
         command.replaceSubrange(Range<Int>(uncheckedBounds: (lower: 0, upper: request.count)), with: request)

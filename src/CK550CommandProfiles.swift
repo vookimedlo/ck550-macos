@@ -26,15 +26,19 @@ SOFTWARE.
 
 import Foundation
 
+// MARK: - CK550 profile related data.
 extension CK550Command {
+    /// Creates a command to get an actually used profile by keyboard.
     static var getActiveProfile: [uint8] {
         return newCommand(request: [0x52, 0x00])
     }
 
+    /// Saves changes in a currently used profile.
     static var saveCurrentProfile: [uint8] {
         return newCommand(request: [0x50, 0x55])
     }
 
+    /// Creates a command to enable profile commands.
     static var setProfileControl: [uint8] {
         return newCommand(request: [0x41, 0x03])
     }
@@ -43,6 +47,10 @@ extension CK550Command {
         return newCommand(request: [0x51, 0x00])
     }
 
+    /// Creates a command to set an actually used profile by keyboard.
+    ///
+    /// - Parameter profileId: Profile to be used.
+    /// - Returns: Requested CK550 data.
     static func setActiveProfile(profileId: uint8) -> [uint8] {
         var command = setActiveProfileTemplate
         command[4] = profileId

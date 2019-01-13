@@ -28,6 +28,9 @@ import Foundation
 import os.log
 
 #if DEBUG
+/// Evaluates if the process is being debugged.
+///
+/// - Returns: True if the process is attached to the debugger. False otherwise.
 private func inDebugSession() -> Bool {
     var info = kinfo_proc()
     var mib: [Int32] = [CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid()]
@@ -37,9 +40,18 @@ private func inDebugSession() -> Bool {
     return (info.kp_proc.p_flag & P_TRACED) != 0
 }
 
+/// Flag containing a result of `inDebugSession` evaluation during a startup.
 private let isDebugged: Bool = inDebugSession()
 #endif
 
+/// Sends a message to the logging system with a debug severity.
+///
+/// - Parameters:
+///   - format: A constant string or format string that produces a human-readable log message.
+///   - args: If message is a constant string, do not specify arguments.
+///           If message is a format string, pass the expected number of arguments
+///           in the order that they appear in the string.
+/// - Warning: Message is discarded if the app is not built in a *Debug* configuration.
 func logDebug(_ format: StaticString, _ args: CVarArg...) {
     #if DEBUG
     if isDebugged {
@@ -48,10 +60,24 @@ func logDebug(_ format: StaticString, _ args: CVarArg...) {
     #endif
 }
 
+/// Sends a message to the logging system with an error severity.
+///
+/// - Parameters:
+///   - format: A constant string or format string that produces a human-readable log message.
+///   - args: If message is a constant string, do not specify arguments.
+///           If message is a format string, pass the expected number of arguments
+///           in the order that they appear in the string.
 func logError(_ format: StaticString, _ args: CVarArg...) {
     os_log(format, type: .error, args)
 }
 
+/// Sends a message to the logging system with an info severity.
+///
+/// - Parameters:
+///   - format: A constant string or format string that produces a human-readable log message.
+///   - args: If message is a constant string, do not specify arguments.
+///           If message is a format string, pass the expected number of arguments
+///           in the order that they appear in the string.
 func logInfo(_ format: StaticString, _ args: CVarArg...) {
     os_log(format, type: .info, args)
 }

@@ -26,6 +26,7 @@ SOFTWARE.
 
 import Foundation
 
+// MARK: - CK550 effect related data.
 extension CK550Command {
     enum EffectID: uint8 {
         typealias RawValue = uint8
@@ -50,10 +51,12 @@ extension CK550Command {
         case off = 0xff // CK550CommandOff
     }
 
+    /// Creates a command to get enabled effects.
     static var getActiveEffects: [uint8] {
         return newCommand(request: [0x52, 0x28])
     }
 
+    /// Creates a command to enable effects commands.
     static var setEffectControl: [uint8] {
         return newCommand(request: [0x41, 0x01])
     }
@@ -62,12 +65,18 @@ extension CK550Command {
         return newCommand(request: [0x51, 0x28])
     }
 
+    /// Creates a command to set a keyboard effect.
+    ///
+    /// - Parameter effectId: Effect to set.
+    /// - Returns: Requested CK550 data.
+    /// - SeeAlso: `CK550Command.EffectID`
     static func setEffect(effectId: EffectID) -> [uint8] {
         var command = setEffectTemplate
         command[4] = effectId.rawValue
         return command
     }
 
+    /// Creates a command to enable an *Off* effect redefinition.
     static var enableOffEffectModification: [uint8] {
         return newCommand(request: [0x41, 0x80])
     }

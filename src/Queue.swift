@@ -26,17 +26,27 @@ SOFTWARE.
 
 import Foundation
 
-class Queue<T> {
-    private var list = [T]()
+/// A FIFO (first-in, first-out) data structure.
+class Queue<Element> {
+    private var list = [Element]()
 
-    func enqueue(_ item: T) {
-        list.append(item)
+    /// Adds element to the queue.
+    ///
+    /// - Parameter element: The element to be queued.
+    func enqueue(_ element: Element) {
+        list.append(element)
     }
 
-    func dequeue() -> T? {
+    /// Removes the oldest element from the queue and returns it.
+    ///
+    /// - Returns: The oldest element in queue.
+    func dequeue() -> Element? {
         return list.isEmpty == false ? list.removeFirst() : nil
     }
 
+    /// Returns the number of queued elements.
+    ///
+    /// - Returns: The number of queued elements.
     func count() -> Int {
         return list.count
     }

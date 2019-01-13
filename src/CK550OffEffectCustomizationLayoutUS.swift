@@ -26,6 +26,7 @@ SOFTWARE.
 
 import Foundation
 
+/// CK550 US layout for an Customization 'Off' effect override.
 class CK550OffEffectCustomizationLayoutUS: CK550OffEffectCustomizationLayout {
     typealias Key = KeyUS
 
@@ -44,6 +45,7 @@ class CK550OffEffectCustomizationLayoutUS: CK550OffEffectCustomizationLayout {
         // swiftlint:enable identifier_name
     }
 
+    /// Individual key settings
     struct KeyData {
         let packet: Int
         let offset: Int

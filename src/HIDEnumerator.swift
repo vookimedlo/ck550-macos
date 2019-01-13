@@ -27,6 +27,7 @@ SOFTWARE.
 import Foundation
 import IOKit
 
+/// Provides an access to HID enumeration.
 class HIDEnumerator {
     private let manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
     private var usagePage: UInt32 = 0
@@ -34,10 +35,21 @@ class HIDEnumerator {
     private var enumeratedDevices: [IOHIDDevice: HIDDeviceProtocol] = [IOHIDDevice: HIDDeviceProtocol]()
     private let hidDeviceType: HIDDeviceProtocol.Type
 
+    /// Creates a HIDEnumerator instance.
+    ///
+    /// - Parameters:
+    ///   - deviceType: `HIDDeviceProtocol` compatible type, which is used for an instantiation
+    ///                 when passing an enumeration or removal result.
     required init<HIDDEVICE: HIDDeviceProtocol>(_ deviceType: HIDDEVICE.Type) {
         hidDeviceType = deviceType
     }
 
+    /// A callback to be used by `IOHIDManager` when a device is enumerated.
+    ///
+    /// - Parameters:
+    ///   - result: The IOHIDManager operation result.
+    ///   - sender: IOHIDManager instance, which called this callback
+    ///   - device: The enumerated device.
     private func enumerated(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) {
         guard result == kIOReturnSuccess else {
             return
@@ -55,7 +67,16 @@ class HIDEnumerator {
         }
     }
 
+    /// A callback to be used by `IOHIDManager` when any enumerated device is removed.
+    ///
+    /// - Parameters:
+    ///   - result: The IOHIDManager operation result.
+    ///   - sender: IOHIDManager instance, which called this callback
+    ///   - device: The removed device.
     private func removed(result: IOReturn, sender: UnsafeMutableRawPointer, device: IOHIDDevice!) {
+        guard result == kIOReturnSuccess else {
+            return
+        }
 // swiftlint:disable force_cast
         if (usagePage == 0 || usagePage == (IOHIDDeviceGetProperty(device, "PrimaryUsagePage" as CFString) as! UInt32)) && (usage == 0 || usage == (IOHIDDeviceGetProperty(device, "PrimaryUsage" as CFString) as! UInt32)) {
 // swiftlint:enable force_cast
@@ -69,10 +90,24 @@ class HIDEnumerator {
         }
     }
 
+    /// Starts a HID enumeration monitoring and filters enumerated results by provided USB IDs.
+    ///
+    /// - Parameters:
+    ///   - vid: The USB Vendor ID.
+    ///   - pid: The USB Product ID.
+    /// - Returns: True when monitring has started. False otherwise.
     func monitorEnumeration(vid: Int, pid: Int) -> Bool {
         return monitorEnumeration(vid: vid, pid: pid, usagePage: 0, usage: 0)
     }
 
+    /// Starts a HID enumeration monitoring and filters enumerated results by provided USB IDs.
+    ///
+    /// - Parameters:
+    ///   - vid: The USB Vendor ID.
+    ///   - pid: The USB Product ID.
+    ///   - usagePage: The USB HID Usage Page ID.
+    ///   - usage: The USB HID Usage ID.
+    /// - Returns: True when monitring has started. False otherwise.
     func monitorEnumeration(vid: Int, pid: Int, usagePage: UInt32, usage: UInt32) -> Bool {
         let deviceMatch = [kIOHIDProductIDKey: pid, kIOHIDVendorIDKey: vid]
         self.usagePage = usagePage
