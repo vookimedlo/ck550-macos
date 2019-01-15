@@ -28,8 +28,8 @@ import Foundation
 import Cocoa
 
 class ColorPopover: NSViewController {
-    let colorPanel = NSColorPanel()
-    let popover = NSPopover()
+    private let popover = NSPopover()
+    private let colorPanel = NSColorPanel()
 
     var mode: NSColorPanel.Mode {
         get { return self.colorPanel.mode }

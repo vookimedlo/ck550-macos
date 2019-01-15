@@ -55,10 +55,9 @@ class ColorButton: NSButton {
     }
 
     @objc func clickedAction(_ sender: Any?) {
-        colorPopover.colorPanel.color = color
         colorPopover.setAction(target: self,
                                selector: #selector(colorChangedAction(_:)))
-        colorPopover.show(parent: self)
+        colorPopover.show(parent: self, initialColor: color)
     }
 
     @objc func colorChangedAction(_ sender: NSColorPanel) {
