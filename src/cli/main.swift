@@ -27,7 +27,7 @@ SOFTWARE.
 import Foundation
 import Commandant
 import Result
-
+
 /// Errors related to the CLI arguments.
 ///
 /// - ok: Argument was proccessed successfully.

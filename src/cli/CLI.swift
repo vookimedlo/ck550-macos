@@ -28,7 +28,7 @@ import Foundation
 
 class CLI: NSObject, HIDDeviceEnumeratedHandler {
     private let dispatchQueue = DispatchQueue(label: "cli", qos: .utility)
-    private let hid = HIDRaw(CK550HIDDevice.self)
+    private let hid = HIDEnumerator(CK550HIDDevice.self)
     private var hidDevice: CK550HIDDevice?
     private var onOpenFunction: () -> Void = {}
 
