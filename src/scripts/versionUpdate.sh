@@ -22,6 +22,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+if [ "$MODE" == "re-release" ]; then
+    exit 0
+fi
+
 plist="${INFOPLIST_FILE}"
 shortVersion=$(date +%Y.%m.%d)
 
@@ -38,5 +42,10 @@ fi
 
 # Release could be created only by setting a MODE veriable to the 'release'
 # xcodebuild -alltargets MODE='release'
+#
+# Create a build using the current version could be created only by setting
+# a MODE veriable to the 're-release'
+# xcodebuild -alltargets MODE='re-release'
+#
 # All other builds are considered as a development build and '-dev' is appended to the short version
 #
