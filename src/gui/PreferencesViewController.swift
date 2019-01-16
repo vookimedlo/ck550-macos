@@ -315,6 +315,7 @@ class PreferencesViewController: NSViewController, EffectSelectConfigurationHand
 
         if let controller = effectPreferenceViewControllers[effect] {
             logDebug("restoring a preference mainView")
+            controller.setup()
             mainView.addSubview(controller.view)
         } else {
             logError("unknown preference mainView")

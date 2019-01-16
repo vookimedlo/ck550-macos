@@ -81,9 +81,10 @@ class EffectCustomizationPreferenceViewController: NSViewController, PreferenceV
     }
 
     func setup() {
+        deactivated()
         logDebug("customization setup")
 
-        openPanel.title = "Import a custumization effect data"
+        openPanel.title = "Import a customization effect data"
         openPanel.message = "Select a customization effect data to import ..."
         openPanel.allowedFileTypes = ["public.json"]
 
@@ -112,9 +113,12 @@ class EffectCustomizationPreferenceViewController: NSViewController, PreferenceV
                 }
             }
         }
+
+        settings = internalSettings
     }
 
     func deactivated() {
+        logDebug("customization deactivated")
         keyboardButtons.values.forEach { button in
             button.target = nil
             button.action = nil
