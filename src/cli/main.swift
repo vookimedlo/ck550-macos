@@ -64,6 +64,7 @@ registry.register(MonitorCommand())
 registry.register(VersionCommand())
 registry.register(LicenseCommand())
 registry.register(ComponentsCommand())
+registry.register(AboutCommand())
 
 // effects
 registry.register(BreathingCommand())
