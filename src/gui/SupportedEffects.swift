@@ -52,11 +52,11 @@ enum Effect: String, CaseIterable {
     var name: String {
         switch self {
         case .staticKeys: return "Static"
-        case .wave: return "Wave"
-        case .crossMode: return "Cross Mode"
-        case .singleKey: return "Single Key"
-        case .customization: return "Customization"
-        case .star: return "Star"
+        case .wave: return "Rainbow Wave"
+        case .crossMode: return "Crosshair"
+        case .singleKey: return "Reactive Fade"
+        case .customization: return "Custom"
+        case .star: return "Stars"
         case .colorCycle: return "Color Cycle"
         case .breathing: return "Breathing"
         case .ripple: return "Ripple"
