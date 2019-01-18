@@ -40,7 +40,7 @@ public struct WaveCommand: CommandProtocol {
             return self.rawValue
         }
 
-        public static let name = "wave-direction"
+        public static let name = "rainbow-wave-direction"
 
         public static func from(string: String) -> WaveDirectionArgument? {
             return self.init(rawValue: string.lowercased())
@@ -62,8 +62,8 @@ public struct WaveCommand: CommandProtocol {
         }
     }
 
-    public let verb = "effect-wave"
-    public let function = "Set a wave effect"
+    public let verb = "effect-rainbow-wave"
+    public let function = "Set a rainbow-wave effect"
 
     public func run(_ options: Options) -> Result<(), CLIError> {
         let evalSupport = EvaluationSupport()

@@ -41,7 +41,7 @@ public struct CustomizationCommand: CommandProtocol {
         }
     }
 
-    public let verb = "effect-customization"
+    public let verb = "effect-custom"
     public let function = "Set a custom color for individual keys"
 
     public func run(_ options: Options) -> Result<(), CLIError> {

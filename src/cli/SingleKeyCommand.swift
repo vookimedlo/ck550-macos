@@ -45,8 +45,8 @@ public struct SingleKeyCommand: CommandProtocol {
         }
     }
 
-    public let verb = "effect-single-key"
-    public let function = "Set a single-key effect"
+    public let verb = "effect-reactive-fade"
+    public let function = "Set a reactive-fade effect"
 
     public func run(_ options: Options) -> Result<(), CLIError> {
         let evalSupport = EvaluationSupport()
