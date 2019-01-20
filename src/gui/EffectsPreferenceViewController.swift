@@ -34,9 +34,11 @@ class EffectsPreferenceViewController: NSViewController, PreferenceViewControlle
             // No implementation, because no preferences are not available for given effect
             return [:]
         }
+        // swiftlint:disable unused_setter_value
         set {
             // No implementation, because no preferences are not available for given effect
         }
+        // swiftlint:enable unused_setter_value
     }
 
     func setup() {
