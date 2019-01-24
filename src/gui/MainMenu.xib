@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,6 +12,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="1pt-rj-TEG" customClass="SUUpdater"/>
         <customObject id="blt-F1-bs0" userLabel="Delegate" customClass="AppDelegate" customModule="ck550" customModuleProvider="target"/>
         <customObject id="js7-Sd-Hgq" userLabel="Status Menu Controller" customClass="StatusMenuController" customModule="ck550" customModuleProvider="target">
             <connections>
@@ -20,6 +21,7 @@
                 <outlet property="statusEffectMenu" destination="DEa-Py-zfA" id="CdW-dF-bgd"/>
                 <outlet property="statusMenu" destination="48C-yD-jno" id="zrE-G2-knL"/>
                 <outlet property="toggleMonitoringViewController" destination="nqJ-pM-HzU" id="HHl-Vr-QMF"/>
+                <outlet property="updater" destination="1pt-rj-TEG" id="US6-nB-g1E"/>
             </connections>
         </customObject>
         <viewController id="nqJ-pM-HzU" userLabel="Toggle Monitoring View Controller" customClass="MonitoringViewController" customModule="ck550" customModuleProvider="target">
@@ -50,7 +52,6 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="xDB-rb-anP"/>
-                <menuItem isSeparatorItem="YES" id="XRx-tD-1oL"/>
                 <menuItem title="Sleep/Wake" tag="3" id="yqh-Ta-Q9s">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
@@ -63,6 +64,13 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="preferencesAction:" target="js7-Sd-Hgq" id="a7v-Ix-sy4"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="pDK-Y0-Bdw"/>
+                <menuItem title="Check for Updates..." id="I3M-Iq-w6K">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="checkForUpdateAction:" target="js7-Sd-Hgq" id="Jyp-zf-MG0"/>
                     </connections>
                 </menuItem>
                 <menuItem title="About..." id="bmb-Jt-aHo">

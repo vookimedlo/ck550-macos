@@ -28,12 +28,9 @@ fi
 
 plist="${INFOPLIST_FILE}"
 shortVersion=$(date +%Y.%m.%d)
+buildNumber=$(date +%Y%m%d)
 
-if [ "$MODE" == "release" ]; then
-    buildNumber=1
-else
-    buildNumber=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$plist")
-    buildNumber=$(($buildNumber + 1))
+if [ "$MODE" != "release" ]; then
     shortVersion="${shortVersion}-dev"
 fi
 

@@ -47,9 +47,6 @@
 		8D29901B21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29901A21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift */; };
 		8D29901C21E7EC42007E8314 /* ComponentsLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D29901921E7E87E007E8314 /* ComponentsLicenseWindow.xib */; };
 		8D29901F21E7F2AE007E8314 /* COMPONENTS.rtf in Sync a COMPONENTS with assets */ = {isa = PBXBuildFile; fileRef = 8D29901D21E7F045007E8314 /* COMPONENTS.rtf */; };
-		8D30193421F4A2980082595D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D30193321F4A2980082595D /* Sparkle.framework */; };
-		8D30193521F4A2A10082595D /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D30193321F4A2980082595D /* Sparkle.framework */; };
-		8D30193621F4A2A10082595D /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D30193321F4A2980082595D /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D32D70B21F12EC300845704 /* AboutCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32D70A21F12EC300845704 /* AboutCommand.swift */; };
 		8D6FB4C721C9A4B400C25DA6 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6FB4C621C9A4B400C25DA6 /* AboutWindow.xib */; };
 		8D6FB4C921CA614E00C25DA6 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */; };
@@ -109,6 +106,8 @@
 		8D75FAD221C5A4A800574CF1 /* CK550CommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */; };
 		8D75FAD421C5A6FC00574CF1 /* AssembleCommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */; };
 		8D75FAD621C5A88300574CF1 /* CrosshairCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD521C5A88300574CF1 /* CrosshairCommand.swift */; };
+		8D82DDC221F792DF0043F516 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D82DDC121F792DF0043F516 /* Sparkle.framework */; };
+		8D82DDC321F792EB0043F516 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D82DDC121F792DF0043F516 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D84AAC521C970CE00087947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAC421C970CE00087947 /* AppDelegate.swift */; };
 		8D84AAC921C970D300087947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D84AAC821C970D300087947 /* Assets.xcassets */; };
 		8D84AACC21C970D300087947 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D84AACA21C970D300087947 /* Preferences.storyboard */; };
@@ -257,8 +256,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8D82DDC321F792EB0043F516 /* Sparkle.framework in Embed Frameworks */,
 				8D90275021D800B700D0EC40 /* PrettyColors.framework in Embed Frameworks */,
-				8D30193621F4A2A10082595D /* Sparkle.framework in Embed Frameworks */,
 				8D90274C21D800B700D0EC40 /* Commandant.framework in Embed Frameworks */,
 				8D90275221D800B700D0EC40 /* Result.framework in Embed Frameworks */,
 				8D73C65721D1855C0021FA4B /* SwiftyJSON.framework in Embed Frameworks */,
@@ -316,7 +315,6 @@
 		8D29901921E7E87E007E8314 /* ComponentsLicenseWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComponentsLicenseWindow.xib; sourceTree = "<group>"; };
 		8D29901A21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsLicenseWindowController.swift; sourceTree = "<group>"; };
 		8D29901D21E7F045007E8314 /* COMPONENTS.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = COMPONENTS.rtf; path = ../../COMPONENTS.rtf; sourceTree = "<group>"; };
-		8D30193321F4A2980082595D /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		8D32D70A21F12EC300845704 /* AboutCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutCommand.swift; path = cli/AboutCommand.swift; sourceTree = "<group>"; };
 		8D34C6B421AD6393007746B6 /* CK550CommandFirmware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550CommandFirmware.swift; sourceTree = "<group>"; };
 		8D34C6B521AD6393007746B6 /* CK550Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CK550Command.swift; sourceTree = "<group>"; };
@@ -403,6 +401,7 @@
 		8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandCrosshair.swift; sourceTree = "<group>"; };
 		8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCrosshair.swift; sourceTree = "<group>"; };
 		8D75FAD521C5A88300574CF1 /* CrosshairCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairCommand.swift; sourceTree = "<group>"; };
+		8D82DDC121F792DF0043F516 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		8D84AAC221C970CE00087947 /* ck550.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ck550.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D84AAC421C970CE00087947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D84AAC821C970D300087947 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -474,9 +473,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D90274F21D800B700D0EC40 /* PrettyColors.framework in Frameworks */,
-				8D30193421F4A2980082595D /* Sparkle.framework in Frameworks */,
+				8D82DDC221F792DF0043F516 /* Sparkle.framework in Frameworks */,
 				8D90274B21D800B700D0EC40 /* Commandant.framework in Frameworks */,
-				8D30193521F4A2A10082595D /* Sparkle.framework in Frameworks */,
 				8D90275121D800B700D0EC40 /* Result.framework in Frameworks */,
 				8D73C65621D1855C0021FA4B /* SwiftyJSON.framework in Frameworks */,
 				8D90274D21D800B700D0EC40 /* Curry.framework in Frameworks */,
@@ -555,11 +553,11 @@
 		8D34C6CC21AD646C007746B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8D30193321F4A2980082595D /* Sparkle.framework */,
 				8D966E4B21C18425009AF6E6 /* Commandant.framework */,
 				8D966E5721C19993009AF6E6 /* Curry.framework */,
 				8D966E4721C035C8009AF6E6 /* PrettyColors.framework */,
 				8D966E4F21C1859C009AF6E6 /* Result.framework */,
+				8D82DDC121F792DF0043F516 /* Sparkle.framework */,
 				8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;

@@ -26,6 +26,7 @@ SOFTWARE.
 
 import Cocoa
 import Foundation
+import Sparkle
 
 class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandler, KeyboardInfoHandler {
     @IBOutlet weak var statusMenu: NSMenu!
@@ -33,6 +34,7 @@ class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandl
     @IBOutlet weak var toggleMonitoringViewController: MonitoringViewController!
     @IBOutlet weak var keyboardInfoViewController: KeyboardInfoViewController!
     @IBOutlet weak var sleepWakeViewController: SleepWakeViewController!
+    @IBOutlet weak var updater: SUUpdater!
 
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var aboutWindowController: AboutWindowController?
@@ -178,6 +180,10 @@ class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandl
         aboutWindowController = AboutWindowController(windowNibName: NSNib.Name("AboutWindow"))
         NotificationCenter.default.addObserver(self, selector: #selector(windowWillClose(notification:)), name: NSWindow.willCloseNotification, object: aboutWindowController?.window)
         aboutWindowController?.window?.orderFrontRegardless()
+    }
+
+    @IBAction func checkForUpdateAction(_ sender: NSMenuItem) {
+        updater.checkForUpdates(sender)
     }
 
     @IBAction func preferencesAction(_ sender: NSMenuItem) {
