@@ -2,8 +2,11 @@
 
 set -e;
 
+PLIST_FILE="../build/Release/ck550.app/Contents/Info.plist"
+VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $PLIST_FILE)
 VOLUME_NAME="CK550"
-DMG_NAME="CK550_MacOS_Effect_Controller.dmg"
+DMG_NAME="CK550_MacOS_Effect_Controller-$VERSION.dmg"
+DMG_PATH="release-output/$DMG_NAME"
 DMG_TEMP_NAME="tmp-$DMG_NAME"
 VOLUME_ICON_FILE="support/ck550-dmg.icns"
 BACKGROUND_FILE="support/ck550-dmg-bg.png"
@@ -94,9 +97,11 @@ echo "Unmounting disk image"
 hdiutil detach "$DEV_NAME"
 
 echo "Compressing disk image"
-hdiutil convert "$DMG_TEMP_NAME" -format ULFO -o "$DMG_NAME"
+hdiutil convert "$DMG_TEMP_NAME" -format ULFO -o "$DMG_PATH"
 rm -f "$DMG_TEMP_NAME"
 
-echo "Done"
+rm -rf "$TARGET"
+
+echo "DMG was created."
 
 exit 0;
