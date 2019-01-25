@@ -20,6 +20,7 @@
                 <outlet property="sleepWakeViewController" destination="5y1-Rd-ts3" id="6YH-Sn-aL6"/>
                 <outlet property="statusEffectMenu" destination="DEa-Py-zfA" id="CdW-dF-bgd"/>
                 <outlet property="statusMenu" destination="48C-yD-jno" id="zrE-G2-knL"/>
+                <outlet property="statusUpdateMenuItem" destination="I3M-Iq-w6K" id="BKR-qA-Old"/>
                 <outlet property="toggleMonitoringViewController" destination="nqJ-pM-HzU" id="HHl-Vr-QMF"/>
                 <outlet property="updater" destination="1pt-rj-TEG" id="US6-nB-g1E"/>
             </connections>

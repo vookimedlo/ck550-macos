@@ -31,6 +31,7 @@ import Sparkle
 class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandler, KeyboardInfoHandler {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var statusEffectMenu: NSMenu!
+    @IBOutlet weak var statusUpdateMenuItem: NSMenuItem!
     @IBOutlet weak var toggleMonitoringViewController: MonitoringViewController!
     @IBOutlet weak var keyboardInfoViewController: KeyboardInfoViewController!
     @IBOutlet weak var sleepWakeViewController: SleepWakeViewController!
@@ -42,6 +43,13 @@ class StatusMenuController: NSObject, EffectToggledHandler, EffectConfigureHandl
     private var effectViewControllers = [Effect: EffectMenuViewController]()
 
     override func awakeFromNib() {
+        if Bundle.isUpdaterEnabled() == false {
+            updater.automaticallyChecksForUpdates = false
+            updater.automaticallyDownloadsUpdates = false
+            statusUpdateMenuItem.isEnabled = false
+            statusUpdateMenuItem.isHidden = true
+        }
+
         let monitoringPlaceHolder = statusMenu.item(withTag: 1)
         monitoringPlaceHolder?.view = toggleMonitoringViewController.view
 

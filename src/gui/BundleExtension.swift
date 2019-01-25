@@ -49,4 +49,14 @@ extension Bundle {
         }
         return (version, build)
     }
+
+    static func isUpdaterEnabled() -> Bool {
+        guard let dictionary = Bundle.main.infoDictionary else {
+            return false
+        }
+        guard let isEnabled: Bool = dictionary["UpdaterEnabled"] as? Bool else {
+            return false
+        }
+        return isEnabled
+    }
 }

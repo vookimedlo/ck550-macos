@@ -450,6 +450,7 @@
 		8DA5D68A21EA908E0062560B /* versionUpdate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = versionUpdate.sh; path = scripts/versionUpdate.sh; sourceTree = "<group>"; };
 		8DA5D68F21EFCEED0062560B /* createDMG.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = createDMG.sh; path = scripts/createDMG.sh; sourceTree = "<group>"; };
 		8DAB658021E145850084D5B6 /* NSButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSButtonExtension.swift; sourceTree = "<group>"; };
+		8DF90BD321FB95AE00245649 /* createRelease.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = createRelease.sh; path = scripts/createRelease.sh; sourceTree = "<group>"; };
 		8DFD0D0421BDADCB009905CD /* ck550-cli.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ck550-cli.entitlements"; sourceTree = "<group>"; };
 		8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCustomization.swift; sourceTree = "<group>"; };
 		8DFD0D0721BDB765009905CD /* AssembleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommand.swift; sourceTree = "<group>"; };
@@ -835,6 +836,7 @@
 			isa = PBXGroup;
 			children = (
 				8DA5D68F21EFCEED0062560B /* createDMG.sh */,
+				8DF90BD321FB95AE00245649 /* createRelease.sh */,
 				8DA5D68A21EA908E0062560B /* versionUpdate.sh */,
 			);
 			name = scripts;
