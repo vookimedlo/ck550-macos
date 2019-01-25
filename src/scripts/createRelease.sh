@@ -3,6 +3,14 @@
 set -e
 
 LANG="C"
+
+if [ -z $1 ]; then
+    echo "Tag hasn't been defined."
+    exit 1
+fi
+
+TAG=$1
+
 RELEASE_OUTPUT_DIR="./release-output"
 
 rm -rf $RELEASE_OUTPUT_DIR || true
@@ -21,12 +29,16 @@ cd scripts
 
 echo "App was built."
 
+cp -f ../build/Release/ck550-cli ../build/Release/ck550-cli.app/Contents/MacOS/
+
+echo "CLI app was injected."
+
 PLIST_FILE="../build/Release/ck550.app/Contents/Info.plist"
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $PLIST_FILE)
 SHORT_VERSION_STRING=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" $PLIST_FILE)
 MIN_MACOS=$(/usr/libexec/PlistBuddy -c "Print LSMinimumSystemVersion" $PLIST_FILE)
 
-ZIP_NAME="CK550_MacOS_GUI-$VERSION.zip"
+ZIP_NAME="CK550_MacOS_Effect_Controller-$VERSION.zip"
 ZIP_PATH="$RELEASE_OUTPUT_DIR/$ZIP_NAME"
 XML_PATH="$RELEASE_OUTPUT_DIR/AppCast.xml"
 

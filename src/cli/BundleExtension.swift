@@ -28,7 +28,8 @@ import Foundation
 
 extension Bundle {
     static func bundleVersion() -> (version: String, build: String) {
-        guard let dictionary = Bundle(path: "ck550-cli.app")?.infoDictionary else {
+        //guard let dictionary = Bundle(path: "ck550-cli.app")?.infoDictionary else {
+        guard let dictionary = Bundle.main.infoDictionary else {
             return ("", "")
         }
         guard let version = dictionary["CFBundleShortVersionString"]  as? String else {

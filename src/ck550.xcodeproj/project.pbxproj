@@ -1363,6 +1363,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/ck550-cli.app/Contents/Frameworks",
+					"@executable_path/ck550.app/Contents/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.vookimedlo.coolmaster.hid.ck550-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1381,7 +1382,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/cli/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/../Frameworks",
 					"@executable_path/ck550-cli.app/Contents/Frameworks",
+					"@executable_path/ck550.app/Contents/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.vookimedlo.coolmaster.hid.ck550-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
