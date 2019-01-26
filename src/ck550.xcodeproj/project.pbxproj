@@ -44,9 +44,10 @@
 		8D20656521BC7469000FF8E4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6CF21AD64A7007746B6 /* main.swift */; };
 		8D2214C921C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2214C821C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift */; };
 		8D2214CB21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2214CA21C83718006609D3 /* CK550OffEffectCustomizationLayoutUS.swift */; };
+		8D27551021FCED2A00BE4137 /* ck550-cli.app in Inject CLI app */ = {isa = PBXBuildFile; fileRef = 8D20653321BC72CF000FF8E4 /* ck550-cli.app */; };
 		8D29901B21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D29901A21E7E8E6007E8314 /* ComponentsLicenseWindowController.swift */; };
 		8D29901C21E7EC42007E8314 /* ComponentsLicenseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D29901921E7E87E007E8314 /* ComponentsLicenseWindow.xib */; };
-		8D29901F21E7F2AE007E8314 /* COMPONENTS.rtf in Sync a COMPONENTS with assets */ = {isa = PBXBuildFile; fileRef = 8D29901D21E7F045007E8314 /* COMPONENTS.rtf */; };
+		8D29901F21E7F2AE007E8314 /* COMPONENTS.rtf in Sync COMPONENTS with assets */ = {isa = PBXBuildFile; fileRef = 8D29901D21E7F045007E8314 /* COMPONENTS.rtf */; };
 		8D32D70B21F12EC300845704 /* AboutCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D32D70A21F12EC300845704 /* AboutCommand.swift */; };
 		8D6FB4C721C9A4B400C25DA6 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6FB4C621C9A4B400C25DA6 /* AboutWindow.xib */; };
 		8D6FB4C921CA614E00C25DA6 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6FB4C821CA614E00C25DA6 /* AboutWindowController.swift */; };
@@ -223,6 +224,16 @@
 		8DFD0D0821BDB765009905CD /* AssembleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0721BDB765009905CD /* AssembleCommand.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8D27550B21FCDAFC00BE4137 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DADC2A1219857FA008F0641 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D20653221BC72CF000FF8E4;
+			remoteInfo = "ck550-cli";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		8D109A3A21BC80D9007F2C30 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -239,15 +250,26 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D29901E21E7F28D007E8314 /* Sync a COMPONENTS with assets */ = {
+		8D27550F21FCED1400BE4137 /* Inject CLI app */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				8D27551021FCED2A00BE4137 /* ck550-cli.app in Inject CLI app */,
+			);
+			name = "Inject CLI app";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D29901E21E7F28D007E8314 /* Sync COMPONENTS with assets */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(SRCROOT)/gui/Assets.xcassets/COMPONENTS.dataset";
 			dstSubfolderSpec = 0;
 			files = (
-				8D29901F21E7F2AE007E8314 /* COMPONENTS.rtf in Sync a COMPONENTS with assets */,
+				8D29901F21E7F2AE007E8314 /* COMPONENTS.rtf in Sync COMPONENTS with assets */,
 			);
-			name = "Sync a COMPONENTS with assets";
+			name = "Sync COMPONENTS with assets";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8D73C65821D1855D0021FA4B /* Embed Frameworks */ = {
@@ -912,7 +934,6 @@
 				8D20653021BC72CF000FF8E4 /* Frameworks */,
 				8D20653121BC72CF000FF8E4 /* Resources */,
 				8D109A2A21BC77C2007F2C30 /* Carthage Frameworks Handling */,
-				8D109A2D21BC7D8D007F2C30 /* Extract CLI */,
 				8D109A3A21BC80D9007F2C30 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -932,16 +953,18 @@
 				8D90275621D9697600D0EC40 /* Sync a default configuration with assets */,
 				8D91DB3221E68D8D00F22A27 /* Sync a changelog with assets */,
 				8D91DB3521E7D9FC00F22A27 /* Sync a LICENSE with assets */,
-				8D29901E21E7F28D007E8314 /* Sync a COMPONENTS with assets */,
+				8D29901E21E7F28D007E8314 /* Sync COMPONENTS with assets */,
 				8D90271221D7A7BA00D0EC40 /* Lint Sources */,
 				8D84AABE21C970CE00087947 /* Sources */,
 				8D84AABF21C970CE00087947 /* Frameworks */,
 				8D84AAC021C970CE00087947 /* Resources */,
 				8D73C65821D1855D0021FA4B /* Embed Frameworks */,
+				8D27550F21FCED1400BE4137 /* Inject CLI app */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8D27550C21FCDAFC00BE4137 /* PBXTargetDependency */,
 			);
 			name = ck550;
 			productName = ck550;
@@ -1053,26 +1076,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		8D109A2D21BC7D8D007F2C30 /* Extract CLI */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}",
-			);
-			name = "Extract CLI";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp -v \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}\"\n";
 		};
 		8D389ABB21C6FC3D00C4BAC8 /* Lint Sources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1340,6 +1343,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D27550C21FCDAFC00BE4137 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D20653221BC72CF000FF8E4 /* ck550-cli */;
+			targetProxy = 8D27550B21FCDAFC00BE4137 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8D84AACA21C970D300087947 /* Preferences.storyboard */ = {
