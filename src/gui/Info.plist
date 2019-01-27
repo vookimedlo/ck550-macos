@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2019.01.25-dev</string>
+	<string>2019.01.27</string>
 	<key>CFBundleVersion</key>
-	<string>20190125</string>
+	<string>20190127</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
