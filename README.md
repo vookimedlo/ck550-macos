@@ -1,4 +1,7 @@
-# ck550-macos
+# ck550-macos 
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/vookimedlo/ck550-macos/master/LICENSE) ![Platform](https://img.shields.io/badge/platforms-macos%2010.14%2B-ff69b4.svg)
+[![Latest release](https://img.shields.io/github/release/vookimedlo/ck550-macos.svg?label=latest%20release)](https://github.com/vookimedlo/ck550-macos/releases/latest)
 
 CoolerMaster has never provided any MacOS SW or SDK for their CK550 keyboards. 
 
@@ -6,7 +9,7 @@ CK550-macos project tries to fix this situation and provides a couple of the Mac
 majority of available keyboard LED effect.
 Applications support only CK550 US-Layout keyboards.
 
-Both applications differ only in a user interface, one is CLI-based and the latter is GUI-based. Applications do not
+Both applications differ only in a user interface, one is CLI-based, and the latter is GUI-based. Applications do not
 overwrite any stored settings in a keyboard. Changes are temporary, so once the keyboard is unplugged, all changes made
 by ck550-macos are lost. The same situation happens if you switch a keyboard to a different profile. 
 The reason for this behavior is to keep the internal keyboard flash write cycles untouched.
@@ -147,15 +150,15 @@ with the CK550-MacOS CLI application.
 
 ## Installation
 
-CK550-MacOS Gui & CLI applications are distributed in two fashions, which is either a `Homebrew CASK`, or the self-updatable DMG.
+CK550-MacOS GUI & CLI applications are distributed in two fashions, which is either a `Homebrew CASK`, or the self-updatable DMG.
 
 ### Self-updatable DMG
 
-The self-updatable DMG is available in a [release section.][3]. Be aware that a CLI application is included in the GUI app bundle. You can run the `./ck550.app/Contents/MacOS/ck550-cli.app/Contents/MacOS/ck550-cli` or create a symbolic link to provide an easy access.
+The self-updatable DMG is available in a [release section][3]. Be aware that a CLI application is included in the GUI app bundle. You can run the `./ck550.app/Contents/MacOS/ck550-cli.app/Contents/MacOS/ck550-cli` or create a symbolic link to provide an easy access.
 
 ### Homebrew CASK
 
-If you have't install the Homebrew yet, follow [their instructions.][4]
+If you haven't install the Homebrew yet, follow [their instructions][4].
 
 Then, applications could be installed by following commands.
 
