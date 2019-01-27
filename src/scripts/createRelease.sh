@@ -134,7 +134,7 @@ name 'CK550 MacOS Effect Controller'
 homepage "https://github.com/vookimedlo/ck550-macos"
 
 app 'ck550.app'
-binary "#{appdir}/ck550.app/Contents/MacOS//ck550-cli.app/Contents/MacOS/ck550-cli"
+binary "#{appdir}/ck550.app/Contents/MacOS/ck550-cli.app/Contents/MacOS/ck550-cli"
 
 zap trash: [
 '~/Library/Containers/cz.vookimedlo.coolmaster.hid.ck550',
