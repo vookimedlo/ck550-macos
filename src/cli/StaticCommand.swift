@@ -26,7 +26,6 @@ SOFTWARE.
 
 import Foundation
 import Commandant
-import Result
 import Curry
 
 public struct StaticCommand: CommandProtocol {

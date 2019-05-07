@@ -26,7 +26,6 @@ SOFTWARE.
 
 import Foundation
 import Commandant
-import Result
 
 public struct MonitorCommand: CommandProtocol {
     public let verb = "monitor"

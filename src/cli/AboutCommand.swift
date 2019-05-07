@@ -26,7 +26,6 @@
 
 import Foundation
 import Commandant
-import Result
 
 public struct AboutCommand: CommandProtocol {
     public let verb = "about"

@@ -26,7 +26,6 @@
 
 import Foundation
 import Commandant
-import Result
 
 public struct LicenseCommand: CommandProtocol {
     public let verb = "license"

@@ -178,8 +178,6 @@
 		8D90274E21D800B700D0EC40 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D90274F21D800B700D0EC40 /* PrettyColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; };
 		8D90275021D800B700D0EC40 /* PrettyColors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8D90275121D800B700D0EC40 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4F21C1859C009AF6E6 /* Result.framework */; };
-		8D90275221D800B700D0EC40 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4F21C1859C009AF6E6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D90275321D801DA00D0EC40 /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4921C0375F009AF6E6 /* Terminal.swift */; };
 		8D90275521D950F200D0EC40 /* ConfigurationChangedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90275421D950F200D0EC40 /* ConfigurationChangedNotification.swift */; };
 		8D90275A21D969FF00D0EC40 /* guiDefaultSettings.json in Sync a default configuration with assets */ = {isa = PBXBuildFile; fileRef = 8D90275821D969D800D0EC40 /* guiDefaultSettings.json */; };
@@ -206,8 +204,6 @@
 		8D966E4C21C18425009AF6E6 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; };
 		8D966E4D21C18490009AF6E6 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D966E4E21C18490009AF6E6 /* PrettyColors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8D966E5021C1859C009AF6E6 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4F21C1859C009AF6E6 /* Result.framework */; };
-		8D966E5121C185DD009AF6E6 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4F21C1859C009AF6E6 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D966E5421C186A3009AF6E6 /* VersionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5321C186A3009AF6E6 /* VersionCommand.swift */; };
 		8D966E5621C18B79009AF6E6 /* MonitorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5521C18B79009AF6E6 /* MonitorCommand.swift */; };
 		8D966E5821C19993009AF6E6 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; };
@@ -242,7 +238,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				8D966E5921C199D4009AF6E6 /* Curry.framework in Embed Frameworks */,
-				8D966E5121C185DD009AF6E6 /* Result.framework in Embed Frameworks */,
 				8D966E4D21C18490009AF6E6 /* Commandant.framework in Embed Frameworks */,
 				8D966E4E21C18490009AF6E6 /* PrettyColors.framework in Embed Frameworks */,
 				8D109A3921BC80D9007F2C30 /* SwiftyJSON.framework in Embed Frameworks */,
@@ -281,7 +276,6 @@
 				8D82DDC321F792EB0043F516 /* Sparkle.framework in Embed Frameworks */,
 				8D90275021D800B700D0EC40 /* PrettyColors.framework in Embed Frameworks */,
 				8D90274C21D800B700D0EC40 /* Commandant.framework in Embed Frameworks */,
-				8D90275221D800B700D0EC40 /* Result.framework in Embed Frameworks */,
 				8D73C65721D1855C0021FA4B /* SwiftyJSON.framework in Embed Frameworks */,
 				8D90274E21D800B700D0EC40 /* Curry.framework in Embed Frameworks */,
 			);
@@ -486,7 +480,6 @@
 				8D966E4C21C18425009AF6E6 /* Commandant.framework in Frameworks */,
 				8D966E4821C035C8009AF6E6 /* PrettyColors.framework in Frameworks */,
 				8D109A3821BC80D9007F2C30 /* SwiftyJSON.framework in Frameworks */,
-				8D966E5021C1859C009AF6E6 /* Result.framework in Frameworks */,
 				8D966E5821C19993009AF6E6 /* Curry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,7 +491,6 @@
 				8D90274F21D800B700D0EC40 /* PrettyColors.framework in Frameworks */,
 				8D82DDC221F792DF0043F516 /* Sparkle.framework in Frameworks */,
 				8D90274B21D800B700D0EC40 /* Commandant.framework in Frameworks */,
-				8D90275121D800B700D0EC40 /* Result.framework in Frameworks */,
 				8D73C65621D1855C0021FA4B /* SwiftyJSON.framework in Frameworks */,
 				8D90274D21D800B700D0EC40 /* Curry.framework in Frameworks */,
 			);
@@ -1060,7 +1052,6 @@
 				"$(SRCROOT)/../Carthage/Build/Mac/SwiftyJSON.framework",
 				"$(SRCROOT)/../Carthage/Build/Mac/PrettyColors.framework",
 				"$(SRCROOT)/../Carthage/Build/Mac/Commandant.framework",
-				"$(SRCROOT)/../Carthage/Build/Mac/Result.framework",
 				"$(SRCROOT)/../Carthage/Build/Mac/Curry.framework",
 			);
 			name = "Carthage Frameworks Handling";
@@ -1070,7 +1061,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/SwiftyJSON.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/PrettyColors.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/Commandant.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/Result.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/Curry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1381,7 +1371,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.vookimedlo.coolmaster.hid.ck550-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1401,7 +1390,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cz.vookimedlo.coolmaster.hid.ck550-cli";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1420,7 +1408,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cz.vookimedlo.coolmaster.hid.ck550;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1439,7 +1426,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cz.vookimedlo.coolmaster.hid.ck550;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1503,6 +1489,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1559,6 +1546,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
