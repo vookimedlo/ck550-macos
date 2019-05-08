@@ -8,15 +8,15 @@
 <description>MacOS effect control SW for a CoolMaster CK550 Keyboard (US Layout).</description>
 <language>en</language>
 <item>
-<title>Version 2019.01.27</title>
+<title>Version 2019.05.08</title>
 <sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
 <sparkle:releaseNotesLink>https://f001.backblazeb2.com/file/Sparkle-Data/ck550/changelog.html</sparkle:releaseNotesLink>
-<pubDate>Sun Jan 27 19:40:24 GMT 2019 +0000</pubDate>
+<pubDate>Wed May  8 19:39:18 GMT 2019 +0000</pubDate>
 <enclosure
-    url="https://github.com/vookimedlo/ck550-macos/releases/download/v2019.01.27/CK550_MacOS_Effect_Controller-20190127.zip"
-    sparkle:version="20190127"
-    sparkle:shortVersionString="2019.01.27"
-    sparkle:edSignature="HBJWCq4kMAiFnZYMSlzkJ/guNLSkTakUPRyFDUPW9OoR7fHH90aYxmggHMU4gOgznzzSWxMF358+WTfTw+U0CQ==" length="10664492"
+    url="https://github.com/vookimedlo/ck550-macos/releases/download/v2019.05.08/CK550_MacOS_Effect_Controller-20190508.zip"
+    sparkle:version="20190508"
+    sparkle:shortVersionString="2019.05.08"
+    sparkle:edSignature="xsk1i/3sZ8keTZbGXDNz7FbHy3SXx2vX/SiOCgl9oquElJ4o+pGz3Ooh64gdCadZ47a3Lq6VWeVPuYTsGQsZCw==" length="10320911"
     type="application/octet-stream" />
 </item>
 </channel>
