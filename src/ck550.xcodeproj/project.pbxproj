@@ -12,6 +12,8 @@
 		8D04E32A21DBFC5B00707E63 /* EffectCustomizationPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04E32921DBFC5B00707E63 /* EffectCustomizationPreferenceViewController.swift */; };
 		8D04E32C21DD5C1D00707E63 /* FileLoadNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04E32B21DD5C1D00707E63 /* FileLoadNotification.swift */; };
 		8D04E32E21DEA58C00707E63 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04E32D21DEA58C00707E63 /* Utils.swift */; };
+		8D06A13F228341A30042E928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A13E228341A30042E928 /* Constants.swift */; };
+		8D06A140228341A30042E928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A13E228341A30042E928 /* Constants.swift */; };
 		8D109A3821BC80D9007F2C30 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; };
 		8D109A3921BC80D9007F2C30 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D20654A21BC7394000FF8E4 /* CK550CommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */; };
@@ -323,6 +325,7 @@
 		8D04E32921DBFC5B00707E63 /* EffectCustomizationPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectCustomizationPreferenceViewController.swift; sourceTree = "<group>"; };
 		8D04E32B21DD5C1D00707E63 /* FileLoadNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoadNotification.swift; sourceTree = "<group>"; };
 		8D04E32D21DEA58C00707E63 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		8D06A13E228341A30042E928 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		8D20653321BC72CF000FF8E4 /* ck550-cli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ck550-cli.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D20654221BC7359000FF8E4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cli/Info.plist; sourceTree = "<group>"; };
@@ -452,7 +455,6 @@
 		8D966E4721C035C8009AF6E6 /* PrettyColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PrettyColors.framework; path = ../Carthage/Build/Mac/PrettyColors.framework; sourceTree = "<group>"; };
 		8D966E4921C0375F009AF6E6 /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Terminal.swift; path = cli/Terminal.swift; sourceTree = "<group>"; };
 		8D966E4B21C18425009AF6E6 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = ../Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
-		8D966E4F21C1859C009AF6E6 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		8D966E5321C186A3009AF6E6 /* VersionCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VersionCommand.swift; path = cli/VersionCommand.swift; sourceTree = "<group>"; };
 		8D966E5521C18B79009AF6E6 /* MonitorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MonitorCommand.swift; path = cli/MonitorCommand.swift; sourceTree = "<group>"; };
 		8D966E5721C19993009AF6E6 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = ../Carthage/Build/Mac/Curry.framework; sourceTree = "<group>"; };
@@ -571,7 +573,6 @@
 				8D966E4B21C18425009AF6E6 /* Commandant.framework */,
 				8D966E5721C19993009AF6E6 /* Curry.framework */,
 				8D966E4721C035C8009AF6E6 /* PrettyColors.framework */,
-				8D966E4F21C1859C009AF6E6 /* Result.framework */,
 				8D82DDC121F792DF0043F516 /* Sparkle.framework */,
 				8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */,
 			);
@@ -909,6 +910,7 @@
 				8D966E3F21BF0B8A009AF6E6 /* AssembleCommandStatic.swift */,
 				8D75FACF21C598C300574CF1 /* AssembleCommandWaterRipple.swift */,
 				8D966E3721BF0667009AF6E6 /* AssembleCommandWave.swift */,
+				8D06A13E228341A30042E928 /* Constants.swift */,
 			);
 			name = shared;
 			sourceTree = "<group>";
@@ -1157,6 +1159,7 @@
 				8D75FACA21C597DA00574CF1 /* AssembleCommandFireball.swift in Sources */,
 				8DFD0D0621BDB105009905CD /* AssembleCommandCustomization.swift in Sources */,
 				8D7281A821C4269000963B1D /* AssembleCommandReactiveTornado.swift in Sources */,
+				8D06A13F228341A30042E928 /* Constants.swift in Sources */,
 				8D75FAD021C598C300574CF1 /* AssembleCommandWaterRipple.swift in Sources */,
 				8D20654A21BC7394000FF8E4 /* CK550CommandBreathing.swift in Sources */,
 				8D20654B21BC7394000FF8E4 /* CK550CommandCircleSpectrum.swift in Sources */,
@@ -1307,6 +1310,7 @@
 				8D73C65A21D2C45D0021FA4B /* RGBColorExtension.swift in Sources */,
 				8D73C64D21CFED820021FA4B /* EffectPreferenceViewController.swift in Sources */,
 				8D84AAE021C994FE00087947 /* Logging.swift in Sources */,
+				8D06A140228341A30042E928 /* Constants.swift in Sources */,
 				8D73C66821D6BBDB0021FA4B /* AppPreferences.swift in Sources */,
 				8D6FB4DC21CBD79C00C25DA6 /* NSViewExtension.swift in Sources */,
 				8D6FB4DE21CC142D00C25DA6 /* EffectToggledNotification.swift in Sources */,

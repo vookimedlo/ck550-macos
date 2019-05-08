@@ -95,9 +95,19 @@ class HIDEnumerator {
     /// - Parameters:
     ///   - vid: The USB Vendor ID.
     ///   - pid: The USB Product ID.
-    /// - Returns: True when monitring has started. False otherwise.
+    /// - Returns: True when monitoring has started. False otherwise.
     func monitorEnumeration(vid: Int, pid: Int) -> Bool {
         return monitorEnumeration(vid: vid, pid: pid, usagePage: 0, usage: 0)
+    }
+
+    /// Starts a HID enumeration monitoring and filters enumerated results by provided USB IDs.
+    ///
+    /// - Parameters:
+    ///   - vid: The USB Vendor ID.
+    ///   - pids: The USB Product IDs.
+    /// - Returns: True when monitoring has started. False otherwise.
+    func monitorEnumeration(vid: Int, pids: [Int]) -> Bool {
+        return monitorEnumeration(vid: vid, pids: pids, usagePage: 0, usage: 0)
     }
 
     /// Starts a HID enumeration monitoring and filters enumerated results by provided USB IDs.
@@ -107,9 +117,28 @@ class HIDEnumerator {
     ///   - pid: The USB Product ID.
     ///   - usagePage: The USB HID Usage Page ID.
     ///   - usage: The USB HID Usage ID.
-    /// - Returns: True when monitring has started. False otherwise.
+    /// - Returns: True when monitoring has started. False otherwise.
     func monitorEnumeration(vid: Int, pid: Int, usagePage: UInt32, usage: UInt32) -> Bool {
-        let deviceMatch = [kIOHIDProductIDKey: pid, kIOHIDVendorIDKey: vid]
+        return monitorEnumeration(vid: vid, pids: [pid], usagePage: 0, usage: 0)
+    }
+
+    /// Starts a HID enumeration monitoring and filters enumerated results by provided USB IDs.
+    ///
+    /// - Parameters:
+    ///   - vid: The USB Vendor ID.
+    ///   - pids: The USB Product IDs.
+    ///   - usagePage: The USB HID Usage Page ID.
+    ///   - usage: The USB HID Usage ID.
+    /// - Returns: True when monitoring has started. False otherwise.
+    func monitorEnumeration(vid: Int, pids: [Int], usagePage: UInt32, usage: UInt32) -> Bool {
+        guard !pids.isEmpty else {
+            return false
+        }
+
+        var deviceMatchMultiple: [[String: Int]] = []
+        for pid in pids {
+            deviceMatchMultiple.append([kIOHIDProductIDKey: pid, kIOHIDVendorIDKey: vid])
+        }
         self.usagePage = usagePage
         self.usage = usage
 
@@ -127,7 +156,7 @@ class HIDEnumerator {
         IOHIDManagerRegisterDeviceMatchingCallback(manager, matchingCallback, this)
         IOHIDManagerRegisterDeviceRemovalCallback(manager, removalCallback, this)
 
-        IOHIDManagerSetDeviceMatching(manager, deviceMatch as CFDictionary?)
+        IOHIDManagerSetDeviceMatchingMultiple(manager, deviceMatchMultiple as CFArray?)
         IOHIDManagerScheduleWithRunLoop(manager, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue)
 
         return kIOReturnSuccess == IOHIDManagerOpen(manager, 0)

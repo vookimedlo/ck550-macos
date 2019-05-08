@@ -296,7 +296,10 @@ class KeyboardGUIHandler: NSObject, HIDDeviceEnumeratedHandler, MenuToggledHandl
     }
 
     func startHIDMonitoring() -> Bool {
-        return hid.monitorEnumeration(vid: 0x2516, pid: 0x007f, usagePage: 0xFF00, usage: 0x00)
+        return hid.monitorEnumeration(vid: keyboardVID,
+                                      pids: KeyboardPIDs.allCases.map { $0.rawValue },
+                                      usagePage: 0xFF00,
+                                      usage: 0x00)
     }
 
     func deviceEnumerated(notification: Notification) {
