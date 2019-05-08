@@ -4,11 +4,11 @@
 [![Latest release](https://img.shields.io/github/release/vookimedlo/ck550-macos.svg?label=latest%20release)](https://github.com/vookimedlo/ck550-macos/releases/latest)
 [![codebeat badge](https://codebeat.co/badges/24d08641-db15-45e4-be57-a7412fd2d4b8)](https://codebeat.co/projects/github-com-vookimedlo-ck550-macos-master)
 
-CoolerMaster has never provided any MacOS SW or SDK for their CK550 keyboards. 
+CoolerMaster has never provided any MacOS SW or SDK for their **CK550** and **CK530** keyboards.
 
 CK550-macos project tries to fix this situation and provides a couple of the MacOS applications for controlling the
-majority of available keyboard LED effect.
-Applications support only CK550 US-Layout keyboards.
+majority of available keyboard LED effects.
+Applications support only the **CK550** and newly the **CK530** US-Layout keyboards.
 
 Both applications differ only in a user interface, one is CLI-based, and the latter is GUI-based. Applications do not
 overwrite any stored settings in a keyboard. Changes are temporary, so once the keyboard is unplugged, all changes made
@@ -179,6 +179,23 @@ If everything went well, you see a similar output and both GUI and CLI applicati
 ==> Moving App 'ck550.app' to '/Applications/ck550.app'.
 ==> Linking Binary 'ck550-cli' to '/usr/local/bin/ck550-cli'.
 🍺  ck550-macos was successfully installed!
+```
+
+Later, you can upgrade this application by following command.
+
+```
+brew cask upgrade ck550-macos
+```
+
+### Other CK keyboard models
+
+It's possible that other CK keyboard models can be controlled by this software. If you are brave enough, you can enable your keyboard model by adding its USB PID to Constants.swift file. Just extend the _KeyboardPIDs_ enum, re-compile the code base, give it a try and let me know.
+
+```
+enum KeyboardPIDs: Int, CaseIterable {
+    case CK550 = 0x007f; // Works - @vookimedlo - this is the only keyboard I have, any contribution for other models is welcome!!!
+    case CK530 = 0x009f; // Works - @cscheib - suggested & reported - Thanks!!!
+}
 ```
 
 ----------------------------------------------
