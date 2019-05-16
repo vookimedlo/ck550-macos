@@ -3,6 +3,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/vookimedlo/ck550-macos/master/LICENSE) ![Platform](https://img.shields.io/badge/platforms-macos%2010.14%2B-ff69b4.svg)
 [![Latest release](https://img.shields.io/github/release/vookimedlo/ck550-macos.svg?label=latest%20release)](https://github.com/vookimedlo/ck550-macos/releases/latest)
 [![codebeat badge](https://codebeat.co/badges/24d08641-db15-45e4-be57-a7412fd2d4b8)](https://codebeat.co/projects/github-com-vookimedlo-ck550-macos-master)
+[![Build Status](https://travis-ci.org/vookimedlo/ck550-macos.svg?branch=master)](https://travis-ci.org/vookimedlo/ck550-macos)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvookimedlo%2Fck550-macos.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvookimedlo%2Fck550-macos?ref=badge_shield)
 
 CoolerMaster has never provided any MacOS SW or SDK for their **CK550** and **CK530** keyboards.
