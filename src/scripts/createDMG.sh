@@ -44,7 +44,7 @@ rm -rf "$TARGET" || true
 mkdir "$TARGET" || true
 
 echo "Creating disk image"
-cp -rf ../build/Release/ck550.app "$TARGET/"
+cp -Rf ../build/Release/ck550.app "$TARGET/"
 ln -s /Applications "$TARGET/Applications"
 cp -f "$LICENSE_FILE" "$TARGET/LICENSE.txt"
 cp -f "$CHANGELOG_FILE" "$TARGET/"
@@ -106,7 +106,7 @@ EOF
 
 echo "Setting custom volume icon"
 cp -f "$VOLUME_ICON_FILE" "$MOUNT_DIR/.VolumeIcon.icns"
-SetFile -c nC "$MOUNT_DIR/.VolumeIcon.icns"
+SetFile -a nC "$MOUNT_DIR/.VolumeIcon.icns"
 SetFile -a C "$MOUNT_DIR"
 
 echo "Fixing permissions"

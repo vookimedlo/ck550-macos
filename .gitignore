@@ -74,3 +74,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 src/scripts/CK550_MacOS_Effect_Controller.dmg
+.DS_Store
