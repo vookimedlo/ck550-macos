@@ -1,5 +1,1 @@
-github "SwiftyJSON/SwiftyJSON" ~> 5.0
-github "jdhealy/PrettyColors" ~> 5.0
-github "Carthage/Commandant" ~> 0.17
-github "thoughtbot/Curry" ~> 4.0
-github "sparkle-project/Sparkle" ~> 1.21
+github "sparkle-project/Sparkle" ~> 1.22

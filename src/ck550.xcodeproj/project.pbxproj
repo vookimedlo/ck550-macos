@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,8 +14,6 @@
 		8D04E32E21DEA58C00707E63 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D04E32D21DEA58C00707E63 /* Utils.swift */; };
 		8D06A13F228341A30042E928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A13E228341A30042E928 /* Constants.swift */; };
 		8D06A140228341A30042E928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D06A13E228341A30042E928 /* Constants.swift */; };
-		8D109A3821BC80D9007F2C30 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; };
-		8D109A3921BC80D9007F2C30 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D20654A21BC7394000FF8E4 /* CK550CommandBreathing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D49DCA521B5BD1500BAC6F8 /* CK550CommandBreathing.swift */; };
 		8D20654B21BC7394000FF8E4 /* CK550CommandCircleSpectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281FF21B4842100EB1F76 /* CK550CommandCircleSpectrum.swift */; };
 		8D20654C21BC7394000FF8E4 /* CK550CommandColorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4281F721B4684500EB1F76 /* CK550CommandColorCycle.swift */; };
@@ -84,8 +82,6 @@
 		8D73C64F21D01C4F0021FA4B /* EffectNoPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D73C64E21D01C4F0021FA4B /* EffectNoPreferenceView.xib */; };
 		8D73C65121D022910021FA4B /* EffectNoPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65021D022910021FA4B /* EffectNoPreferenceViewController.swift */; };
 		8D73C65321D0DE520021FA4B /* PreferencesViewControllerOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65221D0DE520021FA4B /* PreferencesViewControllerOutline.swift */; };
-		8D73C65621D1855C0021FA4B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; };
-		8D73C65721D1855C0021FA4B /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D73C65A21D2C45D0021FA4B /* RGBColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65921D2C45D0021FA4B /* RGBColorExtension.swift */; };
 		8D73C65C21D40E240021FA4B /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73C65B21D40E240021FA4B /* NSColorExtension.swift */; };
 		8D73C65E21D420330021FA4B /* EffectsPreferenceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D73C65D21D420330021FA4B /* EffectsPreferenceView.xib */; };
@@ -109,8 +105,6 @@
 		8D75FAD221C5A4A800574CF1 /* CK550CommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */; };
 		8D75FAD421C5A6FC00574CF1 /* AssembleCommandCrosshair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */; };
 		8D75FAD621C5A88300574CF1 /* CrosshairCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D75FAD521C5A88300574CF1 /* CrosshairCommand.swift */; };
-		8D82DDC221F792DF0043F516 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D82DDC121F792DF0043F516 /* Sparkle.framework */; };
-		8D82DDC321F792EB0043F516 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D82DDC121F792DF0043F516 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D84AAC521C970CE00087947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D84AAC421C970CE00087947 /* AppDelegate.swift */; };
 		8D84AAC921C970D300087947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D84AAC821C970D300087947 /* Assets.xcassets */; };
 		8D84AACC21C970D300087947 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D84AACA21C970D300087947 /* Preferences.storyboard */; };
@@ -174,12 +168,6 @@
 		8D90274821D8006600D0EC40 /* HIDEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6BE21AD63A6007746B6 /* HIDEnumerator.swift */; };
 		8D90274921D8006600D0EC40 /* HIDEnumerationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C221AD63B2007746B6 /* HIDEnumerationNotification.swift */; };
 		8D90274A21D8006600D0EC40 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D34C6C421AD63BB007746B6 /* Data.swift */; };
-		8D90274B21D800B700D0EC40 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; };
-		8D90274C21D800B700D0EC40 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8D90274D21D800B700D0EC40 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; };
-		8D90274E21D800B700D0EC40 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8D90274F21D800B700D0EC40 /* PrettyColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; };
-		8D90275021D800B700D0EC40 /* PrettyColors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D90275321D801DA00D0EC40 /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4921C0375F009AF6E6 /* Terminal.swift */; };
 		8D90275521D950F200D0EC40 /* ConfigurationChangedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D90275421D950F200D0EC40 /* ConfigurationChangedNotification.swift */; };
 		8D90275A21D969FF00D0EC40 /* guiDefaultSettings.json in Sync a default configuration with assets */ = {isa = PBXBuildFile; fileRef = 8D90275821D969D800D0EC40 /* guiDefaultSettings.json */; };
@@ -201,15 +189,9 @@
 		8D966E4221BF0C07009AF6E6 /* AssembleCommandOff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4121BF0C07009AF6E6 /* AssembleCommandOff.swift */; };
 		8D966E4421BF0C93009AF6E6 /* AssembleCommandSnowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4321BF0C93009AF6E6 /* AssembleCommandSnowing.swift */; };
 		8D966E4621C031C5009AF6E6 /* AssembleCommandProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */; };
-		8D966E4821C035C8009AF6E6 /* PrettyColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; };
 		8D966E4A21C0375F009AF6E6 /* Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E4921C0375F009AF6E6 /* Terminal.swift */; };
-		8D966E4C21C18425009AF6E6 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; };
-		8D966E4D21C18490009AF6E6 /* Commandant.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4B21C18425009AF6E6 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8D966E4E21C18490009AF6E6 /* PrettyColors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E4721C035C8009AF6E6 /* PrettyColors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D966E5421C186A3009AF6E6 /* VersionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5321C186A3009AF6E6 /* VersionCommand.swift */; };
 		8D966E5621C18B79009AF6E6 /* MonitorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5521C18B79009AF6E6 /* MonitorCommand.swift */; };
-		8D966E5821C19993009AF6E6 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; };
-		8D966E5921C199D4009AF6E6 /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D966E5721C19993009AF6E6 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D966E5B21C19A75009AF6E6 /* CustomizationCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5A21C19A75009AF6E6 /* CustomizationCommand.swift */; };
 		8D966E5D21C1A60A009AF6E6 /* CLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5C21C1A60A009AF6E6 /* CLI.swift */; };
 		8D966E5F21C1B65E009AF6E6 /* ColorCycleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D966E5E21C1B65E009AF6E6 /* ColorCycleCommand.swift */; };
@@ -218,6 +200,14 @@
 		8DA5D68221E94AD30062560B /* ComponentsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA5D68121E94AD30062560B /* ComponentsCommand.swift */; };
 		8DA5D68721EA83EF0062560B /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA5D68621EA83EF0062560B /* BundleExtension.swift */; };
 		8DAB658121E145850084D5B6 /* NSButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB658021E145850084D5B6 /* NSButtonExtension.swift */; };
+		8DC1CAD023A828B7003C31EA /* PrettyColors in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC1CACF23A828B7003C31EA /* PrettyColors */; };
+		8DC1CAD323A82980003C31EA /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC1CAD223A82980003C31EA /* SwiftyJSON */; };
+		8DC1CAD623A82BFD003C31EA /* Commandant in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC1CAD523A82BFD003C31EA /* Commandant */; };
+		8DC1CAD923A82D74003C31EA /* Curry in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC1CAD823A82D74003C31EA /* Curry */; };
+		8DC1CADB23A8309B003C31EA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC1CADA23A8309B003C31EA /* Sparkle.framework */; };
+		8DC1CADC23A830AD003C31EA /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC1CADA23A8309B003C31EA /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8DC1CADE23A83102003C31EA /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC1CADD23A83102003C31EA /* SwiftyJSON */; };
+		8DC1CAE023A831B5003C31EA /* PrettyColors in Frameworks */ = {isa = PBXBuildFile; productRef = 8DC1CADF23A831B5003C31EA /* PrettyColors */; };
 		8DFD0D0621BDB105009905CD /* AssembleCommandCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */; };
 		8DFD0D0821BDB765009905CD /* AssembleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD0D0721BDB765009905CD /* AssembleCommand.swift */; };
 /* End PBXBuildFile section */
@@ -239,10 +229,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8D966E5921C199D4009AF6E6 /* Curry.framework in Embed Frameworks */,
-				8D966E4D21C18490009AF6E6 /* Commandant.framework in Embed Frameworks */,
-				8D966E4E21C18490009AF6E6 /* PrettyColors.framework in Embed Frameworks */,
-				8D109A3921BC80D9007F2C30 /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +261,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8D82DDC321F792EB0043F516 /* Sparkle.framework in Embed Frameworks */,
-				8D90275021D800B700D0EC40 /* PrettyColors.framework in Embed Frameworks */,
-				8D90274C21D800B700D0EC40 /* Commandant.framework in Embed Frameworks */,
-				8D73C65721D1855C0021FA4B /* SwiftyJSON.framework in Embed Frameworks */,
-				8D90274E21D800B700D0EC40 /* Curry.framework in Embed Frameworks */,
+				8DC1CADC23A830AD003C31EA /* Sparkle.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +308,6 @@
 		8D04E32B21DD5C1D00707E63 /* FileLoadNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoadNotification.swift; sourceTree = "<group>"; };
 		8D04E32D21DEA58C00707E63 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8D06A13E228341A30042E928 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 		8D20653321BC72CF000FF8E4 /* ck550-cli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ck550-cli.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D20654221BC7359000FF8E4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cli/Info.plist; sourceTree = "<group>"; };
 		8D2214C821C8362B006609D3 /* CK550OffEffectCustomizationLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550OffEffectCustomizationLayout.swift; sourceTree = "<group>"; };
@@ -420,7 +401,6 @@
 		8D75FAD121C5A4A800574CF1 /* CK550CommandCrosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CK550CommandCrosshair.swift; sourceTree = "<group>"; };
 		8D75FAD321C5A6FC00574CF1 /* AssembleCommandCrosshair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCrosshair.swift; sourceTree = "<group>"; };
 		8D75FAD521C5A88300574CF1 /* CrosshairCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairCommand.swift; sourceTree = "<group>"; };
-		8D82DDC121F792DF0043F516 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		8D84AAC221C970CE00087947 /* ck550.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ck550.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D84AAC421C970CE00087947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D84AAC821C970D300087947 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -452,12 +432,9 @@
 		8D966E4121BF0C07009AF6E6 /* AssembleCommandOff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandOff.swift; sourceTree = "<group>"; };
 		8D966E4321BF0C93009AF6E6 /* AssembleCommandSnowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandSnowing.swift; sourceTree = "<group>"; };
 		8D966E4521C031C5009AF6E6 /* AssembleCommandProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandProfile.swift; sourceTree = "<group>"; };
-		8D966E4721C035C8009AF6E6 /* PrettyColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PrettyColors.framework; path = ../Carthage/Build/Mac/PrettyColors.framework; sourceTree = "<group>"; };
 		8D966E4921C0375F009AF6E6 /* Terminal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Terminal.swift; path = cli/Terminal.swift; sourceTree = "<group>"; };
-		8D966E4B21C18425009AF6E6 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = ../Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		8D966E5321C186A3009AF6E6 /* VersionCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VersionCommand.swift; path = cli/VersionCommand.swift; sourceTree = "<group>"; };
 		8D966E5521C18B79009AF6E6 /* MonitorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MonitorCommand.swift; path = cli/MonitorCommand.swift; sourceTree = "<group>"; };
-		8D966E5721C19993009AF6E6 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = ../Carthage/Build/Mac/Curry.framework; sourceTree = "<group>"; };
 		8D966E5A21C19A75009AF6E6 /* CustomizationCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomizationCommand.swift; path = cli/CustomizationCommand.swift; sourceTree = "<group>"; };
 		8D966E5C21C1A60A009AF6E6 /* CLI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLI.swift; path = cli/CLI.swift; sourceTree = "<group>"; };
 		8D966E5E21C1B65E009AF6E6 /* ColorCycleCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorCycleCommand.swift; path = cli/ColorCycleCommand.swift; sourceTree = "<group>"; };
@@ -468,6 +445,7 @@
 		8DA5D68A21EA908E0062560B /* versionUpdate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = versionUpdate.sh; path = scripts/versionUpdate.sh; sourceTree = "<group>"; };
 		8DA5D68F21EFCEED0062560B /* createDMG.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = createDMG.sh; path = scripts/createDMG.sh; sourceTree = "<group>"; };
 		8DAB658021E145850084D5B6 /* NSButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSButtonExtension.swift; sourceTree = "<group>"; };
+		8DC1CADA23A8309B003C31EA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = ../Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
 		8DF90BD321FB95AE00245649 /* createRelease.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = createRelease.sh; path = scripts/createRelease.sh; sourceTree = "<group>"; };
 		8DFD0D0421BDADCB009905CD /* ck550-cli.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ck550-cli.entitlements"; sourceTree = "<group>"; };
 		8DFD0D0521BDB105009905CD /* AssembleCommandCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembleCommandCustomization.swift; sourceTree = "<group>"; };
@@ -479,10 +457,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D966E4C21C18425009AF6E6 /* Commandant.framework in Frameworks */,
-				8D966E4821C035C8009AF6E6 /* PrettyColors.framework in Frameworks */,
-				8D109A3821BC80D9007F2C30 /* SwiftyJSON.framework in Frameworks */,
-				8D966E5821C19993009AF6E6 /* Curry.framework in Frameworks */,
+				8DC1CAD323A82980003C31EA /* SwiftyJSON in Frameworks */,
+				8DC1CAD023A828B7003C31EA /* PrettyColors in Frameworks */,
+				8DC1CAD923A82D74003C31EA /* Curry in Frameworks */,
+				8DC1CAD623A82BFD003C31EA /* Commandant in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,11 +468,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D90274F21D800B700D0EC40 /* PrettyColors.framework in Frameworks */,
-				8D82DDC221F792DF0043F516 /* Sparkle.framework in Frameworks */,
-				8D90274B21D800B700D0EC40 /* Commandant.framework in Frameworks */,
-				8D73C65621D1855C0021FA4B /* SwiftyJSON.framework in Frameworks */,
-				8D90274D21D800B700D0EC40 /* Curry.framework in Frameworks */,
+				8DC1CADE23A83102003C31EA /* SwiftyJSON in Frameworks */,
+				8DC1CAE023A831B5003C31EA /* PrettyColors in Frameworks */,
+				8DC1CADB23A8309B003C31EA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,11 +546,7 @@
 		8D34C6CC21AD646C007746B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8D966E4B21C18425009AF6E6 /* Commandant.framework */,
-				8D966E5721C19993009AF6E6 /* Curry.framework */,
-				8D966E4721C035C8009AF6E6 /* PrettyColors.framework */,
-				8D82DDC121F792DF0043F516 /* Sparkle.framework */,
-				8D109A2821BC7794007F2C30 /* SwiftyJSON.framework */,
+				8DC1CADA23A8309B003C31EA /* Sparkle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -927,14 +899,23 @@
 				8D20652F21BC72CF000FF8E4 /* Sources */,
 				8D20653021BC72CF000FF8E4 /* Frameworks */,
 				8D20653121BC72CF000FF8E4 /* Resources */,
-				8D109A2A21BC77C2007F2C30 /* Carthage Frameworks Handling */,
 				8D109A3A21BC80D9007F2C30 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8DC1CAE623A83296003C31EA /* PBXTargetDependency */,
+				8DC1CAE823A83296003C31EA /* PBXTargetDependency */,
+				8DC1CAEA23A83296003C31EA /* PBXTargetDependency */,
+				8DC1CAEC23A83296003C31EA /* PBXTargetDependency */,
 			);
 			name = "ck550-cli";
+			packageProductDependencies = (
+				8DC1CACF23A828B7003C31EA /* PrettyColors */,
+				8DC1CAD223A82980003C31EA /* SwiftyJSON */,
+				8DC1CAD523A82BFD003C31EA /* Commandant */,
+				8DC1CAD823A82D74003C31EA /* Curry */,
+			);
 			productName = "ck550-cli";
 			productReference = 8D20653321BC72CF000FF8E4 /* ck550-cli.app */;
 			productType = "com.apple.product-type.application";
@@ -958,9 +939,15 @@
 			buildRules = (
 			);
 			dependencies = (
+				8DC1CAE223A83288003C31EA /* PBXTargetDependency */,
+				8DC1CAE423A83288003C31EA /* PBXTargetDependency */,
 				8D27550C21FCDAFC00BE4137 /* PBXTargetDependency */,
 			);
 			name = ck550;
+			packageProductDependencies = (
+				8DC1CADD23A83102003C31EA /* SwiftyJSON */,
+				8DC1CADF23A831B5003C31EA /* PrettyColors */,
+			);
 			productName = ck550;
 			productReference = 8D84AAC221C970CE00087947 /* ck550.app */;
 			productType = "com.apple.product-type.application";
@@ -1003,6 +990,12 @@
 				Base,
 			);
 			mainGroup = 8DADC2A0219857FA008F0641;
+			packageReferences = (
+				8DC1CACE23A828B7003C31EA /* XCRemoteSwiftPackageReference "PrettyColors" */,
+				8DC1CAD123A82980003C31EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				8DC1CAD423A82BFD003C31EA /* XCRemoteSwiftPackageReference "Commandant" */,
+				8DC1CAD723A82D74003C31EA /* XCRemoteSwiftPackageReference "Curry" */,
+			);
 			productRefGroup = 8DADC2AA219857FA008F0641 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1043,32 +1036,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8D109A2A21BC77C2007F2C30 /* Carthage Frameworks Handling */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/Mac/SwiftyJSON.framework",
-				"$(SRCROOT)/../Carthage/Build/Mac/PrettyColors.framework",
-				"$(SRCROOT)/../Carthage/Build/Mac/Commandant.framework",
-				"$(SRCROOT)/../Carthage/Build/Mac/Curry.framework",
-			);
-			name = "Carthage Frameworks Handling";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/SwiftyJSON.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/PrettyColors.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/Commandant.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Carthage/Build/Mac/Curry.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		8D389ABB21C6FC3D00C4BAC8 /* Lint Sources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1344,6 +1311,30 @@
 			target = 8D20653221BC72CF000FF8E4 /* ck550-cli */;
 			targetProxy = 8D27550B21FCDAFC00BE4137 /* PBXContainerItemProxy */;
 		};
+		8DC1CAE223A83288003C31EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8DC1CAE123A83288003C31EA /* PrettyColors */;
+		};
+		8DC1CAE423A83288003C31EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8DC1CAE323A83288003C31EA /* SwiftyJSON */;
+		};
+		8DC1CAE623A83296003C31EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8DC1CAE523A83296003C31EA /* PrettyColors */;
+		};
+		8DC1CAE823A83296003C31EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8DC1CAE723A83296003C31EA /* SwiftyJSON */;
+		};
+		8DC1CAEA23A83296003C31EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8DC1CAE923A83296003C31EA /* Commandant */;
+		};
+		8DC1CAEC23A83296003C31EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8DC1CAEB23A83296003C31EA /* Curry */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1365,6 +1356,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/cli/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1385,6 +1377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/cli/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1585,6 +1578,104 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8DC1CACE23A828B7003C31EA /* XCRemoteSwiftPackageReference "PrettyColors" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdhealy/PrettyColors";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		8DC1CAD123A82980003C31EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		8DC1CAD423A82BFD003C31EA /* XCRemoteSwiftPackageReference "Commandant" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Carthage/Commandant";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.17.0;
+			};
+		};
+		8DC1CAD723A82D74003C31EA /* XCRemoteSwiftPackageReference "Curry" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thoughtbot/Curry";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8DC1CACF23A828B7003C31EA /* PrettyColors */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CACE23A828B7003C31EA /* XCRemoteSwiftPackageReference "PrettyColors" */;
+			productName = PrettyColors;
+		};
+		8DC1CAD223A82980003C31EA /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CAD123A82980003C31EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		8DC1CAD523A82BFD003C31EA /* Commandant */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CAD423A82BFD003C31EA /* XCRemoteSwiftPackageReference "Commandant" */;
+			productName = Commandant;
+		};
+		8DC1CAD823A82D74003C31EA /* Curry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CAD723A82D74003C31EA /* XCRemoteSwiftPackageReference "Curry" */;
+			productName = Curry;
+		};
+		8DC1CADD23A83102003C31EA /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CAD123A82980003C31EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		8DC1CADF23A831B5003C31EA /* PrettyColors */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CACE23A828B7003C31EA /* XCRemoteSwiftPackageReference "PrettyColors" */;
+			productName = PrettyColors;
+		};
+		8DC1CAE123A83288003C31EA /* PrettyColors */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CACE23A828B7003C31EA /* XCRemoteSwiftPackageReference "PrettyColors" */;
+			productName = PrettyColors;
+		};
+		8DC1CAE323A83288003C31EA /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CAD123A82980003C31EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		8DC1CAE523A83296003C31EA /* PrettyColors */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CACE23A828B7003C31EA /* XCRemoteSwiftPackageReference "PrettyColors" */;
+			productName = PrettyColors;
+		};
+		8DC1CAE723A83296003C31EA /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CAD123A82980003C31EA /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		8DC1CAE923A83296003C31EA /* Commandant */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CAD423A82BFD003C31EA /* XCRemoteSwiftPackageReference "Commandant" */;
+			productName = Commandant;
+		};
+		8DC1CAEB23A83296003C31EA /* Curry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DC1CAD723A82D74003C31EA /* XCRemoteSwiftPackageReference "Curry" */;
+			productName = Curry;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8DADC2A1219857FA008F0641 /* Project object */;
 }
