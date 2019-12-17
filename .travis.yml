@@ -15,7 +15,6 @@ install:
   - 'brew update'
   - 'brew uninstall swiftlint'
   - 'brew uninstall carthage'
-  - 'brew install swiftlint'
   - 'brew install carthage'
   - 'carthage bootstrap --platform macOS --verbose'
 
@@ -24,7 +23,8 @@ before_script:
 
 script:
   - 'cd src'
-  - 'xcodebuild -target ck550'
+  - 'xcodebuild -resolvePackageDependencies -workspace ck550.xcworkspace -scheme ck550-cli -clonedSourcePackagesDirPath .'
+  - 'xcodebuild -workspace ck550.xcworkspace -scheme ck550-cli -clonedSourcePackagesDirPath .'
 
 after_script:
   - 'echo "Done."'
