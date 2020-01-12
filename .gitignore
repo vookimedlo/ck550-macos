@@ -77,3 +77,6 @@ src/scripts/CK550_MacOS_Effect_Controller.dmg
 .DS_Store
 src/checkouts
 src/repositories
+src/ManifestLoading
+src/dependencies-state.json
+src/manifest.db
