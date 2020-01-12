@@ -1,3 +1,7 @@
+excluded:
+ - checkouts
+ - repositories
+
 # rule identifiers to exclude from running
 disabled_rules:
 - function_body_length
