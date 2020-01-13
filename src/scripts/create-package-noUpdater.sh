@@ -8,6 +8,7 @@ VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $PLIST_FILE)
 ZIP_NAME="CK550_MacOS_Effect_Controller-$VERSION-NoUpdater.zip"
 ZIP_PATH="$RELEASE_OUTPUT_DIR/$ZIP_NAME"
 
+rm -f "$ZIP_PATH" || true
 ditto -c -k --sequesterRsrc --keepParent ../build-noupdate/Build/Products/Release/ck550.app $ZIP_PATH
 echo "$ZIP_NAME was created."
 SHASUM=$(shasum -ba 256 $ZIP_PATH)
