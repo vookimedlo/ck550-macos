@@ -4,7 +4,7 @@ language: swift
 xcode_workspace: ck550.xcworkspace
 
 os: osx
-osx_image: xcode11.2
+osx_image: xcode11.3
 
 sudo: false
 
@@ -16,6 +16,7 @@ install:
   - 'brew uninstall swiftlint'
   - 'brew uninstall carthage'
   - 'brew install carthage'
+  - 'brew install swiftlint'
   - 'carthage bootstrap --platform macOS --verbose'
 
 before_script:
@@ -23,8 +24,8 @@ before_script:
 
 script:
   - 'cd src'
-  - 'xcodebuild -resolvePackageDependencies -workspace ck550.xcworkspace -scheme ck550-cli -clonedSourcePackagesDirPath .'
-  - 'xcodebuild -workspace ck550.xcworkspace -scheme ck550-cli -clonedSourcePackagesDirPath .'
+  - 'xcodebuild -resolvePackageDependencies -workspace ck550.xcworkspace -scheme ck550-cli -clonedSourcePackagesDirPath . -derivedDataPath build -configuration Release'
+  - 'xcodebuild -workspace ck550.xcworkspace -scheme ck550 -clonedSourcePackagesDirPath . -derivedDataPath build  -configuration Release'
 
 after_script:
   - 'echo "Done."'
