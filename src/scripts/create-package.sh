@@ -24,7 +24,7 @@
 
 set -e
 
-PLIST_FILE="../build/Release/ck550.app/Contents/Info.plist"
+PLIST_FILE="../build/Build/Products/Release/ck550.app/Contents/Info.plist"
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $PLIST_FILE)
 VOLUME_NAME="CK550"
 DMG_NAME="CK550_MacOS_Effect_Controller-$VERSION.dmg"
@@ -44,7 +44,7 @@ rm -rf "$TARGET" || true
 mkdir "$TARGET" || true
 
 echo "Creating disk image"
-cp -Rf ../build/Release/ck550.app "$TARGET/"
+cp -Rf ../build/Build/Products/Release/ck550.app "$TARGET/"
 ln -s /Applications "$TARGET/Applications"
 cp -f "$LICENSE_FILE" "$TARGET/LICENSE.txt"
 cp -f "$CHANGELOG_FILE" "$TARGET/"

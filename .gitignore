@@ -80,3 +80,5 @@ src/repositories
 src/ManifestLoading
 src/dependencies-state.json
 src/manifest.db
+src/build-noupdate
+
