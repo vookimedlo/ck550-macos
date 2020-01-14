@@ -1,6 +1,17 @@
 #!/bin/sh
 cd $(dirname "$0")
 
+set -e
+
+LANG="C"
+
+if [ -z $1 ]; then
+    echo "Tag hasn't been defined."
+    exit 1
+fi
+
+TAG=$1
+
 RELEASE_OUTPUT_DIR="./release-output"
 PLIST_FILE="../build/Build/Products/Release/ck550.app/Contents/Info.plist"
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $PLIST_FILE)

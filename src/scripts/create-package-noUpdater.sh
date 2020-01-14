@@ -1,9 +1,21 @@
 #!/bin/sh
 cd $(dirname "$0")
 
+set -e
+
+LANG="C"
+
+if [ -z $1 ]; then
+    echo "Tag hasn't been defined."
+    exit 1
+fi
+
+TAG=$1
+
 RELEASE_OUTPUT_DIR="./release-output"
 PLIST_FILE="../build-noupdate/Build/Products/Release/ck550.app/Contents/Info.plist"
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $PLIST_FILE)
+SHORT_VERSION_STRING=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" $PLIST_FILE)
 
 ZIP_NAME="CK550_MacOS_Effect_Controller-$VERSION-NoUpdater.zip"
 ZIP_PATH="$RELEASE_OUTPUT_DIR/$ZIP_NAME"

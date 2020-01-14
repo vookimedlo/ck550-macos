@@ -24,6 +24,8 @@
 
 set -e
 
+LANG="C"
+
 PLIST_FILE="../build/Build/Products/Release/ck550.app/Contents/Info.plist"
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" $PLIST_FILE)
 VOLUME_NAME="CK550"

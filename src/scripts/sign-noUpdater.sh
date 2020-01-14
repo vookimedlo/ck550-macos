@@ -1,6 +1,10 @@
 #!/bin/sh
 cd $(dirname "$0")
 
+set -e
+
+LANG="C"
+
 cd ../build-noupdate/Build/Products/Release
 
 find ck550.app -name "*.dylib" | xargs codesign --force --verify --verbose --sign "${DEVELOPER_IDENTITY_CK550}"
