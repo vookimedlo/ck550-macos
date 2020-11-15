@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,16 +17,16 @@
         <window title="Release Notes" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="L11-aK-dxX" userLabel="ReleaseNotesWindow" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
             <rect key="contentRect" x="407" y="270" width="360" height="497"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" wantsLayer="YES" id="Tlz-xZ-QGr">
                 <rect key="frame" x="0.0" y="0.0" width="360" height="497"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="gtP-be-DhE">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="477"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="467"/>
                         <subviews>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2W-FC-yki">
-                                <rect key="frame" x="0.0" y="0.0" width="360" height="477"/>
+                            <scrollView misplaced="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2W-FC-yki">
+                                <rect key="frame" x="0.0" y="-10" width="360" height="477"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="7ce-2I-Lfo">
                                     <rect key="frame" x="0.0" y="0.0" width="360" height="477"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +49,10 @@
                                         </textView>
                                     </subviews>
                                 </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Ib7-ma-INy">
+                                    <rect key="frame" x="-100" y="-100" width="360" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="nTD-gN-9Yb">
                                     <rect key="frame" x="344" y="0.0" width="16" height="477"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -64,7 +69,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="gtP-be-DhE" secondAttribute="bottom" id="1Vk-Pa-bKT"/>
-                    <constraint firstItem="gtP-be-DhE" firstAttribute="top" secondItem="Tlz-xZ-QGr" secondAttribute="top" constant="20" id="a2T-Ob-eXD"/>
+                    <constraint firstItem="gtP-be-DhE" firstAttribute="top" secondItem="Tlz-xZ-QGr" secondAttribute="top" constant="30" id="a2T-Ob-eXD"/>
                     <constraint firstAttribute="trailing" secondItem="gtP-be-DhE" secondAttribute="trailing" id="gsm-Eg-JZS"/>
                     <constraint firstItem="gtP-be-DhE" firstAttribute="leading" secondItem="Tlz-xZ-QGr" secondAttribute="leading" id="nNR-4A-U43"/>
                 </constraints>
