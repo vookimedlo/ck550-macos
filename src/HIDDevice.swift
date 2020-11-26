@@ -80,7 +80,7 @@ class HIDDevice: HIDDeviceProtocol {
             return false
         }
 
-        let inputCallback: IOHIDReportCallback = { context, result, sender, type, reportId, inputBuffer, inputBufferLength in
+        let inputCallback: IOHIDReportCallback = { context, result, _, _, _, inputBuffer, inputBufferLength in
             guard kIOReturnSuccess == result else {
                 return
             }
