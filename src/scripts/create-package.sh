@@ -54,7 +54,7 @@ hdiutil create -volname "$VOLUME_NAME" -srcfolder "$TARGET/" -nocrossdev -ov -fs
 
 echo "Mounting disk image"
 MOUNT_DIR="/Volumes/$VOLUME_NAME"
-DEV_NAME=`hdiutil attach -readwrite -noverify -noautoopen $DMG_TEMP_NAME | egrep '^/dev/' | sed 1q | awk '{print $1}'`
+DEV_NAME=$(hdiutil attach -readwrite -noverify -noautoopen $DMG_TEMP_NAME | egrep '^/dev/' | sed 1q | awk '{print $1}')
 
 echo "Setting background image"
 test -d "$MOUNT_DIR/.background" || mkdir "$MOUNT_DIR/.background"
