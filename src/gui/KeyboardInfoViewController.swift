@@ -41,6 +41,8 @@ class KeyboardInfoViewController: NSViewController, KeyboardInfoHandler {
             if isPlugged {
                 if let fwVersion = userInfo[.fwVersion] as? String {
                     firmwareTextField?.stringValue = fwVersion
+                } else {
+                    firmwareTextField?.stringValue = "unknown"
                 }
                 if let product = userInfo[.product] as? String {
                     productTextField?.stringValue = product
@@ -48,6 +50,8 @@ class KeyboardInfoViewController: NSViewController, KeyboardInfoHandler {
                     if let manufacturer = userInfo[.manufacturer] as? String {
                         productTextField?.toolTip = product + " by " + manufacturer
                     }
+                } else {
+                    productTextField?.stringValue = "unknown"
                 }
             } else {
                 firmwareTextField?.stringValue = ""
