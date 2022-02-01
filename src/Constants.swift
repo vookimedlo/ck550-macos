@@ -31,4 +31,5 @@ let keyboardVID: Int = 0x2516
 enum KeyboardPIDs: Int, CaseIterable {
     case CK550 = 0x007f; // Works - @vookimedlo - this is the only keyboard I have, any contribution for other models is welcome!!!
     case CK530 = 0x009f; // Works - @cscheib - suggested & reported - Thanks!!!
+    case CK550v2 = 0x0145; // Works - @adrewb - CK550v2 Version 1.10 model #: GK-550-GKTM1-US
 }
